@@ -13,18 +13,18 @@ project:
 
     - file: 00-introduction-nb.md
 
-    - title: cours #1
+    - title: "Réseaux"
       children:
         - file: slides1.md
 
-    - title: cours #2
+    - title: "Coté Serveur !"
       children:
         - file: slides2.md
 
-    - title: cours #3
+    - title: "Flask"
       children:
         - file: slides3.md
 
-    - title: cours #4
+    - title: "Addendum"
       children:
         - file: slides4.md
