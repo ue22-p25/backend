@@ -13,31 +13,18 @@ project:
 
     - file: 00-introduction-nb.md
 
-    - title: Intro
+    - title: cours #1
       children:
-        - pattern: 0[1-9]*-nb.md
+        - file: slides1.md
 
-    - title: HTML & CSS basics
+    - title: cours #2
       children:
-        - pattern: 1*-nb.md
+        - file: slides2.md
 
-    - title: layout with CSS
+    - title: cours #3
       children:
-        - pattern: 2*-nb.md
+        - file: slides3.md
 
-    - title: Intro to JS
+    - title: cours #4
       children:
-        - pattern: 3*-nb.md
-
-    - title: practising JS
-      children:
-        - pattern: "[45]*-nb.md"
-
-    - title: optional content
-      children:
-        - pattern: 6*-nb.md
-
-    - title: handouts Aurélien
-      children:
-        - url: http://ue22-p25-web.surge.sh/
-          title: sur surge.sh
+        - file: slides4.md
