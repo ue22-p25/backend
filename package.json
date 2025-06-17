@@ -1,0 +1,36 @@
+{
+  "name": "slides-model",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": ""
+  },
+  "description": "les slides du cours réseau / backend à l'École des Mines de Paris",
+  "dependencies": {
+    "esbuild": "",
+    "fsevents": "^2.3.3",
+    "nanoid": "^3.3.8",
+    "picocolors": "^1.1.1",
+    "postcss": "^8.5.1",
+    "rollup": "^3.29.5",
+    "source-map-js": "^1.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ue22-p24/backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ue22-p24/backend/issues"
+  },
+  "homepage": "https://github.com/ue22-p24/backend#readme",
+  "main": "vite.config.js"
+}
