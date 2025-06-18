@@ -11,11 +11,11 @@ version: 1
 project:
   toc:
 
-    - file: 00-introduction-nb.md
+    - file: 0-introduction.md
 
-    - title: "Réseaux"
+    - title: "Introduction Réseaux"
       children:
-        - file: slides1.md
+        - pattern: 1-*.md
 
     - title: "Coté Serveur !"
       children:

@@ -295,6 +295,10 @@ article main table {
 html.dark .corrige {
     background-image: radial-gradient(circle at top left, #0e3852, #0c5517);
 }
+.center {
+  text-align: center;
+}
+
 pre {
   margin: 7px;
 }
