@@ -1,14 +1,12 @@
 class: middle, slide_title
 
-<img class="slide_title_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_title_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_title_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_title_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_title_armines" src="static/media/logos/logo_armines.jpg"> -->
-<img class="left_panel" src="static/media/logos/mines_paris_lampe.png">
+<!-- <img class="slide_title_armines" src="media/logos/logo_armines.jpg"> -->
+<img class="left_panel" src="media/logos/mines_paris_lampe.png">
 
-# Programmes coopérants 🚀
-
-## Côté Serveur !
+# Côté Serveur !
 
 <p> <strong><i>Basile Marchand</i></strong><sup> 1</sup></p>
 
@@ -17,10 +15,10 @@ class: middle, slide_title
 ---
 
 layout: true
-<img class="slide_header_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_header_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_header_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_header_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_header_armines" src="static/media/logos/logo_armines.jpg"> -->
+<!-- <img class="slide_header_armines" src="media/logos/logo_armines.jpg"> -->
 
 <div class="slide_footer">
     <div class="wrap">
@@ -40,17 +38,17 @@ layout: true
 
 .cols[
 .fifty[
-.center[<img src="static/media/osi-model.svg" width="60%">]
+.center[<img src="media/osi-model.svg" width="60%">]
 ]
 .fifty[
 Un modèle OSI en 7 couches
 
-.center[<img src="static/media/ip-address.svg" width="40%">]
+.center[<img src="media/ip-address.svg" width="40%">]
 
 Un protocole HTTP(S) pour le web
 
 .center[
-<img src="static/media/http-request.svg" width="60%">
+<img src="media/http-request.svg" width="60%">
 ]
 
 ]
@@ -61,7 +59,7 @@ Un protocole HTTP(S) pour le web
 # Quel est le rôle du serveur ?
 
 .center[
-<img src="static/media/client-server.svg" width="60%">
+<img src="media/client-server.svg" width="60%">
 ]
 
 --
@@ -106,13 +104,13 @@ class: center, middle
 .center[Serveur physique vs serveur virtuel (VPS) ]
 
 <div style="position: absolute; bottom: 15%; left: 15%">
-<img src="static/media/bare-metal.svg" width="80%">
+<img src="media/bare-metal.svg" width="80%">
 </div>
 
 --
 
 <div style="position: absolute; bottom: 15%; right: 10%">
-<img src="static/media/vps.svg" width="80%">
+<img src="media/vps.svg" width="80%">
 </div>
 
 --
@@ -128,7 +126,7 @@ Différentes solutions : On Premise vs Cloud (OVH, Azure, GCP, AWS, ... )
 ## Le serveur "software"
 
 .center[
-<img src="static/media/server-app.svg" width="65%">
+<img src="media/server-app.svg" width="65%">
 ]
 
 C'est l'application (au sens logiciel) qui va s'occuper de
@@ -145,7 +143,7 @@ Différentes solutions : Nginx (33%), Apache (27%), LiteSpeed (15%), Node.js(4%)
 
 .center[OUI 🎯 il suffit de se partager le port 80 🤝]
 
-.center[<img src="static/media/virtual-host.svg" width="80%">]
+.center[<img src="media/virtual-host.svg" width="80%">]
 
 --
 
@@ -154,11 +152,11 @@ Différentes solutions : Nginx (33%), Apache (27%), LiteSpeed (15%), Node.js(4%)
 --
 
 <div style="position: absolute; top: 38%; left:15%">
-<img src="static/media/servername-mines.png" width="40%">
+<img src="media/servername-mines.png" width="40%">
 </div>
 
 <div style="position: absolute; top: 38%; left:55%">
-<img src="static/media/servername-cpp.png" width="70%">
+<img src="media/servername-cpp.png" width="70%">
 </div>
 
 .center[
@@ -237,7 +235,7 @@ Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation 
 <br><br>
 
 .center[
-<a href="http://cpp.bmarchand.fr" target="_blank"> <img src="static/media/site-static.svg" width="90%"></a>
+<a href="http://cpp.bmarchand.fr" target="_blank"> <img src="media/site-static.svg" width="90%"></a>
 ]
 
 ---
@@ -248,7 +246,7 @@ Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation 
 
 .center[
 <a href="http://bmarchand.fr/research/activities" target="_blank">
-<img src="static/media/dynamic-site1.svg" width="50%">
+<img src="media/dynamic-site1.svg" width="50%">
 </a>
 ]
 
@@ -256,7 +254,7 @@ Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation 
 
 .center[
 <a href="https://rep.mines-paristech.fr" target="_blank">
-<img src="static/media/cerebro.png" width="50%">
+<img src="media/cerebro.png" width="50%">
 </a>
 ]
 
@@ -306,7 +304,7 @@ Attention en revanche :
 .cols.bottom[
 
 .sixty[
-  <img src="static/media/performance.svg" width="700px">
+  <img src="media/performance.svg" width="700px">
 ]
 
 .fourty[
@@ -323,7 +321,7 @@ Attention en revanche :
 
 # Solutions techniques
 
-.center[<img src="static/media/concurrency.svg" width="70%">]
+.center[<img src="media/concurrency.svg" width="70%">]
 
 .center[Utilisation du parallélisme de tâches processus/thread et/ou programmation asynchrone]
 
@@ -333,10 +331,10 @@ Attention en revanche :
 
 .cols[
 .fifty[
-.center[<img src="static/media/http-request.svg" width="100%">]
+.center[<img src="media/http-request.svg" width="100%">]
 ]
 .fifty[
-.center[<img src="static/media/response-format.svg" width="100%">]
+.center[<img src="media/response-format.svg" width="100%">]
 ]
 ]
 
@@ -347,11 +345,11 @@ Possible de voir les requêtes et réponses dans votre navigateur via
 --
 
 <div style="position: absolute; top: 38%; left:15%">
-<img src="static/media/chrome-request-headers.png" width="40%">
+<img src="media/chrome-request-headers.png" width="40%">
 </div>
 
 <div style="position: absolute; top: 38%; left:55%">
-<img src="static/media/chrome-response-headers.png" width="70%">
+<img src="media/chrome-response-headers.png" width="70%">
 </div>
 
 ---
@@ -408,7 +406,7 @@ puis ouvrez dans votre navigateur `http://localhost:8000/index.html` (*)
 
 <!-- [http://bit.ly/3EeuLLo](http://bit.ly/3EeuLLo)
 
-<img src="static/media/qrcode/http_server.png" width="20%"> -->
+<img src="media/qrcode/http_server.png" width="20%"> -->
 
 ---
 
@@ -451,7 +449,7 @@ mais c'est bien de comprendre comment ça marche
 
 <!-- pour info, était aussi dispo sur replit ici:
 [http://bit.ly/3EeuLLo](http://bit.ly/3EeuLLo)
-<img src="static/media/qrcode/http_server.png" width="20%"> -->
+<img src="media/qrcode/http_server.png" width="20%"> -->
 
 ---
 
@@ -490,7 +488,7 @@ Ensemble de programmes effectuant des opérations spécifiques, que vous allez u
 Par exemple `NumPy` en Python 🐍 est une librairie
 
 .center[
-<img src="static/media/code-with-library.svg" height="200px">
+<img src="media/code-with-library.svg" height="200px">
 ]
 
 ]
@@ -503,7 +501,7 @@ Cadre de développement dans lequel le développeur vient s'inscrire, i.e. déve
 Un code à trou 🕳️ en quelque sorte
 
 .center[
-<img src="static/media/code-with-framework.svg" height="200px">
+<img src="media/code-with-framework.svg" height="200px">
 ]
 
 ]
@@ -522,7 +520,7 @@ Un code à trou 🕳️ en quelque sorte
 
 .center[
 
-  <img src="static/media/framework_frontend.png" width=50%>
+  <img src="media/framework_frontend.png" width=50%>
 ]
 
 Focalisé sur le développement d'application côté client
@@ -535,7 +533,7 @@ Focalisé sur le développement d'application côté client
 
 .center[
 
-  <img src="static/media/framework_backend.png" width=100%>
+  <img src="media/framework_backend.png" width=100%>
 ]
 
 Focalisé sur le développement côté serveur
@@ -548,7 +546,7 @@ Focalisé sur le développement côté serveur
 # frameworks backend: les grands principes
 
 .center[
-<img src="static/media/framework-routes.svg" width=70%>
+<img src="media/framework-routes.svg" width=70%>
 ]
 
 A cela un framework complet ajoute des fonctionnalités de :
@@ -561,7 +559,7 @@ A cela un framework complet ajoute des fonctionnalités de :
 Micro-framework Python 🐍 développé depuis 2010.
 <br><br>
 .center[
-<img src="static/media/logos/logo-flask.svg" width=30% />
+<img src="media/logos/logo-flask.svg" width=30% />
 ]
 <br><br>
 🚧 Micro-framework ne veut pas dire "pas utilisable sur des gros projets"  ⚠️
@@ -793,7 +791,7 @@ Enrobage du protocôle HTTP dans une couche de chiffrement <br><br>
 pour garantir la sécurité de l'utilisateur
 ]
 
-.center[<img src="static/media/https.jpg" width="35%">]
+.center[<img src="media/https.jpg" width="35%">]
 
 ---
 
@@ -833,11 +831,11 @@ pour garantir la sécurité de l'utilisateur
 
 .cols[
 .fifty[
-<img src="static/media/http-not-safe.svg" width="100%">
+<img src="media/http-not-safe.svg" width="100%">
 ]
 .fifty[
 
-<img src="static/media/https-safe.svg" width="100%">
+<img src="media/https-safe.svg" width="100%">
 
 ]
 ]
@@ -851,7 +849,7 @@ pour garantir la sécurité de l'utilisateur
 En pratique le chiffrement fonctionne avec un système clé publique/clé privée
 
 .center[
-<img src="static/media/timeline-tls.excalidraw.svg" height="480px">
+<img src="media/timeline-tls.excalidraw.svg" height="480px">
 ]
 
 ---
@@ -864,10 +862,10 @@ En pratique le chiffrement fonctionne avec un système clé publique/clé privé
 Possible de générer ses propres certificat soi-même mais ils ne sont pas considérés comme valides par les clients standard (sachant que les navigateurs web ont une liste de CA de confiance)
 
 <br>
-Les logiciels open-source utilisent majoritairement la librairie ***OpenSSL*** <img src="static/media/logos/openssl.svg" width="20%">
+Les logiciels open-source utilisent majoritairement la librairie ***OpenSSL*** <img src="media/logos/openssl.svg" width="20%">
 
 <br>
-Pour générer des certificats gratuitement il existe l'initiative **Let's Encrypt** <img src="static/media/logos/lets-encrypt.svg" width="30%">
+Pour générer des certificats gratuitement il existe l'initiative **Let's Encrypt** <img src="media/logos/lets-encrypt.svg" width="30%">
 
 .footnote.small[
   en pratique, un certificat est valide pour une durée finie, de l'ordre de 1 an, il faut donc le renouveler régulièrement
@@ -903,16 +901,16 @@ Faisons une pause goûter 🤤
 
 .cols[
 .fifty[
-<img src="static/media/cookie1.svg" width="100%">
+<img src="media/cookie1.svg" width="100%">
 ]
 .fifty[
-<img src="static/media/cookie2.svg" width="100%">
+<img src="media/cookie2.svg" width="100%">
 ]
 ]
 
 .center[stockée sur le client (dans le navigateur) <br> et **renvoyée** au serveur à chaque nouvelle requête]
 
-.center[ <img src="static/media/cookie3.svg" width="40%">]
+.center[ <img src="media/cookie3.svg" width="40%">]
 
 ---
 
@@ -984,7 +982,7 @@ Par exemple, allez sur <https://www.mat.minesparis.psl.eu> et trouvez le cookie 
 
 # Quelques règles à suivre
 
-.center[<img src="static/media/logos/cnil.svg" width="30%">]
+.center[<img src="media/logos/cnil.svg" width="30%">]
 
 .center[<https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies>]
 
@@ -1009,7 +1007,7 @@ le dossier `python/http-cookie` du cours
 <br>ou<br>
 [http://bit.ly/410qbdD](http://bit.ly/410qbdD)
 <br>ou<br>
-<img src="static/media/qrcode/cookie.png" width="20%">
+<img src="media/qrcode/cookie.png" width="20%">
 ]
 
 .footnote.small[
@@ -1042,7 +1040,7 @@ le dossier `python/http-cookie` du cours
 .cols[
 
 .twenty[
-<img src="static/media/timeline-http.svg" width="100%">
+<img src="media/timeline-http.svg" width="100%">
 ]
 
 .eighty[
@@ -1057,10 +1055,10 @@ oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 
 .cols[
 .fifty[
-<img src="static/media/limitation1.svg" width="100%">
+<img src="media/limitation1.svg" width="100%">
 ]
 .fifty[
-<img src="static/media/limitation2.svg" width="100%">
+<img src="media/limitation2.svg" width="100%">
 ]
 ]
 
@@ -1084,7 +1082,7 @@ oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 son petit nom: `ws` (ou `wss` pour le sécurisé)
 ]
 .fourty[
-.center[<img src="static/media/timeline-ws.svg" width="70%">]
+.center[<img src="media/timeline-ws.svg" width="70%">]
 ]
 ]
 
@@ -1153,7 +1151,7 @@ C'est lié à la programmation asynchrone. Pour plus de détails je vous encoura
 .center[[http://bit.ly/3xu599H](http://bit.ly/3xu599H)]
 
 .center[
-<img src="static/media/qrcode/tornado.png" width="20%">
+<img src="media/qrcode/tornado.png" width="20%">
 ]
 
 ---

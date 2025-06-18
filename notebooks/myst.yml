@@ -36,7 +36,7 @@ site:
     favicon: media/favicon-p25.svg
     logo: media/logo-backend.svg
     # very visible in the header
-    logo_text: "UE22: Web frontend"
+    logo_text: "UE22: Web backend"
     style: "_static/style.css"
 
 extends:

@@ -1,9 +1,9 @@
 class: middle, slide_title
-<img class="slide_title_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_title_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_title_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_title_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_title_armines" src="static/media/logos/logo_armines.jpg"> -->
-<img class="left_panel" src="static/media/logos/mines_paris_lampe.png">
+<!-- <img class="slide_title_armines" src="media/logos/logo_armines.jpg"> -->
+<img class="left_panel" src="media/logos/mines_paris_lampe.png">
 
 # Programmes coopérents 🚀
 
@@ -16,10 +16,10 @@ class: middle, slide_title
 ---
 
 layout: true
-<img class="slide_header_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_header_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_header_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_header_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_header_armines" src="static/media/logos/logo_armines.jpg"> -->
+<!-- <img class="slide_header_armines" src="media/logos/logo_armines.jpg"> -->
 
 <div class="slide_footer">
     <div class="wrap">
@@ -32,7 +32,7 @@ layout: true
 # La coopération - mythe ou réalité
 
 .center[
-<img src="static/media/architecture.svg " style="width: 80%;">
+<img src="media/architecture.svg " style="width: 80%;">
 ]
 
 La plupart des systèmes informatiques/services web que vous pouvez utiliser quotidiennement ne sont pas **une** application mais un **ensemble** d'application qui intéragissent entre elles.
@@ -58,37 +58,37 @@ Cela introduit alors tout un tas de questions :
 
 ## Client-serveur
 
-.center[<img src="static/media/client-server.svg" style="width: 50%;">]
+.center[<img src="media/client-server.svg" style="width: 50%;">]
 
 ---
 
 ## Architecture trois-tiers
 
-.center[<img src="static/media/architecture-three-tiers.svg" style="width: 50%;">]
+.center[<img src="media/architecture-three-tiers.svg" style="width: 50%;">]
 
 ---
 
 ## Architecture pair à pair
 
-.center[<img src="static/media/peer-to-peer.svg" style="width: 50%;">]
+.center[<img src="media/peer-to-peer.svg" style="width: 50%;">]
 
 ---
 
 # Le Web
 
-.center[<img src="static/media/web.jpg" style="width: 40%;">]
+.center[<img src="media/web.jpg" style="width: 40%;">]
 
 ---
 
 # Le cloud
 
 .center[
-  <img src="static/media/nocloud.png" style="width: 40%">
+  <img src="media/nocloud.png" style="width: 40%">
 ]
 
 <!--
 <div style="position: absolute; top: 25%; left: 75%;">
-<img src="static/media/logos/logo_cmat.png" width="200px">
+<img src="media/logos/logo_cmat.png" width="200px">
 </div>
 
 <br>
@@ -120,7 +120,7 @@ Quelques chiffres:
 #
 
 .center[
-<img src="static/media/orga_cmat.png" width="70%">
+<img src="media/orga_cmat.png" width="70%">
 ]
 
 ---
@@ -147,7 +147,7 @@ Quelques chiffres:
   - Simulation numérique
 
 <div style="position: absolute; top: 20%; right: 10%">
-<img src="static/media/school.png" width="200px">
+<img src="media/school.png" width="200px">
 </div>
 
 ---
@@ -225,7 +225,7 @@ Le principal outil la suite logicielle Z-set, co-développement Centre des Maté
 <br>
 
 .center[
-<img src="static/media/zset_apiculteur.png" width="55%">
+<img src="media/zset_apiculteur.png" width="55%">
 ]
 
 .footnote[Projet en cours : depuis un an développement d'un nouveau code de calcul pour remplacer Z-set.]
@@ -235,7 +235,7 @@ Le principal outil la suite logicielle Z-set, co-développement Centre des Maté
 # Calcul parallèle distribué
 
 <div style="position: absolute; left: 5%; top: 15%;">
-  <img width="100px" src="static/media/aube_dd.png">
+  <img width="100px" src="media/aube_dd.png">
 </div>
 
 <div style="position: absolute; left: 20%; top: 15%;">
@@ -255,11 +255,11 @@ Le principal outil la suite logicielle Z-set, co-développement Centre des Maté
 </div>
 
 <div style="position: absolute; left: 5%; top: 45%; z-index: 3;">
-  <img width="300px" src="static/media/aube_dd_2.png">
+  <img width="300px" src="media/aube_dd_2.png">
 </div>
 
 <div style="position: absolute; left: 25%; top: 65%; z-index: 1;">
-  <img width="300px" src="static/media/aube_dd_1.png">
+  <img width="300px" src="media/aube_dd_1.png">
 </div>
 
 --
@@ -309,13 +309,13 @@ Prise en compte à différentes échelles des phénomènes de contact
 .cols[
 .fifty[
 
-.center[<img src="static/media/contact/basava.png" width="80%">]
+.center[<img src="media/contact/basava.png" width="80%">]
 
 Thèse B. Akula 2019
 ]
 .fifty[
-.center[<img src="static/media/contact/andrei1.png" width="40%">]
-.center[<img src="static/media/contact/andrei2.png" width="100%">]
+.center[<img src="media/contact/andrei1.png" width="40%">]
+.center[<img src="media/contact/andrei2.png" width="100%">]
 
 Thèse A. Shvarts 2019
 ]
@@ -354,7 +354,7 @@ Par exemple calcul plastique poreux (Gurson) <br>
 </div>
 
 <!-- <div style="position: absolute; left: 50%; top: 35%;">
-<video controls autoplay loop src="static/media/output.ogg" width="500px">
+<video controls autoplay loop src="media/output.ogg" width="500px">
 </div> -->
 
 <div style="position: absolute; left: 50%; top: 20%;">
@@ -376,16 +376,16 @@ Des travaux récents (Thèse A. El Ouazani) sur la transition endommagement rupt
 Homonégénisation et relocalisation des champs jusq'au 3ème ordre
 
 <div style="position: absolute; top: 25%; left:5%">
-<img src="static/media/mouad1.png" width="500px">
+<img src="media/mouad1.png" width="500px">
 </div>
 
 <div style="position: absolute; top: 10%; left:60%">
-  <img src="static/media/mouad2.png" width="400px">
+  <img src="media/mouad2.png" width="400px">
   <p  class="legend">Champs relocalisés vs solution exacte</p>
 </div>
 
 <div style="position: absolute; top: 58%; left:55%">
-  <img src="static/media/mouad3.png" width="300px">
+  <img src="media/mouad3.png" width="300px">
   <p class="legend">Champs relocalisés et corrigés aux bords et carte d'erreur</p>
 </div>
 
@@ -396,7 +396,7 @@ Homonégénisation et relocalisation des champs jusq'au 3ème ordre
 # Méthodes de réduction de modèle
 
 .center[
-<img src="static/media/model_reduction.png" width="65%">
+<img src="media/model_reduction.png" width="65%">
 ]
 
 .footnote[Thématique portée par D. Ryckelynck, P. Kerfriden, L. Lacourt]

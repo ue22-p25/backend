@@ -1,22 +1,20 @@
 class: middle, slide_title
 
-<img class="slide_title_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_title_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_title_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_title_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_title_armines" src="static/media/logos/logo_armines.jpg"> -->
-<img class="left_panel" src="static/media/logos/mines_paris_lampe.png">
+<!-- <img class="slide_title_armines" src="media/logos/logo_armines.jpg"> -->
+<img class="left_panel" src="media/logos/mines_paris_lampe.png">
 
-# Programmes coopérants 🚀
-
-## Additional slides !
+# Additional slides !
 
 ---
 
 layout: true
-<img class="slide_header_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_header_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_header_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_header_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_header_armines" src="static/media/logos/logo_armines.jpg"> -->
+<!-- <img class="slide_header_armines" src="media/logos/logo_armines.jpg"> -->
 
 <div class="slide_footer">
     <div class="wrap">
@@ -149,7 +147,7 @@ Greatly reduces the risk of compromised accounts
   ]
 
 .fourty[
-  <img src="static/media/trust-chain.excalidraw.svg" width="80%">
+  <img src="media/trust-chain.excalidraw.svg" width="80%">
 ]
 ]
 
@@ -285,9 +283,9 @@ particularly as it is a standard and you can use it on any cloud provider
   - graphQL
 ]
 .fourty[
-  <img src="static/media/scaleway-instances.png" width="100%">
+  <img src="media/scaleway-instances.png" width="100%">
 
-  <img src="static/media/scaleway-grafana.png" width="100%">
+  <img src="media/scaleway-grafana.png" width="100%">
 ]
 ]
 
@@ -486,7 +484,7 @@ usage:
   e.g. once the TLS handshake is done
   ]
   .fourty[
-  <img src="static/media/diffie-hellman.png" width="100%">
+  <img src="media/diffie-hellman.png" width="100%">
   ]
 ]
 

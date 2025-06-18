@@ -1,14 +1,12 @@
 class: middle, slide_title
 
-<img class="slide_title_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_title_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_title_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_title_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_title_armines" src="static/media/logos/logo_armines.jpg"> -->
-<img class="left_panel" src="static/media/logos/mines_paris_lampe.png">
+<!-- <img class="slide_title_armines" src="media/logos/logo_armines.jpg"> -->
+<img class="left_panel" src="media/logos/mines_paris_lampe.png">
 
-# Programmes coopérants 🚀
-
-## Framework web --- Flask !
+# Framework web --- Flask !
 
 <p> <strong><i>Basile Marchand</i></strong><sup> 1</sup></p>
 
@@ -17,10 +15,10 @@ class: middle, slide_title
 ---
 
 layout: true
-<img class="slide_header_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_header_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_header_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_header_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_header_armines" src="static/media/logos/logo_armines.jpg"> -->
+<!-- <img class="slide_header_armines" src="media/logos/logo_armines.jpg"> -->
 
 <div class="slide_footer">
     <div class="wrap">
@@ -40,18 +38,18 @@ layout: true
 
 .cols[
 .fourty[
-.center[<img src="static/media/osi-model.svg" width="70%">]
+.center[<img src="media/osi-model.svg" width="70%">]
 ]
 
 .fifty[
-<img src="static/media/ip-address.svg" width="30%"> <img src="static/media/http-request.svg" width="40%">
+<img src="media/ip-address.svg" width="30%"> <img src="media/http-request.svg" width="40%">
 
-<img src="static/media/server-app.svg" width="400px">
+<img src="media/server-app.svg" width="400px">
 ]
 
 .twenty[
   <br><br>
-<img src="static/media/logos/lets-encrypt.svg" width="150px">
+<img src="media/logos/lets-encrypt.svg" width="150px">
 <p style="font-size: 4rem"> 🍪 </p>
 ]
 ]
@@ -91,7 +89,7 @@ Ensemble de programmes effectuant des opérations spécifiques, que vous allez u
 Par exemple `NumPy` en Python 🐍 est une librairie
 
 .center[
-<img src="static/media/code-with-library.svg" height="180px">
+<img src="media/code-with-library.svg" height="180px">
 ]
 
 ]
@@ -106,7 +104,7 @@ Cadre de développement dans lequel le développeur vient s'inscrire, i.e. déve
 Un code à trou 🕳️ en quelque sorte - comme `arcade`
 
 .center[
-<img src="static/media/code-with-framework.svg" height="180px" >
+<img src="media/code-with-framework.svg" height="180px" >
 ]
 
 ]
@@ -125,7 +123,7 @@ Un code à trou 🕳️ en quelque sorte - comme `arcade`
 
 .center[
 
-  <img src="static/media/framework_frontend.png" width=50%>
+  <img src="media/framework_frontend.png" width=50%>
 ]
 
 Focalisé sur le développement d'application côté client.
@@ -138,7 +136,7 @@ Focalisé sur le développement d'application côté client.
 
 .center[
 
-  <img src="static/media/framework_backend.png" width=100%>
+  <img src="media/framework_backend.png" width=100%>
 ]
 
 Focalisé sur le développement côté serveur
@@ -153,7 +151,7 @@ Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
 # Les grands principes des framework backend
 
 .center[
-<img src="static/media/framework-routes.svg" width="65%">
+<img src="media/framework-routes.svg" width="65%">
 ]
 
 À cela un framework complet ajoute des fonctionnalités de :
@@ -167,7 +165,7 @@ Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
 Micro-framework Python 🐍 développé depuis 2010.
 <br><br>
 .center[
-<img src="static/media/logos/logo-flask.svg" width="35%">
+<img src="media/logos/logo-flask.svg" width="35%">
 ]
 <br><br>
 🚧 Micro-framework ne veut pas dire pas utilisable sur des gros projets ⚠️
@@ -193,7 +191,7 @@ Micro-framework car noyau très léger et minimaliste mais pouvant être enrichi
 .center[
 
 <figure>
-<img src="static/media/web_framework_survey.png" width="70%"/><br>
+<img src="media/web_framework_survey.png" width="70%"/><br>
 <label style="font-size: x-small"> Source: <a href="https://www.jetbrains.com/lp/devecosystem-2022/python/">https://www.jetbrains.com/lp/devecosystem-2022/python/</a>
 </figure>
 ]
@@ -233,7 +231,7 @@ Deux approches :
 Utilisation de librairies graphiques et développement d'un client lourd
 
 .center[
-<img src="static/media/old-school.svg" width=50%>
+<img src="media/old-school.svg" width=50%>
 ]
 
 ]
@@ -244,7 +242,7 @@ Utilisation de librairies graphiques et développement d'un client lourd
 Utilisation du navigateur
 
 .center[
-<img src="static/media/new-age.svg" width=80%>
+<img src="media/new-age.svg" width=80%>
 ]
 
 ]
@@ -335,7 +333,7 @@ app.run(debug=True, port=3001)
 .fourty[
 [http://bit.ly/3Z5C5k7](http://bit.ly/3Z5C5k7)
 
-.center[<img src="static/media/qrcode/flask_sandbox.png" width="60%">]
+.center[<img src="media/qrcode/flask_sandbox.png" width="60%">]
 ]
 ]
 
@@ -386,7 +384,7 @@ En revanche tous les fichiers contenus dans le dossier `static` seront
 ## Passage de paramètres aux URLs
 
 .center[
-<img src="static/media/http-get-arguments.svg" width="80%">
+<img src="media/http-get-arguments.svg" width="80%">
 ]
 
 Besoin de récupérer dans la fonction `handler` la requête et donc ses arguments 🤔
@@ -421,7 +419,7 @@ def handler():
 Possibilité offerte par Flask de définir des paramètres au sein même d'une URL
 
 .center[
-<img src="static/media/flask-route-param.svg" width=70%>
+<img src="media/flask-route-param.svg" width=70%>
 ]
 
 .cols[
@@ -467,7 +465,7 @@ Possibilité pour les deux d'ajouter un paramètre `n` par exemple `?n=10` pour 
 ]
 
 .center[
-<img src="static/media/qrcode/flask_random_api.png" width="20%">
+<img src="media/qrcode/flask_random_api.png" width="20%">
 ]
 
 ---
@@ -483,7 +481,7 @@ Petit rappel du 1er épisode, HTTP différentes requêtes possibles
 
 Il s'agit là des principaux types de requêtes mais il en existe d'autres, pour la liste complète vous pouvez faire un tour [https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 
-.center[<img src="static/media/api_img.jpg" width="40%">]
+.center[<img src="media/api_img.jpg" width="40%">]
 
 .footnote[Image from Jérémy Mésière, Architecte Middleware chez Manutan]
 
@@ -537,7 +535,7 @@ Plusieurs méthodes à disposition :
 
 [http://bit.ly/40ly786](http://bit.ly/40ly786)
 
-<img src="static/media/qrcode/flask_post.png" width="20%">
+<img src="media/qrcode/flask_post.png" width="20%">
 ]
 
 ---
@@ -581,7 +579,7 @@ Pour le cas de pages dynamiques deux approches existent
 ]
 
 .center[
-<img src="static/media/qrcode/flask_ssr_vs_csr.png" width="30%">
+<img src="media/qrcode/flask_ssr_vs_csr.png" width="30%">
 ]
 
 Il faut être curieux et ouvrir l'onglet "Network" des outils de développement du navigateur !
@@ -590,14 +588,14 @@ Il faut être curieux et ouvrir l'onglet "Network" des outils de développement 
 
 # Approche CSR
 
-.center[<img src="static/media/csr.svg" width=70%>]
+.center[<img src="media/csr.svg" width=70%>]
 
 ---
 
 # Approche SSR
 
 .center[
-<img src="static/media/ssr.svg" width=70%>
+<img src="media/ssr.svg" width=70%>
 ]
 
 .center[
@@ -611,7 +609,7 @@ Besoin d'un mécanisme de ***génération de page HTML***
 Mécanisme de génération de page HTML à partir d'un modèle et de données.
 
 .center[
-<img src="static/media/template-engine.svg" width="40%">
+<img src="media/template-engine.svg" width="40%">
 ]
 
 Plusieurs techno/solutions :
@@ -919,7 +917,7 @@ Remarques
 .center[
 [http://bit.ly/3JyTBb2](http://bit.ly/3JyTBb2)
 
-<img src="static/media/qrcode/flask_form.png" width="20%">
+<img src="media/qrcode/flask_form.png" width="20%">
 ]
 ]
 ]
@@ -960,7 +958,7 @@ Par exemple, nombre de fois qu'on visite une page !
 .center[
 [http://bit.ly/408GbcF](http://bit.ly/408GbcF)
 
-<img src="static/media/qrcode/flask_cookie.png" width="20%">
+<img src="media/qrcode/flask_cookie.png" width="20%">
 ]
 
 ---
@@ -1015,7 +1013,7 @@ def index():
 
 <a href="http://bit.ly/3JYyboX">http://bit.ly/3JYyboX</a>
 <br>
-<img src="static/media/qrcode/flask_session_demo.png" width="200px">
+<img src="media/qrcode/flask_session_demo.png" width="200px">
 </div>
 
 ---
@@ -1033,7 +1031,7 @@ Petit rappel au cas où ...
 ]
 ]
 .fifty[
-.center[<img src="static/media/timeline-ws.svg" width="70%">]
+.center[<img src="media/timeline-ws.svg" width="70%">]
 ]
 ]
 
@@ -1096,7 +1094,7 @@ pour une gestion plus fine des destinataires
 📥️ 📤️
 <http://bit.ly/3yVAEdt> 
 
-<img src="static/media/qrcode/flask_socketio.png" width="150px">
+<img src="media/qrcode/flask_socketio.png" width="150px">
 ]
 ]
 ]

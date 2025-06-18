@@ -1,11 +1,10 @@
-class: middle, slide_title
-<img class="slide_title_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_title_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_title_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_title_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_title_armines" src="static/media/logos/logo_armines.jpg"> -->
-<img class="left_panel" src="static/media/logos/mines_paris_lampe.png">
+<!-- <img class="slide_title_armines" src="media/logos/logo_armines.jpg"> -->
+<img class="left_panel" src="media/logos/mines_paris_lampe.png">
 
-# Programmes coopérants 🚀
+# coté réseaux 🚀
 
 ## Introduction réseaux 🕸️
 
@@ -16,10 +15,10 @@ class: middle, slide_title
 ---
 
 layout: true
-<img class="slide_header_mpt" src="static/media/logos/logo_mines_paris.png">
-<img class="slide_header_cnrs" src="static/media/logos/logo_cnrs.jpg">
+<img class="slide_header_mpt" src="media/logos/logo_mines_paris.png">
+<img class="slide_header_cnrs" src="media/logos/logo_cnrs.jpg">
 
-<!-- <img class="slide_header_armines" src="static/media/logos/logo_armines.jpg"> -->
+<!-- <img class="slide_header_armines" src="media/logos/logo_armines.jpg"> -->
 
 <div class="slide_footer">
     <div class="wrap">
@@ -37,7 +36,7 @@ layout: true
 # Le monde d'aujourd'hui - ultra connecté 🕸️
 
 .center[
-<img src="static/media/architecture.svg" style="width: 80%;">
+<img src="media/architecture.svg" style="width: 80%;">
 ]
 
 La plupart des systèmes informatiques/services web que vous pouvez utiliser quotidiennement ne sont pas **une** application mais un **ensemble** d'applications qui intéragissent entre elles.
@@ -49,7 +48,7 @@ La plupart des systèmes informatiques/services web que vous pouvez utiliser quo
 Un élève répond à un questionnaire de satisfaction en ligne et après la soumission de son questionnaire reçoit automatiquement une réponse personnalisée et spécifique selon ses réponses.
 
 .center[
-  <img src="static/media/premier-use-case.svg" style="width: 80%;">
+  <img src="media/premier-use-case.svg" style="width: 80%;">
 ]
 
 .center[
@@ -70,7 +69,7 @@ Un élève répond à un questionnaire de satisfaction en ligne et après la sou
 ]
 
 .center[
-    <img src="static/media/second-use-case.svg" style="width: 70%;">
+    <img src="media/second-use-case.svg" style="width: 70%;">
 ]
 
 .center[
@@ -119,19 +118,19 @@ On va regarder les plus classiques
 
 ## Client-serveur
 
-.center[<img src="static/media/client-server.svg" style="width: 80%;">]
+.center[<img src="media/client-server.svg" style="width: 80%;">]
 
 ---
 
 ## Architecture trois-tiers
 
-.center[<img src="static/media/architecture-three-tiers.svg" style="width: 80%;">]
+.center[<img src="media/architecture-three-tiers.svg" style="width: 80%;">]
 
 ---
 
 ## Architecture pair à pair
 
-.center[<img src="static/media/peer-to-peer.svg" style="width: 45%;">]
+.center[<img src="media/peer-to-peer.svg" style="width: 45%;">]
 
 Très à la mode à une époque où Netflix/Amazon Prime/... n'existaient pas (oui oui cette période est réelle 🤯)
 
@@ -141,7 +140,7 @@ Très à la mode à une époque où Netflix/Amazon Prime/... n'existaient pas (o
 
 # Le Web
 
-.center[<img src="static/media/web.jpg" style="width: 40%;">]
+.center[<img src="media/web.jpg" style="width: 40%;">]
 
 .center[Juste un gros réseau]
 
@@ -149,7 +148,7 @@ Très à la mode à une époque où Netflix/Amazon Prime/... n'existaient pas (o
 
 # Le cloud
 
-.center[<img src="static/media/nocloud.png" style="width: 50%">
+.center[<img src="media/nocloud.png" style="width: 50%">
 ]
 
 ---
@@ -184,23 +183,23 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 
 ## Supercalculateur : un modèle peer-to-peer
 
-<div style="position: absolute; left: 10%; top: 25%;">
-<img src="static/media/cluster1.jpg" width="300px">
-</div>
+<!-- <div style="position: absolute; left: 10%; top: 25%;"> -->
+<img src="media/cluster1.jpg" width="300px">
+<!-- </div> -->
 
-<div style="position: absolute; left: 35%; top: 35%;">
-<img src="static/media/cluster2.jpg" width="300px">
-</div>
+<!-- <div style="position: absolute; left: 35%; top: 35%;"> -->
+<img src="media/cluster2.jpg" width="300px">
+<!-- </div> -->
 
-<div style="position: absolute; left: 55%; top: 55%;">
+<!-- <div style="position: absolute; left: 55%; top: 55%;"> -->
 <iframe width="400px" height="280" src="https://www.youtube.com/embed/4r6frld1UNE?autoplay=1&mute=1&loop=1&controls=0&playlist=4r6frld1UNE">
 </iframe>
-</div>
+<!-- </div> -->
 
-<div style="position: absolute; left: 65%; top: 25%;">
+<!-- <div style="position: absolute; left: 65%; top: 25%;"> -->
 <iframe width="320px" height="215" src="https://www.youtube.com/embed/90-kA3wYuoM?autoplay=1&mute=1&loop=1&controls=0&playlist=90-kA3wYuoM">
 </iframe>
-</div>
+<!-- </div> -->
 
 ---
 
@@ -210,32 +209,32 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 
 <div>
 <p style="font-size: small;"> Décomposition en sous-domaines </p>
-  <img width="250px" src="static/media/aube_dd.png"> 
+  <img width="250px" src="media/aube_dd.png">
 </div>
 
 --
 
-<div style="position: absolute; left: 40%; top: 25%">
+<!-- <div style="position: absolute; left: 40%; top: 25%"> -->
   <p style="font-size: small;"> Chaque sous-domaine "envoyé" <br> sur une machine de calcul </p>
-    <img width="250px" src="static/media/dd.png"> 
-</div>
+    <img width="250px" src="media/dd.png"> 
+<!-- </div> -->
 
 --
 
-<div style="position: absolute; left: 75%; top: 25%">
+<!-- <div style="position: absolute; left: 75%; top: 25%"> -->
   <p style="font-size: small;"> Chaque sous-domaine "éclaté" par paquet d'éléments <br>pour l'intégration de la loi de comportement
-    <img width="250px" src="static/media/dd_zoom.png"> 
-</div>
+    <img width="250px" src="media/dd_zoom.png"> 
+<!-- </div> -->
 
 --
 
-<div style="position: absolute; left: 30%; top: 65%">
+<!-- <div style="position: absolute; left: 30%; top: 65%"> -->
   <p> Au niveau de chaque sous-domaine : </p>
   <ul>
     <li>Opérations algébriques distribuées </li>
     <li>Résolution de problèmes locaux (solveurs DD)</li>
   </ul>
-</div>
+<!-- </div> -->
 
 ---
 
@@ -267,7 +266,7 @@ class: middle, center
 .cols[
 .fifty[
 
-.center[<img src="static/media/osi-model.svg" style="width: 72%;">]
+.center[<img src="media/osi-model.svg" style="width: 72%;">]
 
 ]
 .fifty[
@@ -296,12 +295,12 @@ Cette addresse peut être _temporaire_ ou bien _fixe_.
 <br><br>
 C'est ce qu'on appelle l'adresse IP, pour _Internet Protocol_. L'adresse IP d'une interface réseau s'écrit comme une combinaison de quatre nombres compris entre 0 et 255.
 <br><br>
-.center[<img src="static/media/ip-address.svg" style="width: 30%;">]
+.center[<img src="media/ip-address.svg" style="width: 30%;">]
 
 .footnote.smaller[
 il y a donc deux parties : l'adresse du réseau (souvent sur 24 bits) et l'adresse de l'hôte (souvent sur 8 bits)  
 lorsqu'on a besoin d'écrire l'adresse d'un réseau on écrit alors comme ceci le nombre de bits de l'adresse réseau
-.center[<img src="static/media/ip-address-subnet.svg" style="width: 30%;">]
+.center[<img src="media/ip-address-subnet.svg" style="width: 30%;">]
 ]
 
 ---
@@ -333,7 +332,7 @@ on en reparlera...
 ## Réseau local
 
 .center[
-<img src="static/media/connection-local.svg" style="width: 60%">
+<img src="media/connection-local.svg" style="width: 60%">
 
 ]
 
@@ -344,7 +343,7 @@ on en reparlera...
 ## Réseau distant
 
 .center[
-<img src="static/media/connection-remote.svg" style="width: 60%">
+<img src="media/connection-remote.svg" style="width: 60%">
 ]
 
 ---
@@ -451,7 +450,7 @@ en fait il y a deux types d'adresses IP :
 - publiques: celles qui sont visibles sur le réseau, et qui sont uniques
 - privées: celles qui sont utilisées **uniquement** dans un réseau local
 
-<img src="static/media/nat-routing.svg" width="125%">
+<img src="media/nat-routing.svg" width="125%">
 ]
 
 .thirty-five[
@@ -578,7 +577,7 @@ Le choix de l'application avec laquelle on va discuter implique la notion de **_
 .center[(mais on ne fait pas tourner autant d'applications sur un serveur)]
 ]
 .twenty-five[
-<img src="static/media/address-ports-bound.excalidraw.svg" width="100%">
+<img src="media/address-ports-bound.excalidraw.svg" width="100%">
 ]
 ]
 
@@ -613,7 +612,7 @@ et voici à quoi ressemble un paquet:
 
 <br>
 
-<img src="static/media/packet-layers.svg" width="100%" style="margin-top: -30px">
+<img src="media/packet-layers.svg" width="100%" style="margin-top: -30px">
 
 ---
 
@@ -643,7 +642,7 @@ Le principe du TCP est très simple et se décompose en trois étapes:
 
 .cols[
 .fourty[
-<img src="static/media/handshake.svg" style="width: 80%">
+<img src="media/handshake.svg" style="width: 80%">
 ]
 .fifty[
 La connexion d'un client à un serveur TCP se décompose en trois étapes
@@ -671,7 +670,7 @@ de la manière suivante :
 .cols[
 .fourty[
 
-<img src="static/media/tcp-close.svg" style="width: 75%">
+<img src="media/tcp-close.svg" style="width: 75%">
 
 ]
 .fifty[
@@ -699,7 +698,7 @@ le dossier `python/tcp` du cours
 <br>ou<br>
 [http://bit.ly/3HHQ49i](http://bit.ly/3HHQ49i)
 <br>ou<br>
-<img src="static/media/qrcode/tcp_qrcode.png" width="20%">
+<img src="media/qrcode/tcp_qrcode.png" width="20%">
 ]
 
 ---
@@ -748,7 +747,7 @@ UDP = rapide mais peu fiable
 Les applications :
 
 .center[
-<img src="static/media/udp-applications.svg" width=60%>
+<img src="media/udp-applications.svg" width=60%>
 ]
 
 ---
@@ -777,7 +776,7 @@ le dossier `python/tcp-awkward-api`
 ]
 ]
 .thirty[
-<img src="static/media/qrcode/tcp_qrcode.png" width="65%">
+<img src="media/qrcode/tcp_qrcode.png" width="65%">
 ]
 ]
 
@@ -819,7 +818,7 @@ Par exemple les informations d'une personne :
 # Sérialisation JSON
 
 .center[
-<img src="static/media/serialization-json.svg" width="90%">
+<img src="media/serialization-json.svg" width="90%">
 ]
 
 --
@@ -884,7 +883,7 @@ On parle de protocole, comme par exemple:
 Format d'une requête
 
 .center[
-<img src="static/media/http-request.svg" width="60%">
+<img src="media/http-request.svg" width="60%">
 ]
 
 ---
@@ -925,7 +924,7 @@ le dossier `python/httpbin-client` du cours
 <br>ou<br>
 [http://bit.ly/3XmaLNE](http://bit.ly/3XmaLNE)
 <br> ou <br>
-<img src="static/media/qrcode/reqests_qrcode.png" width="20%">
+<img src="media/qrcode/reqests_qrcode.png" width="20%">
 ]
 
 ---
@@ -963,7 +962,7 @@ Dans le domaine particulier du Web l'API se définit en fait à partir d'une URL
 
 --
 
-.center[<img src="static/media/api_img.jpg" width="60%">]
+.center[<img src="media/api_img.jpg" width="60%">]
 
 .footnote[Image from Jérémy Mésière, Architecte Middleware chez Manutan]
 
@@ -1071,7 +1070,7 @@ On trouve en ligne plein d'API ouverte un lien pour avoir une liste non exhausti
 ou <br>
 [http://bit.ly/3YHC1qX](http://bit.ly/3YHC1qX) <br>
 ou <br>
-<img src="static/media/qrcode/public_api_qr.png" width="40%">
+<img src="media/qrcode/public_api_qr.png" width="40%">
 ]
 ]
 
@@ -1098,7 +1097,7 @@ le dossier `python/api-random` du cours
 <br>ou<br>
 [http://bit.ly/3HONIFN](http://bit.ly/3HONIFN)
 <br> ou <br>
-<img src="static/media/qrcode/random_number.png" width="20%">
+<img src="media/qrcode/random_number.png" width="20%">
 ]
 
 ---
@@ -1122,7 +1121,7 @@ le dossier `python/api-random` du cours
 Depuis quelques années de plus en plus à la mode: **No Code**, **Low Code**
 
 .center[
-<img src="static/media/make.png" width="50%">
+<img src="media/make.png" width="50%">
 ]
 
 <br><br>
@@ -1180,7 +1179,7 @@ L'objectif ici est de mettre en place un programme Python permettant de modifier
 **Step 2️⃣** : créer une intégration Notion
 .center[Se rendre sur le site [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations) et créer une intégration]
 
-<img src="static/media/notion-token.png" width="80%">
+<img src="media/notion-token.png" width="80%">
 
 ]
 
@@ -1188,11 +1187,11 @@ L'objectif ici est de mettre en place un programme Python permettant de modifier
 **Step 3️⃣** : ajouter la base de données à l'intégration créée précédemment
 .center[depuis la page de la base de données]
 
-<img src="static/media/notion-db-to-integ.png" width="37%">
+<img src="media/notion-db-to-integ.png" width="37%">
 
 **Step 4️⃣** : récuper l'ID de la base de données
 
-<img src="static/media/notion-db-id.png" width="80%">
+<img src="media/notion-db-id.png" width="80%">
 
 ]
 ]
