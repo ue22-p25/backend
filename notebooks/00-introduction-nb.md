@@ -20,3 +20,5 @@ nbhosting:
 This course is about the basics of networking, and about tools for writing a backend.
 
 We'll talk about things like: TCP/IP, DNS, HTTP, APIs, WebSockets, Flask or Django or FastAPI, and more.
+
+<img src="media/logos/logo-mines-original.svg">

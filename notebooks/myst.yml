@@ -11,7 +11,7 @@ project:
   license: CC-BY-NC-SA-4.0
   # inserted under the title
   authors:
-    - Basle Marchand & Thierry Parmentelat
+    - Basile Marchand & Thierry Parmentelat
   github: https://github.com/ue22-p25/backend
   keywords:
     - Informatique
