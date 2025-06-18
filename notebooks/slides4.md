@@ -1,34 +1,6 @@
-class: middle, slide_title
-
-<img class="slide_title_mpt" src="media/logos/logo_mines_paris.png">
-<img class="slide_title_cnrs" src="media/logos/logo_cnrs.jpg">
-
-<!-- <img class="slide_title_armines" src="media/logos/logo_armines.jpg"> -->
-<img class="left_panel" src="media/logos/mines_paris_lampe.png">
-
 # Additional slides !
 
----
-
-layout: true
-<img class="slide_header_mpt" src="media/logos/logo_mines_paris.png">
-<img class="slide_header_cnrs" src="media/logos/logo_cnrs.jpg">
-
-<!-- <img class="slide_header_armines" src="media/logos/logo_armines.jpg"> -->
-
-<div class="slide_footer">
-    <div class="wrap">
-        <span>2025 - <i> Réseaux & Backend</i>
-        - <a href="slides1.html">1/3: Réseaux</a>
-        - <a href="slides2.html">2/3: Coté Serveur!</a>
-        - <a href="slides3.html">3/3: Flask</a>
-        - <a class="current-slides" href="slides4.html">4: Addendum</a>
-    </div>
-</div>
-
----
-
-# 🔐 Web Authentication Techniques
+## 🔐 Web Authentication Techniques
 
 ## Session-based Authentication
 
@@ -42,14 +14,14 @@ Example:
 POST /login
 → Set-Cookie: session_id=abc123
 ```
-    
+
 Subsequent requests include the session ID:
 
 ```http
 GET /profile
 Cookie: session_id=abc123
 ```
-    
+
 ---
 
 ## API Key Authentication

@@ -1,38 +1,7 @@
-class: middle, slide_title
-
-<img class="slide_title_mpt" src="media/logos/logo_mines_paris.png">
-<img class="slide_title_cnrs" src="media/logos/logo_cnrs.jpg">
-
-<!-- <img class="slide_title_armines" src="media/logos/logo_armines.jpg"> -->
-<img class="left_panel" src="media/logos/mines_paris_lampe.png">
-
 # Côté Serveur !
 
-<p> <strong><i>Basile Marchand</i></strong><sup> 1</sup></p>
 
-.footnote[1 - Plateforme SISDev, Centre des Matériaux, MINES Paris - CNRS - Université PSL]
-
----
-
-layout: true
-<img class="slide_header_mpt" src="media/logos/logo_mines_paris.png">
-<img class="slide_header_cnrs" src="media/logos/logo_cnrs.jpg">
-
-<!-- <img class="slide_header_armines" src="media/logos/logo_armines.jpg"> -->
-
-<div class="slide_footer">
-    <div class="wrap">
-        <span>2025 - <i> Réseaux & Backend</i>
-        - <a href="slides1.html">1/3: Réseaux</a>
-        - <a class="current-slides" href="slides2.html">2/3: Coté Serveur!</a>
-        - <a href="slides3.html">3/3: Flask</a>
-        - <a href="slides4.html">4: Addendum</a>
-    </div>
-</div>
-
----
-
-# Récap de la dernière fois
+## Récap de la dernière fois
 
 .center[Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ... ]
 
