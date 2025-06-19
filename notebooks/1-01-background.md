@@ -17,16 +17,11 @@ La plupart des systèmes informatiques/services web que vous pouvez utiliser quo
 
 Un élève répond à un questionnaire de satisfaction en ligne et après la soumission de son questionnaire reçoit automatiquement une réponse personnalisée et spécifique selon ses réponses.
 
-<img src="media/premier-use-case.svg" style="width: 80%;">
+<img src="media/premier-use-case.svg">
 
 [https://tally.so/r/w8N0jA](https://tally.so/r/w8N0jA)
 
 <br><br>
-
-```{div}
-:class: center
-❓ Quels ingrédients, outils 🛠️ doivent être mis en oeuvre❓
-```
 
 ---
 

@@ -1,35 +1,38 @@
----
-
-class: center, middle
-
-# On sait s'orienter, comment on cause maintenant
-
-➡️ On a besoin de la 4ème couche du modèle OSI
-
----
-
 # La couche transport 🚗
 
-La quatrième couche du modèle
+> On sait s'orienter, comment on cause maintenant
+>
+> ➡️ On a besoin de la 4ème couche du modèle OSI
+
+---
+
+## La couche 4
 
 > spécification de comment on fait pour envoyer des données <br>
 > d'un serveur A vers un client B et inversement.
 
+`````{div}
+:class: cols
+
+````{div}
+:class: thirty
 Différents protocole établis :
 
 - TCP
 - UDP
 - ...
 
-<br><br>
+````
+````{div}
+:class: seventy
 **⚠️ Attention ⚠️**
-<br><br>
 ````{div}
 :class: center
 La couche transport ne fait que définir la ***manière*** dont deux applications communiquent
-<br><br>
+<br>
 mais ne spécifie en rien le ***contenu*** de ces communications
 ````
+`````
 
 ---
 
@@ -43,42 +46,49 @@ Connaitre l'IP du serveur ne vous permet pas encore de communiquer avec l'applic
 ❓ D'ailleurs sur un serveur il ne peut y avoir qu'une application réseau ou peut-on en mettre plusieurs ❓
 ````
 
---
+`````{div}
+:class: cols
 
-.cols[
-
-.seventy-five[
+````{div}
+:class: seventy-five
 On peut avoir plusieurs applications sur un même serveur, et heureusement 🥳
 
 Le choix de l'application avec laquelle on va discuter implique la notion de **_port_**
 
-````{div}
+```{div}
 :class: center
 port = porte d'entrée du service 🚪
+```
+
+```{div}
+:class: center
+(mais on ne fait pas tourner autant d'applications sur un serveur)
+```
 ````
 
 ````{div}
-:class: center
-(mais on ne fait pas tourner autant d'applications sur un serveur)
+:class: twenty-five
+```{image} media/address-ports-bound.excalidraw.svg
+```
 ````
-]
-.twenty-five[
-<img src="media/address-ports-bound.excalidraw.svg" width="100%">
-]
-]
+
+`````
 
 ---
 
 # Les ports standard
 
-.cols[
+`````{div}
+:class: cols
 
-.fifty[
+````{div}
+:class: fifty
 
 Sur une machine on a 2<sup>16</sup> = 65,536 ports
-]
+````
 
-.fifty[
+````{div}
+:class: fifty
 Quelques port normalisés :
 
 service | port
@@ -89,8 +99,8 @@ DNS | 53
 HTTP | 80
 HTTPS | 443
 ... | ...
-]
-]
+````
+`````
 
 <br>
 
@@ -98,21 +108,21 @@ et voici à quoi ressemble un paquet:
 
 <br>
 
-<img src="media/packet-layers.svg" width="100%" style="margin-top: -30px">
+```{image} media/packet-layers.svg
+```
 
 ---
 
-# Bas niveau
+# TCP/IP
 
-## TCP/IP
+## Principe
 
 ````{div}
 :class: center
-Transmission Control Protocol
+**T**ransmission **C**ontrol **P**rotocol
 ````
-<br><br>
+
 est **le** protocole historique (Bob Kahn et Vinton Cerf, Septembre 1973), qui doit sa longévité par sa robustesse et sa fiabilité.
-<br>
 
 ````{div}
 :class: center
@@ -128,21 +138,25 @@ Le principe du TCP est très simple et se décompose en trois étapes:
 
 ---
 
-# Bas niveau
-
 ## TCP/IP : open
 
-.cols[
-.fourty[
-<img src="media/handshake.svg" style="width: 80%">
-]
-.fifty[
-La connexion d'un client à un serveur TCP se décompose en trois étapes
+`````{div}
+:class: cols
 
 ````{div}
+:class: fourty
+```{image} media/handshake.svg
+```
+````
+
+````{div}
+:class: fifty
+La connexion d'un client à un serveur TCP se décompose en trois étapes
+
+```{div}
 :class: center
 ___three way handshake___
-````
+```
 
 de la manière suivante :
 
@@ -153,22 +167,25 @@ de la manière suivante :
 - 3️⃣ Client : Oui c'est bon je t'entends
   <br><br>
 
-  ]
-]
+````
+`````
 
 ---
 
-# Bas niveau
-
 ## TCP/IP : close
 
-.cols[
-.fourty[
+`````{div}
+:class: cols
 
-<img src="media/tcp-close.svg" style="width: 75%">
+````{div}
+:class: fourty
 
-]
-.fifty[
+```{image} media/tcp-close.svg
+```
+````
+
+````{div}
+:class: fifty
 Clotûre en 4 étapes
 <br><br>
 
@@ -179,8 +196,8 @@ Clotûre en 4 étapes
 - 3️⃣ Serveur : moi aussi je n'ai plus rien à te dire
   <br><br>
 - 4️⃣ Client : Ok à la prochaine
-  ]
-  ]
+````
+`````
 
 ---
 
@@ -188,20 +205,12 @@ Clotûre en 4 étapes
 
 ```{div}
 :class: center
-le dossier `python/tcp` du cours
-<br>ou<br>
-[https://replit.com/@BasileMarchand/TcpExample?v=1](https://replit.com/@BasileMarchand/TcpExample?v=1)
-<br>ou<br>
-[http://bit.ly/3HHQ49i](http://bit.ly/3HHQ49i)
-<br>ou<br>
-<img src="media/qrcode/tcp_qrcode.png" width="20%">
+allons voir le dossier `python/tcp` du cours
 ```
 
 ---
 
-# Bas niveau
-
-## TCP un truc de riche 🤑
+# TCP un truc de riche 🤑
 
 Vous pouvez donc voir qu'avec cette approche
 <br><br>
@@ -221,9 +230,7 @@ C'est pour cela qu'il existe une alternative au TCP 😯
 
 ---
 
-# Bas niveau
-
-## UDP
+# UDP
 
 Le protocole UDP (User Datagram Protocol) est complémentaire au protocole TCP. Créé par David Reed en 1980.
 
@@ -244,11 +251,10 @@ TCP = très fiable mais lent
 UDP = rapide mais peu fiable
 ````
 
---
-
-Les applications :
+Les applications d'UDP sont nombreuses, par exemple :
 
 ````{div}
 :class: center
-<img src="media/udp-applications.svg" width=60%>
+```{image} media/udp-applications.svg
+```
 ````

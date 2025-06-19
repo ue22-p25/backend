@@ -26,23 +26,33 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 
 ## Supercalculateur : un modèle peer-to-peer
 
-<!-- <div style="position: absolute; left: 10%; top: 25%;"> -->
-<img src="media/cluster1.jpg" width="300px">
-<!-- </div> -->
+`````{div}
+:class: cols
 
-<!-- <div style="position: absolute; left: 35%; top: 35%;"> -->
-<img src="media/cluster2.jpg" width="300px">
-<!-- </div> -->
+````{div}
+:class: twenty-five
+```{image} media/cluster1.jpg
+```
+````
 
-<!-- <div style="position: absolute; left: 55%; top: 55%;"> -->
-<iframe width="400px" height="280" src="https://www.youtube.com/embed/4r6frld1UNE?autoplay=1&mute=1&loop=1&controls=0&playlist=4r6frld1UNE">
-</iframe>
-<!-- </div> -->
+````{div}
+:class: twenty-five
+```{image} media/cluster2.jpg
+```
+````
+````{div}
+:class: twenty-five
+```{iframe} https://www.youtube.com/embed/4r6frld1UNE?autoplay=1&mute=1&loop=1&controls=0&playlist=4r6frld1UNE
+```
+````
 
-<!-- <div style="position: absolute; left: 65%; top: 25%;"> -->
-<iframe width="320px" height="215" src="https://www.youtube.com/embed/90-kA3wYuoM?autoplay=1&mute=1&loop=1&controls=0&playlist=90-kA3wYuoM">
-</iframe>
-<!-- </div> -->
+````{div}
+:class: twenty-five
+```{iframe} https://www.youtube.com/embed/90-kA3wYuoM?autoplay=1&mute=1&loop=1&controls=0&playlist=90-kA3wYuoM
+```
+````
+
+`````
 
 ---
 
@@ -53,34 +63,43 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 Diviser pour mieux régner
 ````
 
-<div>
+<!-- <div>
 <p style="font-size: small;"> Décomposition en sous-domaines </p>
   <img width="250px" src="media/aube_dd.png">
-</div>
+</div> -->
 
---
+`````{div}
+:class: cols
 
-<!-- <div style="position: absolute; left: 40%; top: 25%"> -->
-  <p style="font-size: small;"> Chaque sous-domaine "envoyé" <br> sur une machine de calcul </p>
-    <img width="250px" src="media/dd.png"> 
-<!-- </div> -->
+````{div}
+:class: thirty
+```{figure} media/aube_dd.png
+décomposition en sous-domaines
+```
+````
 
---
+````{div}
+:class: thirty
+```{figure} media/dd.png
+Chaque sous-domaine "envoyé" <br> sur une machine de calcul
+```
+````
 
-<!-- <div style="position: absolute; left: 75%; top: 25%"> -->
-  <p style="font-size: small;"> Chaque sous-domaine "éclaté" par paquet d'éléments <br>pour l'intégration de la loi de comportement
-    <img width="250px" src="media/dd_zoom.png"> 
-<!-- </div> -->
+````{div}
+:class: thirty
+```{figure} media/dd_zoom.png
+Chaque sous-domaine "éclaté" par paquet d'éléments <br>pour l'intégration de la loi de comportement
+```
+````
 
---
+`````
 
-<!-- <div style="position: absolute; left: 30%; top: 65%"> -->
-  <p> Au niveau de chaque sous-domaine : </p>
-  <ul>
-    <li>Opérations algébriques distribuées </li>
-    <li>Résolution de problèmes locaux (solveurs DD)</li>
-  </ul>
-<!-- </div> -->
+Au niveau de chaque sous-domaine :
+
+- Opérations algébriques distribuées
+- Résolution de problèmes locaux (solveurs DD)
+
+mais refermons la parenthèse, on n'est pas là pour parler de HPC mais de réseau !
 
 ---
 
@@ -88,7 +107,8 @@ Diviser pour mieux régner
 
 ## Différentes qualités
 
-La qualité du réseau, un petit truc qui a son importance suivant l'application 🚀 <button onclick="plot_network()"> click me 📈 </button>
+La qualité du réseau, un petit truc qui a son importance suivant l'application 🚀
+<button onclick="plot_network()"> xxx no longer working - click me 📈 </button>
 
 ````{div}
 :class: center
@@ -102,41 +122,43 @@ La qualité du réseau, un petit truc qui a son importance suivant l'application
 
 ---
 
-class: middle, center
-
 # Un réseau et c'est tout ?
 
 ---
 
 # Modèle OSI
 
-.cols[
-.fifty[
+`````{div}
+:class: cols
 
 ````{div}
+:class: fifty
+```{div}
 :class: center
 <img src="media/osi-model.svg" style="width: 72%;">
+```
 ````
 
-]
-.fifty[
-<br><br><br>
+````{div}
+:class: fifty
+<br><br>
 **O**pen **S**ystem **I**nterconnexion
 <br><br><br>
 
 **norme** mise en place par le commité ISO en 1984
-<br><br><br>
+<br><br>
 
 Objectifs :
-<br><br><br>
+<br><br>
 
-````{div}
+```{div}
 :class: center
 standardiser les communications<br> entre appareils sur un réseau
+```
+
 ````
 
-]
-]
+`````
 
 ---
 
@@ -156,14 +178,16 @@ C'est ce qu'on appelle l'adresse IP, pour _Internet Protocol_. L'adresse IP d'un
 <img src="media/ip-address.svg" style="width: 30%;">
 ````
 
-.footnote.smaller[
+````{div}
+:class: smaller
+
 il y a donc deux parties : l'adresse du réseau (souvent sur 24 bits) et l'adresse de l'hôte (souvent sur 8 bits)  
 lorsqu'on a besoin d'écrire l'adresse d'un réseau on écrit alors comme ceci le nombre de bits de l'adresse réseau
-````{div}
+```{div}
 :class: center
 <img src="media/ip-address-subnet.svg" style="width: 30%;">
+```
 ````
-]
 
 ---
 
@@ -181,6 +205,7 @@ par exemple (en hexa) `2001:0db8:0000:85a3:0000:0000:ac1f:8001`
 En fait on a tellement d'adresses que l'on peut donner une adresse IP à chaque grain de sable sur terre 🏖  ️
 
 <br>
+
 Actuellement déployé **mais en partie** - principalement, mais pas que, dans le coeur de réseau chez les opérateurs
 
 Et pourquoi pas partout, me direz-vous ?  
@@ -200,8 +225,6 @@ on en reparlera...
 
 ---
 
-# Interconnexion
-
 ## Réseau distant
 
 ````{div}
@@ -211,12 +234,11 @@ on en reparlera...
 
 ---
 
-# Interconnexion
+## Pour résumer :
 
-Pour résumer :
 ````{div}
 :class: center
-interconnexion qui constitue en fait la troisième couche du modèle OSI
+interconnexion qui constitue en fait **la troisième couche** du modèle OSI
 ````
 
 gère trois éléments :
@@ -224,95 +246,107 @@ gère trois éléments :
 
 - Routage
   ````{div}
-:class: center
-chemin entre deux machines dans des réseaux différents, <br>chemin passant par les passerelles (routeurs)<br>ces fameuses machines ayant des interfaces dans deux réseaux distincts.
-````
+  :class: center
+  chemin entre deux machines dans des réseaux différents, <br>chemin passant par les passerelles (routeurs)<br>ces fameuses machines ayant des interfaces dans deux réseaux distincts.
+  ````
+
 - Relayage
   ````{div}
-:class: center
-s'occupe, une fois la route déterminée, <br>de faire transiter l'information de la machine A à la machine B
-````
+  :class: center
+  s'occupe, une fois la route déterminée, <br>de faire transiter l'information de la machine A à la machine B
+  ````
 
 - Contrôle de flux
   ````{div}
-:class: center
-une fonctionnalité optionnelle mais néanmoins essentielle <br> qui permet de décongestionner l'ensemble du réseau (au sens large). <br>Un peu le Waze du transit de données
-````
+  :class: center
+  une fonctionnalité optionnelle mais néanmoins essentielle <br> qui permet de décongestionner l'ensemble du réseau (au sens large). <br>Un peu le Waze du transit de données
+  ````
 
 ---
-name: my-ip-address
+(my-ip-address)=
 
 ## (Au passage c'est quoi mon IP ?)
 
-.cols[
+`````{div}
+:class: cols
 
-.fifty[
-Comment je fais pour connaitre mon IP ?
-]
-.fifty[
+````{div}
+:class: fourty
+Comment je fais <br>pour connaitre mon IP ?
+````
+
+````{div}
+:class: sixty
 pour commencer je clone le cours (si ce n'est déjà fait)  
-sur github: `ue22-p24/web`  
+sur github: `ue22-p25/backend`  
 et je me rends dans le dossier `python/ip-address`
-]
-]
+````
 
-.cols[
-.fitfy[
-je demande à un site extérieur
+`````
 
-```sh
-$ cat my-public-ip.py
-import requests
+`````{div}
+:class: cols
+````{div}
+:class: fitfy
 
-response = requests.get("https://api64.ipify.org?format=json")
-public_ip = response.json()["ip"]
+un petit code pour demander à un site extérieur
 
-print("Public IP:", public_ip)
+```{literalinclude} ../python/ip-address/my-public-ip.py
 ```
-]
-.sixty[
-je demande à mon OS (*)
 
-```sh
-$ cat my-local-ip.py
-import socket
+````
 
-def get_outgoing_ip():
-    with socket.create_connection(("8.8.8.8", 53)) as s:
-        return s.getsockname()[0]
+````{div}
+:class: fitfy
+ou pour demander à mon OS(*)
 
-print("Outgoing IP:", get_outgoing_ip())
+```{literalinclude} ../python/ip-address/my-local-ip.py
 ```
-]
-]
 
-.cols[
-  .fifty[
-  et j'obtiens (essayez !)
-```sh
+
+````
+
+`````
+
+`````{div}
+:class: cols
+
+````{div}
+:class: fifty
+
+et j'obtiens (essayez !)
+```{code}
+:linenos:
+:emphasize-lines: 2
 $ python my-public-ip.py
-*Public IP: 138.96.202.10
+Public IP: 138.96.202.10
 ```
+````
 
-  ]
-  .fifty[
-  .. et ça peut être différent ! quel est ce mystère ?
-```sh
+````{div}
+:class: fifty
+.. et ça peut être différent ! quel est ce mystère ?
+```{code}
+:linenos:
+:emphasize-lines: 2
 $ python my-local-ip.py
-*Outgoing IP: 10.1.1.15
+Outgoing IP: 10.1.1.15
 ```
-  ]
-]
+````
 
-.footnote.small[(*): depuis le terminal, utiliser: `ipconfig` sur Windows, `ifconfig` sur MacOS, `ip address show` sur Linux]
+`````
+
+(*) depuis le terminal, utiliser: `ipconfig` sur Windows, `ifconfig` sur MacOS, `ip address show` sur Linux
 
 ---
 
 ## le NAT (Network Address Translation)
 
-.cols[
+`````{div}
+:class: cols
 
-.sixty-five[
+````{div}
+:class: sixty-five
 et mon petit doigt me dit que:
 
 - vous allez tous avoir **la même adresse publique**
@@ -324,9 +358,10 @@ en fait il y a deux types d'adresses IP :
 - privées: celles qui sont utilisées **uniquement** dans un réseau local
 
 <img src="media/nat-routing.svg" width="125%">
-]
+````
 
-.thirty-five[
+````{div}
+:class: thirty-five
 <br><br>
 les adresses privées réservées:
 
@@ -335,8 +370,8 @@ les adresses privées réservées:
 - `172.16.0.0/12` <br> 2<sup>20</sup> = 1,048,576 adresses
 
 - `10.0.0.0/8` <br> 2<sup>24</sup> = 16,777,216 adresses
-]
-]
+````
+`````
 
 ---
 
@@ -349,11 +384,11 @@ Retenir les adresses IP c'est quand même pas super 🤯 !
 Par exemple imaginez que vous deviez retenir `91.134.82.158` <br/>pour savoir les salles de cours .... <strike>on ne vous verrait pas souvent !</strike>
 ````
 
-.footnote[`*` c'est l'adresse IP du serveur qui héberge OASIS]
+(*) c'est l'adresse IP du serveur qui héberge OASIS
 
 --
 
-Un truc magique le :
+Pour cela dans l'infrastructure d'Internet il y a un truc magique, le :
 
 ````{div}
 :class: center
@@ -364,9 +399,12 @@ En gros c'est le service qui fait l'association entre un nom de domaine et un ad
 
 --
 
-.cols[
+`````{div}
+:class: cols
 
-.fifty[
+````{div}
+:class: fifty
+
 ```bash
 # plusieurs utilitaires pour faire des requêtes DNS
 
@@ -378,10 +416,11 @@ Non-authoritative answer:
 Name:	oasis.minesparis.psl.eu
 *Address: 91.134.82.158
 ```
-]
 
-.fifty[
+````
 
+````{div}
+:class: fifty
 ```bash
 $ host oasis.minesparis.psl.eu
 *oasis.minesparis.psl.eu has address 91.134.82.158
@@ -395,7 +434,6 @@ $ dig @8.8.8.8 oasis.minesparis.psl.eu A +noall +answer
 ;; global options: +cmd
 *oasis.minesparis.psl.eu. 161	IN	A	91.134.82.158
 ```
+````
 
-]
-]
-
+`````
