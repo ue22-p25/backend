@@ -307,6 +307,10 @@ pre {
   margin: 7px;
 }
 
+.smaller {
+  font-size: 80%;
+}
+
 .remark-code {
   --code-font: "JetBrains Mono", serif;
   font-family: var(--code-font);
