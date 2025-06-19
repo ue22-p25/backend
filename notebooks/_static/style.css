@@ -299,6 +299,10 @@ html.dark .corrige {
   text-align: center;
 }
 
+hr.py-2.my-5.translate-y-2 {
+  border-top-width: 20px;
+}
+
 pre {
   margin: 7px;
 }
