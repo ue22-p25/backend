@@ -17,7 +17,8 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 
 ````{div}
 :class: center
-**⚠️ L'appareil en lui-même n'a pas besoin de connaître la signification de ce signal, <br> car c'est un programme tournant derrière l'interface réseau qui se chargera de traiter le signal en question ⚠️**
+**⚠️ L'appareil en lui-même n'a pas besoin de connaître la signification de ce signal, 
+<br> car c'est un programme tournant derrière l'interface réseau qui se chargera de traiter le signal en question ⚠️**
 ````
 
 ---
@@ -62,11 +63,6 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 :class: center
 Diviser pour mieux régner
 ````
-
-<!-- <div>
-<p style="font-size: small;"> Décomposition en sous-domaines </p>
-  <img width="250px" src="media/aube_dd.png">
-</div> -->
 
 `````{div}
 :class: cols
@@ -128,16 +124,17 @@ La qualité du réseau, un petit truc qui a son importance suivant l'application
 
 # Modèle OSI
 
-`````{div}
+``````{div}
 :class: cols
 
-````{div}
+`````{div}
 :class: fifty
-```{div}
+````{div}
 :class: center
-<img src="media/osi-model.svg" style="width: 72%;">
+```{image} media/osi-model.svg
 ```
 ````
+`````
 
 ````{div}
 :class: fifty
@@ -145,10 +142,10 @@ La qualité du réseau, un petit truc qui a son importance suivant l'application
 **O**pen **S**ystem **I**nterconnexion
 <br><br><br>
 
-**norme** mise en place par le commité ISO en 1984
+**Norme** mise en place <br>par le commité ISO en 1984
 <br><br>
 
-Objectifs :
+**Objectifs** :
 <br><br>
 
 ```{div}
@@ -158,7 +155,7 @@ standardiser les communications<br> entre appareils sur un réseau
 
 ````
 
-`````
+``````
 
 ---
 
@@ -168,26 +165,35 @@ standardiser les communications<br> entre appareils sur un réseau
 :class: center
 Associer à chaque interface de chaque machine sur un réseau une adresse unique
 ````
-<br><br>
+
+<br>
+
 Cette addresse peut être _temporaire_ ou bien _fixe_.
-<br><br>
-C'est ce qu'on appelle l'adresse IP, pour _Internet Protocol_. L'adresse IP d'une interface réseau s'écrit comme une combinaison de quatre nombres compris entre 0 et 255.
-<br><br>
+
+<br>
+
+C'est ce qu'on appelle l'adresse IP, pour _Internet Protocol_. 
+L'adresse IP d'une interface réseau s'écrit comme une combinaison de quatre nombres compris entre 0 et 255.
+<br>
 ````{div}
 :class: center
-<img src="media/ip-address.svg" style="width: 30%;">
+```{image} media/ip-address.svg
+:width: 30%
+```
 ````
 
-````{div}
+`````{div}
 :class: smaller
 
 il y a donc deux parties : l'adresse du réseau (souvent sur 24 bits) et l'adresse de l'hôte (souvent sur 8 bits)  
 lorsqu'on a besoin d'écrire l'adresse d'un réseau on écrit alors comme ceci le nombre de bits de l'adresse réseau
-```{div}
+````{div}
 :class: center
-<img src="media/ip-address-subnet.svg" style="width: 30%;">
+```{image} media/ip-address-subnet.svg
+:width: 20%
 ```
 ````
+`````
 
 ---
 
@@ -220,7 +226,9 @@ on en reparlera...
 
 ````{div}
 :class: center
-<img src="media/connection-local.svg" style="width: 60%">
+```{image} media/connection-local.svg
+:width: 60%
+```
 ````
 
 ---
@@ -229,12 +237,13 @@ on en reparlera...
 
 ````{div}
 :class: center
-<img src="media/connection-remote.svg" style="width: 60%">
+```{image} media/connection-remote.svg
+:width: 60%
 ````
 
 ---
 
-## Pour résumer :
+# Pour résumer :
 
 ````{div}
 :class: center
@@ -357,7 +366,6 @@ en fait il y a deux types d'adresses IP :
 - publiques: celles qui sont visibles sur le réseau, et qui sont uniques
 - privées: celles qui sont utilisées **uniquement** dans un réseau local
 
-<img src="media/nat-routing.svg" width="125%">
 ````
 
 ````{div}
@@ -373,6 +381,13 @@ les adresses privées réservées:
 ````
 `````
 
+````{div}
+:class: center
+```{image} media/nat-routing.svg
+:width: 125%
+```
+````
+
 ---
 
 # Les noms de domaines là-dedans !
@@ -381,7 +396,8 @@ Retenir les adresses IP c'est quand même pas super 🤯 !
 
 ````{div}
 :class: center
-Par exemple imaginez que vous deviez retenir `91.134.82.158` <br/>pour savoir les salles de cours .... <strike>on ne vous verrait pas souvent !</strike>
+Par exemple imaginez que vous deviez retenir `91.134.82.158` (*)
+<br/>pour savoir les salles de cours .... <strike>on ne vous verrait pas souvent !</strike>
 ````
 
 (*) c'est l'adresse IP du serveur qui héberge OASIS
