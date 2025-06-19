@@ -3,25 +3,35 @@
 La couche 4 est-elle suffisante, ou avons-nous besoin d'un truc en plus ?
 
 <br><br>
-.center[Avec tcp ou udp on peut faire nos transfert de données entre application]
+````{div}
+:class: center
+Avec tcp ou udp on peut faire nos transfert de données entre application
+````
 <br>
-.center[A votre avis c'est tout bon du coup ou on a besoin d'un truc en plus ?]
+````{div}
+:class: center
+A votre avis c'est tout bon du coup ou on a besoin d'un truc en plus ?
+````
 <br><br>
 
 --
 
-.center[ 🔎 Regardons sur un exemple concret 🔎 ]
+````{div}
+:class: center
+🔎 Regardons sur un exemple concret 🔎
+````
 
 .cols[
 .seventy[
-.center[
+```{div}
+:class: center
 le dossier `python/tcp-awkward-api`
 <br>ou<br>
 [https://replit.com/@BasileMarchand/tcpexample?v=1](https://replit.com/@BasileMarchand/tcpexample?v=1)
 <br>ou<br>
 [http://bit.ly/3YpoKDR](http://bit.ly/3YpoKDR)
 <br>ou<br>
-]
+```
 ]
 .thirty[
 <img src="media/qrcode/tcp_qrcode.png" width="65%">
@@ -32,20 +42,32 @@ le dossier `python/tcp-awkward-api`
 
 # Un verrou 🔒
 
-.center[Rien de standard dans mes échanges de données 😵‍💫]
+````{div}
+:class: center
+Rien de standard dans mes échanges de données 😵‍💫
+````
 <br><br><br>
-.center[J'ai créé ma propre logique <br><br><br> mais elle ne l'est <strike>peut-être</strike> certainement pas aux yeux des autres.]
+````{div}
+:class: center
+J'ai créé ma propre logique <br><br><br> mais elle ne l'est <strike>peut-être</strike> certainement pas aux yeux des autres.
+````
 
 --
 
 <br><br><br>
-.center[ Un peu de standardisation ne ferait pas de mal ... ]
+````{div}
+:class: center
+Un peu de standardisation ne ferait pas de mal ...
+````
 
 ---
 
 # Au passage : tranfert de données ...
 
-.center[La grande question qui peut se poser est <br><br><br>sous quel format est-il pertinent d'échanger des données ❓]
+````{div}
+:class: center
+La grande question qui peut se poser est <br><br><br>sous quel format est-il pertinent d'échanger des données ❓
+````
 
 <br>
 Le modèle OSI ne spécifie pas vraiment de format de données autre que dire c'est du binaire 🤨
@@ -53,21 +75,26 @@ Le modèle OSI ne spécifie pas vraiment de format de données autre que dire c'
 La couche 6 spécifie un peu les choses en réalité mais ca donne un spectre assez large en fait
 <br>
 
-.center[
+````{div}
+:class: center
 😩 Comment on fait si on veut faire transiter <br><br> un paquet de donnée structurée mais hétérogène ?
-]
+````
 
 Par exemple les informations d'une personne :
 
-.center[Nom, Prénom, Date de naissance, nombre d'enfants, ... ]
+````{div}
+:class: center
+Nom, Prénom, Date de naissance, nombre d'enfants, ...
+````
 
 ---
 
 # Sérialisation JSON
 
-.center[
+````{div}
+:class: center
 <img src="media/serialization-json.svg" width="90%">
-]
+````
 
 --
 
@@ -101,13 +128,19 @@ data = json.loads(serialized)
 
 C'est là que les choses concrètes commencent 🥳
 <br><br><br>
-.center[***Couche 7 = couche Application***]
+````{div}
+:class: center
+***Couche 7 = couche Application***
+````
 <br><br><br>
 Chaque "catégorie" d'application spécifie alors :
 
-.center[Comment se font les communications entre le client et l'application
+````{div}
+:class: center
+Comment se font les communications entre le client et l'application
 <br><br>
-format des message, contenu attendu, ... ]
+format des message, contenu attendu, ...
+````
 
 .cols[
 .fifty[

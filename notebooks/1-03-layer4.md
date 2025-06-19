@@ -24,11 +24,12 @@ Différents protocole établis :
 <br><br>
 **⚠️ Attention ⚠️**
 <br><br>
-.center[
+````{div}
+:class: center
 La couche transport ne fait que définir la ***manière*** dont deux applications communiquent
 <br><br>
 mais ne spécifie en rien le ***contenu*** de ces communications
-]
+````
 
 ---
 
@@ -37,7 +38,10 @@ mais ne spécifie en rien le ***contenu*** de ces communications
 Connaitre l'IP du serveur ne vous permet pas encore de communiquer avec l'application qui se trouve sur ce serveur
 <br>
 
-.center[❓ D'ailleurs sur un serveur il ne peut y avoir qu'une application réseau ou peut-on en mettre plusieurs ❓]
+````{div}
+:class: center
+❓ D'ailleurs sur un serveur il ne peut y avoir qu'une application réseau ou peut-on en mettre plusieurs ❓
+````
 
 --
 
@@ -48,9 +52,15 @@ On peut avoir plusieurs applications sur un même serveur, et heureusement 🥳
 
 Le choix de l'application avec laquelle on va discuter implique la notion de **_port_**
 
-.center[ port = porte d'entrée du service 🚪]
+````{div}
+:class: center
+port = porte d'entrée du service 🚪
+````
 
-.center[(mais on ne fait pas tourner autant d'applications sur un serveur)]
+````{div}
+:class: center
+(mais on ne fait pas tourner autant d'applications sur un serveur)
+````
 ]
 .twenty-five[
 <img src="media/address-ports-bound.excalidraw.svg" width="100%">
@@ -96,12 +106,18 @@ et voici à quoi ressemble un paquet:
 
 ## TCP/IP
 
-.center[Transmission Control Protocol]
+````{div}
+:class: center
+Transmission Control Protocol
+````
 <br><br>
 est **le** protocole historique (Bob Kahn et Vinton Cerf, Septembre 1973), qui doit sa longévité par sa robustesse et sa fiabilité.
 <br>
 
-.center[Aujourd'hui lorsque vous naviguez sur le web<br>la plupart des échanges qui ont lieu entre votre navigateur et les sites web sont basés sur du TCP]
+````{div}
+:class: center
+Aujourd'hui lorsque vous naviguez sur le web<br>la plupart des échanges qui ont lieu entre votre navigateur et les sites web sont basés sur du TCP
+````
 
 <br>
 Le principe du TCP est très simple et se décompose en trois étapes:
@@ -123,7 +139,10 @@ Le principe du TCP est très simple et se décompose en trois étapes:
 .fifty[
 La connexion d'un client à un serveur TCP se décompose en trois étapes
 
-.center[___three way handshake___]
+````{div}
+:class: center
+___three way handshake___
+````
 
 de la manière suivante :
 
@@ -167,7 +186,8 @@ Clotûre en 4 étapes
 
 # Regardons un peu en vrai comment ca marche
 
-.center[
+```{div}
+:class: center
 le dossier `python/tcp` du cours
 <br>ou<br>
 [https://replit.com/@BasileMarchand/TcpExample?v=1](https://replit.com/@BasileMarchand/TcpExample?v=1)
@@ -175,7 +195,7 @@ le dossier `python/tcp` du cours
 [http://bit.ly/3HHQ49i](http://bit.ly/3HHQ49i)
 <br>ou<br>
 <img src="media/qrcode/tcp_qrcode.png" width="20%">
-]
+```
 
 ---
 
@@ -185,14 +205,17 @@ le dossier `python/tcp` du cours
 
 Vous pouvez donc voir qu'avec cette approche
 <br><br>
-.center[
+````{div}
+:class: center
 ✅ la connexion est extrêmement fiable et il y a peu de chances d'avoir des loupés
-]
+````
 <br><br>
 En revanche cette fiabilité n'est pas gratuite 💰️
 <br><br>
-.center[
-❌ elle s'accompagne d'un coût en terme d'échanges relativement élevé]
+````{div}
+:class: center
+❌ elle s'accompagne d'un coût en terme d'échanges relativement élevé
+````
 <br><br>
 C'est pour cela qu'il existe une alternative au TCP 😯
 
@@ -206,22 +229,26 @@ Le protocole UDP (User Datagram Protocol) est complémentaire au protocole TCP. 
 
 Cas d'usage :
 
-.center[Transmission rapide de données et réception de l'intégralité **pas impérative**]
+````{div}
+:class: center
+Transmission rapide de données et réception de l'intégralité **pas impérative**
+````
 
-.center[
-
+````{div}
+:class: center
 TCP = très fiable mais lent
 
 *vs*
 <br>
 
 UDP = rapide mais peu fiable
-]
+````
 
 --
 
 Les applications :
 
-.center[
+````{div}
+:class: center
 <img src="media/udp-applications.svg" width=60%>
-]
+````

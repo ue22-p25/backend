@@ -4,7 +4,10 @@
 
 Tout d'abord un réseau c'est quoi ?
 
-.center[Et bien c'est une **infrastructure** que l'on utilise pour faire transiter des données. ]
+````{div}
+:class: center
+Et bien c'est une **infrastructure** que l'on utilise pour faire transiter des données.
+````
 
 Dans sa version la plus élémentaire qui soit un réseau est composé de deux appareils reliés entre eux, par un câble réseau par exemple.
 
@@ -12,9 +15,10 @@ Le point important là-dedans c'est qu’un appareil connecté au réseau doit p
 
 Par exemple votre ordinateur portable possède deux interfaces réseau : la prise RJ45 et la carte wifi. Le signal qui transite par l'interface réseau est un signal binaire.
 
-.center[
+````{div}
+:class: center
 **⚠️ L'appareil en lui-même n'a pas besoin de connaître la signification de ce signal, <br> car c'est un programme tournant derrière l'interface réseau qui se chargera de traiter le signal en question ⚠️**
-]
+````
 
 ---
 
@@ -44,7 +48,10 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 
 # High Performance Computing
 
-.center[Diviser pour mieux régner]
+````{div}
+:class: center
+Diviser pour mieux régner
+````
 
 <div>
 <p style="font-size: small;"> Décomposition en sous-domaines </p>
@@ -83,14 +90,15 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 
 La qualité du réseau, un petit truc qui a son importance suivant l'application 🚀 <button onclick="plot_network()"> click me 📈 </button>
 
-.center[
-
+````{div}
+:class: center
 <div id="plot_network"></div>
-]
+````
 
-.center[
+````{div}
+:class: center
 ⏳️ Sur des grosses simulations le temps des échanges peut représenter 20% du temps de calcul 💣
-]
+````
 
 ---
 
@@ -105,7 +113,10 @@ class: middle, center
 .cols[
 .fifty[
 
-.center[<img src="media/osi-model.svg" style="width: 72%;">]
+````{div}
+:class: center
+<img src="media/osi-model.svg" style="width: 72%;">
+````
 
 ]
 .fifty[
@@ -119,7 +130,10 @@ class: middle, center
 Objectifs :
 <br><br><br>
 
-.center[standardiser les communications<br> entre appareils sur un réseau]
+````{div}
+:class: center
+standardiser les communications<br> entre appareils sur un réseau
+````
 
 ]
 ]
@@ -128,18 +142,27 @@ Objectifs :
 
 # Adressage
 
-.center[Associer à chaque interface de chaque machine sur un réseau une adresse unique]
+````{div}
+:class: center
+Associer à chaque interface de chaque machine sur un réseau une adresse unique
+````
 <br><br>
 Cette addresse peut être _temporaire_ ou bien _fixe_.
 <br><br>
 C'est ce qu'on appelle l'adresse IP, pour _Internet Protocol_. L'adresse IP d'une interface réseau s'écrit comme une combinaison de quatre nombres compris entre 0 et 255.
 <br><br>
-.center[<img src="media/ip-address.svg" style="width: 30%;">]
+````{div}
+:class: center
+<img src="media/ip-address.svg" style="width: 30%;">
+````
 
 .footnote.smaller[
 il y a donc deux parties : l'adresse du réseau (souvent sur 24 bits) et l'adresse de l'hôte (souvent sur 8 bits)  
 lorsqu'on a besoin d'écrire l'adresse d'un réseau on écrit alors comme ceci le nombre de bits de l'adresse réseau
-.center[<img src="media/ip-address-subnet.svg" style="width: 30%;">]
+````{div}
+:class: center
+<img src="media/ip-address-subnet.svg" style="width: 30%;">
+````
 ]
 
 ---
@@ -170,10 +193,10 @@ on en reparlera...
 
 ## Réseau local
 
-.center[
+````{div}
+:class: center
 <img src="media/connection-local.svg" style="width: 60%">
-
-]
+````
 
 ---
 
@@ -181,29 +204,40 @@ on en reparlera...
 
 ## Réseau distant
 
-.center[
+````{div}
+:class: center
 <img src="media/connection-remote.svg" style="width: 60%">
-]
+````
 
 ---
 
 # Interconnexion
 
 Pour résumer :
-.center[interconnexion qui constitue en fait la troisième couche du modèle OSI ]
+````{div}
+:class: center
+interconnexion qui constitue en fait la troisième couche du modèle OSI
+````
 
 gère trois éléments :
 <br>
 
 - Routage
-  .center[
-  chemin entre deux machines dans des réseaux différents, <br>chemin passant par les passerelles (routeurs)<br>ces fameuses machines ayant des interfaces dans deux réseaux distincts.
-  ]
+  ````{div}
+:class: center
+chemin entre deux machines dans des réseaux différents, <br>chemin passant par les passerelles (routeurs)<br>ces fameuses machines ayant des interfaces dans deux réseaux distincts.
+````
 - Relayage
-  .center[s'occupe, une fois la route déterminée, <br>de faire transiter l'information de la machine A à la machine B]
+  ````{div}
+:class: center
+s'occupe, une fois la route déterminée, <br>de faire transiter l'information de la machine A à la machine B
+````
 
 - Contrôle de flux
-  .center[une fonctionnalité optionnelle mais néanmoins essentielle <br> qui permet de décongestionner l'ensemble du réseau (au sens large). <br>Un peu le Waze du transit de données]
+  ````{div}
+:class: center
+une fonctionnalité optionnelle mais néanmoins essentielle <br> qui permet de décongestionner l'ensemble du réseau (au sens large). <br>Un peu le Waze du transit de données
+````
 
 ---
 name: my-ip-address
@@ -310,9 +344,10 @@ les adresses privées réservées:
 
 Retenir les adresses IP c'est quand même pas super 🤯 !
 
-.center[
+````{div}
+:class: center
 Par exemple imaginez que vous deviez retenir `91.134.82.158` <br/>pour savoir les salles de cours .... <strike>on ne vous verrait pas souvent !</strike>
-]
+````
 
 .footnote[`*` c'est l'adresse IP du serveur qui héberge OASIS]
 
@@ -320,7 +355,10 @@ Par exemple imaginez que vous deviez retenir `91.134.82.158` <br/>pour savoir le
 
 Un truc magique le :
 
-.center[ **DNS** = **D**omain **N**ame **S**ystem]
+````{div}
+:class: center
+**DNS** = **D**omain **N**ame **S**ystem
+````
 
 En gros c'est le service qui fait l'association entre un nom de domaine et un adresse IP.
 

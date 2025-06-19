@@ -3,22 +3,32 @@
 
 ## Récap de la dernière fois
 
-.center[Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ... ]
+````{div}
+:class: center
+Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ...
+````
 
 .cols[
 .fifty[
-.center[<img src="media/osi-model.svg" width="60%">]
+````{div}
+:class: center
+<img src="media/osi-model.svg" width="60%">
+````
 ]
 .fifty[
 Un modèle OSI en 7 couches
 
-.center[<img src="media/ip-address.svg" width="40%">]
+````{div}
+:class: center
+<img src="media/ip-address.svg" width="40%">
+````
 
 Un protocole HTTP(S) pour le web
 
-.center[
+````{div}
+:class: center
 <img src="media/http-request.svg" width="60%">
-]
+````
 
 ]
 ]
@@ -27,13 +37,17 @@ Un protocole HTTP(S) pour le web
 
 # Quel est le rôle du serveur ?
 
-.center[
+````{div}
+:class: center
 <img src="media/client-server.svg" width="60%">
-]
+````
 
 --
 
-.center[🥱 Attendre et attendre et attendre ... 🥱]
+````{div}
+:class: center
+🥱 Attendre et attendre et attendre ... 🥱
+````
 
 --
 
@@ -47,10 +61,10 @@ class: center, middle
 
 **_Attention_** il y a deux significations à serveur ...
 
-.center[
-
+````{div}
+:class: center
 <iframe src="https://giphy.com/embed/xU9TT471DTGJq" width="480" height="365" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-]
+````
 
 ---
 
@@ -58,11 +72,15 @@ class: center, middle
 
 ## Le serveur hardware
 
-.center[
+````{div}
+:class: center
 <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1634&q=80" width="50%">
-]
+````
 
-.center[C'est la machine **physique ou virtuelle** connectée au réseau qui va recevoir des paquets de données mais en aucun cas ne s'occupera du traitement de ces données]
+````{div}
+:class: center
+C'est la machine **physique ou virtuelle** connectée au réseau qui va recevoir des paquets de données mais en aucun cas ne s'occupera du traitement de ces données
+````
 
 ---
 
@@ -70,7 +88,10 @@ class: center, middle
 
 ## Le serveur hardware : différents types
 
-.center[Serveur physique vs serveur virtuel (VPS) ]
+````{div}
+:class: center
+Serveur physique vs serveur virtuel (VPS)
+````
 
 <div style="position: absolute; bottom: 15%; left: 15%">
 <img src="media/bare-metal.svg" width="80%">
@@ -94,13 +115,17 @@ Différentes solutions : On Premise vs Cloud (OVH, Azure, GCP, AWS, ... )
 
 ## Le serveur "software"
 
-.center[
+````{div}
+:class: center
 <img src="media/server-app.svg" width="65%">
-]
+````
 
 C'est l'application (au sens logiciel) qui va s'occuper de
 
-.center[**Recevoir**, **Traiter** et **Répondre** aux requètes HTTP (ou autres d'ailleurs)]
+````{div}
+:class: center
+**Recevoir**, **Traiter** et **Répondre** aux requètes HTTP (ou autres d'ailleurs)
+````
 
 Différentes solutions : Nginx (33%), Apache (27%), LiteSpeed (15%), Node.js(4%), IIS (4%), ...
 
@@ -110,13 +135,22 @@ Différentes solutions : Nginx (33%), Apache (27%), LiteSpeed (15%), Node.js(4%)
 
 # Héberger plusieurs serveurs HTTP(S) sur un même serveur physique ?
 
-.center[OUI 🎯 il suffit de se partager le port 80 🤝]
+````{div}
+:class: center
+OUI 🎯 il suffit de se partager le port 80 🤝
+````
 
-.center[<img src="media/virtual-host.svg" width="80%">]
+````{div}
+:class: center
+<img src="media/virtual-host.svg" width="80%">
+````
 
 --
 
-.center[Il suffit de configurer au niveau du serveur HTTP des **Virtual Host**]
+````{div}
+:class: center
+Il suffit de configurer au niveau du serveur HTTP des **Virtual Host**
+````
 
 --
 
@@ -128,20 +162,25 @@ Différentes solutions : Nginx (33%), Apache (27%), LiteSpeed (15%), Node.js(4%)
 <img src="media/servername-cpp.png" width="70%">
 </div>
 
-.center[
+````{div}
+:class: center
 le "routage" entre les deux sites se fait au niveau du Header `Host:` de la requête HTTP
-]
+````
 ---
 
 # Un mot sur le serverless
 
-.center[Un serveur traditionnel passe son temps à attendre ...
+````{div}
+:class: center
+Un serveur traditionnel passe son temps à attendre ...
 
 🥱
+````
 
-]
-
-.center[**_Un serverless est un serveur qui n'attend pas_**]
+````{div}
+:class: center
+**_Un serverless est un serveur qui n'attend pas_**
+````
 
 Le principe est de découper le traitement en petites **tâches indépendantes** (fonctions) qui seront exécutées **à la demande**
 
@@ -175,7 +214,10 @@ Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation 
 
 **Deux applications**
 
-.center[Sites statiques vs dynamiques]
+````{div}
+:class: center
+Sites statiques vs dynamiques
+````
 
 .cols[
 .fifty[
@@ -196,36 +238,44 @@ Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation 
 
 # Site statique
 
-.center[Le serveur http ne fait qu'une seule et unique chose
+````{div}
+:class: center
+Le serveur http ne fait qu'une seule et unique chose
 <br><br>
 **_lire des fichiers_** html, png, jpg, pdf, .... et **_envoyer le contenu au client_**
-]
+````
 
 <br><br>
 
-.center[
+````{div}
+:class: center
 <a href="http://cpp.bmarchand.fr" target="_blank"> <img src="media/site-static.svg" width="90%"></a>
-]
+````
 
 ---
 
 # Site dynamique
 
-.center[Le serveur http va devoir travailler **avec d'autres services** <br>afin de produire le résultat final pouvant être envoyé au client]
+````{div}
+:class: center
+Le serveur http va devoir travailler **avec d'autres services** <br>afin de produire le résultat final pouvant être envoyé au client
+````
 
-.center[
+````{div}
+:class: center
 <a href="http://bmarchand.fr/research/activities" target="_blank">
 <img src="media/dynamic-site1.svg" width="50%">
 </a>
-]
+````
 
 --
 
-.center[
+````{div}
+:class: center
 <a href="https://rep.mines-paristech.fr" target="_blank">
 <img src="media/cerebro.png" width="50%">
 </a>
-]
+````
 
 ---
 
@@ -260,11 +310,17 @@ Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation 
 
 ]
 
-.center[Plein d'offres sur le marché, à vous de choisir celle qui vous convient le mieux]
+````{div}
+:class: center
+Plein d'offres sur le marché, à vous de choisir celle qui vous convient le mieux
+````
 
 Attention en revanche :
 
-.center[**_Gratuit_** ne veut pas dire **_sans limite_**]
+````{div}
+:class: center
+**_Gratuit_** ne veut pas dire **_sans limite_**
+````
 
 ---
 
@@ -290,9 +346,15 @@ Attention en revanche :
 
 # Solutions techniques
 
-.center[<img src="media/concurrency.svg" width="70%">]
+````{div}
+:class: center
+<img src="media/concurrency.svg" width="70%">
+````
 
-.center[Utilisation du parallélisme de tâches processus/thread et/ou programmation asynchrone]
+````{div}
+:class: center
+Utilisation du parallélisme de tâches processus/thread et/ou programmation asynchrone
+````
 
 ---
 
@@ -300,10 +362,16 @@ Attention en revanche :
 
 .cols[
 .fifty[
-.center[<img src="media/http-request.svg" width="100%">]
+````{div}
+:class: center
+<img src="media/http-request.svg" width="100%">
+````
 ]
 .fifty[
-.center[<img src="media/response-format.svg" width="100%">]
+````{div}
+:class: center
+<img src="media/response-format.svg" width="100%">
+````
 ]
 ]
 
@@ -430,48 +498,61 @@ mais c'est bien de comprendre comment ça marche
 
 Réponse à un besoin mais lequel ?
 
-.center[***Cadre de développement simplifié***]
+````{div}
+:class: center
+***Cadre de développement simplifié***
+````
 
 En gros un guide <strike> spirituel </strike>, permettant de développer simplement des applications spécifiques.
 
-.center[
-
+````{div}
+:class: center
 <iframe src="https://giphy.com/embed/MZW5o8f5RaH0Q" width="480" height="197" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
-]
+````
 
 ---
 
 # Framework vs Librairie
 
-.center[Frameworks, Librairies, même chose ? <br> ]
+````{div}
+:class: center
+Frameworks, Librairies, même chose ? <br>
+````
 
 --
 
 .cols[
 .fifty[
-.center[<b> Librairies </b>]
+````{div}
+:class: center
+<b> Librairies </b>
+````
 
 Ensemble de programmes effectuant des opérations spécifiques, que vous allez utiliser de manière ponctuelle au sein de vos programmes en suivant votre propre logique.
 
 Par exemple `NumPy` en Python 🐍 est une librairie
 
-.center[
+````{div}
+:class: center
 <img src="media/code-with-library.svg" height="200px">
-]
+````
 
 ]
 .vertbar[]
 .fifty[
-.center[<b> Framework </b>]
+````{div}
+:class: center
+<b> Framework </b>
+````
 
 Cadre de développement dans lequel le développeur vient s'inscrire, i.e. développer des fonctionnalités/comportements. Là ce n'est plus le développeur qui fixe sa logique mais le framework.
  
 Un code à trou 🕳️ en quelque sorte
 
-.center[
+````{div}
+:class: center
 <img src="media/code-with-framework.svg" height="200px">
-]
+````
 
 ]
 ]
@@ -480,17 +561,23 @@ Un code à trou 🕳️ en quelque sorte
 
 # Frontend, backend
 
-.center[⚠️ Framework web un terme très, trop, générique ⚠️]
+````{div}
+:class: center
+⚠️ Framework web un terme très, trop, générique ⚠️
+````
 
 .cols[
 .fifty[
 
-.center[Framework frontend]
+````{div}
+:class: center
+Framework frontend
+````
 
-.center[
-
-  <img src="media/framework_frontend.png" width=50%>
-]
+````{div}
+:class: center
+<img src="media/framework_frontend.png" width=50%>
+````
 
 Focalisé sur le développement d'application côté client
 
@@ -498,12 +585,15 @@ Focalisé sur le développement d'application côté client
 .vertbar[]
 .fifty[
 
-.center[Framework backend]
+````{div}
+:class: center
+Framework backend
+````
 
-.center[
-
-  <img src="media/framework_backend.png" width=100%>
-]
+````{div}
+:class: center
+<img src="media/framework_backend.png" width=100%>
+````
 
 Focalisé sur le développement côté serveur
 
@@ -514,12 +604,16 @@ Focalisé sur le développement côté serveur
 
 # frameworks backend: les grands principes
 
-.center[
+````{div}
+:class: center
 <img src="media/framework-routes.svg" width=70%>
-]
+````
 
 A cela un framework complet ajoute des fonctionnalités de :
-.center[`Web Template`, `Sécurité`, `Accès à des bases de données`]
+````{div}
+:class: center
+`Web Template`, `Sécurité`, `Accès à des bases de données`
+````
 
 ---
 
@@ -527,15 +621,17 @@ A cela un framework complet ajoute des fonctionnalités de :
 
 Micro-framework Python 🐍 développé depuis 2010.
 <br><br>
-.center[
+````{div}
+:class: center
 <img src="media/logos/logo-flask.svg" width=30% />
-]
+````
 <br><br>
 🚧 Micro-framework ne veut pas dire "pas utilisable sur des gros projets"  ⚠️
 <br><br>
-.center[
+````{div}
+:class: center
 Pinterest, Airbnb, Trivago, ...
-]
+````
 <br><br>
 Micro-framework car noyau très léger et minimaliste, mais pouvant être enrichi avec des extensions.
 
@@ -565,11 +661,14 @@ if __name__ == '__main__':
     app.run()
 ```
 
-.center[
+```{div}
+:class: center
 Une fois lancé -> [http://localhost:5000](http://localhost:5000)
-]
+```
 
-.center[? C'est quoi .clignote[`@app.route('/')`] ?]
+.center[
+? C'est quoi .clignote[`@app.route('/')`] ?
+]
 
 ---
 
@@ -602,7 +701,10 @@ class: center, middle
 
 # ... ou pas en fait
 
-.center[<iframe src="https://giphy.com/embed/3ohs7XbAurbpO5jIBy" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]
+````{div}
+:class: center
+<iframe src="https://giphy.com/embed/3ohs7XbAurbpO5jIBy" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+````
 
 ---
 
@@ -746,21 +848,31 @@ L'api du backend doit **impérativement** respecter les routes documentées dans
 
 Quelle différence entre
 
-.center[HTTP et HTTP**S**  
-❓]
+````{div}
+:class: center
+HTTP et HTTP**S**  
+❓
+````
 
 --
 
-.center[Oui oui c'est le **S** de **S**ecure 😓]
+````{div}
+:class: center
+Oui oui c'est le **S** de **S**ecure 😓
+````
 
 Grosso modo :
 
-.center[
+````{div}
+:class: center
 Enrobage du protocôle HTTP dans une couche de chiffrement <br><br>
 pour garantir la sécurité de l'utilisateur
-]
+````
 
-.center[<img src="media/https.jpg" width="35%">]
+````{div}
+:class: center
+<img src="media/https.jpg" width="35%">
+````
 
 ---
 
@@ -771,10 +883,10 @@ pour garantir la sécurité de l'utilisateur
 ***Alors oui le HTTP de base n'est pas sécurisé***
 ]
 .fifty[
-.center[
-
+````{div}
+:class: center
 <iframe src="https://giphy.com/embed/1FMaabePDEfgk" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-]
+````
 ]
 ]
 
@@ -782,10 +894,10 @@ pour garantir la sécurité de l'utilisateur
 
 .cols[
 .fifty[
-.center[
-
+````{div}
+:class: center
 <iframe src="https://giphy.com/embed/dZA4cLPCvSs1s5aCm7" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-]
+````
   ]
   .fifty[
     ***Mais ce n'est pas très grave dans pleins de cas***
@@ -809,7 +921,10 @@ pour garantir la sécurité de l'utilisateur
 ]
 ]
 
-.center[Le principe est donc de renfermer la requête HTTP et les informations qu'elle contient <br><br> dans un message crypté]
+````{div}
+:class: center
+Le principe est donc de renfermer la requête HTTP et les informations qu'elle contient <br><br> dans un message crypté
+````
 
 ---
 
@@ -817,15 +932,19 @@ pour garantir la sécurité de l'utilisateur
 
 En pratique le chiffrement fonctionne avec un système clé publique/clé privée
 
-.center[
+````{div}
+:class: center
 <img src="media/timeline-tls.excalidraw.svg" height="480px">
-]
+````
 
 ---
 
 # Autorité de certification (CA)
 
-.center[**Tiers de confiance** <br>qui va générer les certificats permettant le chiffrement et l'authentification de l'identité des correspondants]
+````{div}
+:class: center
+**Tiers de confiance** <br>qui va générer les certificats permettant le chiffrement et l'authentification de l'identité des correspondants
+````
 
 <br>
 Possible de générer ses propres certificat soi-même mais ils ne sont pas considérés comme valides par les clients standard (sachant que les navigateurs web ont une liste de CA de confiance)
@@ -845,7 +964,10 @@ class: center, middle
 
 # Et maintenant c'est fini ?
 
-.center[<iframe src="https://giphy.com/embed/I1nwVpCaB4k36" width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]
+````{div}
+:class: center
+<iframe src="https://giphy.com/embed/I1nwVpCaB4k36" width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+````
 
 ---
 
@@ -853,20 +975,24 @@ class: center, middle
 
 Faisons une pause goûter 🤤
 
-.center[
-
+````{div}
+:class: center
 <iframe src="https://giphy.com/embed/3o6MbitgftpbGFP3B6" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-]
+````
 
-.center[
+````{div}
+:class: center
 Ça fait partie de ces petites choses ***cachées*** dans les headers HTTP
-]
+````
 
 ---
 
 # Concrètement c'est quoi ?
 
- .center[Un 🍪 HTTP c'est une donnée qu’un serveur envoie à un client]
+ ````{div}
+:class: center
+Un 🍪 HTTP c'est une donnée qu’un serveur envoie à un client
+````
 
 .cols[
 .fifty[
@@ -877,9 +1003,15 @@ Faisons une pause goûter 🤤
 ]
 ]
 
-.center[stockée sur le client (dans le navigateur) <br> et **renvoyée** au serveur à chaque nouvelle requête]
+````{div}
+:class: center
+stockée sur le client (dans le navigateur) <br> et **renvoyée** au serveur à chaque nouvelle requête
+````
 
-.center[ <img src="media/cookie3.svg" width="40%">]
+````{div}
+:class: center
+<img src="media/cookie3.svg" width="40%">
+````
 
 ---
 
@@ -889,19 +1021,31 @@ Les cookies sont là pour enrichir le HTTP.
 
 ***Le problème***
 
-.center[HTTP = protocole sans état]
+````{div}
+:class: center
+HTTP = protocole sans état
+````
 
 En gros impossible pour un serveur HTTP de savoir si deux requêtes viennent d'un même client ou pas 😵‍💫
 
-.center[Comment rester authentifié alors ?]
+````{div}
+:class: center
+Comment rester authentifié alors ?
+````
 
 **_La solution_**
 
-.center[Les cookies 🍪 parce que ça laisse des miettes]
+````{div}
+:class: center
+Les cookies 🍪 parce que ça laisse des miettes
+````
 
 Concrètement on va pouvoir stocker :
 
-.center[Un session ID, des préférences utilisateur (light/dark theme, langue, ...)]
+````{div}
+:class: center
+Un session ID, des préférences utilisateur (light/dark theme, langue, ...)
+````
 
 ---
 
@@ -909,9 +1053,10 @@ Concrètement on va pouvoir stocker :
 
 Rien de plus simple, dans l'en-tête de la réponse serveur il suffit d'ajouter
 <br>
-.center[
+````{div}
+:class: center
 `Set-Cookie: <name>=<value>; <attributs...>`
-]
+````
 
 Attributs de Cookie
 
@@ -951,9 +1096,15 @@ Par exemple, allez sur <https://www.mat.minesparis.psl.eu> et trouvez le cookie 
 
 # Quelques règles à suivre
 
-.center[<img src="media/logos/cnil.svg" width="30%">]
+````{div}
+:class: center
+<img src="media/logos/cnil.svg" width="30%">
+````
 
-.center[<https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies>]
+````{div}
+:class: center
+<https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies>
+````
 
 - Internautes doivent être informés et donner leur consentement avant le dépôt de certains cookies
   - ❌ Traçage publicitaire / réseaux sociaux
@@ -971,13 +1122,14 @@ Par exemple, allez sur <https://www.mat.minesparis.psl.eu> et trouvez le cookie 
 
 # Rajoutons un Cookie dans notre serveur
 
-.center[
+```{div}
+:class: center
 le dossier `python/http-cookie` du cours
 <br>ou<br>
 [http://bit.ly/410qbdD](http://bit.ly/410qbdD)
 <br>ou<br>
 <img src="media/qrcode/cookie.png" width="20%">
-]
+```
 
 .footnote.small[
   faites tourner ce code sur votre ordi et cherchez les cookies dans les headers  
@@ -996,11 +1148,12 @@ le dossier `python/http-cookie` du cours
 
 # HTTP + 🍪 suffisant pour tout faire ?
 
-.center[
+````{div}
+:class: center
 <br><br>
 
 <iframe src="https://giphy.com/embed/XymaJlgorUL8vOfF88" width="480" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-]
+````
 
 ---
 
@@ -1039,19 +1192,27 @@ oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 
 # Websocket
 
-.center[En 2011, révolution: arrivée de Websocket 🤯]
+````{div}
+:class: center
+En 2011, révolution: arrivée de Websocket 🤯
+````
 
 .cols[
 .sixty[
 <br><br>
-.center[connexion **bidirectionnelle** entre un client et le serveur
+````{div}
+:class: center
+connexion **bidirectionnelle** entre un client et le serveur
 <br><br>on parle de connexion *full-duplex*
 <br><br>permet au serveur de ***pousser*** des informations vers le client sans que ce dernier n'ait rien demandé 😲
-]
+````
 son petit nom: `ws` (ou `wss` pour le sécurisé)
 ]
 .fourty[
-.center[<img src="media/timeline-ws.svg" width="70%">]
+````{div}
+:class: center
+<img src="media/timeline-ws.svg" width="70%">
+````
 ]
 ]
 
@@ -1061,15 +1222,23 @@ son petit nom: `ws` (ou `wss` pour le sécurisé)
 
 Très simplement en fait !
 
-.center[Première étape on établit une connexion vers un serveur WebSocket <br> via <br>
+````{div}
+:class: center
+Première étape on établit une connexion vers un serveur WebSocket <br> via <br>
 `ws://mon-super-server.com` ou `wss://mon-super-server.com`
-]
+````
 
-.center[Une fois la connexion établie <br><br>On doit simplement se mettre en état d'écoute à des évènements particuliers]
+````{div}
+:class: center
+Une fois la connexion établie <br><br>On doit simplement se mettre en état d'écoute à des évènements particuliers
+````
 
 Quatre types d'évènements
 
-.center[`onopen` 📖, `onclose` 📕, `onerror` 🚨, `onmessage` 📥]
+````{div}
+:class: center
+`onopen` 📖, `onclose` 📕, `onerror` 🚨, `onmessage` 📥
+````
 
 Et à chaque évènement on va venir associer une action
 
@@ -1108,7 +1277,10 @@ secondes**, et le serveur répond en décomptant jusqu'à 0 ] ]
 
 C'est lié à la programmation asynchrone. Pour plus de détails je vous encourage à faire un tour sur le Mooc
 
-.center[*Python : des fondamentaux aux concepts avancés du langage*]
+````{div}
+:class: center
+*Python : des fondamentaux aux concepts avancés du langage*
+````
 ]
 
 ---
@@ -1117,11 +1289,15 @@ C'est lié à la programmation asynchrone. Pour plus de détails je vous encoura
 
 ## Une messagerie instantanée !
 
-.center[[http://bit.ly/3xu599H](http://bit.ly/3xu599H)]
+```{div}
+:class: center
+[http://bit.ly/3xu599H](http://bit.ly/3xu599H)
+```
 
-.center[
+````{div}
+:class: center
 <img src="media/qrcode/tornado.png" width="20%">
-]
+````
 
 ---
 
@@ -1129,12 +1305,21 @@ C'est lié à la programmation asynchrone. Pour plus de détails je vous encoura
 
 .cols[
 .fifty[
-.center[<iframe src="https://giphy.com/embed/xTiTnBdvZgewvjTBAs" width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]
+````{div}
+:class: center
+<iframe src="https://giphy.com/embed/xTiTnBdvZgewvjTBAs" width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+````
 ]
 .fifty[
-.center[<iframe src="https://giphy.com/embed/RbSmVaVGptW03Wjw3a" width="480" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]
+````{div}
+:class: center
+<iframe src="https://giphy.com/embed/RbSmVaVGptW03Wjw3a" width="480" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+````
 ]
 ]
 
-.center[Un tour d'horizon du **Framework `Flask`** <br>
-qui va vous simplifier la vie pour tous les développements Web]
+````{div}
+:class: center
+Un tour d'horizon du **Framework `Flask`** <br>
+qui va vous simplifier la vie pour tous les développements Web
+````

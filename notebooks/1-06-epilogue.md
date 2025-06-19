@@ -21,7 +21,10 @@ Authorization: Bearer <token>
 
 L'obtention du token se fait généralement via l'interface Web du service visé.
 
-.center[⚠️ Attention un token ne doit ***jamais*** être partagé 💣️]
+````{div}
+:class: center
+⚠️ Attention un token ne doit ***jamais*** être partagé 💣️
+````
 
 Dans la plupart des cas à un token est associé :
 
@@ -29,7 +32,10 @@ Dans la plupart des cas à un token est associé :
 - Les droits sur ces ressources (consultation, modification, création, suppression)
 - Une durée de validité (date d'expiration du token)
 
-.center[Une solution pour conserver les tokens d'une application est d'utiliser un fichier `.env`]
+````{div}
+:class: center
+Une solution pour conserver les tokens d'une application est d'utiliser un fichier `.env`
+````
 
 ---
 
@@ -42,19 +48,21 @@ On trouve en ligne plein d'API ouverte un lien pour avoir une liste non exhausti
 .cols[
 
 .fifty[
-.center[
+```{div}
+:class: center
 [https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis)<br>
 ou <br>
 [http://bit.ly/3YHC1qX](http://bit.ly/3YHC1qX) <br>
 ou <br>
 <img src="media/qrcode/public_api_qr.png" width="40%">
-]
+```
 ]
 
 .fifty[
-.center[
+````{div}
+:class: center
 notamment un exemple d'API utile<br> <https://adresse.data.gouv.fr/outils/api-doc/adresse>
-]
+````
 ]
 
 ]
@@ -69,19 +77,23 @@ Considérons par exemple le cas d'un serveur générant des listes de nombres al
 - `/api/integer?n=100` renvoie 100 nombres aléatoires entiers
 - ...
 
-.center[
+```{div}
+:class: center
 le dossier `python/api-random` du cours
 <br>ou<br>
 [http://bit.ly/3HONIFN](http://bit.ly/3HONIFN)
 <br> ou <br>
 <img src="media/qrcode/random_number.png" width="20%">
-]
+```
 
 ---
 
 # Par exemple
 
-.center[Générer quelques statistiques sur Github]
+````{div}
+:class: center
+Générer quelques statistiques sur Github
+````
 
 ```md
 ![Basile's GitHub stats](https://github-readme-stats.vercel.app/api?username=basileMarchand&count_private=true&show_icons=true&theme=dark)
@@ -97,12 +109,16 @@ le dossier `python/api-random` du cours
 
 Depuis quelques années de plus en plus à la mode: **No Code**, **Low Code**
 
-.center[
+````{div}
+:class: center
 <img src="media/make.png" width="50%">
-]
+````
 
 <br><br>
-.center[demande de support par mail qui provoque une nouvelle entrée dans une base de données<br>et une notification par mail si "urgent" dans le sujet du mail 🤯]
+````{div}
+:class: center
+demande de support par mail qui provoque une nouvelle entrée dans une base de données<br>et une notification par mail si "urgent" dans le sujet du mail 🤯
+````
 
 ---
 
@@ -115,7 +131,10 @@ Je vous ai mis en place un serveur minimaliste offrant une API permettant :
 3. Envoyer un message à un utilisateur
 4. Récupérer les messages qui m'ont été envoyés.
 
-.center[ 🚀 https://mines.bmarchand.fr/api/doc 🚀]
+````{div}
+:class: center
+🚀 https://mines.bmarchand.fr/api/doc 🚀
+````
 
 --
 
@@ -151,18 +170,23 @@ L'objectif ici est de mettre en place un programme Python permettant de modifier
 .cols[
 .fifty[
 **Step 1️⃣** : créer une base de données dans Notion
-.center[vous pouvez dupliquer [celle-ci](https://bmarchand.notion.site/04620d6c67274d8e96211ddc738acf76?v=31bcb2e38fa242cfbc8eb9c51eca6108)]
+```{div}
+:class: center
+vous pouvez dupliquer [celle-ci](https://bmarchand.notion.site/04620d6c67274d8e96211ddc738acf76?v=31bcb2e38fa242cfbc8eb9c51eca6108)
+```
 
-**Step 2️⃣** : créer une intégration Notion
-.center[Se rendre sur le site [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations) et créer une intégration]
+Se rendre sur le site [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations) et créer une intégration]
 
 <img src="media/notion-token.png" width="80%">
 
-]
+```
 
 .fifty[
 **Step 3️⃣** : ajouter la base de données à l'intégration créée précédemment
-.center[depuis la page de la base de données]
+````{div}
+:class: center
+depuis la page de la base de données
+````
 
 <img src="media/notion-db-to-integ.png" width="37%">
 
@@ -182,6 +206,7 @@ class: middle, center
 
 ## On passe du côté obscur <br> et on voit comment définir nos API
 
-.center[
+````{div}
+:class: center
 <iframe src="https://giphy.com/embed/6x4CLjC8KofaU" width="469" height="380" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-]
+````

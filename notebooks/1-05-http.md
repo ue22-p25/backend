@@ -2,9 +2,10 @@
 
 Format d'une requête
 
-.center[
+````{div}
+:class: center
 <img src="media/http-request.svg" width="60%">
-]
+````
 
 ---
 
@@ -23,9 +24,10 @@ En gros c'est pour dire que l'on veut faire un requête de type `GET`. Sous-ente
 Il s'agit là des principaux types de requêtes mais il en existe d'autres, pour la liste complète vous pouvez faire un tour ici
 <https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol>
 
-.center[
+````{div}
+:class: center
 ⚠️ Il arrive souvent que `POST` soit utilisée, à la place de `PATCH`, <br> pour mettre à jour une donnée déjà présente côté serveur ... 🤢
-]
+````
 
 ---
 
@@ -39,13 +41,14 @@ import requests
 
 Nous allons utiliser le site <http://httpbin.org> qui met à disposition un serveur de test relativement utile.
 
-.center[
+```{div}
+:class: center
 le dossier `python/httpbin-client` du cours
 <br>ou<br>
 [http://bit.ly/3XmaLNE](http://bit.ly/3XmaLNE)
 <br> ou <br>
 <img src="media/qrcode/reqests_qrcode.png" width="20%">
-]
+```
 
 ---
 
@@ -54,7 +57,10 @@ le dossier `python/httpbin-client` du cours
 Lorsque l'on fait une requête à un serveur via http/https ce dernier nous renvoie en premier lieu un code de retour.
 
 <br>
-.center[Ces codes sont normalisés]
+````{div}
+:class: center
+Ces codes sont normalisés
+````
 <br>
 Voici un extrait non complet des codes possibles :
 
@@ -74,7 +80,10 @@ Et donc la première chose à faire lorsque vous faites une requête à un serve
 
 # La notion d'API
 
-.center[Application Programming Interface]
+````{div}
+:class: center
+Application Programming Interface
+````
 
 Permet de définir comment un programme **consommateur** va pouvoir exploiter les **fonctionnalités** données d'un programme **fournisseur**
 
@@ -82,7 +91,10 @@ Dans le domaine particulier du Web l'API se définit en fait à partir d'une URL
 
 --
 
-.center[<img src="media/api_img.jpg" width="60%">]
+````{div}
+:class: center
+<img src="media/api_img.jpg" width="60%">
+````
 
 .footnote[Image from Jérémy Mésière, Architecte Middleware chez Manutan]
 
@@ -90,7 +102,10 @@ Dans le domaine particulier du Web l'API se définit en fait à partir d'une URL
 
 # API REST
 
-.center[**Representational State Transfer**]
+````{div}
+:class: center
+**Representational State Transfer**
+````
 
 Ensemble de principes gouvernant l'architercture d'application Web.
 
@@ -127,9 +142,10 @@ Ensemble de principes gouvernant l'architercture d'application Web.
 
 # L'importance des headers HTTP
 
-.center[
+````{div}
+:class: center
 Les headers HTTP sont des paramètres envoyés dans les requêtes et réponses HTTP qui fournissent des informations essentielles sur la transaction HTTP.
-]
+````
 
 Notamment cela va nous permettre de gérer l'authentification 🔐 lorsqu'on veut accéder à des API protégées, le format des données, la version de l'API
 

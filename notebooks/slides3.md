@@ -2,11 +2,17 @@
 
 ## Récap des épisodes précédents
 
-.center[Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ... ]
+````{div}
+:class: center
+Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ...
+````
 
 .cols[
 .fourty[
-.center[<img src="media/osi-model.svg" width="70%">]
+````{div}
+:class: center
+<img src="media/osi-model.svg" width="70%">
+````
 ]
 
 .fifty[
@@ -28,27 +34,35 @@
 
 Réponse à un besoin mais lequel ?
 
-.center[***Cadre de développement simplifié***]
+````{div}
+:class: center
+***Cadre de développement simplifié***
+````
 
 En gros un guide <strike> spirituel </strike>, permettant de développer simplement des applications spécifiques.
 
-.center[
-
+````{div}
+:class: center
 <iframe src="https://giphy.com/embed/MZW5o8f5RaH0Q" width="480" height="197" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
-]
+````
 
 ---
 
 # Framework vs Librairie
 
-.center[Frameworks, Librairies, même chose ? <br> ]
+````{div}
+:class: center
+Frameworks, Librairies, même chose ? <br>
+````
 
 --
 
 .cols[
 .fifty[
-.center[<b> Librairies </b>]
+````{div}
+:class: center
+<b> Librairies </b>
+````
 
 Ensemble de programmes effectuant des opérations spécifiques, que vous allez utiliser de manière ponctuelle au sein de vos programmes en suivant votre propre logique.
 
@@ -56,14 +70,18 @@ Ensemble de programmes effectuant des opérations spécifiques, que vous allez u
 
 Par exemple `NumPy` en Python 🐍 est une librairie
 
-.center[
+````{div}
+:class: center
 <img src="media/code-with-library.svg" height="180px">
-]
+````
 
 ]
 .vertbar[]
 .fifty[
-.center[<b> Framework </b>]
+````{div}
+:class: center
+<b> Framework </b>
+````
 
 Cadre de développement dans lequel le développeur vient s'inscrire, i.e. développer des fonctionnalités/comportements. Là ce n'est plus le développeur qui fixe sa logique mais le framework.
 
@@ -71,9 +89,10 @@ Cadre de développement dans lequel le développeur vient s'inscrire, i.e. déve
 
 Un code à trou 🕳️ en quelque sorte - comme `arcade`
 
-.center[
+````{div}
+:class: center
 <img src="media/code-with-framework.svg" height="180px" >
-]
+````
 
 ]
 ]
@@ -82,17 +101,23 @@ Un code à trou 🕳️ en quelque sorte - comme `arcade`
 
 # Frontend, backend
 
-.center[⚠️ Framework web un terme très, trop, générique ⚠️]
+````{div}
+:class: center
+⚠️ Framework web un terme très, trop, générique ⚠️
+````
 
 .cols[
 .fifty[
 
-.center[Framework frontend]
+````{div}
+:class: center
+Framework frontend
+````
 
-.center[
-
-  <img src="media/framework_frontend.png" width=50%>
-]
+````{div}
+:class: center
+<img src="media/framework_frontend.png" width=50%>
+````
 
 Focalisé sur le développement d'application côté client.
 
@@ -100,12 +125,15 @@ Focalisé sur le développement d'application côté client.
 .vertbar[]
 .fifty[
 
-.center[Framework backend]
+````{div}
+:class: center
+Framework backend
+````
 
-.center[
-
-  <img src="media/framework_backend.png" width=100%>
-]
+````{div}
+:class: center
+<img src="media/framework_backend.png" width=100%>
+````
 
 Focalisé sur le développement côté serveur
 
@@ -118,13 +146,17 @@ Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
 
 # Les grands principes des framework backend
 
-.center[
+````{div}
+:class: center
 <img src="media/framework-routes.svg" width="65%">
-]
+````
 
 À cela un framework complet ajoute des fonctionnalités de :
 
-.center[`Web Template`, `Sécurité`, `Accès à des bases de données`]
+````{div}
+:class: center
+`Web Template`, `Sécurité`, `Accès à des bases de données`
+````
 
 ---
 
@@ -132,15 +164,17 @@ Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
 
 Micro-framework Python 🐍 développé depuis 2010.
 <br><br>
-.center[
+````{div}
+:class: center
 <img src="media/logos/logo-flask.svg" width="35%">
-]
+````
 <br><br>
 🚧 Micro-framework ne veut pas dire pas utilisable sur des gros projets ⚠️
 <br><br>
-.center[
+````{div}
+:class: center
 Pinterest, Airbnb, Trivago, ...
-]
+````
 <br><br>
 Micro-framework car noyau très léger et minimaliste mais pouvant être enrichi avec des extensions.
 
@@ -150,19 +184,22 @@ Micro-framework car noyau très léger et minimaliste mais pouvant être enrichi
 
 1️⃣ Vous savez tous à peu prêt faire du Python 🐍
 
-.center[donc on élimine tout ce qui n'est pas à base Python]
+````{div}
+:class: center
+donc on élimine tout ce qui n'est pas à base Python
+````
 
 --
 
 2️⃣ On va essayer de vous apprendre des trucs utilisés par ailleurs
 
-.center[
-
+````{div}
+:class: center
 <figure>
 <img src="media/web_framework_survey.png" width="70%"/><br>
 <label style="font-size: x-small"> Source: <a href="https://www.jetbrains.com/lp/devecosystem-2022/python/">https://www.jetbrains.com/lp/devecosystem-2022/python/</a>
 </figure>
-]
+````
 
 .footnote.small[
   Notez bien que tout ça est extrêmement difficile à mesurer par ailleurs - par exemple, on parle de quelle unité ?  
@@ -183,35 +220,45 @@ class: middle, center
 
 Faire le pont 🌉 entre :
 
-.center[un code de calcul/traitement de donnée/...
+````{div}
+:class: center
+un code de calcul/traitement de donnée/...
 
 et
 
 une interface graphique
-]
+````
 
 Deux approches :
 
 .cols[
 .fifty[
-.center[***Old school***]
+````{div}
+:class: center
+***Old school***
+````
 
 Utilisation de librairies graphiques et développement d'un client lourd
 
-.center[
+````{div}
+:class: center
 <img src="media/old-school.svg" width=50%>
-]
+````
 
 ]
 .vertbar[]
 .fifty[
-.center[***New age***]
+````{div}
+:class: center
+***New age***
+````
 
 Utilisation du navigateur
 
-.center[
+````{div}
+:class: center
 <img src="media/new-age.svg" width=80%>
-]
+````
 
 ]
 ]
@@ -238,9 +285,12 @@ Vous pourrez alors travailler en local 💻️.
   Au besoin si vous voulez vous mettre dans une configuration serveur vous pouvez utiliser [@Replit](https://replit.com) il y a un template Flask.
 ]
 
-.center[Et rien de plus à faire 😯 <br>
+````{div}
+:class: center
+Et rien de plus à faire 😯 <br>
 <br><br>
-c'est l'avantage de Flask par rapport à Django <br> qui nécessite un setup plus poussé pour démarrer un projet]
+c'est l'avantage de Flask par rapport à Django <br> qui nécessite un setup plus poussé pour démarrer un projet
+````
 
 ---
 
@@ -295,13 +345,19 @@ app.run(debug=True, port=3001)
 
 .cols[
 .sixty[
-.center[<iframe src="https://giphy.com/embed/4KkSbPnZ5Skec" width="471" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]
+````{div}
+:class: center
+<iframe src="https://giphy.com/embed/4KkSbPnZ5Skec" width="471" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+````
 
 ]
 .fourty[
 [http://bit.ly/3Z5C5k7](http://bit.ly/3Z5C5k7)
 
-.center[<img src="media/qrcode/flask_sandbox.png" width="60%">]
+````{div}
+:class: center
+<img src="media/qrcode/flask_sandbox.png" width="60%">
+````
 ]
 ]
 
@@ -351,13 +407,17 @@ En revanche tous les fichiers contenus dans le dossier `static` seront
 
 ## Passage de paramètres aux URLs
 
-.center[
+````{div}
+:class: center
 <img src="media/http-get-arguments.svg" width="80%">
-]
+````
 
 Besoin de récupérer dans la fonction `handler` la requête et donc ses arguments 🤔
 
-.center[Flask a tout prévu]
+````{div}
+:class: center
+Flask a tout prévu
+````
 
 .cols[
 .sixty[
@@ -378,7 +438,10 @@ def handler():
 ]
 ]
 
-.center[🚧 Pas de notion de type dans les arguments, tout est chaîne de caractère 🚧]
+````{div}
+:class: center
+🚧 Pas de notion de type dans les arguments, tout est chaîne de caractère 🚧
+````
 
 ---
 
@@ -386,9 +449,10 @@ def handler():
 
 Possibilité offerte par Flask de définir des paramètres au sein même d'une URL
 
-.center[
+````{div}
+:class: center
 <img src="media/flask-route-param.svg" width=70%>
-]
+````
 
 .cols[
 .fifty[
@@ -428,13 +492,15 @@ API de génération de nombres aléatoires
 
 Possibilité pour les deux d'ajouter un paramètre `n` par exemple `?n=10` pour générer 10 valeurs alétoires.
 
-.center[
+```{div}
+:class: center
 [http://bit.ly/3nb0yaG](http://bit.ly/3nb0yaG)
-]
+```
 
-.center[
+````{div}
+:class: center
 <img src="media/qrcode/flask_random_api.png" width="20%">
-]
+````
 
 ---
 
@@ -449,7 +515,10 @@ Petit rappel du 1er épisode, HTTP différentes requêtes possibles
 
 Il s'agit là des principaux types de requêtes mais il en existe d'autres, pour la liste complète vous pouvez faire un tour [https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 
-.center[<img src="media/api_img.jpg" width="40%">]
+````{div}
+:class: center
+<img src="media/api_img.jpg" width="40%">
+````
 
 .footnote[Image from Jérémy Mésière, Architecte Middleware chez Manutan]
 
@@ -488,23 +557,28 @@ def post_for_chemin():
 
 # Récupérer les données reçues
 
-.center[Encore une fois tout se passe dans `request`]
+````{div}
+:class: center
+Encore une fois tout se passe dans `request`
+````
 
 Plusieurs méthodes à disposition :
 
 - `request.is_json()` pour vérifier qu'il y a bien du json dans la requête
 - `request.get_json()` qui retourne le contenu de la requête
 
-.center[
+````{div}
+:class: center
 ⚠️ Lorsque vous traitez une requête `POST` il faut impérativement que votre fonction renvoie quelque chose ⚠️
-]
+````
 
-.center[
+```{div}
+:class: center
 
 [http://bit.ly/40ly786](http://bit.ly/40ly786)
 
 <img src="media/qrcode/flask_post.png" width="20%">
-]
+```
 
 ---
 
@@ -514,14 +588,20 @@ Deux cas de figures :
 
 - Réponses "statiques" -> contenu ne dépendant de rien donc le plus simple en fait
 
-.center[<iframe src="https://giphy.com/embed/Rl9Yqavfj2Ula" height="250" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]
+````{div}
+:class: center
+<iframe src="https://giphy.com/embed/Rl9Yqavfj2Ula" height="250" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+````
 
 --
 
 - Réponses "dynamiques" -> contenu dépendant de données externes (base de
   données typiquement, paramètres utilisateur... )
 
-.center[Page profil utilisateur, recherche de produits selon critères, ... ]
+````{div}
+:class: center
+Page profil utilisateur, recherche de produits selon critères, ...
+````
 
 ---
 
@@ -529,26 +609,31 @@ Deux cas de figures :
 
 Pour le cas de pages dynamiques deux approches existent
 
-.center[
+````{div}
+:class: center
 **C**lient **S**ide **R**endering
 <br><br> vs <br><br>
 **S**erver **S**ide **R**endering
-]
+````
 
-.center[<iframe src="https://giphy.com/embed/QYMBnZjnxko0eCzBuF" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-]
+````{div}
+:class: center
+<iframe src="https://giphy.com/embed/QYMBnZjnxko0eCzBuF" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+````
 
 ---
 
 # Une démo
 
-.center[
+```{div}
+:class: center
 [http://bit.ly/3Tx8wqL](http://bit.ly/3Tx8wqL)
-]
+```
 
-.center[
+````{div}
+:class: center
 <img src="media/qrcode/flask_ssr_vs_csr.png" width="30%">
-]
+````
 
 Il faut être curieux et ouvrir l'onglet "Network" des outils de développement du navigateur !
 
@@ -556,19 +641,24 @@ Il faut être curieux et ouvrir l'onglet "Network" des outils de développement 
 
 # Approche CSR
 
-.center[<img src="media/csr.svg" width=70%>]
+````{div}
+:class: center
+<img src="media/csr.svg" width=70%>
+````
 
 ---
 
 # Approche SSR
 
-.center[
+````{div}
+:class: center
 <img src="media/ssr.svg" width=70%>
-]
+````
 
-.center[
+````{div}
+:class: center
 Besoin d'un mécanisme de ***génération de page HTML***
-]
+````
 
 ---
 
@@ -576,13 +666,17 @@ Besoin d'un mécanisme de ***génération de page HTML***
 
 Mécanisme de génération de page HTML à partir d'un modèle et de données.
 
-.center[
+````{div}
+:class: center
 <img src="media/template-engine.svg" width="40%">
-]
+````
 
 Plusieurs techno/solutions :
 
-.center[***Jinja2***, **Pug**, **Mustache**, **Ejs**]
+````{div}
+:class: center
+***Jinja2***, **Pug**, **Mustache**, **Ejs**
+````
 
 ---
 
@@ -686,14 +780,23 @@ Grosso modo
 
 - CSR c'est cool pour
 
-.center[Avoir des pages avec beaucoup d'interaction,<br><br>notamment lorsque l'on est plus sur de l'appli web que du site web]
+````{div}
+:class: center
+Avoir des pages avec beaucoup d'interaction,<br><br>notamment lorsque l'on est plus sur de l'appli web que du site web
+````
 
 - SSR c'est bien pour
 
-.center[accélérer le chargement initial de votre site, si vous avez peu d'interaction avec l'utilisateur,<br><br>si vous souhaitez optimiser votre référencement naturel dans les moteurs de recherches.]
+````{div}
+:class: center
+accélérer le chargement initial de votre site, si vous avez peu d'interaction avec l'utilisateur,<br><br>si vous souhaitez optimiser votre référencement naturel dans les moteurs de recherches.
+````
 
 Et d'un point de vue très pragmatique
-.center[peut dépendre également du confort que vous avez à programmer en Python ou Javascript]
+````{div}
+:class: center
+peut dépendre également du confort que vous avez à programmer en Python ou Javascript
+````
 
 ---
 
@@ -726,7 +829,10 @@ Un truc récurrent dans le web c'est les formulaires :
 <br><br>
 Un besoin
 
-.center[Spécifier les champs (nom et nature/type) ; agréger les données saisies par l'utilisateur ; envoyer ces données au backend ; traiter ces données et émettre une réponse ]
+````{div}
+:class: center
+Spécifier les champs (nom et nature/type) ; agréger les données saisies par l'utilisateur ; envoyer ces données au backend ; traiter ces données et émettre une réponse
+````
 
 Un module tout fait en Python WTForm et son interface pour Flask FlaskWTF
 
@@ -848,7 +954,10 @@ La méthode `form.hidden_tag` va générer une ligne du genre :
 
 Aucun intérêt fonctionnel. En revanche utile pour la sécurité 🚨 et se prémunir des attaques type
 <br><br>
-.center[**C**ross **S**ite **R**equest **F**orgery]
+````{div}
+:class: center
+**C**ross **S**ite **R**equest **F**orgery
+````
 
 Et ça demande de définir une clé secrete
  `app.config['SECRET_KEY'] = os.urandom(32))`
@@ -882,11 +991,12 @@ Remarques
   ]
 
 .fourty[
-.center[
+```{div}
+:class: center
 [http://bit.ly/3JyTBb2](http://bit.ly/3JyTBb2)
 
 <img src="media/qrcode/flask_form.png" width="20%">
-]
+```
 ]
 ]
 
@@ -923,11 +1033,12 @@ def handler():
 Par exemple, nombre de fois qu'on visite une page !
 
 
-.center[
+```{div}
+:class: center
 [http://bit.ly/408GbcF](http://bit.ly/408GbcF)
 
 <img src="media/qrcode/flask_cookie.png" width="20%">
-]
+```
 
 ---
 
@@ -935,11 +1046,17 @@ Par exemple, nombre de fois qu'on visite une page !
 
 Très souvent besoin de la notion de session utilisateur
 
-.center[Stocker des infos spécifiques à un utilisateur entre deux requêtes]
+````{div}
+:class: center
+Stocker des infos spécifiques à un utilisateur entre deux requêtes
+````
 
 Possible de faire ça à la main 🖖🏻 à l'aide de cookies 🍪 ...
 
-.center[mais Flask peut tout faire à votre place]
+````{div}
+:class: center
+mais Flask peut tout faire à votre place
+````
 
 .cols[
 .fourty[
@@ -993,13 +1110,18 @@ def index():
 .fifty[
 Petit rappel au cas où ...
 <br><br>
-.center[connexion **bidirectionnelle** entre un client et le serveur
+````{div}
+:class: center
+connexion **bidirectionnelle** entre un client et le serveur
 <br><br>on parle de connexion *full-duplex*
 <br><br>Permet au serveur de ***pousser*** des informations vers le client sans que ce dernier n'ait rien demandé 😲
-]
+````
 ]
 .fifty[
-.center[<img src="media/timeline-ws.svg" width="70%">]
+````{div}
+:class: center
+<img src="media/timeline-ws.svg" width="70%">
+````
 ]
 ]
 
@@ -1058,12 +1180,13 @@ def handle_my_custom_event(json):
 Possibilité d'ajouter par dessus la notion de `room` <br>
 pour une gestion plus fine des destinataires
 <br>
-.center[
+````{div}
+:class: center
 📥️ 📤️
 <http://bit.ly/3yVAEdt> 
 
 <img src="media/qrcode/flask_socketio.png" width="150px">
-]
+````
 ]
 ]
 
@@ -1104,19 +1227,26 @@ socket.on("the_response", (msg) => {
 
 # Tout ce qu'on ne peut pas voir
 
-.center[🚀 Cours en mode express 🚀]
+````{div}
+:class: center
+🚀 Cours en mode express 🚀
+````
 
 Plein de choses que l'on ne peut pas voir :
 
-.center[Authentification, gestion de base de données,<br><br>sécurité des applications web, interface avec services externes, ... ]
+````{div}
+:class: center
+Authentification, gestion de base de données,<br><br>sécurité des applications web, interface avec services externes, ...
+````
 
 **Quelques ressources**
 
-.center[
+```{div}
+:class: center
 [https://flask.palletsprojects.com/en/1.1.x/](https://flask.palletsprojects.com/en/1.1.x/)
 
 [https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
-]
+```
 
 ---
 
@@ -1124,13 +1254,19 @@ Plein de choses que l'on ne peut pas voir :
 
 Pour faire de la base de données relationnelle simplement
 
-.center[SQLAlchemy]
+````{div}
+:class: center
+SQLAlchemy
+````
 
 Avec une intégration Flask assez simple via `Flask-SQLAlchemy`
 
 Après dans le cas où vous avez besoin d'une base de données `simple` pour faire de la lecture/écriture minimaliste une solution :
 
-.center[Passer par un service externe]
+````{div}
+:class: center
+Passer par un service externe
+````
 
 Trucs à la mode : Notion ou Airtable par exemple
 
@@ -1142,13 +1278,14 @@ Trucs à la mode : Notion ou Airtable par exemple
 pip install Flask-SQLAlchemy
 ```
 
-.center[
+````{div}
+:class: center
 Gestion de base de données se fait via des **modèles**
 <br><br>
 Dans le jargon, ça s'appelle un ORM (Object-Relationship-Model)
 <br><br>
 Mais vous allez voir c'est beaucoup plus simple que ce qu'on vous a dit en prépa 😅
-]
+````
 
 .footnote[il y a plein d'autres ORMs utilisables avec Flask, mais SQLAlchemy est le plus populaire]
 
@@ -1258,8 +1395,11 @@ def get_posts(username):
     return "<pre><code>" + "<br>".join(output) + "</pre></code>"
 ```
 
-.center[Ainsi toute la science occulte de la base de données relationnelle
-<br><br>est cachée derrière des classes Python 🐍]
+````{div}
+:class: center
+Ainsi toute la science occulte de la base de données relationnelle
+<br><br>est cachée derrière des classes Python 🐍
+````
 
 ---
 
@@ -1276,7 +1416,7 @@ class: middle
 
 --
 
-.center[
-
+````{div}
+:class: center
 <iframe src="https://giphy.com/embed/Xd6Y9TuDtylt5ug5PC" width="480" height="260" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-]
+````
