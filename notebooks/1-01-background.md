@@ -7,7 +7,8 @@ Le monde d'aujourd'hui est ultra connecté 🕸️
 
 ---
 
-<img src="media/architecture.svg" style="width: 80%;">
+```{image} media/architecture.svg
+```
 
 La plupart des systèmes informatiques/services web que vous pouvez utiliser quotidiennement ne sont pas **une** application mais un **ensemble** d'applications qui intéragissent entre elles.
 
@@ -17,11 +18,10 @@ La plupart des systèmes informatiques/services web que vous pouvez utiliser quo
 
 Un élève répond à un questionnaire de satisfaction en ligne et après la soumission de son questionnaire reçoit automatiquement une réponse personnalisée et spécifique selon ses réponses.
 
-<img src="media/premier-use-case.svg">
+```{image} media/premier-use-case.svg
+```
 
 [https://tally.so/r/w8N0jA](https://tally.so/r/w8N0jA)
-
-<br><br>
 
 ---
 
@@ -29,7 +29,8 @@ Un élève répond à un questionnaire de satisfaction en ligne et après la sou
 
 <!-- <button onclick="copyFunction()">Email du support</button> -->
 
-<img src="media/second-use-case.svg" style="width: 70%;">
+```{image} media/second-use-case.svg
+```
 
 ```{div}
 :class: center
@@ -55,7 +56,11 @@ On va essayer de répondre aux questions suivantes
 - Sous quel format envoyer ce message ?
 - Comment fait-on une application Python capable d'écouter sur le réseau ?
 
-<iframe src="https://giphy.com/embed/l0HlRnAWXxn0MhKLK" width="480" height="348" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+````{div}
+:class: fourty
+```{iframe} https://giphy.com/embed/l0HlRnAWXxn0MhKLK
+```
+````
 
 ---
 
@@ -63,7 +68,11 @@ On va essayer de répondre aux questions suivantes
 
 Pour faire collaborer des applications ensemble il existe plein de modèles, d'architectures différentes
 
-<iframe src="https://giphy.com/embed/JrSwnF7PLhgvmNfM8C" width="700p" height="348" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+````{div}
+:class: sixty
+```{iframe} https://giphy.com/embed/JrSwnF7PLhgvmNfM8C
+```
+````
 
 On va regarder les plus classiques
 
@@ -71,19 +80,22 @@ On va regarder les plus classiques
 
 ## Client-serveur
 
-<img src="media/client-server.svg" style="width: 80%;">
+```{image} media/client-server.svg
+```
 
 ---
 
 ## Architecture trois-tiers
 
-<img src="media/architecture-three-tiers.svg" style="width: 80%;">
+```{image} media/architecture-three-tiers.svg
+```
 
 ---
 
 ## Architecture pair à pair
 
-<img src="media/peer-to-peer.svg" style="width: 45%;">
+```{image} media/peer-to-peer.svg
+```
 
 Très à la mode à une époque où Netflix/Amazon Prime/... n'existaient pas (oui oui cette période est réelle 🤯)
 
@@ -99,20 +111,21 @@ Très à la mode à une époque où Netflix/Amazon Prime/... n'existaient pas (o
 ```{div}
 :class: center
 
-<img src="media/web.jpg" style="width: 50%;">
-
-<br>
 Juste un gros réseau
+
+```{image} media/web.jpg
 ```
+
 
 ---
 
 # Le cloud
 
-```{div}
+````{div}
 :class: center
 
 Le cloud c'est quoi ?
-<br>
-<img src="media/nocloud.png" style="width: 50%">
+```{image} media/nocloud.png
+:width: 40%
 ```
+````
