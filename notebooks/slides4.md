@@ -101,7 +101,7 @@ Greatly reduces the risk of compromised accounts
 
 ## 🔑 Public Key Infrastructure (PKI)
 
-.cols[
+.columns[
   .sixty[
 
 - each browser and OS comes with a list of trusted CAs
@@ -243,7 +243,7 @@ particularly as it is a standard and you can use it on any cloud provider
 
 ## Illustration on Scaleway
 
-.cols[
+.columns[
 .sixty[
 - web console
 - docs & the API
@@ -443,7 +443,7 @@ and used to agree on lightweight symmetric keys for the rest of the session
 
 a method for two parties to establish a shared secret over an insecure channel
 
-.cols[
+.columns[
   .sixty[
 based on simpler math:
 - choose a large prime *p* and a base *g* for everyone to see

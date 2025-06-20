@@ -8,7 +8,7 @@
 Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ...
 ````
 
-.cols[
+.columns[
 .fifty[
 ````{div}
 :class: center
@@ -184,7 +184,7 @@ Un serveur traditionnel passe son temps à attendre ...
 
 Le principe est de découper le traitement en petites **tâches indépendantes** (fonctions) qui seront exécutées **à la demande**
 
-.cols[
+.columns[
 .fifty[
 
 ## Avantages
@@ -219,7 +219,7 @@ Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation 
 Sites statiques vs dynamiques
 ````
 
-.cols[
+.columns[
 .fifty[
 
 <iframe src="https://cpp.bmarchand.fr/controlSection.html" width="100%" height="400px" frameBorder="0"></iframe>
@@ -281,7 +281,7 @@ Le serveur http va devoir travailler **avec d'autres services** <br>afin de prod
 
 # Solutions d'hébergement gratuit
 
-.cols[
+.columns[
 .fifty[
 
 ## Sites statiques
@@ -326,7 +326,7 @@ Attention en revanche :
 
 # Le serveur web : un besoin de perf 🚀
 
-.cols.bottom[
+.columns.bottom[
 
 .sixty[
   <img src="media/performance.svg" width="700px">
@@ -360,7 +360,7 @@ Utilisation du parallélisme de tâches processus/thread et/ou programmation asy
 
 # Et au fait il répond quoi le serveur à GET ?
 
-.cols[
+.columns[
 .fifty[
 ````{div}
 :class: center
@@ -408,7 +408,7 @@ puis ouvrez dans votre navigateur `http://localhost:8000/index.html` (*)
 
 --
 
-.cols[
+.columns[
 
 .fourty.small[
   On peut aussi écrire le serveur "à la main" en Python 🐍
@@ -521,7 +521,7 @@ Frameworks, Librairies, même chose ? <br>
 
 --
 
-.cols[
+.columns[
 .fifty[
 ````{div}
 :class: center
@@ -566,7 +566,7 @@ Un code à trou 🕳️ en quelque sorte
 ⚠️ Framework web un terme très, trop, générique ⚠️
 ````
 
-.cols[
+.columns[
 .fifty[
 
 ````{div}
@@ -760,7 +760,7 @@ L'api du backend doit **impérativement** respecter les routes documentées dans
 ## les routes en Flask
 
 - une route peut prendre un paramètre, éventuellement typé
-  .cols[
+  .columns[
   .fifty[
       ```pythona
   @app.route('/hello/<name>')
@@ -878,7 +878,7 @@ pour garantir la sécurité de l'utilisateur
 
 # HTTP un truc pas safe ?
 
-.cols[
+.columns[
 .fifty[
 ***Alors oui le HTTP de base n'est pas sécurisé***
 ]
@@ -892,7 +892,7 @@ pour garantir la sécurité de l'utilisateur
 
 --
 
-.cols[
+.columns[
 .fifty[
 ````{div}
 :class: center
@@ -910,7 +910,7 @@ pour garantir la sécurité de l'utilisateur
 
 <br>
 
-.cols[
+.columns[
 .fifty[
 <img src="media/http-not-safe.svg" width="100%">
 ]
@@ -994,7 +994,7 @@ Faisons une pause goûter 🤤
 Un 🍪 HTTP c'est une donnée qu’un serveur envoie à un client
 ````
 
-.cols[
+.columns[
 .fifty[
 <img src="media/cookie1.svg" width="100%">
 ]
@@ -1070,7 +1070,7 @@ Attributs de Cookie
 
 Par exemple, allez sur <https://www.mat.minesparis.psl.eu> et trouvez le cookie `PHPSESSID`
 
-.cols[
+.columns[
 
 .fourty.small[
   plus de détails ici sur MDN, notamment
@@ -1159,7 +1159,7 @@ le dossier `python/http-cookie` du cours
 
 # Mais pourquoi ?
 
-.cols[
+.columns[
 
 .twenty[
 <img src="media/timeline-http.svg" width="100%">
@@ -1175,7 +1175,7 @@ Fonctionnement de HTTP très rigide: orienté **question/réponse**
 <br><br>
 oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 
-.cols[
+.columns[
 .fifty[
 <img src="media/limitation1.svg" width="100%">
 ]
@@ -1197,7 +1197,7 @@ oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 En 2011, révolution: arrivée de Websocket 🤯
 ````
 
-.cols[
+.columns[
 .sixty[
 <br><br>
 ````{div}
@@ -1248,7 +1248,7 @@ Et à chaque évènement on va venir associer une action
 
 Voyez dans le dossier `python/websockets`:
 
-.cols[
+.columns[
 .fifty[
 
 le protocole "ping-pong" (en fait "ping-gnip"):
@@ -1303,7 +1303,7 @@ C'est lié à la programmation asynchrone. Pour plus de détails je vous encoura
 
 # In the next episode
 
-.cols[
+.columns[
 .fifty[
 ````{div}
 :class: center

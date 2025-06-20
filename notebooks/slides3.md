@@ -7,7 +7,7 @@
 Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ...
 ````
 
-.cols[
+.columns[
 .fourty[
 ````{div}
 :class: center
@@ -57,7 +57,7 @@ Frameworks, Librairies, même chose ? <br>
 
 --
 
-.cols[
+.columns[
 .fifty[
 ````{div}
 :class: center
@@ -106,7 +106,7 @@ Un code à trou 🕳️ en quelque sorte - comme `arcade`
 ⚠️ Framework web un terme très, trop, générique ⚠️
 ````
 
-.cols[
+.columns[
 .fifty[
 
 ````{div}
@@ -231,7 +231,7 @@ une interface graphique
 
 Deux approches :
 
-.cols[
+.columns[
 .fifty[
 ````{div}
 :class: center
@@ -296,7 +296,7 @@ c'est l'avantage de Flask par rapport à Django <br> qui nécessite un setup plu
 
 # Minimal Working Example
 
-.cols[
+.columns[
 .fifty[
   - Step 1️⃣ :
 
@@ -326,7 +326,7 @@ def la_fonction_correspondante():
 ```
 
 Pour finir :
-.cols[
+.columns[
 .fifty[
 
 ```python
@@ -343,7 +343,7 @@ app.run(debug=True, port=3001)
 
 # Pour ceux qui auraient la flemme !
 
-.cols[
+.columns[
 .sixty[
 ````{div}
 :class: center
@@ -367,7 +367,7 @@ app.run(debug=True, port=3001)
 
 Si on veut pour une url donnée renvoyer, non pas une chaîne, mais un fichier HTML qui lui même peut nécessiter des CSS/JS, il va falloir une organisation un peu particulière
 
-.cols[
+.columns[
 .fifty[
 
 ```bash
@@ -419,7 +419,7 @@ Besoin de récupérer dans la fonction `handler` la requête et donc ses argumen
 Flask a tout prévu
 ````
 
-.cols[
+.columns[
 .sixty[
 
 ```python
@@ -454,7 +454,7 @@ Possibilité offerte par Flask de définir des paramètres au sein même d'une U
 <img src="media/flask-route-param.svg" width=70%>
 ````
 
-.cols[
+.columns[
 .fifty[
 Possibilité de typer les paramètres :
 
@@ -873,7 +873,7 @@ class LoginForm(FlaskForm):
 
 # Les types input
 
-.cols[
+.columns[
 .fifty[
 Les différents types prédéfinis dans `WTForm` sont les suivants :
 
@@ -912,7 +912,7 @@ Possibilité d'ajouter des "validateurs"
 
 # Utilisation en lien avec les templates
 
-.cols[
+.columns[
 .fifty[
 
 ```html
@@ -981,7 +981,7 @@ def login():
         return redirect("/home")
     return render_template("login.html", form=form)
 ```
-.cols[
+.columns[
 .sixty[
 
 Remarques
@@ -1004,7 +1004,7 @@ Remarques
 
 # Un petit bonus : les Cookies 🍪
 
-.cols[
+.columns[
 .fifty[
 
 ```python
@@ -1058,7 +1058,7 @@ Possible de faire ça à la main 🖖🏻 à l'aide de cookies 🍪 ...
 mais Flask peut tout faire à votre place
 ````
 
-.cols[
+.columns[
 .fourty[
 
 ```python
@@ -1106,7 +1106,7 @@ def index():
 # Et les websocket ...
 
 
-.cols[
+.columns[
 .fifty[
 Petit rappel au cas où ...
 <br><br>
@@ -1155,7 +1155,7 @@ def handle_message(json):
 
 # Exemple de Chat Flask + SocketIO
 
-.cols[
+.columns[
 .fifty[
 
 ```python

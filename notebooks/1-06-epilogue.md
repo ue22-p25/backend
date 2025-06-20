@@ -4,20 +4,26 @@
 
 Pour s'authentifier auprès d'une API REST, il faut à chaque requête fournir la preuve de qui l'on est. Cela passe généralement par l'association à la requète d'un token qui permet à l'application de savoir
 
-.cols[
-.fifty[
+`````{div}
+:class: columns
+````{div}
+:class: fifty
 
 - Qui l'on est
 - Ce que l'on a le droit de faire sur quelles ressources
-  ]
-  .fifty[
+
+````
+
+````{div}
+:class: fifty
 
 ```bash
 Authorization: Bearer <token>
 ```
 
-]
-]
+````
+`````
+
 
 L'obtention du token se fait généralement via l'interface Web du service visé.
 
@@ -39,36 +45,34 @@ Une solution pour conserver les tokens d'une application est d'utiliser un fichi
 
 ---
 
-# Une API utilisable est une API documentée
+## Une API utilisable est une API documentée
 
 Donc pour conclure sur les API, il s'agit d'un moyen très simple pour offrir une interface vers des ressources et données distantes. La seule difficulté dans ce domaine c'est la définition et surtout la **documentation des API** 📑. Donc si vous mettez en place un service Web disposant d'une API et que vous souhaitez ouvrir votre service vers l'extérieur merci de prendre le temps de documenter votre API.
 
 On trouve en ligne plein d'API ouverte un lien pour avoir une liste non exhaustive
 
-.cols[
-
-.fifty[
-```{div}
-:class: center
-[https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis)<br>
-ou <br>
-[http://bit.ly/3YHC1qX](http://bit.ly/3YHC1qX) <br>
-ou <br>
-<img src="media/qrcode/public_api_qr.png" width="40%">
-```
-]
-
-.fifty[
+`````{div}
+:class: columns
 ````{div}
-:class: center
+:class: fifty center
+[https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis)  
+ou   
+[http://bit.ly/3YHC1qX](http://bit.ly/3YHC1qX)  
+ou  
+```{image} media/qrcode/public_api_qr.png
+:width: 40%
+```
+````
+
+````{div}
+:class: fifty center
 notamment un exemple d'API utile<br> <https://adresse.data.gouv.fr/outils/api-doc/adresse>
 ````
-]
+`````
 
-]
 ---
 
-# Illustration
+## Illustration
 
 Considérons par exemple le cas d'un serveur générant des listes de nombres aléatoires à la demande. L'api d'un tel serveur pourrait être
 
@@ -79,20 +83,16 @@ Considérons par exemple le cas d'un serveur générant des listes de nombres al
 
 ```{div}
 :class: center
-le dossier `python/api-random` du cours
-<br>ou<br>
-[http://bit.ly/3HONIFN](http://bit.ly/3HONIFN)
-<br> ou <br>
-<img src="media/qrcode/random_number.png" width="20%">
+ça se passe dans le dossier `python/api-random` du cours
 ```
 
 ---
 
-# Par exemple
+## Par exemple
 
 ````{div}
 :class: center
-Générer quelques statistiques sur Github
+Voici comment générer quelques statistiques sur Github directement en Markdown
 ````
 
 ```md
@@ -100,21 +100,32 @@ Générer quelques statistiques sur Github
 ![Basile's top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=basileMarchand&hide=jupyter%20notebook&langs_count=10&theme=dark&layout=compact)
 ```
 
+`````{div}
+:class: columns
+````{div}
+:class: fifty center
 ![Basile's GitHub stats](https://github-readme-stats.vercel.app/api?username=basileMarchand&count_private=true&show_icons=true&theme=dark)
+````
+
+````{div}
+:class: fifty center
 ![Basile's top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=basileMarchand&hide=jupyter%20notebook&langs_count=10&theme=dark&layout=compact)
+````
+`````
 
 ---
 
-# Un mot sur le "No Code"
+## Un mot sur le "No Code"
 
 Depuis quelques années de plus en plus à la mode: **No Code**, **Low Code**
 
 ````{div}
 :class: center
-<img src="media/make.png" width="50%">
+```{image} media/make.png
+:width: 50%
+```
 ````
 
-<br><br>
 ````{div}
 :class: center
 demande de support par mail qui provoque une nouvelle entrée dans une base de données<br>et une notification par mail si "urgent" dans le sujet du mail 🤯
@@ -122,7 +133,7 @@ demande de support par mail qui provoque une nouvelle entrée dans une base de d
 
 ---
 
-# Application 1
+## Application 1
 
 Je vous ai mis en place un serveur minimaliste offrant une API permettant :
 
@@ -149,64 +160,67 @@ L'idée est que vous réalisiez les actions suivantes :
 
 ---
 
-# Application 2 : utilisation de l'API Notion
+## Application 2 : utilisation de l'API Notion
 
 L'objectif ici est de mettre en place un programme Python permettant de modifier le contenu d'une base de données Notion. **[Un squelette est disponible ici](https://github.com/ue22-p24/backend-notion-api-skeleton)**. L'application à terme doit pouvoir :
 
-.small[
+`````{div}
+:class: columns smaller
 
-.cols[
-.sixty[
-
+````{div}
+:class: sixty
 - Lister l'ensemble des tâches d'une base de données
 - Afficher le détail d'une tâche défini par son ID
-  ]
-  .fifty[
+````
+````{div}
+:class: forty
 - Changer le status d'une tâche
 - Ajouter du texte dans la page de la tâche
-  ]
-  ]
-
-.cols[
-.fifty[
-**Step 1️⃣** : créer une base de données dans Notion
-```{div}
-:class: center
-vous pouvez dupliquer [celle-ci](https://bmarchand.notion.site/04620d6c67274d8e96211ddc738acf76?v=31bcb2e38fa242cfbc8eb9c51eca6108)
-```
-
-Se rendre sur le site [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations) et créer une intégration]
-
-<img src="media/notion-token.png" width="80%">
-
-```
-
-.fifty[
-**Step 3️⃣** : ajouter la base de données à l'intégration créée précédemment
-````{div}
-:class: center
-depuis la page de la base de données
 ````
+`````
 
-<img src="media/notion-db-to-integ.png" width="37%">
-
-**Step 4️⃣** : récuper l'ID de la base de données
-
-<img src="media/notion-db-id.png" width="80%">
-
-]
-]
-
-]
 ---
 
-class: middle, center
+`````{div}
+:class: columns
 
-# La semaine prochaine❕
+````{div}
+:class: fifty
 
-## On passe du côté obscur <br> et on voit comment définir nos API
+**Step 1️⃣** : créer une base de données dans Notion  
+[vous pouvez dupliquer celle-ci](https://bmarchand.notion.site/04620d6c67274d8e96211ddc738acf76?v=31bcb2e38fa242cfbc8eb9c51eca6108)
+
+**Step 2️⃣** : créer une intégration Notion  
+Se rendre sur le site [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations) et créer une intégration
+
+```{image} media/notion-token.png
+:width: 80%
+```
+````
+
+````{div}
+:class: fifty
+**Step 3️⃣** : ajouter la base de données à l'intégration créée précédemment  
+depuis la page de la base de données
+
+```{image} media/notion-db-to-integ.png
+:width: 45%
+```
+
+**Step 4️⃣** : récuper l'ID de la base de données  
+```{image} media/notion-db-id.png
+```
+````
+`````
+
+---
+
+## La semaine prochaine❕
+
+On passe du côté obscur, et on voit comment définir nos API
 
 ````{div}
 :class: center
-<iframe src="https://giphy.com/embed/6x4CLjC8KofaU" width="469" height="380" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+```{iframe} https://giphy.com/embed/6x4CLjC8KofaU
+<!-- :width: 469" height="380" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
 ````

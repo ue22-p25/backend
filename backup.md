@@ -157,7 +157,7 @@ Quelques distinctions : <br>
 
 # Moyens de calcul
 
-.cols[
+.columns[
 .fifty[
 Un cluster de calcul auto-hébergé
 
@@ -287,7 +287,7 @@ Discrétisation temporelle : 222 incréments<br>
 
 Prise en compte à différentes échelles des phénomènes de contact
 
-.cols[
+.columns[
 .fifty[
 
 .center[<img src="media/contact/basava.png" width="80%">]
