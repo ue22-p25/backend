@@ -7,7 +7,8 @@
 Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ...
 ````
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fourty
 ````{div}
@@ -29,14 +30,15 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 ```
 ````
 
-.twenty[
-  <br><br>
+````{div}
+:class: twenty
+<br><br>
 ```{image} media/logos/lets-encrypt.svg
 :width: 150px
 ```
 <p style="font-size: 4rem"> 🍪 </p>
-]
-]
+````
+````
 
 ---
 
@@ -67,7 +69,8 @@ Frameworks, Librairies, même chose ? <br>
 
 --
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 ````{div}
@@ -106,7 +109,7 @@ Un code à trou 🕳️ en quelque sorte - comme `arcade`
 <img src="media/code-with-framework.svg" height="180px" >
 ````
 ````
-]
+````
 
 ---
 
@@ -117,7 +120,8 @@ Un code à trou 🕳️ en quelque sorte - comme `arcade`
 ⚠️ Framework web un terme très, trop, générique ⚠️
 ````
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 ````{div}
@@ -151,7 +155,7 @@ Framework backend
 
 Focalisé sur le développement côté serveur
 ````
-]
+````
 
 Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
 
@@ -250,7 +254,8 @@ une interface graphique
 
 Deux approches :
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 ````{div}
@@ -284,7 +289,7 @@ Utilisation du navigateur
 ```
 ````
 ````
-]
+````
 
 <div style="transform: rotate(40deg); opacity: 0.9;position: absolute; right: 10%; top: 25%; border: 1px solid darkblue; border-radius: 10px; padding: 2pt 10pt; background-color: aliceblue;">
 <p style="opacity: 1; color: crimson; font-weight: bold; background-color: aliceblue"> Projets d'informatique ... </p>
@@ -319,7 +324,8 @@ c'est l'avantage de Flask par rapport à Django <br> qui nécessite un setup plu
 
 # Minimal Working Example
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 - Step 1️⃣ :
@@ -337,7 +343,7 @@ from flask import Flask
 app = Flask("Appli de ouf")
 ```
 ````
-]
+````
 
 Ensuite tout repose sur une syntaxe un peu particulière :
 
@@ -351,7 +357,8 @@ def la_fonction_correspondante():
 ```
 
 Pour finir :
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 ```python
@@ -362,13 +369,14 @@ app.run(debug=True, port=3001)
 :class: fifty
 `debug=True` permet d'activer du hot reloading
 ````
-]
+````
 
 ---
 
 # Pour ceux qui auraient la flemme !
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: sixty
 ````{div}
@@ -376,7 +384,8 @@ app.run(debug=True, port=3001)
 <iframe src="https://giphy.com/embed/4KkSbPnZ5Skec" width="471" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 ````
 ````
-.fourty[
+````{div}
+:class: fourty
 [http://bit.ly/3Z5C5k7](http://bit.ly/3Z5C5k7)
 
 ````{div}
@@ -385,8 +394,8 @@ app.run(debug=True, port=3001)
 :width: 60%
 ```
 ````
-]
-]
+````
+````
 
 ---
 
@@ -394,7 +403,8 @@ app.run(debug=True, port=3001)
 
 Si on veut pour une url donnée renvoyer, non pas une chaîne, mais un fichier HTML qui lui même peut nécessiter des CSS/JS, il va falloir une organisation un peu particulière
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 ```bash
@@ -421,7 +431,7 @@ def index():
   return render_template("wheel.html")
 ```
 ````
-]
+````
 
 En revanche tous les fichiers contenus dans le dossier `static` seront
 **automatiquement accessibles** sans que l'on ait rien à faire et ça c'est 🆒 !
@@ -446,7 +456,8 @@ Besoin de récupérer dans la fonction `handler` la requête et donc ses argumen
 Flask a tout prévu
 ````
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: sixty
 ```python
@@ -463,7 +474,7 @@ def handler():
 :class: fourty
 ⚠️ Si l'argument n'existe pas la fonction `get` retourne `None`
 ````
-]
+````
 
 ````{div}
 :class: center
@@ -483,7 +494,8 @@ Possibilité offerte par Flask de définir des paramètres au sein même d'une U
 ```
 ````
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 Possibilité de typer les paramètres :
@@ -502,7 +514,7 @@ def home_uid(user_id):
     return f"we were passed {user_id}"
 ```
 ````
-]
+````
 
 .footnote.small[
 
@@ -915,7 +927,8 @@ class LoginForm(FlaskForm):
 
 # Les types input
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 Les différents types prédéfinis dans `WTForm` sont les suivants :
@@ -942,7 +955,7 @@ Possibilité d'ajouter des "validateurs"
 - `NumberRange` : valeur numérique dans un intervalle
 - `Optional` : champs optionnel
 ````
-]
+````
 
 --
 
@@ -954,7 +967,8 @@ Possibilité d'ajouter des "validateurs"
 
 # Utilisation en lien avec les templates
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 ```html
@@ -1002,7 +1016,7 @@ Aucun intérêt fonctionnel. En revanche utile pour la sécurité 🚨 et se pr�
 
 Et ça demande de définir une clé secrete
  `app.config['SECRET_KEY'] = os.urandom(32))`
-]
+````
 ]
 
 ---
@@ -1022,7 +1036,8 @@ def login():
         return redirect("/home")
     return render_template("login.html", form=form)
 ```
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: sixty
 Remarques
@@ -1030,7 +1045,8 @@ Remarques
 - son extension doit être `.html`, `.htm`, `.xml`, `.xhtml`, ou `.svg`
 ````
 
-.fourty[
+````{div}
+:class: fourty
 ```{div}
 :class: center
 [http://bit.ly/3JyTBb2](http://bit.ly/3JyTBb2)
@@ -1039,14 +1055,15 @@ Remarques
 :width: 20%
 ```
 ```
-]
-]
+````
+````
 
 ---
 
 # Un petit bonus : les Cookies 🍪
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 ```python
@@ -1068,7 +1085,7 @@ def handler():
    # ...
 ```
 ````
-]
+````
 
 Par exemple, nombre de fois qu'on visite une page !
 
@@ -1100,9 +1117,10 @@ Possible de faire ça à la main 🖖🏻 à l'aide de cookies 🍪 ...
 mais Flask peut tout faire à votre place
 ````
 
-.columns[
-.fourty[
-
+````{div}
+:class: columns
+````{div}
+:class: fourty
 ```python
 from Flask import session
 ```
@@ -1113,9 +1131,9 @@ Besoin d'un peu de config par contre
 app.config["SECRET_KEY"] = "un secret"
 ```
 
-]
-.sixty[
-
+````
+````{div}
+:class: sixty
 ```python
 
 @app.route("/une/url/<string:username>")
@@ -1133,8 +1151,8 @@ def index():
             " vers /une/url/<username>")
 ```
 
-]
-]
+````
+````
 
 <div class="center" style="position: absolute; top: 10%; right: 5%">
 
@@ -1150,7 +1168,8 @@ def index():
 # Et les websocket ...
 
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 Petit rappel au cas où ...
@@ -1171,7 +1190,7 @@ connexion **bidirectionnelle** entre un client et le serveur
 ```
 ````
 ````
-]
+````
 
 ---
 
@@ -1203,7 +1222,8 @@ def handle_message(json):
 
 # Exemple de Chat Flask + SocketIO
 
-.columns[
+````{div}
+:class: columns
 .fifty[
 
 ```python
@@ -1237,7 +1257,7 @@ pour une gestion plus fine des destinataires
 :width: 150px
 ```
 ````
-]
+````
 ]
 
 ````{div}

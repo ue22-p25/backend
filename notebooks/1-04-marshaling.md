@@ -21,8 +21,10 @@ A votre avis c'est tout bon du coup ou on a besoin d'un truc en plus ?
 🔎 Regardons sur un exemple concret 🔎
 ````
 
-.columns[
-.seventy[
+````{div}
+:class: columns
+````{div}
+:class: seventy
 ```{div}
 :class: center
 le dossier `python/tcp-awkward-api`
@@ -32,11 +34,12 @@ le dossier `python/tcp-awkward-api`
 [http://bit.ly/3YpoKDR](http://bit.ly/3YpoKDR)
 <br>ou<br>
 ```
-]
-.thirty[
+````
+````{div}
+:class: thirty
 <img src="media/qrcode/tcp_qrcode.png" width="65%">
-]
-]
+````
+````
 
 ---
 
@@ -100,7 +103,8 @@ Nom, Prénom, Date de naissance, nombre d'enfants, ...
 
 Via Python 🐍 c'est facile !
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 ```python
@@ -119,7 +123,7 @@ data = json.loads(serialized)
 # data is now a dictionary
 ```
 ````
-]
+````
 
 ---
 
@@ -141,7 +145,8 @@ Comment se font les communications entre le client et l'application
 format des message, contenu attendu, ...
 ````
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: fifty
 On parle de protocole, comme par exemple:
@@ -155,5 +160,5 @@ On parle de protocole, comme par exemple:
 :class: fifty
 <img src="https://media1.tenor.com/m/qRpNbT_IhBAAAAAd/appurajosh-appu.gif" height="200px">
 ````
-]
+````
 

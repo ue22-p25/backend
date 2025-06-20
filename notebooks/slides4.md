@@ -101,8 +101,9 @@ Greatly reduces the risk of compromised accounts
 
 ## 🔑 Public Key Infrastructure (PKI)
 
-.columns[
-  ````{div}
+````{div}
+:class: columns
+````{div}
 :class: sixty
 - each browser and OS comes with a list of trusted CAs
   - CA = Certificate Authority
@@ -124,7 +125,7 @@ Greatly reduces the risk of compromised accounts
 :width: 80%
 ```
 ````
-]
+````
 
 .footnote.small[
   try it: in chrome, you can inspect the certificate chain by clicking on the lock icon in the address bar; then choose "Connection is secure" and "Certificate is valid"
@@ -246,7 +247,8 @@ particularly as it is a standard and you can use it on any cloud provider
 
 ## Illustration on Scaleway
 
-.columns[
+````{div}
+:class: columns
 ````{div}
 :class: sixty
 - web console
@@ -268,7 +270,7 @@ particularly as it is a standard and you can use it on any cloud provider
 :width: 100%
 ```
 ````
-]
+````
 
 ---
 
@@ -452,8 +454,9 @@ and used to agree on lightweight symmetric keys for the rest of the session
 
 a method for two parties to establish a shared secret over an insecure channel
 
-.columns[
-  ````{div}
+````{div}
+:class: columns
+````{div}
 :class: sixty
 based on simpler math:
 - choose a large prime *p* and a base *g* for everyone to see
@@ -471,7 +474,7 @@ usage:
 :width: 100%
 ```
 ````
-]
+````
 
 .footnote.small[image from https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange]
 
