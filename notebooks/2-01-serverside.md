@@ -713,11 +713,10 @@ if __name__ == '__main__':
 ```{div}
 :class: center
 Une fois lancé -> [http://localhost:5000](http://localhost:5000)
-```
 
-.center[
 ? C'est quoi .clignote[`@app.route('/')`] ?
-]
+
+```
 
 ---
 
