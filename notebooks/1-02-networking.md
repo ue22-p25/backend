@@ -9,7 +9,7 @@ Tout d'abord un réseau c'est quoi ?
 Et bien c'est une **infrastructure** que l'on utilise pour faire transiter des données.
 ````
 
-Dans sa version la plus élémentaire qui soit un réseau est composé de deux appareils reliés entre eux, par un câble réseau par exemple.
+Dans sa version la plus élémentaire qui soit, un réseau est composé de deux appareils reliés entre eux, par un câble réseau par exemple.
 
 Le point important là-dedans c'est qu’un appareil connecté au réseau doit posséder une **interface réseau**, un composant capable de communiquer c'est-à-dire d'envoyer et recevoir un signal.
 
@@ -23,32 +23,31 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 
 ---
 
-# Petite parenthèse
+## Petite parenthèse
 
-## Supercalculateur : un modèle peer-to-peer
+### Supercalculateur : un modèle peer-to-peer
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
-:class: twenty-five
+:class: thirty
 ```{image} media/cluster1.jpg
 ```
 ````
 
 ````{div}
-:class: twenty-five
+:class: thirty
 ```{image} media/cluster2.jpg
-```
-````
-````{div}
-:class: twenty-five
-```{iframe} https://www.youtube.com/embed/4r6frld1UNE?autoplay=1&mute=1&loop=1&controls=0&playlist=4r6frld1UNE
 ```
 ````
 
 ````{div}
-:class: twenty-five
+:class: rows thirty
+
+```{iframe} https://www.youtube.com/embed/4r6frld1UNE?autoplay=1&mute=1&loop=1&controls=0&playlist=4r6frld1UNE
+```
+
 ```{iframe} https://www.youtube.com/embed/90-kA3wYuoM?autoplay=1&mute=1&loop=1&controls=0&playlist=90-kA3wYuoM
 ```
 ````
@@ -57,7 +56,7 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 
 ---
 
-# High Performance Computing
+## High Performance Computing
 
 ````{div}
 :class: center
@@ -65,7 +64,7 @@ Diviser pour mieux régner
 ````
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: thirty
@@ -99,17 +98,23 @@ mais refermons la parenthèse, on n'est pas là pour parler de HPC mais de rése
 
 ---
 
-# Réseau
-
-## Différentes qualités
+## Différentes qualités du réseau
 
 La qualité du réseau, un petit truc qui a son importance suivant l'application 🚀
-<button onclick="plot_network()"> xxx no longer working - click me 📈 </button>
+
+<!-- <button onclick="plot_network()"> xxx no longer working - click me 📈 </button> 
 
 ````{div}
 :class: center
 <div id="plot_network"></div>
 ````
+-->
+
+Généralement on parle de trois qualités :
+
+- **Bande passante** : la quantité de données qui peut être transmise par unité de temps (en bits par seconde, bps)
+- **Latence** : le temps nécessaire pour qu'un paquet de données atteigne sa destination
+- **Fiabilité** : la probabilité que les données soient transmises sans erreur
 
 ````{div}
 :class: center
@@ -118,14 +123,10 @@ La qualité du réseau, un petit truc qui a son importance suivant l'application
 
 ---
 
-# Un réseau et c'est tout ?
-
----
-
-# Modèle OSI
+## Modèle OSI
 
 ``````{div}
-:class: cols
+:class: columns
 
 `````{div}
 :class: fifty
@@ -159,7 +160,7 @@ standardiser les communications<br> entre appareils sur un réseau
 
 ---
 
-# Adressage
+## Adressage
 
 ````{div}
 :class: center
@@ -197,7 +198,7 @@ lorsqu'on a besoin d'écrire l'adresse d'un réseau on écrit alors comme ceci l
 
 ---
 
-## Adresses IPv6
+### Adresses IPv6
 
 **en 2011** on prévoit **l'épuisement 💣 des adresses IP** disponibles !...
 
@@ -220,9 +221,9 @@ on en reparlera...
 
 ---
 
-# Interconnexion
+## Interconnexion
 
-## Réseau local
+### Réseau local
 
 ````{div}
 :class: center
@@ -233,7 +234,7 @@ on en reparlera...
 
 ---
 
-## Réseau distant
+### Réseau distant
 
 ````{div}
 :class: center
@@ -243,7 +244,7 @@ on en reparlera...
 
 ---
 
-# Pour résumer :
+## Pour résumer :
 
 ````{div}
 :class: center
@@ -274,10 +275,10 @@ gère trois éléments :
 ---
 (my-ip-address)=
 
-## (Au passage c'est quoi mon IP ?)
+## Au passage: c'est quoi mon IP ?
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: fourty
@@ -294,7 +295,7 @@ et je me rends dans le dossier `python/ip-address`
 `````
 
 `````{div}
-:class: cols
+:class: columns
 ````{div}
 :class: fitfy
 
@@ -318,7 +319,7 @@ ou pour demander à mon OS(*)
 `````
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: fifty
@@ -349,10 +350,10 @@ Outgoing IP: 10.1.1.15
 
 ---
 
-## le NAT (Network Address Translation)
+### le NAT (Network Address Translation)
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: sixty-five
@@ -390,7 +391,7 @@ les adresses privées réservées:
 
 ---
 
-# Les noms de domaines là-dedans !
+## Les noms de domaines là-dedans !
 
 Retenir les adresses IP c'est quand même pas super 🤯 !
 
@@ -413,10 +414,12 @@ Pour cela dans l'infrastructure d'Internet il y a un truc magique, le :
 
 En gros c'est le service qui fait l'association entre un nom de domaine et un adresse IP.
 
---
+---
+
+### Le DNS depuis le terminal
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: fifty

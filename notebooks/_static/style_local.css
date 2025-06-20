@@ -1,5 +1,22 @@
+/*
+ the right-hand-side toc made more compact
+ useful because this content is mostly made of slides
+ and so we use a large zoom level
+*/
+
+ul.text-sm.leading-6>li>a {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* --- */
+
 .center {
   text-align: center;
+
+  &>p {
+    margin-top: 0px;
+  }
 }
 
 hr.py-2.my-5.translate-y-2 {
@@ -69,10 +86,15 @@ button.copy-button {
   text-align: end;
 }
 
-.cols {
+.columns {
   display: flex;
   flex-wrap: no-wrap;
   justify-content: space-between;
+}
+
+.rows {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .bottom {

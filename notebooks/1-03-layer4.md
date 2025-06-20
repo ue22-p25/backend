@@ -12,11 +12,11 @@
 > d'un serveur A vers un client B et inversement.
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: thirty
-Différents protocole établis :
+Différents protocoles établis&nbsp;:
 
 - TCP
 - UDP
@@ -36,7 +36,7 @@ mais ne spécifie en rien le ***contenu*** de ces communications
 
 ---
 
-# Un serveur == une application ?
+## Un serveur == une application ?
 
 Connaitre l'IP du serveur ne vous permet pas encore de communiquer avec l'application qui se trouve sur ce serveur
 <br>
@@ -47,7 +47,7 @@ Connaitre l'IP du serveur ne vous permet pas encore de communiquer avec l'applic
 ````
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: seventy-five
@@ -76,10 +76,10 @@ port = porte d'entrée du service 🚪
 
 ---
 
-# Les ports standard
+## Les ports standard
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: fifty
@@ -113,9 +113,9 @@ et voici à quoi ressemble un paquet:
 
 ---
 
-# TCP/IP
+## TCP/IP
 
-## Principe
+### Principe
 
 ````{div}
 :class: center
@@ -138,10 +138,10 @@ Le principe du TCP est très simple et se décompose en trois étapes:
 
 ---
 
-## TCP/IP : open
+### TCP/IP : open
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: fourty
@@ -150,7 +150,7 @@ Le principe du TCP est très simple et se décompose en trois étapes:
 ````
 
 ````{div}
-:class: fifty
+:class: sixty
 La connexion d'un client à un serveur TCP se décompose en trois étapes
 
 ```{div}
@@ -160,7 +160,7 @@ ___three way handshake___
 
 de la manière suivante :
 
-- 1️⃣ Client : Hello le serveur tu m'entends ?
+- 1️⃣ Client : Hello le serveur tu m'entends&nbsp;?
   <br><br>
 - 2️⃣ Serveur : Oui je t'entends et toi ?
   <br><br>
@@ -172,10 +172,10 @@ de la manière suivante :
 
 ---
 
-## TCP/IP : close
+### TCP/IP : close
 
 `````{div}
-:class: cols
+:class: columns
 
 ````{div}
 :class: fourty
@@ -185,7 +185,7 @@ de la manière suivante :
 ````
 
 ````{div}
-:class: fifty
+:class: sixty
 Clotûre en 4 étapes
 <br><br>
 
@@ -201,7 +201,7 @@ Clotûre en 4 étapes
 
 ---
 
-# Regardons un peu en vrai comment ca marche
+## Regardons un peu en vrai comment ca marche
 
 ```{div}
 :class: center
@@ -210,27 +210,25 @@ allons voir le dossier `python/tcp` du cours
 
 ---
 
-# TCP un truc de riche 🤑
+## TCP un truc de riche 🤑
 
 Vous pouvez donc voir qu'avec cette approche
-<br><br>
 ````{div}
 :class: center
 ✅ la connexion est extrêmement fiable et il y a peu de chances d'avoir des loupés
 ````
-<br><br>
+
 En revanche cette fiabilité n'est pas gratuite 💰️
-<br><br>
 ````{div}
 :class: center
 ❌ elle s'accompagne d'un coût en terme d'échanges relativement élevé
 ````
-<br><br>
+
 C'est pour cela qu'il existe une alternative au TCP 😯
 
 ---
 
-# UDP
+## UDP
 
 Le protocole UDP (User Datagram Protocol) est complémentaire au protocole TCP. Créé par David Reed en 1980.
 

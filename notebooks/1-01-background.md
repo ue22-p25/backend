@@ -39,7 +39,7 @@ Un élève répond à un questionnaire de satisfaction en ligne et après la sou
 
 ---
 
-# 👩‍🍳 Les ingrédients nécessaires 👨‍🍳
+## 👩‍🍳 Les ingrédients nécessaires 👨‍🍳
 
 Des **applications** qui peuvent se **contacter**,
 <br><br> **échanger** des **données**
@@ -47,7 +47,7 @@ Des **applications** qui peuvent se **contacter**,
 
 ---
 
-# Dans ce cours
+## Dans ce cours
 
 On va essayer de répondre aux questions suivantes
 
@@ -64,7 +64,7 @@ On va essayer de répondre aux questions suivantes
 
 ---
 
-# Architecture
+## Architecture
 
 Pour faire collaborer des applications ensemble il existe plein de modèles, d'architectures différentes
 
@@ -78,23 +78,24 @@ On va regarder les plus classiques
 
 ---
 
-## Client-serveur
+### Client-serveur
 
 ```{image} media/client-server.svg
 ```
 
 ---
 
-## Architecture trois-tiers
+### Architecture trois-tiers
 
 ```{image} media/architecture-three-tiers.svg
 ```
 
 ---
 
-## Architecture pair à pair
+### Architecture pair à pair
 
 ```{image} media/peer-to-peer.svg
+:width: 60%
 ```
 
 Très à la mode à une époque où Netflix/Amazon Prime/... n'existaient pas (oui oui cette période est réelle 🤯)
@@ -106,7 +107,7 @@ Très à la mode à une époque où Netflix/Amazon Prime/... n'existaient pas (o
 
 ---
 
-# Le Web
+## Le Web
 
 ```{div}
 :class: center
@@ -119,7 +120,7 @@ Juste un gros réseau
 
 ---
 
-# Le cloud
+## Le cloud
 
 ````{div}
 :class: center

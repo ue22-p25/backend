@@ -21,7 +21,7 @@ A votre avis c'est tout bon du coup ou on a besoin d'un truc en plus ?
 🔎 Regardons sur un exemple concret 🔎
 ````
 
-.cols[
+.columns[
 .seventy[
 ```{div}
 :class: center
@@ -40,7 +40,7 @@ le dossier `python/tcp-awkward-api`
 
 ---
 
-# Un verrou 🔒
+## Un verrou 🔒
 
 ````{div}
 :class: center
@@ -62,7 +62,7 @@ Un peu de standardisation ne ferait pas de mal ...
 
 ---
 
-# Au passage : tranfert de données ...
+## Au passage : tranfert de données ...
 
 ````{div}
 :class: center
@@ -89,7 +89,7 @@ Nom, Prénom, Date de naissance, nombre d'enfants, ...
 
 ---
 
-# Sérialisation JSON
+## Sérialisation JSON
 
 ````{div}
 :class: center
@@ -100,7 +100,7 @@ Nom, Prénom, Date de naissance, nombre d'enfants, ...
 
 Via Python 🐍 c'est facile !
 
-.cols[
+.columns[
 .fifty[
 
 ```python
@@ -124,7 +124,7 @@ data = json.loads(serialized)
 
 ---
 
-# Haut niveau : la couche 7 du modèle OSI
+## Haut niveau : la couche 7 du modèle OSI
 
 C'est là que les choses concrètes commencent 🥳
 <br><br><br>
@@ -142,7 +142,7 @@ Comment se font les communications entre le client et l'application
 format des message, contenu attendu, ...
 ````
 
-.cols[
+.columns[
 .fifty[
 On parle de protocole, comme par exemple:
 
