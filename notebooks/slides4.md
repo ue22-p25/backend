@@ -102,8 +102,8 @@ Greatly reduces the risk of compromised accounts
 ## 🔑 Public Key Infrastructure (PKI)
 
 .columns[
-  .sixty[
-
+  ````{div}
+:class: sixty
 - each browser and OS comes with a list of trusted CAs
   - CA = Certificate Authority
   - in practical terms, their public key
@@ -116,13 +116,14 @@ Greatly reduces the risk of compromised accounts
 - like always, signing is based on a public/private key pair
   - the CA signs the certificate with its private key
   - and the browser verifies it with the CA's public key
-  ]
+````
 
-.fourty[
-  ```{image} media/trust-chain.excalidraw.svg
+````{div}
+:class: fourty
+```{image} media/trust-chain.excalidraw.svg
 :width: 80%
 ```
-]
+````
 ]
 
 .footnote.small[
@@ -246,7 +247,8 @@ particularly as it is a standard and you can use it on any cloud provider
 ## Illustration on Scaleway
 
 .columns[
-.sixty[
+````{div}
+:class: sixty
 - web console
 - docs & the API
 - the CLI
@@ -255,16 +257,17 @@ particularly as it is a standard and you can use it on any cloud provider
   - prometheus
   - grafana
   - graphQL
-]
-.fourty[
-  ```{image} media/scaleway-instances.png
+````
+````{div}
+:class: fourty
+```{image} media/scaleway-instances.png
 :width: 100%
 ```
 
   ```{image} media/scaleway-grafana.png
 :width: 100%
 ```
-]
+````
 ]
 
 ---
@@ -450,7 +453,8 @@ and used to agree on lightweight symmetric keys for the rest of the session
 a method for two parties to establish a shared secret over an insecure channel
 
 .columns[
-  .sixty[
+  ````{div}
+:class: sixty
 based on simpler math:
 - choose a large prime *p* and a base *g* for everyone to see
 - then Alice and Bob choose their own private keys *a* and *b*
@@ -460,12 +464,13 @@ based on simpler math:
 usage:  
 - agree on a shared (symmetric) secret key,  
   e.g. once the TLS handshake is done
-  ]
-  .fourty[
-  ```{image} media/diffie-hellman.png
+````
+  ````{div}
+:class: fourty
+```{image} media/diffie-hellman.png
 :width: 100%
 ```
-  ]
+````
 ]
 
 .footnote.small[image from https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange]

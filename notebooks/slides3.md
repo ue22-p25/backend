@@ -8,16 +8,18 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 ````
 
 .columns[
-.fourty[
+````{div}
+:class: fourty
 ````{div}
 :class: center
 ```{image} media/osi-model.svg
 :width: 70%
 ```
 ````
-]
+````
 
-.fifty[
+````{div}
+:class: fifty
 ```{image} media/ip-address.svg" width="30%"> <img src="media/http-request.svg
 :width: 40%
 ```
@@ -25,7 +27,7 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 ```{image} media/server-app.svg
 :width: 400px
 ```
-]
+````
 
 .twenty[
   <br><br>
@@ -66,7 +68,8 @@ Frameworks, Librairies, même chose ? <br>
 --
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ````{div}
 :class: center
 <b> Librairies </b>
@@ -83,10 +86,10 @@ Par exemple `NumPy` en Python 🐍 est une librairie
 ```{image} media/code-with-library.svg" height="180px
 ```
 ````
-
-]
+````
 .vertbar[]
-.fifty[
+````{div}
+:class: fifty
 ````{div}
 :class: center
 <b> Framework </b>
@@ -102,8 +105,7 @@ Un code à trou 🕳️ en quelque sorte - comme `arcade`
 :class: center
 <img src="media/code-with-framework.svg" height="180px" >
 ````
-
-]
+````
 ]
 
 ---
@@ -116,8 +118,8 @@ Un code à trou 🕳️ en quelque sorte - comme `arcade`
 ````
 
 .columns[
-.fifty[
-
+````{div}
+:class: fifty
 ````{div}
 :class: center
 Framework frontend
@@ -131,11 +133,10 @@ Framework frontend
 ````
 
 Focalisé sur le développement d'application côté client.
-
-]
+````
 .vertbar[]
-.fifty[
-
+````{div}
+:class: fifty
 ````{div}
 :class: center
 Framework backend
@@ -149,8 +150,7 @@ Framework backend
 ````
 
 Focalisé sur le développement côté serveur
-
-]
+````
 ]
 
 Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
@@ -251,7 +251,8 @@ une interface graphique
 Deux approches :
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ````{div}
 :class: center
 ***Old school***
@@ -265,10 +266,10 @@ Utilisation de librairies graphiques et développement d'un client lourd
 :width: 50%
 ```
 ````
-
-]
+````
 .vertbar[]
-.fifty[
+````{div}
+:class: fifty
 ````{div}
 :class: center
 ***New age***
@@ -282,8 +283,7 @@ Utilisation du navigateur
 :width: 80%
 ```
 ````
-
-]
+````
 ]
 
 <div style="transform: rotate(40deg); opacity: 0.9;position: absolute; right: 10%; top: 25%; border: 1px solid darkblue; border-radius: 10px; padding: 2pt 10pt; background-color: aliceblue;">
@@ -320,21 +320,23 @@ c'est l'avantage de Flask par rapport à Django <br> qui nécessite un setup plu
 # Minimal Working Example
 
 .columns[
-.fifty[
-  - Step 1️⃣ :
+````{div}
+:class: fifty
+- Step 1️⃣ :
 
 ```python
 from flask import Flask
 ```
-]
+````
 
-.fifty[
+````{div}
+:class: fifty
 - Step 2️⃣
 
 ```python
 app = Flask("Appli de ouf")
 ```
-]
+````
 ]
 
 Ensuite tout repose sur une syntaxe un peu particulière :
@@ -350,16 +352,16 @@ def la_fonction_correspondante():
 
 Pour finir :
 .columns[
-.fifty[
-
+````{div}
+:class: fifty
 ```python
 app.run(debug=True, port=3001)
 ```
-
-]
-.fifty[
+````
+````{div}
+:class: fifty
 `debug=True` permet d'activer du hot reloading
-]
+````
 ]
 
 ---
@@ -367,13 +369,13 @@ app.run(debug=True, port=3001)
 # Pour ceux qui auraient la flemme !
 
 .columns[
-.sixty[
+````{div}
+:class: sixty
 ````{div}
 :class: center
 <iframe src="https://giphy.com/embed/4KkSbPnZ5Skec" width="471" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 ````
-
-]
+````
 .fourty[
 [http://bit.ly/3Z5C5k7](http://bit.ly/3Z5C5k7)
 
@@ -393,8 +395,8 @@ app.run(debug=True, port=3001)
 Si on veut pour une url donnée renvoyer, non pas une chaîne, mais un fichier HTML qui lui même peut nécessiter des CSS/JS, il va falloir une organisation un peu particulière
 
 .columns[
-.fifty[
-
+````{div}
+:class: fifty
 ```bash
 .
 ├── app.py
@@ -406,10 +408,9 @@ Si on veut pour une url donnée renvoyer, non pas une chaîne, mais un fichier H
 └── templates
     └── wheel.html
 ```
-
-]
-.fifty[
-
+````
+````{div}
+:class: fifty
 ```python
 from flask import render_template
 ```
@@ -419,8 +420,7 @@ from flask import render_template
 def index():
   return render_template("wheel.html")
 ```
-
-]
+````
 ]
 
 En revanche tous les fichiers contenus dans le dossier `static` seront
@@ -447,8 +447,8 @@ Flask a tout prévu
 ````
 
 .columns[
-.sixty[
-
+````{div}
+:class: sixty
 ```python
 from flask import request
 
@@ -458,11 +458,11 @@ def handler():
   age = request.args.get("age")
   return f"<h1> Hello {name} ! Tu as vraiment {age} ans ? </h1>"
 ```
-
-]
-.fourty[
+````
+````{div}
+:class: fourty
 ⚠️ Si l'argument n'existe pas la fonction `get` retourne `None`
-]
+````
 ]
 
 ````{div}
@@ -484,25 +484,24 @@ Possibilité offerte par Flask de définir des paramètres au sein même d'une U
 ````
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 Possibilité de typer les paramètres :
 
 - `string` : pour tout texte sans slash
 - `int` : valeur entière positive
 - `float` : valeur flottante positive
 - `path` : un string qui peut contenir un slash `/`
-
-]
-.fifty[
-
+````
+````{div}
+:class: fifty
 ```python
 @app.route("/home/<int:user_id>")
 def home_uid(user_id):
     ## do something according to user_id value
     return f"we were passed {user_id}"
 ```
-
-]
+````
 ]
 
 .footnote.small[
@@ -917,7 +916,8 @@ class LoginForm(FlaskForm):
 # Les types input
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 Les différents types prédéfinis dans `WTForm` sont les suivants :
 
 - `BooleanField` : représente un booléen
@@ -931,9 +931,9 @@ Les différents types prédéfinis dans `WTForm` sont les suivants :
 - `PasswordField` : champ pour le mot de passe (affiche des étoiles)
 - `TextAreaField` : champ de saisie de texte libre
 - `SubmitField` : le bouton de soumission du formulaire
-  ]
-  .fifty[
-
+````
+  ````{div}
+:class: fifty
 Possibilité d'ajouter des "validateurs"
 
 - `DataRequired` : champs obligatoire
@@ -941,8 +941,7 @@ Possibilité d'ajouter des "validateurs"
 - `EqualTo` : test d'égalité
 - `NumberRange` : valeur numérique dans un intervalle
 - `Optional` : champs optionnel
-
-]
+````
 ]
 
 --
@@ -956,8 +955,8 @@ Possibilité d'ajouter des "validateurs"
 # Utilisation en lien avec les templates
 
 .columns[
-.fifty[
-
+````{div}
+:class: fifty
 ```html
 <html>
   <head>
@@ -981,8 +980,7 @@ Possibilité d'ajouter des "validateurs"
   </body>
 </html>
 ```
-
-]
+````
 .fifty[
 La méthode `form.hidden_tag` va générer une ligne du genre :
 
@@ -1025,13 +1023,12 @@ def login():
     return render_template("login.html", form=form)
 ```
 .columns[
-.sixty[
-
+````{div}
+:class: sixty
 Remarques
 - `login.html` doit être dans un répertoire `/templates`
 - son extension doit être `.html`, `.htm`, `.xml`, `.xhtml`, ou `.svg`
-
-  ]
+````
 
 .fourty[
 ```{div}
@@ -1050,8 +1047,8 @@ Remarques
 # Un petit bonus : les Cookies 🍪
 
 .columns[
-.fifty[
-
+````{div}
+:class: fifty
 ```python
 @app.route('/route/install/cookie')
 def handler():
@@ -1061,18 +1058,16 @@ def handler():
 
   return resp
 ```
-
-]
-.fifty[
-
+````
+````{div}
+:class: fifty
 ```python
 @app.route('/route/read/cookie')
 def handler():
    name = request.cookies.get('cookieName')
    # ...
 ```
-
-]
+````
 ]
 
 Par exemple, nombre de fois qu'on visite une page !
@@ -1156,7 +1151,8 @@ def index():
 
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 Petit rappel au cas où ...
 <br><br>
 ````{div}
@@ -1165,15 +1161,16 @@ connexion **bidirectionnelle** entre un client et le serveur
 <br><br>on parle de connexion *full-duplex*
 <br><br>Permet au serveur de ***pousser*** des informations vers le client sans que ce dernier n'ait rien demandé 😲
 ````
-]
-.fifty[
+````
+````{div}
+:class: fifty
 ````{div}
 :class: center
 ```{image} media/timeline-ws.svg
 :width: 70%
 ```
 ````
-]
+````
 ]
 
 ---
@@ -1243,8 +1240,8 @@ pour une gestion plus fine des destinataires
 ]
 ]
 
-.fifty[
-
+````{div}
+:class: fifty
 ```js
 let socket = io.connect(
     "http://" + document.domain + ":" + location.port);
@@ -1271,8 +1268,7 @@ socket.on("the_response", (msg) => {
   }
 });
 ```
-
-]
+````
 
 ]
 

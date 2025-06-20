@@ -101,25 +101,24 @@ Nom, Prénom, Date de naissance, nombre d'enfants, ...
 Via Python 🐍 c'est facile !
 
 .columns[
-.fifty[
-
+````{div}
+:class: fifty
 ```python
 import json
 data = dict(name="jean", age=1)
 serialized = json.dumps(data)
 # serialized is now a string
 ```
-
-]
-.fifty[
-
+````
+````{div}
+:class: fifty
 ```python
 import json
 serialized = '{"name": "jean", "age": 1}'
 data = json.loads(serialized)
 # data is now a dictionary
 ```
-]
+````
 ]
 
 ---
@@ -143,17 +142,18 @@ format des message, contenu attendu, ...
 ````
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 On parle de protocole, comme par exemple:
 
 - Transfert de fichiers 📂 : (S)FTP, rsync
 - Messagerie ✉️ : SMTP, POP, IMAP
 - Sessions distantes : telnet, SSH
 - et
-]
-.fifty[
-
-  <img src="https://media1.tenor.com/m/qRpNbT_IhBAAAAAd/appurajosh-appu.gif" height="200px">
-]
+````
+````{div}
+:class: fifty
+<img src="https://media1.tenor.com/m/qRpNbT_IhBAAAAAd/appurajosh-appu.gif" height="200px">
+````
 ]
 

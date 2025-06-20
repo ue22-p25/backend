@@ -391,22 +391,24 @@ Utilisation du parallélisme de tâches processus/thread et/ou programmation asy
 ## Et au fait il répond quoi le serveur à GET ?
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ````{div}
 :class: center
 ```{image} media/http-request.svg
 :width: 100%
 ```
 ````
-]
-.fifty[
+````
+````{div}
+:class: fifty
 ````{div}
 :class: center
 ```{image} media/response-format.svg
 :width: 100%
 ```
 ````
-]
+````
 ]
 
 <br><br>
@@ -560,7 +562,8 @@ Frameworks, Librairies, même chose ? <br>
 --
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ````{div}
 :class: center
 <b> Librairies </b>
@@ -575,10 +578,10 @@ Par exemple `NumPy` en Python 🐍 est une librairie
 ```{image} media/code-with-library.svg
 ```
 ````
-
-]
+````
 .vertbar[]
-.fifty[
+````{div}
+:class: fifty
 ````{div}
 :class: center
 <b> Framework </b>
@@ -593,8 +596,7 @@ Un code à trou 🕳️ en quelque sorte
 ```{image} media/code-with-framework.svg
 ```
 ````
-
-]
+````
 ]
 
 ---
@@ -607,8 +609,8 @@ Un code à trou 🕳️ en quelque sorte
 ````
 
 .columns[
-.fifty[
-
+````{div}
+:class: fifty
 ````{div}
 :class: center
 Framework frontend
@@ -622,11 +624,10 @@ Framework frontend
 ````
 
 Focalisé sur le développement d'application côté client
-
-]
+````
 .vertbar[]
-.fifty[
-
+````{div}
+:class: fifty
 ````{div}
 :class: center
 Framework backend
@@ -640,8 +641,7 @@ Framework backend
 ````
 
 Focalisé sur le développement côté serveur
-
-]
+````
 ]
 
 ---
@@ -809,20 +809,22 @@ L'api du backend doit **impérativement** respecter les routes documentées dans
 
 - une route peut prendre un paramètre, éventuellement typé
   .columns[
-  .fifty[
-      ```pythona
+  ````{div}
+:class: fifty
+```python
   @app.route('/hello/<name>')
       def hello(name):
           return f'Hello, {name}!'
       ```
-  ]
-  .fifty[
+````
+  ````{div}
+:class: fifty
 ```python
   @app.route('/hello/<int:id>')
       def hello(id):
           return f'Hello, {id**2}!'
 ```
-  ]
+````
   ]
 
 - pour raccourcir le code, une route peut retourner des types variés, qui sont traités comme ceci :
@@ -929,29 +931,33 @@ pour garantir la sécurité de l'utilisateur
 ## HTTP un truc pas safe ?
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ***Alors oui le HTTP de base n'est pas sécurisé***
-]
-.fifty[
+````
+````{div}
+:class: fifty
 ````{div}
 :class: center
 <iframe src="https://giphy.com/embed/1FMaabePDEfgk" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 ````
-]
+````
 ]
 
 --
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ````{div}
 :class: center
 <iframe src="https://giphy.com/embed/dZA4cLPCvSs1s5aCm7" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 ````
-  ]
-  .fifty[
-    ***Mais ce n'est pas très grave dans pleins de cas***
-]
+````
+  ````{div}
+:class: fifty
+***Mais ce n'est pas très grave dans pleins de cas***
+````
 ]
 
 ---
@@ -961,18 +967,18 @@ pour garantir la sécurité de l'utilisateur
 <br>
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ```{image} media/http-not-safe.svg
 :width: 100%
 ```
-]
-.fifty[
-
+````
+````{div}
+:class: fifty
 ```{image} media/https-safe.svg
 :width: 100%
 ```
-
-]
+````
 ]
 
 ````{div}
@@ -1056,16 +1062,18 @@ Un 🍪 HTTP c'est une donnée qu’un serveur envoie à un client
 ````
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ```{image} media/cookie1.svg
 :width: 100%
 ```
-]
-.fifty[
+````
+````{div}
+:class: fifty
 ```{image} media/cookie2.svg
 :width: 100%
 ```
-]
+````
 ]
 
 ````{div}
@@ -1249,16 +1257,18 @@ Fonctionnement de HTTP très rigide: orienté **question/réponse**
 oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ```{image} media/limitation1.svg
 :width: 100%
 ```
-]
-.fifty[
+````
+````{div}
+:class: fifty
 ```{image} media/limitation2.svg
 :width: 100%
 ```
-]
+````
 ]
 
 ]
@@ -1275,7 +1285,8 @@ En 2011, révolution: arrivée de Websocket 🤯
 ````
 
 .columns[
-.sixty[
+````{div}
+:class: sixty
 <br><br>
 ````{div}
 :class: center
@@ -1284,15 +1295,16 @@ connexion **bidirectionnelle** entre un client et le serveur
 <br><br>permet au serveur de ***pousser*** des informations vers le client sans que ce dernier n'ait rien demandé 😲
 ````
 son petit nom: `ws` (ou `wss` pour le sécurisé)
-]
-.fourty[
+````
+````{div}
+:class: fourty
 ````{div}
 :class: center
 ```{image} media/timeline-ws.svg
 :width: 70%
 ```
 ````
-]
+````
 ]
 
 ---
@@ -1328,8 +1340,8 @@ Et à chaque évènement on va venir associer une action
 Voyez dans le dossier `python/websockets`:
 
 .columns[
-.fifty[
-
+````{div}
+:class: fifty
 le protocole "ping-pong" (en fait "ping-gnip"):
 
 - `ws-server.py` : un serveur WebSocket en Python
@@ -1338,9 +1350,10 @@ le protocole "ping-pong" (en fait "ping-gnip"):
 
 ça marche mais ça n'a pas grand intérêt  
 disons que ça a le mérite de montrer comment ça fonctionne
-]
+````
 
-.fifty[
+````{div}
+:class: fifty
 le protocole "countdown", même logique:
 
 - `python ws-server2.py` pour le serveur
@@ -1348,7 +1361,8 @@ le protocole "countdown", même logique:
 - `node ws-client2.js 3` pareil mais en JS
 
 cette fois c'est plus intéressant, le client **envoie au serveur un nombre de
-secondes**, et le serveur répond en décomptant jusqu'à 0 ] ]
+secondes**, et le serveur répond en décomptant jusqu'à 0
+```` ]
 
 
 .footnote[
@@ -1385,18 +1399,20 @@ C'est lié à la programmation asynchrone. Pour plus de détails je vous encoura
 ## In the next episode
 
 .columns[
-.fifty[
+````{div}
+:class: fifty
 ````{div}
 :class: center
 <iframe src="https://giphy.com/embed/xTiTnBdvZgewvjTBAs" width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 ````
-]
-.fifty[
+````
+````{div}
+:class: fifty
 ````{div}
 :class: center
 <iframe src="https://giphy.com/embed/RbSmVaVGptW03Wjw3a" width="480" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 ````
-]
+````
 ]
 
 ````{div}
