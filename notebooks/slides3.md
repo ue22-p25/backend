@@ -11,19 +11,27 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 .fourty[
 ````{div}
 :class: center
-<img src="media/osi-model.svg" width="70%">
+```{image} media/osi-model.svg
+:width: 70%
+```
 ````
 ]
 
 .fifty[
-<img src="media/ip-address.svg" width="30%"> <img src="media/http-request.svg" width="40%">
+```{image} media/ip-address.svg" width="30%"> <img src="media/http-request.svg
+:width: 40%
+```
 
-<img src="media/server-app.svg" width="400px">
+```{image} media/server-app.svg
+:width: 400px
+```
 ]
 
 .twenty[
   <br><br>
-<img src="media/logos/lets-encrypt.svg" width="150px">
+```{image} media/logos/lets-encrypt.svg
+:width: 150px
+```
 <p style="font-size: 4rem"> 🍪 </p>
 ]
 ]
@@ -72,7 +80,8 @@ Par exemple `NumPy` en Python 🐍 est une librairie
 
 ````{div}
 :class: center
-<img src="media/code-with-library.svg" height="180px">
+```{image} media/code-with-library.svg" height="180px
+```
 ````
 
 ]
@@ -116,7 +125,9 @@ Framework frontend
 
 ````{div}
 :class: center
-<img src="media/framework_frontend.png" width=50%>
+```{image} media/framework_frontend.png
+:width: 50%
+```
 ````
 
 Focalisé sur le développement d'application côté client.
@@ -132,7 +143,9 @@ Framework backend
 
 ````{div}
 :class: center
-<img src="media/framework_backend.png" width=100%>
+```{image} media/framework_backend.png
+:width: 100%
+```
 ````
 
 Focalisé sur le développement côté serveur
@@ -148,7 +161,9 @@ Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
 
 ````{div}
 :class: center
-<img src="media/framework-routes.svg" width="65%">
+```{image} media/framework-routes.svg
+:width: 65%
+```
 ````
 
 À cela un framework complet ajoute des fonctionnalités de :
@@ -166,7 +181,9 @@ Micro-framework Python 🐍 développé depuis 2010.
 <br><br>
 ````{div}
 :class: center
-<img src="media/logos/logo-flask.svg" width="35%">
+```{image} media/logos/logo-flask.svg
+:width: 35%
+```
 ````
 <br><br>
 🚧 Micro-framework ne veut pas dire pas utilisable sur des gros projets ⚠️
@@ -196,7 +213,9 @@ donc on élimine tout ce qui n'est pas à base Python
 ````{div}
 :class: center
 <figure>
-<img src="media/web_framework_survey.png" width="70%"/><br>
+```{image} media/web_framework_survey.png
+:width: "70%"/><br
+```
 <label style="font-size: x-small"> Source: <a href="https://www.jetbrains.com/lp/devecosystem-2022/python/">https://www.jetbrains.com/lp/devecosystem-2022/python/</a>
 </figure>
 ````
@@ -242,7 +261,9 @@ Utilisation de librairies graphiques et développement d'un client lourd
 
 ````{div}
 :class: center
-<img src="media/old-school.svg" width=50%>
+```{image} media/old-school.svg
+:width: 50%
+```
 ````
 
 ]
@@ -257,7 +278,9 @@ Utilisation du navigateur
 
 ````{div}
 :class: center
-<img src="media/new-age.svg" width=80%>
+```{image} media/new-age.svg
+:width: 80%
+```
 ````
 
 ]
@@ -356,7 +379,9 @@ app.run(debug=True, port=3001)
 
 ````{div}
 :class: center
-<img src="media/qrcode/flask_sandbox.png" width="60%">
+```{image} media/qrcode/flask_sandbox.png
+:width: 60%
+```
 ````
 ]
 ]
@@ -409,7 +434,9 @@ En revanche tous les fichiers contenus dans le dossier `static` seront
 
 ````{div}
 :class: center
-<img src="media/http-get-arguments.svg" width="80%">
+```{image} media/http-get-arguments.svg
+:width: 80%
+```
 ````
 
 Besoin de récupérer dans la fonction `handler` la requête et donc ses arguments 🤔
@@ -451,7 +478,9 @@ Possibilité offerte par Flask de définir des paramètres au sein même d'une U
 
 ````{div}
 :class: center
-<img src="media/flask-route-param.svg" width=70%>
+```{image} media/flask-route-param.svg
+:width: 70%
+```
 ````
 
 .columns[
@@ -499,7 +528,9 @@ Possibilité pour les deux d'ajouter un paramètre `n` par exemple `?n=10` pour 
 
 ````{div}
 :class: center
-<img src="media/qrcode/flask_random_api.png" width="20%">
+```{image} media/qrcode/flask_random_api.png
+:width: 20%
+```
 ````
 
 ---
@@ -517,7 +548,9 @@ Il s'agit là des principaux types de requêtes mais il en existe d'autres, pour
 
 ````{div}
 :class: center
-<img src="media/api_img.jpg" width="40%">
+```{image} media/api_img.jpg
+:width: 40%
+```
 ````
 
 .footnote[Image from Jérémy Mésière, Architecte Middleware chez Manutan]
@@ -577,7 +610,9 @@ Plusieurs méthodes à disposition :
 
 [http://bit.ly/40ly786](http://bit.ly/40ly786)
 
-<img src="media/qrcode/flask_post.png" width="20%">
+```{image} media/qrcode/flask_post.png
+:width: 20%
+```
 ```
 
 ---
@@ -632,7 +667,9 @@ Pour le cas de pages dynamiques deux approches existent
 
 ````{div}
 :class: center
-<img src="media/qrcode/flask_ssr_vs_csr.png" width="30%">
+```{image} media/qrcode/flask_ssr_vs_csr.png
+:width: 30%
+```
 ````
 
 Il faut être curieux et ouvrir l'onglet "Network" des outils de développement du navigateur !
@@ -643,7 +680,9 @@ Il faut être curieux et ouvrir l'onglet "Network" des outils de développement 
 
 ````{div}
 :class: center
-<img src="media/csr.svg" width=70%>
+```{image} media/csr.svg
+:width: 70%
+```
 ````
 
 ---
@@ -652,7 +691,9 @@ Il faut être curieux et ouvrir l'onglet "Network" des outils de développement 
 
 ````{div}
 :class: center
-<img src="media/ssr.svg" width=70%>
+```{image} media/ssr.svg
+:width: 70%
+```
 ````
 
 ````{div}
@@ -668,7 +709,9 @@ Mécanisme de génération de page HTML à partir d'un modèle et de données.
 
 ````{div}
 :class: center
-<img src="media/template-engine.svg" width="40%">
+```{image} media/template-engine.svg
+:width: 40%
+```
 ````
 
 Plusieurs techno/solutions :
@@ -995,7 +1038,9 @@ Remarques
 :class: center
 [http://bit.ly/3JyTBb2](http://bit.ly/3JyTBb2)
 
-<img src="media/qrcode/flask_form.png" width="20%">
+```{image} media/qrcode/flask_form.png
+:width: 20%
+```
 ```
 ]
 ]
@@ -1037,7 +1082,9 @@ Par exemple, nombre de fois qu'on visite une page !
 :class: center
 [http://bit.ly/408GbcF](http://bit.ly/408GbcF)
 
-<img src="media/qrcode/flask_cookie.png" width="20%">
+```{image} media/qrcode/flask_cookie.png
+:width: 20%
+```
 ```
 
 ---
@@ -1098,7 +1145,9 @@ def index():
 
 <a href="http://bit.ly/3JYyboX">http://bit.ly/3JYyboX</a>
 <br>
-<img src="media/qrcode/flask_session_demo.png" width="200px">
+```{image} media/qrcode/flask_session_demo.png
+:width: 200px
+```
 </div>
 
 ---
@@ -1120,7 +1169,9 @@ connexion **bidirectionnelle** entre un client et le serveur
 .fifty[
 ````{div}
 :class: center
-<img src="media/timeline-ws.svg" width="70%">
+```{image} media/timeline-ws.svg
+:width: 70%
+```
 ````
 ]
 ]
@@ -1185,7 +1236,9 @@ pour une gestion plus fine des destinataires
 📥️ 📤️
 <http://bit.ly/3yVAEdt> 
 
-<img src="media/qrcode/flask_socketio.png" width="150px">
+```{image} media/qrcode/flask_socketio.png
+:width: 150px
+```
 ````
 ]
 ]

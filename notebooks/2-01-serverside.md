@@ -1,6 +1,5 @@
 # Côté Serveur !
 
-
 ## Récap de la dernière fois
 
 ````{div}
@@ -8,56 +7,52 @@
 Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ...
 ````
 
-.columns[
-.fifty[
+`````{div}
+:class: columns
+
 ````{div}
-:class: center
-<img src="media/osi-model.svg" width="60%">
+:class: fifty center
+```{image} media/osi-model.svg
+```
 ````
-]
-.fifty[
+
+````{div}
+:class: fifty center
 Un modèle OSI en 7 couches
 
-````{div}
-:class: center
-<img src="media/ip-address.svg" width="40%">
-````
+```{image} media/ip-address.svg
+:width: 40%
+```
+<br>
 
 Un protocole HTTP(S) pour le web
-
-````{div}
+```{image} media/http-request.svg
 :class: center
-<img src="media/http-request.svg" width="60%">
-````
+```
 
-]
-]
+`````
 
 ---
 
-# Quel est le rôle du serveur ?
+## Quel est le rôle du serveur ?
 
 ````{div}
 :class: center
-<img src="media/client-server.svg" width="60%">
+```{image} media/client-server.svg
+:width: 60%
+```
 ````
-
---
 
 ````{div}
 :class: center
 🥱 Attendre et attendre et attendre ... 🥱
 ````
 
---
-
 Et de temps en temps 🥳 il doit traiter une requête !
 
 ---
 
-class: center, middle
-
-# Serveur et serveur deux choses différentes
+## Serveur et serveur deux choses différentes
 
 **_Attention_** il y a deux significations à serveur ...
 
@@ -68,13 +63,13 @@ class: center, middle
 
 ---
 
-# Serveur et serveur deux choses différentes
-
-## Le serveur hardware
+### Le serveur hardware
 
 ````{div}
 :class: center
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1634&q=80" width="50%">
+```{image} https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1634&q=80
+:width: 50%
+```
 ````
 
 ````{div}
@@ -84,40 +79,42 @@ C'est la machine **physique ou virtuelle** connectée au réseau qui va recevoir
 
 ---
 
-# Serveur et serveur deux choses différentes
-
-## Le serveur hardware : différents types
+### Le serveur hardware : différents types
 
 ````{div}
 :class: center
 Serveur physique vs serveur virtuel (VPS)
 ````
 
-<div style="position: absolute; bottom: 15%; left: 15%">
-<img src="media/bare-metal.svg" width="80%">
-</div>
+`````{div}
+:class: columns
 
---
+````{div}
+:class: fifty center
+```{image} media/bare-metal.svg
+```
+````
 
-<div style="position: absolute; bottom: 15%; right: 10%">
-<img src="media/vps.svg" width="80%">
-</div>
+````{div}
+:class: fifty center
+```{image} media/vps.svg
+```
+````
+`````
 
---
-
-<div style="position: absolute; bottom: 10%; left: 20%">
 Différentes solutions : On Premise vs Cloud (OVH, Azure, GCP, AWS, ... )
-</div>
 
 ---
 
-# Serveur et serveur deux choses différentes
+## Serveur et serveur deux choses différentes
 
-## Le serveur "software"
+### Le serveur "software"
 
 ````{div}
 :class: center
-<img src="media/server-app.svg" width="65%">
+```{image} media/server-app.svg
+:width: 65%
+```
 ````
 
 C'est l'application (au sens logiciel) qui va s'occuper de
@@ -129,11 +126,14 @@ C'est l'application (au sens logiciel) qui va s'occuper de
 
 Différentes solutions : Nginx (33%), Apache (27%), LiteSpeed (15%), Node.js(4%), IIS (4%), ...
 
-.footnote[Source : [https://w3techs.com/technologies/overview/web_server](https://w3techs.com/technologies/overview/web_server) ]
+````{div}
+:class: smaller
+Source : [https://w3techs.com/technologies/overview/web_server](https://w3techs.com/technologies/overview/web_server)
+````
 
 ---
 
-# Héberger plusieurs serveurs HTTP(S) sur un même serveur physique ?
+## Héberger plusieurs serveurs HTTP(S) sur un même serveur physique ?
 
 ````{div}
 :class: center
@@ -142,39 +142,53 @@ OUI 🎯 il suffit de se partager le port 80 🤝
 
 ````{div}
 :class: center
-<img src="media/virtual-host.svg" width="80%">
+```{image} media/virtual-host.svg
+:width: 80%
+```
 ````
-
---
 
 ````{div}
 :class: center
 Il suffit de configurer au niveau du serveur HTTP des **Virtual Host**
 ````
 
---
-
-<div style="position: absolute; top: 38%; left:15%">
-<img src="media/servername-mines.png" width="40%">
-</div>
-
-<div style="position: absolute; top: 38%; left:55%">
-<img src="media/servername-cpp.png" width="70%">
-</div>
-
-````{div}
-:class: center
-le "routage" entre les deux sites se fait au niveau du Header `Host:` de la requête HTTP
-````
 ---
 
-# Un mot sur le serverless
+### virtual hosts
+
+Exemple de config nginx avec deux sites différents dans le même serveur physique
+
+
+`````{div}
+:class: columns
+
+````{div}
+:class: fifty center
+```{image} media/servername-mines.png
+:width: 40%
+```
+````
+
+````{div}
+:class: fifty center
+```{image} media/servername-cpp.png
+:width: 70%
+```
+````
+`````
 
 ````{div}
 :class: center
-Un serveur traditionnel passe son temps à attendre ...
+le "routage" entre les deux sites se fait sur la base du Header `Host:` de la requête HTTP
+````
 
-🥱
+---
+
+## Un mot sur le serverless
+
+````{div}
+:class: center
+Un serveur traditionnel passe son temps à attendre ... 🥱
 ````
 
 ````{div}
@@ -184,33 +198,37 @@ Un serveur traditionnel passe son temps à attendre ...
 
 Le principe est de découper le traitement en petites **tâches indépendantes** (fonctions) qui seront exécutées **à la demande**
 
-.columns[
-.fifty[
+`````{div}
+:class: columns
 
-## Avantages
+````{div}
+:class: fifty center
+
+### Avantages
 
 - Pas de gestion de serveur
 - Pas de coût fixe
 - Évolutif
+````
 
-]
-.fifty[
+````{div}
+:class: fifty center
 
-## Inconvénients/Difficultés
+### Inconvénients/Difficultés
 
 - Temps de démarrage
 - Coût à l'usage
 - Difficulté de débogage
 - Stateless
+````
 
-]
-]
+`````
 
 Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation des ressources
 
 ---
 
-# Tous les serveurs font la même chose ?
+## Tous les serveurs font la même chose ?
 
 **Deux applications**
 
@@ -219,136 +237,148 @@ Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation 
 Sites statiques vs dynamiques
 ````
 
-.columns[
-.fifty[
+`````{div}
+:class: columns
 
+````{div}
+:class: fifty center
 <iframe src="https://cpp.bmarchand.fr/controlSection.html" width="100%" height="400px" frameBorder="0"></iframe>
-
-    ]
-
-.fifty[
-
+````
+````{div}
+:class: fifty center
 <iframe width="100%" height="400px" src="https://xkcd.com"></iframe>
-
-    ]
-
-]
+````
+`````
 
 ---
 
-# Site statique
+### Site statique
 
 ````{div}
 :class: center
 Le serveur http ne fait qu'une seule et unique chose
-<br><br>
+<br>
 **_lire des fichiers_** html, png, jpg, pdf, .... et **_envoyer le contenu au client_**
-````
 
-<br><br>
+<br>
 
-````{div}
-:class: center
-<a href="http://cpp.bmarchand.fr" target="_blank"> <img src="media/site-static.svg" width="90%"></a>
+```{image} media/site-static.svg
+:width: 90%
+```
+
+<br>voir par exemple [le site du cours C++](https://cpp.bmarchand.fr)
+
 ````
 
 ---
 
-# Site dynamique
+### Site dynamique (basique)
 
 ````{div}
 :class: center
 Le serveur http va devoir travailler **avec d'autres services** <br>afin de produire le résultat final pouvant être envoyé au client
-````
 
-````{div}
-:class: center
-<a href="http://bmarchand.fr/research/activities" target="_blank">
-<img src="media/dynamic-site1.svg" width="50%">
-</a>
-````
+```{image} media/dynamic-site1.svg
+:width: 90%
+```
 
---
-
-````{div}
-:class: center
-<a href="https://rep.mines-paristech.fr" target="_blank">
-<img src="media/cerebro.png" width="50%">
-</a>
+<br>Par exemple: [un site de e-commerce moyen](https://vraimentbeau.com)
 ````
 
 ---
 
-# Solutions d'hébergement gratuit
+### Site dynamique (avancé)
 
-.columns[
-.fifty[
+````{div}
+:class: center
 
-## Sites statiques
+Par contre l'architecture derrière un site dynamique peut être aussi très très complexe
 
-- GitHub Pages (nous y sommes !)
-- readthedocs.io (les cours de S1)
-- GitLab Pages
+```{image} media/cerebro.png
+:width: 90%
+```
+
+
+<br>Par exemple: [une plateforme de développement](https://rep.minesparis.psl.eu)
+````
+
+---
+
+## Solutions d'hébergement gratuit
+
+`````{div}
+:class: columns
+
+````{div}
+:class: fifty
+
+### Sites statiques
+
 - Netlify
 - Vercel
-- Surge 
+- Surge
+- GitHub Pages (nous y sommes !)
+- readthedocs.io (nous y étions ;)
+- GitLab Pages
 - ...
+````
 
-]
-.fifty[
+````{div}
+:class: fifty
 
-## Sites dynamiques
+### Sites dynamiques
 
-- ~~Heroku~~
 - Glitch
 - Repl.it
 - PythonAnywhere
 - Vercel (serverless)
+- ~~Heroku~~
 - ...
 
-]
-
-]
+````
+`````
 
 ````{div}
 :class: center
 Plein d'offres sur le marché, à vous de choisir celle qui vous convient le mieux
-````
 
-Attention en revanche :
+Attention en revanche&nbsp;: **_Gratuit_** ne veut pas dire **_sans limite_**
 
-````{div}
-:class: center
-**_Gratuit_** ne veut pas dire **_sans limite_**
 ````
 
 ---
 
-# Le serveur web : un besoin de perf 🚀
+## Le serveur web : un besoin de perf 🚀
 
-.columns.bottom[
+`````{div}
+:class: columns bottom
 
-.sixty[
-  <img src="media/performance.svg" width="700px">
-]
+````{div}
+:class: .sixty
+```{image} media/performance.svg
+:width: 700px
+```
+````
 
-.fourty[
+````{div}
+:class: fourty
   Comment faire pour que tout le monde
 
   ait une réponse en un temps raisonnable ?
 
+````
   ⏳️
-]
-
-]
+`````
 
 ---
 
-# Solutions techniques
+## Solutions techniques
 
 ````{div}
 :class: center
-<img src="media/concurrency.svg" width="70%">
+```{image} media/concurrency.svg
+:width: 70%
+```
 ````
 
 ````{div}
@@ -358,19 +388,23 @@ Utilisation du parallélisme de tâches processus/thread et/ou programmation asy
 
 ---
 
-# Et au fait il répond quoi le serveur à GET ?
+## Et au fait il répond quoi le serveur à GET ?
 
 .columns[
 .fifty[
 ````{div}
 :class: center
-<img src="media/http-request.svg" width="100%">
+```{image} media/http-request.svg
+:width: 100%
+```
 ````
 ]
 .fifty[
 ````{div}
 :class: center
-<img src="media/response-format.svg" width="100%">
+```{image} media/response-format.svg
+:width: 100%
+```
 ````
 ]
 ]
@@ -381,27 +415,27 @@ Possible de voir les requêtes et réponses dans votre navigateur via
 
 --
 
-<div style="position: absolute; top: 38%; left:15%">
-<img src="media/chrome-request-headers.png" width="40%">
-</div>
+```{image} media/chrome-request-headers.png
+:width: 40%
+```
 
-<div style="position: absolute; top: 38%; left:55%">
-<img src="media/chrome-response-headers.png" width="70%">
-</div>
+```{image} media/chrome-response-headers.png
+:width: 70%
+```
 
 ---
 
-# Faisons un serveur http de base
+## Faisons un serveur http de base
 
 ```sh
-# dans votre terminal:
-# on va dans le repo du cours
+## dans votre terminal:
+## on va dans le repo du cours
 cd /bla-bla-bla/backend
 
-# pour lancer le serveur
+## pour lancer le serveur
 python -m http.server
-# ... à ce stade le terminal est bloqué
-# pour tuer le serveur tapez "Control-C"
+## ... à ce stade le terminal est bloqué
+## pour tuer le serveur tapez "Control-C"
 ```
 
 puis ouvrez dans votre navigateur `http://localhost:8000/index.html` (*)
@@ -443,11 +477,13 @@ puis ouvrez dans votre navigateur `http://localhost:8000/index.html` (*)
 
 <!-- [http://bit.ly/3EeuLLo](http://bit.ly/3EeuLLo)
 
-<img src="media/qrcode/http_server.png" width="20%"> -->
+```{image} media/qrcode/http_server.png
+:width: 20%
+``` -->
 
 ---
 
-# Traitement des requêtes
+## Traitement des requêtes
 
 Le fonctionnement interne d'un serveur HTTP est assez simple
 
@@ -463,7 +499,7 @@ car il définit la manière dont le serveur va traiter la requête.
 
 ---
 
-# Exemples fait à la main
+## Exemples fait à la main
 
 📢 ⚠️ dans le dossier `python/http`, on regarde les fichiers:
 
@@ -486,15 +522,17 @@ mais c'est bien de comprendre comment ça marche
 
 <!-- pour info, était aussi dispo sur replit ici:
 [http://bit.ly/3EeuLLo](http://bit.ly/3EeuLLo)
-<img src="media/qrcode/http_server.png" width="20%"> -->
+```{image} media/qrcode/http_server.png
+:width: 20%
+``` -->
 
 ---
 
-# of course il existe des frameworks pour ça&nbsp;!
+## of course il existe des frameworks pour ça&nbsp;!
 
 ---
 
-# Les frameworks
+## Les frameworks
 
 Réponse à un besoin mais lequel ?
 
@@ -512,7 +550,7 @@ En gros un guide <strike> spirituel </strike>, permettant de développer simplem
 
 ---
 
-# Framework vs Librairie
+## Framework vs Librairie
 
 ````{div}
 :class: center
@@ -534,7 +572,8 @@ Par exemple `NumPy` en Python 🐍 est une librairie
 
 ````{div}
 :class: center
-<img src="media/code-with-library.svg" height="200px">
+```{image} media/code-with-library.svg
+```
 ````
 
 ]
@@ -551,7 +590,8 @@ Un code à trou 🕳️ en quelque sorte
 
 ````{div}
 :class: center
-<img src="media/code-with-framework.svg" height="200px">
+```{image} media/code-with-framework.svg
+```
 ````
 
 ]
@@ -559,7 +599,7 @@ Un code à trou 🕳️ en quelque sorte
 
 ---
 
-# Frontend, backend
+## Frontend, backend
 
 ````{div}
 :class: center
@@ -576,7 +616,9 @@ Framework frontend
 
 ````{div}
 :class: center
-<img src="media/framework_frontend.png" width=50%>
+```{image} media/framework_frontend.png
+:width: 50%
+```
 ````
 
 Focalisé sur le développement d'application côté client
@@ -592,7 +634,9 @@ Framework backend
 
 ````{div}
 :class: center
-<img src="media/framework_backend.png" width=100%>
+```{image} media/framework_backend.png
+:width: 100%
+```
 ````
 
 Focalisé sur le développement côté serveur
@@ -602,11 +646,13 @@ Focalisé sur le développement côté serveur
 
 ---
 
-# frameworks backend: les grands principes
+## frameworks backend: les grands principes
 
 ````{div}
 :class: center
-<img src="media/framework-routes.svg" width=70%>
+```{image} media/framework-routes.svg
+:width: 70%
+```
 ````
 
 A cela un framework complet ajoute des fonctionnalités de :
@@ -617,14 +663,17 @@ A cela un framework complet ajoute des fonctionnalités de :
 
 ---
 
-# Framework Flask
+## Framework Flask
 
 Micro-framework Python 🐍 développé depuis 2010.
 <br><br>
 ````{div}
 :class: center
-<img src="media/logos/logo-flask.svg" width=30% />
+```{image} media/logos/logo-flask.svg
+:width: 30% 
+```
 ````
+
 <br><br>
 🚧 Micro-framework ne veut pas dire "pas utilisable sur des gros projets"  ⚠️
 <br><br>
@@ -637,9 +686,9 @@ Micro-framework car noyau très léger et minimaliste, mais pouvant être enrich
 
 ---
 
-# Le setup de base
+## Le setup de base
 
-## Installation
+### Installation
 
 ```bash
 pip install flask
@@ -647,7 +696,7 @@ pip install flask
 
 --
 
-## Minimal working example
+### Minimal working example
 
 ```python
 from flask import Flask
@@ -672,7 +721,7 @@ Une fois lancé -> [http://localhost:5000](http://localhost:5000)
 
 ---
 
-# Les routes
+## Les routes
 
 `@app.route` est un décorateur qui permet d'associer une fonction à une URL et un type de requête HTTP.
 
@@ -693,13 +742,13 @@ def hello():
 
 class: center, middle
 
-# On a fini ...
+## On a fini ...
 
 <br><br>
 
 --
 
-# ... ou pas en fait
+## ... ou pas en fait
 
 ````{div}
 :class: center
@@ -708,7 +757,7 @@ class: center, middle
 
 ---
 
-# Petite pause mise en pratique
+## Petite pause mise en pratique
 
 **Objectif** : Mettre en place une API permettant d'accéder au contenu de fichier CSV
 
@@ -735,9 +784,9 @@ L'api du backend doit **impérativement** respecter les routes documentées dans
 
 ---
 
-# Quelques trucs utiles (1)
+## Quelques trucs utiles (1)
 
-## *auto-reload*
+### *auto-reload*
 
 - on peut lancer l'application avec `python app.py`; ça marche...  
 -  **MAIS** il faut relancer le tout à chaque modification (très sous-optimal)
@@ -755,9 +804,9 @@ L'api du backend doit **impérativement** respecter les routes documentées dans
 
 ---
 
-# Quelques trucs utiles (2)
+## Quelques trucs utiles (2)
 
-## les routes en Flask
+### les routes en Flask
 
 - une route peut prendre un paramètre, éventuellement typé
   .columns[
@@ -789,9 +838,9 @@ L'api du backend doit **impérativement** respecter les routes documentées dans
 
 ---
 
-# Quelques trucs utiles (3)
+## Quelques trucs utiles (3)
 
-## *httpie*
+### *httpie*
 
 - c'est pratique d'avoir un vrai frontend en html/css/js
 - MAIS pour développer il peut être utile de tester AUSSI les routes en ligne de commande dans le terminal
@@ -820,9 +869,9 @@ L'api du backend doit **impérativement** respecter les routes documentées dans
 
 ---
 
-# Quelques trucs utiles (4)
+## Quelques trucs utiles (4)
 
-## MacOS & AirPlay
+### MacOS & AirPlay
 
 - sur MacOS il y a potentiellement déjà un service qui tourne sur le port 5000
 - si vous voyez ceci:
@@ -844,7 +893,7 @@ L'api du backend doit **impérativement** respecter les routes documentées dans
 
 ---
 
-# Un petit point sécurité 🔒
+## Un petit point sécurité 🔒
 
 Quelle différence entre
 
@@ -871,12 +920,14 @@ pour garantir la sécurité de l'utilisateur
 
 ````{div}
 :class: center
-<img src="media/https.jpg" width="35%">
+```{image} media/https.jpg
+:width: 35%
+```
 ````
 
 ---
 
-# HTTP un truc pas safe ?
+## HTTP un truc pas safe ?
 
 .columns[
 .fifty[
@@ -906,17 +957,21 @@ pour garantir la sécurité de l'utilisateur
 
 ---
 
-# Le risque du HTTP
+## Le risque du HTTP
 
 <br>
 
 .columns[
 .fifty[
-<img src="media/http-not-safe.svg" width="100%">
+```{image} media/http-not-safe.svg
+:width: 100%
+```
 ]
 .fifty[
 
-<img src="media/https-safe.svg" width="100%">
+```{image} media/https-safe.svg
+:width: 100%
+```
 
 ]
 ]
@@ -928,18 +983,19 @@ Le principe est donc de renfermer la requête HTTP et les informations qu'elle c
 
 ---
 
-# Principes de chiffrement
+## Principes de chiffrement
 
 En pratique le chiffrement fonctionne avec un système clé publique/clé privée
 
 ````{div}
 :class: center
-<img src="media/timeline-tls.excalidraw.svg" height="480px">
+```{image} media/timeline-tls.excalidraw.svg
+```
 ````
 
 ---
 
-# Autorité de certification (CA)
+## Autorité de certification (CA)
 
 ````{div}
 :class: center
@@ -950,10 +1006,16 @@ En pratique le chiffrement fonctionne avec un système clé publique/clé privé
 Possible de générer ses propres certificat soi-même mais ils ne sont pas considérés comme valides par les clients standard (sachant que les navigateurs web ont une liste de CA de confiance)
 
 <br>
-Les logiciels open-source utilisent majoritairement la librairie ***OpenSSL*** <img src="media/logos/openssl.svg" width="20%">
+Les logiciels open-source utilisent majoritairement la librairie ***OpenSSL***
+```{image} media/logos/openssl.svg
+:width: 20%
+```
 
 <br>
-Pour générer des certificats gratuitement il existe l'initiative **Let's Encrypt** <img src="media/logos/lets-encrypt.svg" width="30%">
+Pour générer des certificats gratuitement il existe l'initiative **Let's Encrypt**
+```{image} media/logos/lets-encrypt.svg
+:width: 30%
+```
 
 .footnote.small[
   en pratique, un certificat est valide pour une durée finie, de l'ordre de 1 an, il faut donc le renouveler régulièrement
@@ -962,7 +1024,7 @@ Pour générer des certificats gratuitement il existe l'initiative **Let's Encry
 
 class: center, middle
 
-# Et maintenant c'est fini ?
+## Et maintenant c'est fini ?
 
 ````{div}
 :class: center
@@ -971,7 +1033,7 @@ class: center, middle
 
 ---
 
-# Les cookies 🍪
+## Les cookies 🍪
 
 Faisons une pause goûter 🤤
 
@@ -987,7 +1049,7 @@ Faisons une pause goûter 🤤
 
 ---
 
-# Concrètement c'est quoi ?
+## Concrètement c'est quoi ?
 
  ````{div}
 :class: center
@@ -996,10 +1058,14 @@ Un 🍪 HTTP c'est une donnée qu’un serveur envoie à un client
 
 .columns[
 .fifty[
-<img src="media/cookie1.svg" width="100%">
+```{image} media/cookie1.svg
+:width: 100%
+```
 ]
 .fifty[
-<img src="media/cookie2.svg" width="100%">
+```{image} media/cookie2.svg
+:width: 100%
+```
 ]
 ]
 
@@ -1010,12 +1076,14 @@ stockée sur le client (dans le navigateur) <br> et **renvoyée** au serveur à 
 
 ````{div}
 :class: center
-<img src="media/cookie3.svg" width="40%">
+```{image} media/cookie3.svg
+:width: 40%
+```
 ````
 
 ---
 
-# Quel intérêt ?
+## Quel intérêt ?
 
 Les cookies sont là pour enrichir le HTTP.
 
@@ -1049,7 +1117,7 @@ Un session ID, des préférences utilisateur (light/dark theme, langue, ...)
 
 ---
 
-# Mettre des cookies
+## Mettre des cookies
 
 Rien de plus simple, dans l'en-tête de la réponse serveur il suffit d'ajouter
 <br>
@@ -1094,11 +1162,13 @@ Par exemple, allez sur <https://www.mat.minesparis.psl.eu> et trouvez le cookie 
 
 ---
 
-# Quelques règles à suivre
+## Quelques règles à suivre
 
 ````{div}
 :class: center
-<img src="media/logos/cnil.svg" width="30%">
+```{image} media/logos/cnil.svg
+:width: 30%
+```
 ````
 
 ````{div}
@@ -1120,7 +1190,7 @@ Par exemple, allez sur <https://www.mat.minesparis.psl.eu> et trouvez le cookie 
 
 ---
 
-# Rajoutons un Cookie dans notre serveur
+## Rajoutons un Cookie dans notre serveur
 
 ```{div}
 :class: center
@@ -1128,7 +1198,9 @@ le dossier `python/http-cookie` du cours
 <br>ou<br>
 [http://bit.ly/410qbdD](http://bit.ly/410qbdD)
 <br>ou<br>
-<img src="media/qrcode/cookie.png" width="20%">
+```{image} media/qrcode/cookie.png
+:width: 20%
+```
 ```
 
 .footnote.small[
@@ -1146,7 +1218,7 @@ le dossier `python/http-cookie` du cours
 ]
 ---
 
-# HTTP + 🍪 suffisant pour tout faire ?
+## HTTP + 🍪 suffisant pour tout faire ?
 
 ````{div}
 :class: center
@@ -1157,12 +1229,14 @@ le dossier `python/http-cookie` du cours
 
 ---
 
-# Mais pourquoi ?
+## Mais pourquoi ?
 
 .columns[
 
 .twenty[
-<img src="media/timeline-http.svg" width="100%">
+```{image} media/timeline-http.svg
+:width: 100%
+```
 ]
 
 .eighty[
@@ -1177,10 +1251,14 @@ oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 
 .columns[
 .fifty[
-<img src="media/limitation1.svg" width="100%">
+```{image} media/limitation1.svg
+:width: 100%
+```
 ]
 .fifty[
-<img src="media/limitation2.svg" width="100%">
+```{image} media/limitation2.svg
+:width: 100%
+```
 ]
 ]
 
@@ -1190,7 +1268,7 @@ oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 
 ---
 
-# Websocket
+## Websocket
 
 ````{div}
 :class: center
@@ -1211,14 +1289,16 @@ son petit nom: `ws` (ou `wss` pour le sécurisé)
 .fourty[
 ````{div}
 :class: center
-<img src="media/timeline-ws.svg" width="70%">
+```{image} media/timeline-ws.svg
+:width: 70%
+```
 ````
 ]
 ]
 
 ---
 
-# Comment ça marche
+## Comment ça marche
 
 Très simplement en fait !
 
@@ -1244,7 +1324,7 @@ Et à chaque évènement on va venir associer une action
 
 ---
 
-# Par exemple&nbsp;:
+## Par exemple&nbsp;:
 
 Voyez dans le dossier `python/websockets`:
 
@@ -1285,9 +1365,9 @@ C'est lié à la programmation asynchrone. Pour plus de détails je vous encoura
 
 ---
 
-# En pratique
+## En pratique
 
-## Une messagerie instantanée !
+### Une messagerie instantanée !
 
 ```{div}
 :class: center
@@ -1296,12 +1376,14 @@ C'est lié à la programmation asynchrone. Pour plus de détails je vous encoura
 
 ````{div}
 :class: center
-<img src="media/qrcode/tornado.png" width="20%">
+```{image} media/qrcode/tornado.png
+:width: 20%
+```
 ````
 
 ---
 
-# In the next episode
+## In the next episode
 
 .columns[
 .fifty[

@@ -19,7 +19,7 @@ project:
 
     - title: "Coté Serveur !"
       children:
-        - file: slides2.md
+        - pattern: 2-*.md
 
     - title: "Flask"
       children:

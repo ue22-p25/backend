@@ -119,7 +119,9 @@ Greatly reduces the risk of compromised accounts
   ]
 
 .fourty[
-  <img src="media/trust-chain.excalidraw.svg" width="80%">
+  ```{image} media/trust-chain.excalidraw.svg
+:width: 80%
+```
 ]
 ]
 
@@ -255,9 +257,13 @@ particularly as it is a standard and you can use it on any cloud provider
   - graphQL
 ]
 .fourty[
-  <img src="media/scaleway-instances.png" width="100%">
+  ```{image} media/scaleway-instances.png
+:width: 100%
+```
 
-  <img src="media/scaleway-grafana.png" width="100%">
+  ```{image} media/scaleway-grafana.png
+:width: 100%
+```
 ]
 ]
 
@@ -456,7 +462,9 @@ usage:
   e.g. once the TLS handshake is done
   ]
   .fourty[
-  <img src="media/diffie-hellman.png" width="100%">
+  ```{image} media/diffie-hellman.png
+:width: 100%
+```
   ]
 ]
 

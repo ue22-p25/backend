@@ -17,7 +17,8 @@ nbhosting:
 
 # backend & networking
 
-<img src="media/logos/logo-mines-original.svg">
+```{image} media/logos/logo-mines-original.svg
+```
 
 ---
 
