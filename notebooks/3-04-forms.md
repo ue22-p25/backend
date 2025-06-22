@@ -1,4 +1,4 @@
-# formulaires avec Flask
+# Formulaires avec Flask
 
 Un truc récurrent dans le web c'est les formulaires :
 

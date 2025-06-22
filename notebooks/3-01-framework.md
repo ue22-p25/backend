@@ -1,4 +1,4 @@
-# Framework web --- Flask !
+# Le framework Flask !
 
 ## Récap des épisodes précédents
 

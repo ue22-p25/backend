@@ -1,0 +1,119 @@
+# hosting
+
+many online solutions are available for hosting your web apps
+
+- static hosting
+  - surge.sh
+  - netlify
+  - vercel
+
+- CI/CD
+  - github pages (often powered by github actions)
+  - readthedocs.io
+  - ...
+
+---
+
+## Cloud operators
+
+Many operators offer cloud services
+
+- AWS
+- Google Cloud
+- Azure
+- Digital Ocean
+- Scaleway
+- OVH
+- etc..
+
+---
+
+## Cloud offerings
+
+- metal
+  - bare metal servers
+
+- instances
+  - virtual machines
+
+- kubernetes
+  - the substrate is ready for you
+  - kube is about **container orchestration**
+  - this means you just write yaml files
+  - you describe **the state you want to reach**
+  - not **the order in which to do things**
+  - the kube engine will take care of it
+  - offers a huge number of sophisticated features
+  - e.g. load balancing, replicas, scaling, ...
+
+k8s has a rather steep learning curve, but very much worth it;  
+particularly as it is a standard and you can use it on any cloud provider
+
+---
+
+## Illustration on Scaleway
+
+`````{div}
+:class: columns
+````{div}
+:class: sixty
+- web console
+- docs & the API
+- the CLI
+- billing
+- monitoring
+  - prometheus
+  - grafana
+  - graphQL
+````
+````{div}
+:class: fourty
+```{image} media/scaleway-instances.png
+:width: 100%
+```
+
+  ```{image} media/scaleway-grafana.png
+:width: 100%
+```
+````
+`````
+
+---
+
+## Docker: a container engine
+
+- what is a container ? think of it as:
+
+  - a root image (filesystem)
+  - a set of processes (process group)
+  - a network namespace (IP address)
+
+- in short, it is a *lightwight* virtual machine
+  - except that it **shares the kernel** with the host OS
+
+- an app vendor can package their app
+  - with all its dependencies
+  - and ship it as a container image
+
+- so in pratical terms:
+  - instead of running a service inside an OS, you run it **inside a container**
+  - e.g. you can run a linux-based nginx server inside a container in a Windows machine
+  - **note** there are some gory tricks at work (does WSL rings a bell ?)
+
+---
+
+## CI/CD
+
+### Continuous Integration / Continuous Deployment
+
+- CI/CD is a set of practices that enable development teams to deliver code changes more frequently and reliably
+
+- CI focuses on automating the integration of code changes from multiple contributors into a single software project
+
+- CD automates the deployment of code changes to production
+
+- example : github actions
+  - look at the `.github/workflows` folder
+
+- example: readthedocs (continuous documentation)
+  - in the numerique course, see the `.readthedocs.yaml` file

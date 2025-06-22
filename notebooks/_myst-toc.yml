@@ -21,10 +21,10 @@ project:
       children:
         - pattern: 2-*.md
 
-    - title: "Flask"
+    - title: "Flask (xxx -> FastAPI)"
       children:
         - pattern: 3-*.md
 
-    - title: "Addendum"
+    - title: "optional content"
       children:
-        - file: slides4.md
+        - pattern: 4-*.md

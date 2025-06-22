@@ -1,5 +1,7 @@
 # Framework Flask
 
+xxx - to rewrite using FastAPI
+
 Micro-framework Python 🐍 développé depuis 2010.
 <br><br>
 ````{div}
@@ -17,6 +19,25 @@ Pinterest, Airbnb, Trivago, ...
 ````
 <br><br>
 Micro-framework car noyau très léger et minimaliste mais pouvant être enrichi avec des extensions.
+
+---
+
+## FastAPI
+
+- similar to Flask on the surface
+  - but much more modern !
+
+- fosters a more structured approach
+  - uses SQLModel for ORM
+  - you can define separate models for creating, reading, updating, etc.
+  - useful e.g. for password hashing (not exposed)
+
+- leverages type information (type hints / pydantic)
+  - and in particular, automatically generates **interactive documentation**
+
+- has native support for asynchroneous programming
+
+- as well as websockets
 
 ---
 
