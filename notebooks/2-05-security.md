@@ -6,11 +6,7 @@ Quelle différence entre
 
 ````{div}
 :class: center
-HTTP et HTTP**S** ❓
-````
-
-````{div}
-:class: center
+HTTP et HTTP**S** ❓  
 Oui oui c'est le **S** de **S**ecure 😓
 ````
 
@@ -18,7 +14,7 @@ Grosso modo :
 
 ````{div}
 :class: center
-Enrobage du protocôle HTTP dans une couche de chiffrement <br><br>
+Enrobage du protocôle HTTP dans une couche de chiffrement <br>
 pour garantir la sécurité de l'utilisateur
 ````
 
@@ -33,36 +29,40 @@ pour garantir la sécurité de l'utilisateur
 
 ## HTTP un truc pas safe ?
 
-.columns[
+`````{div}
+:class: columns
+
 ````{div}
 :class: fifty
 ***Alors oui le HTTP de base n'est pas sécurisé***
 ````
+
 ````{div}
 :class: fifty
-````{div}
+```{div}
 :class: center
 <iframe src="https://giphy.com/embed/1FMaabePDEfgk" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+```
 ````
-````
-````
+`````
 
---
-
-````{div}
+`````{div}
 :class: columns
+
 ````{div}
 :class: fifty
-````{div}
+```{div}
 :class: center
 <iframe src="https://giphy.com/embed/dZA4cLPCvSs1s5aCm7" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+```
 ````
-````
-  ````{div}
+
+````{div}
 :class: fifty
 ***Mais ce n'est pas très grave dans pleins de cas***
 ````
-````
+
+`````
 
 ---
 
@@ -70,7 +70,7 @@ pour garantir la sécurité de l'utilisateur
 
 <br>
 
-````{div}
+`````{div}
 :class: columns
 ````{div}
 :class: fifty
@@ -78,17 +78,19 @@ pour garantir la sécurité de l'utilisateur
 :width: 100%
 ```
 ````
+
 ````{div}
 :class: fifty
 ```{image} media/https-safe.svg
 :width: 100%
 ```
 ````
-````
+`````
 
 ````{div}
 :class: center
-Le principe est donc de renfermer la requête HTTP et les informations qu'elle contient <br><br> dans un message crypté
+Le principe est donc de renfermer la requête HTTP et les informations qu'elle contient  
+dans un message crypté
 ````
 
 ---
@@ -112,27 +114,26 @@ En pratique le chiffrement fonctionne avec un système clé publique/clé privé
 **Tiers de confiance** <br>qui va générer les certificats permettant le chiffrement et l'authentification de l'identité des correspondants
 ````
 
-<br>
-Possible de générer ses propres certificat soi-même mais ils ne sont pas considérés comme valides par les clients standard (sachant que les navigateurs web ont une liste de CA de confiance)
+Possible de générer ses propres certificats soi-même mais ils ne sont pas considérés comme valides par les clients standard (sachant que les navigateurs web ont une liste de CA de confiance)
 
-<br>
 Les logiciels open-source utilisent majoritairement la librairie ***OpenSSL***
+
 ```{image} media/logos/openssl.svg
 :width: 20%
 ```
 
-<br>
+<br><br>
 Pour générer des certificats gratuitement il existe l'initiative **Let's Encrypt**
 ```{image} media/logos/lets-encrypt.svg
-:width: 30%
+:width: 20%
 ```
 
-.footnote.small[
-  en pratique, un certificat est valide pour une durée finie, de l'ordre de 1 an, il faut donc le renouveler régulièrement
-]
----
+```{div}
+:class: smaller
+en pratique, un certificat est valide pour une durée finie, de l'ordre de 1 an, il faut donc le renouveler régulièrement
+```
 
-class: center, middle
+---
 
 ## Et maintenant c'est fini ?
 
@@ -166,21 +167,23 @@ Faisons une pause goûter 🤤
 Un 🍪 HTTP c'est une donnée qu’un serveur envoie à un client
 ````
 
-````{div}
+`````{div}
 :class: columns
+
 ````{div}
 :class: fifty
 ```{image} media/cookie1.svg
 :width: 100%
 ```
 ````
+
 ````{div}
 :class: fifty
 ```{image} media/cookie2.svg
 :width: 100%
 ```
 ````
-````
+`````
 
 ````{div}
 :class: center
@@ -251,8 +254,13 @@ Attributs de Cookie
 
 Par exemple, allez sur <https://www.mat.minesparis.psl.eu> et trouvez le cookie `PHPSESSID`
 
-````{div}
-:class: columns
+---
+
+### Les détails scabreux
+
+`````{div}
+:class: columns smaller
+
 ````{div}
 :class: fourty
 plus de détails ici sur MDN, notamment
@@ -273,7 +281,8 @@ plus de détails ici sur MDN, notamment
   <br>
   doit-on envoyer le premier cookie ?
 ````
-````
+
+`````
 
 ---
 
@@ -284,10 +293,7 @@ plus de détails ici sur MDN, notamment
 ```{image} media/logos/cnil.svg
 :width: 30%
 ```
-````
 
-````{div}
-:class: center
 <https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies>
 ````
 
@@ -299,9 +305,10 @@ plus de détails ici sur MDN, notamment
   - Possibilité de choisir les cookies
   - Facilité de retrait du consentement
 
-.footnote.small[voir aussi les RGPD:
+```{div}
+:class: smaller
+voir aussi les RGPD:
 <https://www.economie.gouv.fr/entreprises/reglement-general-protection-donnees-rgpd>
-]
 
 ---
 
@@ -309,28 +316,27 @@ plus de détails ici sur MDN, notamment
 
 ```{div}
 :class: center
-le dossier `python/http-cookie` du cours
-<br>ou<br>
-[http://bit.ly/410qbdD](http://bit.ly/410qbdD)
-<br>ou<br>
-```{image} media/qrcode/cookie.png
-:width: 20%
-```
+allons dans le dossier `python/http-cookie` du cours
 ```
 
-.footnote.small[
-  faites tourner ce code sur votre ordi et cherchez les cookies dans les headers  
-  si vous joignez le serveur sur `localhost`, vous allez peut-être en voir plein..
-  comment se fait-il d'après vous ?
+````{div}
+:class: smaller
 
-  <details><summary>réponse</summary>
+faites tourner ce code sur votre ordi et cherchez les cookies dans les headers
 
-  le cookie est - en gros - <b>attaché à un hostname</b>; donc tous les cookies qui auront été mis par un serveur que vous avez déjà joint via <code>localhost</code>, même qui n'ont rien à voir avec celui-ci, seront remis dans la requête par le browser
+notez que sur Chrome, vous pouvez aussi inspecter les cookies dans le navigateur via `DevTools > Application > Cookies`
 
-  </details>
+```{admonition} Remarque
+si vous joignez le serveur sur `localhost`, vous allez peut-être en voir plein..
+comment se fait-il d'après vous ?
 
-  enfin sur Chrome, vous pouvez aussi inspecter les cookies dans le navigateur via `DevTools > Application > Cookies`
-]
+<details><summary>réponse</summary>
+
+le cookie est - en gros - <b>attaché à un hostname</b>; donc tous les cookies qui auront été mis par un serveur que vous avez déjà joint via <code>localhost</code>, même qui n'ont rien à voir avec celui-ci, seront remis dans la requête par le browser
+
+</details>
+````
+
 ---
 
 ## HTTP + 🍪 suffisant pour tout faire ?
@@ -346,7 +352,7 @@ le dossier `python/http-cookie` du cours
 
 ## Mais pourquoi ?
 
-````{div}
+`````{div}
 :class: columns
 ````{div}
 :class: twenty
@@ -357,32 +363,33 @@ le dossier `python/http-cookie` du cours
 
 ````{div}
 :class: eighty
-<br><br>
 
 Fonctionnement de HTTP très rigide: orienté **question/réponse**
 <br>
 **Impossible** pour le serveur d'être **à l'origine** de l'échange : assez limitant en fait 😮‍💨
 <br><br>
 oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
+````
+`````
 
-.columns[
+`````{div}
+:class: columns
+
 ````{div}
 :class: fifty
 ```{image} media/limitation1.svg
 :width: 100%
 ```
 ````
+
 ````{div}
 :class: fifty
 ```{image} media/limitation2.svg
 :width: 100%
 ```
 ````
-````
 
-````
-
-]
+`````
 
 ---
 
@@ -393,29 +400,29 @@ oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 En 2011, révolution: arrivée de Websocket 🤯
 ````
 
-````{div}
+`````{div}
 :class: columns
+
 ````{div}
 :class: sixty
 <br><br>
-````{div}
+```{div}
 :class: center
 connexion **bidirectionnelle** entre un client et le serveur
-<br><br>on parle de connexion *full-duplex*
-<br><br>permet au serveur de ***pousser*** des informations vers le client sans que ce dernier n'ait rien demandé 😲
-````
+<br>on parle de connexion *full-duplex*
+<br>permet au serveur de ***pousser*** des informations vers le client sans que ce dernier n'ait rien demandé 😲
+```
 son petit nom: `ws` (ou `wss` pour le sécurisé)
 ````
+
 ````{div}
-:class: fourty
-````{div}
-:class: center
+:class: fourty center
 ```{image} media/timeline-ws.svg
-:width: 70%
+:width: 80%
 ```
 ````
-````
-````
+
+`````
 
 ---
 
@@ -449,8 +456,9 @@ Et à chaque évènement on va venir associer une action
 
 Voyez dans le dossier `python/websockets`:
 
-````{div}
-:class: columns
+`````{div}
+:class: columns smaller
+
 ````{div}
 :class: fifty
 le protocole "ping-pong" (en fait "ping-gnip"):
@@ -473,18 +481,18 @@ le protocole "countdown", même logique:
 
 cette fois c'est plus intéressant, le client **envoie au serveur un nombre de
 secondes**, et le serveur répond en décomptant jusqu'à 0
-```` ]
-
-
-.footnote[
-⚠️ Vous voyez apparaître le mot clé `await` que vous ne connaissez pas en Python 🐍
-
-C'est lié à la programmation asynchrone. Pour plus de détails je vous encourage à faire un tour sur le Mooc
+```` 
+`````
 
 ````{div}
+:class: smaller
+⚠️ Vous voyez apparaître le mot clé `await` que vous ne connaissez pas en Python 🐍  
+C'est lié à la programmation asynchrone. Pour plus de détails je vous encourage à faire un tour sur le Mooc
+
+```{div}
 :class: center
 *Python : des fondamentaux aux concepts avancés du langage*
-````
+```
 ````
 
 ---
@@ -492,6 +500,8 @@ C'est lié à la programmation asynchrone. Pour plus de détails je vous encoura
 ## En pratique
 
 ### Une messagerie instantanée !
+
+xxx dead link xxx
 
 ```{div}
 :class: center
@@ -509,23 +519,22 @@ C'est lié à la programmation asynchrone. Pour plus de détails je vous encoura
 
 ## In the next episode
 
-````{div}
+`````{div}
 :class: columns
+
 ````{div}
-:class: fifty
-````{div}
-:class: center
+:class: fifty center
 <iframe src="https://giphy.com/embed/xTiTnBdvZgewvjTBAs" width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 ````
-````
+
 ````{div}
 :class: fifty
-````{div}
+```{div}
 :class: center
 <iframe src="https://giphy.com/embed/RbSmVaVGptW03Wjw3a" width="480" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+```
 ````
-````
-````
+`````
 
 ````{div}
 :class: center
