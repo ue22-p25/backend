@@ -23,7 +23,7 @@ project:
 
     - title: "Flask"
       children:
-        - file: slides3.md
+        - pattern: 3-*.md
 
     - title: "Addendum"
       children:
