@@ -15,7 +15,7 @@ nbhosting:
   title: motivation
 ---
 
-# backend & networking
+# networking & backend
 
 ```{image} media/logos/logo-mines-original.svg
 ```
