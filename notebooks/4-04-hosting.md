@@ -4,11 +4,11 @@ many online solutions are available for hosting your web apps
 
 - static hosting
   - surge.sh
-  - netlify
-  - vercel
+  - netlify.com
+  - vercel.com
 
 - CI/CD
-  - github pages (often powered by github actions)
+  - github pages (powered by github actions)
   - readthedocs.io
   - ...
 
