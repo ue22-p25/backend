@@ -14,6 +14,23 @@ many online solutions are available for hosting your web apps
 
 ---
 
+## Fast and easy: fly.io
+
+It's rather easy to host you web app on fly.io; the repo below shows how to do
+it using Continuous Deployment (CD) with Github Actions on a super-simple
+FastAPI app.
+
+https://github.com/ue22-p25/backend-fastapi-flyio
+
+there are many advantages with this kind of service:
+
+- you can deploy your app in a few minutes
+- you pay as you use it
+- and the machines get turned off automatically when not in use
+- you can scale up and down easily
+
+---
+
 ## Cloud operators
 
 Many operators offer cloud services
