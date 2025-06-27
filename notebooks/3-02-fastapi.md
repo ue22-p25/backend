@@ -1,24 +1,16 @@
-# Framework Flask
+# Framework FastAPI
 
-xxx - to rewrite using FastAPI
+Micro-framework Python 🐍 - plutôt récent (2018);  
+occupe le même espace que
 
-Micro-framework Python 🐍 développé depuis 2010.
-<br><br>
-````{div}
-:class: center
-```{image} media/logos/logo-flask.svg
-:width: 35%
+- Flask - développé depuis 2010 - léger et extensible
+- Django - développé depuis 2003 - perçu comme plus complet mais plus lourd aussi
+
+🚧 Micro-framework ne veut pas dire pas utilisable sur des gros projets ⚠️  
+
+```{image} media/logos/fastapi.svg
+:width: 20%
 ```
-````
-<br><br>
-🚧 Micro-framework ne veut pas dire pas utilisable sur des gros projets ⚠️
-<br><br>
-````{div}
-:class: center
-Pinterest, Airbnb, Trivago, ...
-````
-<br><br>
-Micro-framework car noyau très léger et minimaliste mais pouvant être enrichi avec des extensions.
 
 ---
 
@@ -41,7 +33,7 @@ Micro-framework car noyau très léger et minimaliste mais pouvant être enrichi
 
 ---
 
-## Pourquoi Flask et pas autre chose
+## Pourquoi FastAPI et pas autre chose
 
 1️⃣ Vous savez tous à peu prêt faire du Python 🐍
 
