@@ -21,7 +21,7 @@ project:
       children:
         - pattern: 2-*.md
 
-    - title: "Flask (xxx -> FastAPI)"
+    - title: "FastAPI"
       children:
         - pattern: 3-*.md
 
