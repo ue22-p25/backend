@@ -17,19 +17,15 @@ nbhosting:
 
 # networking & backend
 
-`````{grid} 1 2 2 2
-````{card}
-This course is about the basics of networking, and about tools for writing a backend.
-
-We'll talk about things like: TCP/IP, DNS, HTTP, APIs, WebSockets, Flask or Django or FastAPI, and more.
-````
-
-````{card}
+````{aside}
 ```{image} media/logos/logo-mines-original.svg
 ```
 ````
 
-`````
+This course is about the basics of networking, and about tools for writing a backend.
+
+We'll talk about things like: TCP/IP, DNS, HTTP, APIs, WebSockets, Flask or Django or FastAPI, and more.
+
 
 [![Published](https://img.shields.io/badge/Published-Website-green)](https://backend.info-mines.paris)
 [![MyST Build Status](https://img.shields.io/github/actions/workflow/status/ue22-p25/backend/myst-to-pages.yml?branch=main&label=MyST%20Build%20Status)](https://github.com/ue22-p25/backend/actions/workflows/myst-to-pages.yml)
