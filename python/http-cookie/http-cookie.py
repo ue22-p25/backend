@@ -1,3 +1,18 @@
+"""
+this app sets a cookie in the browser called 'visit'
+that tracks the number of times the user has visited the page.
+
+using only the Python standard library
+this gives a rather long/tedious version
+but it's interesting to compare it with the fastapi version
+
+NOTES:
+- of course you don't want to write this kind of low-lever code in real life
+- when running this, you'll see the counter increase TWICE per page load
+  this is because the browser requests /favicon.ico automatically
+  and since we don't handle that path, it gets counted as well
+"""
+
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from random import randint
 
