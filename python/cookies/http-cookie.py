@@ -70,7 +70,7 @@ class SessionHandler(BaseHTTPRequestHandler):
             ret[tokens[0].strip()] = "".join(tokens[1:])
         return ret
 
-PORT = 8000
+PORT = 10000
 print(f"Open this in your browser:\nhttp://localhost:{PORT}/")
 
 address = ("", PORT)

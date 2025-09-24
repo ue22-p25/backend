@@ -16,10 +16,6 @@ Grosso modo :
 :class: center
 Enrobage du protocôle HTTP dans une couche de chiffrement <br>
 pour garantir la sécurité de l'utilisateur
-````
-
-````{div}
-:class: center
 ```{image} media/https.jpg
 :width: 35%
 ```
@@ -33,15 +29,15 @@ pour garantir la sécurité de l'utilisateur
 :class: columns
 
 ````{div}
-:class: fifty
+:class: sixty
 ***Alors oui le HTTP de base n'est pas sécurisé***
 ````
 
 ````{div}
-:class: fifty
+:class: fourty
 ```{div}
 :class: center
-<iframe src="https://giphy.com/embed/1FMaabePDEfgk" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="https://giphy.com/embed/1FMaabePDEfgk" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 ```
 ````
 `````
@@ -59,7 +55,8 @@ pour garantir la sécurité de l'utilisateur
 
 ````{div}
 :class: fifty
-***Mais ce n'est pas très grave dans pleins de cas***
+***Ce n'est pas très grave dans pleins de cas***  
+Mais les browsers modernes commencent à être très stricts sur le sujet
 ````
 
 `````
@@ -74,14 +71,14 @@ pour garantir la sécurité de l'utilisateur
 :class: columns
 ````{div}
 :class: fifty
-```{image} media/http-not-safe.svg
+```{image} media/http-not-safe.excalidraw.svg
 :width: 100%
 ```
 ````
 
 ````{div}
 :class: fifty
-```{image} media/https-safe.svg
+```{image} media/https-safe.excalidraw.svg
 :width: 100%
 ```
 ````
@@ -172,14 +169,14 @@ Un 🍪 HTTP c'est une donnée qu’un serveur envoie à un client
 
 ````{div}
 :class: fifty
-```{image} media/cookie1.svg
+```{image} media/cookie1.excalidraw.svg
 :width: 100%
 ```
 ````
 
 ````{div}
 :class: fifty
-```{image} media/cookie2.svg
+```{image} media/cookie2.excalidraw.svg
 :width: 100%
 ```
 ````
@@ -192,7 +189,7 @@ stockée sur le client (dans le navigateur) <br> et **renvoyée** au serveur à 
 
 ````{div}
 :class: center
-```{image} media/cookie3.svg
+```{image} media/cookie3.excalidraw.svg
 :width: 40%
 ```
 ````
@@ -203,7 +200,7 @@ stockée sur le client (dans le navigateur) <br> et **renvoyée** au serveur à 
 
 Les cookies sont là pour enrichir le HTTP.
 
-***Le problème***
+### Le problème
 
 ````{div}
 :class: center
@@ -217,7 +214,9 @@ En gros impossible pour un serveur HTTP de savoir si deux requêtes viennent d'u
 Comment rester authentifié alors ?
 ````
 
-**_La solution_**
+---
+
+### La solution
 
 ````{div}
 :class: center
@@ -259,19 +258,19 @@ Par exemple, allez sur <https://www.mat.minesparis.psl.eu> et trouvez le cookie 
 ### Les détails scabreux
 
 `````{div}
-:class: columns smaller
+:class: smaller
 
 ````{div}
-:class: fourty
 plus de détails ici sur MDN, notamment
   - [en termes de durée de vie, au sujet de `Expires` et `Max-Age`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#removal_defining_the_lifetime_of_a_cookie)
   - [en termes de *scope* au sujet de `Domain` et `Path`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#define_where_cookies_are_sent)
   - [en termes de sécurité, au sujet de `HttpOnly` et `Secure`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#security)
 ````
 
-````{div}
-:class: sixty
-<br>Enfin [`SameSite`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#controlling_third-party_cookies_with_samesite), un sujet assez épineux, celui des [*third-party cookies*](https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Third-party_cookies); de quoi s'agit-il ?
+````{admonition} et les *Third-Party Cookies* ?
+:class: warning dropdown smaller
+
+Enfin s'agissant de [`SameSite`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#controlling_third-party_cookies_with_samesite), un sujet assez épineux, celui des [*third-party cookies*](https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Third-party_cookies); de quoi s'agit-il ?
 
   Vous allez sur `https://the-shop.com` qui vous met un cookie
   <br>
@@ -309,25 +308,31 @@ plus de détails ici sur MDN, notamment
 :class: smaller
 voir aussi les RGPD:
 <https://www.economie.gouv.fr/entreprises/reglement-general-protection-donnees-rgpd>
+```
 
 ---
 
 ## Rajoutons un Cookie dans notre serveur
 
-```{div}
+````{div}
 :class: center
-allons dans le dossier `python/http-cookie` du cours
-```
+allons dans le dossier `python/cookies` du cours
+````
 
 ````{div}
+faites tourner ce code sur votre ordi et cherchez les cookies dans les headers  
+
+```{div}
 :class: smaller
+notez que sur Chrome, vous pouvez aussi inspecter les cookies dans le navigateur via   
+`DevTools > Application > Cookies`
+```
 
-faites tourner ce code sur votre ordi et cherchez les cookies dans les headers
+```{admonition} Vous en voyez trop ?
+:class: dropdown smaller
 
-notez que sur Chrome, vous pouvez aussi inspecter les cookies dans le navigateur via `DevTools > Application > Cookies`
-
-```{admonition} Remarque
-si vous joignez le serveur sur `localhost`, vous allez peut-être en voir plein..
+si vous joignez le serveur sur `localhost`, vous allez peut-être en voir plein..  
+enfin, beaucoup plus que ce que le serveur met lui-même  
 comment se fait-il d'après vous ?
 
 <details><summary>réponse</summary>
@@ -335,6 +340,7 @@ comment se fait-il d'après vous ?
 le cookie est - en gros - <b>attaché à un hostname</b>; donc tous les cookies qui auront été mis par un serveur que vous avez déjà joint via <code>localhost</code>, même qui n'ont rien à voir avec celui-ci, seront remis dans la requête par le browser
 
 </details>
+```
 ````
 
 ---
@@ -356,7 +362,7 @@ le cookie est - en gros - <b>attaché à un hostname</b>; donc tous les cookies 
 :class: columns
 ````{div}
 :class: twenty
-```{image} media/timeline-http.svg
+```{image} media/timeline-http.excalidraw.svg
 :width: 100%
 ```
 ````
@@ -377,14 +383,14 @@ oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 
 ````{div}
 :class: fifty
-```{image} media/limitation1.svg
+```{image} media/limitation1.excalidraw.svg
 :width: 100%
 ```
 ````
 
 ````{div}
 :class: fifty
-```{image} media/limitation2.svg
+```{image} media/limitation2.excalidraw.svg
 :width: 100%
 ```
 ````
@@ -417,7 +423,7 @@ son petit nom: `ws` (ou `wss` pour le sécurisé)
 
 ````{div}
 :class: fourty center
-```{image} media/timeline-ws.svg
+```{image} media/timeline-ws.excalidraw.svg
 :width: 80%
 ```
 ````
@@ -538,6 +544,6 @@ xxx dead link xxx
 
 ````{div}
 :class: center
-Un tour d'horizon du **Framework `Flask`** <br>
+Un tour d'horizon du **Framework `FastAPI`** <br>
 qui va vous simplifier la vie pour tous les développements Web
 ````
