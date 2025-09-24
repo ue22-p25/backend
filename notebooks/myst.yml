@@ -34,7 +34,7 @@ site:
   domains: []
   options:
     favicon: media/favicon-p25.svg.ico
-    logo: media/logo-backend.svg
+    logo: media/logos/logo-backend.svg
     # very visible in the header
     logo_text: "UE22: Web backend"
     style: "_static/style.css"

@@ -119,28 +119,29 @@ A cela un framework complet ajoute des fonctionnalités de :
 
 ---
 
-## Framework Flask
+## Framework FastAPI
 
-xxx todo : on va utiliser FastAPI xxx
+Framework Python 🐍 "lightweight" développé depuis 2018.
 
-Micro-framework Python 🐍 développé depuis 2010.
-<br><br>
-````{div}
-:class: center
-```{image} media/logos/logo-flask.svg
-:width: 30% 
+```{image} media/logos/logo-fastapi.svg
+:align: center
+:width: 300px
 ```
-````
 
 <br><br>
-🚧 Micro-framework ne veut pas dire "pas utilisable sur des gros projets"  ⚠️
-<br><br>
+🚧 framework "lightweight" ne veut pas dire "pas utilisable sur des gros projets"  ⚠️
+<br>
 ````{div}
 :class: center
-Pinterest, Airbnb, Trivago, ...
+Netflix, Microsoft, Uber, ... utilisent FastAPI pour certaines parties de leurs backends
 ````
-<br><br>
-Micro-framework car noyau très léger et minimaliste, mais pouvant être enrichi avec des extensions.
+
+noyau très léger et minimaliste, mais super puissant
+
+- utilise les **annotations de type** Python pour la validation automatique des données
+- **documentation automatique** des API avec Swagger UI et ReDoc
+- **nativement asynchrone**, du coup très performant
+- de plus, il peut être enrichi avec des **extensions**.
 
 ---
 
@@ -149,8 +150,10 @@ Micro-framework car noyau très léger et minimaliste, mais pouvant être enrich
 ### Installation
 
 ```bash
-pip install flask
+pip install fastapi[standard]
 ```
+
+xxx ici
 
 ### Minimal working example
 
