@@ -8,7 +8,7 @@ occupe le même espace que
 
 🚧 Micro-framework ne veut pas dire pas utilisable sur des gros projets ⚠️  
 
-```{image} media/logos/fastapi.svg
+```{image} media/logos/logo-fastapi.svg
 :width: 20%
 ```
 
