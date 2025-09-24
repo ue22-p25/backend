@@ -7,7 +7,7 @@ Le monde d'aujourd'hui est ultra connecté 🕸️
 
 ---
 
-```{image} media/architecture.svg
+```{image} media/architecture.excalidraw.svg
 ```
 
 La plupart des systèmes informatiques/services web que vous pouvez utiliser quotidiennement ne sont pas **une** application mais un **ensemble** d'applications qui intéragissent entre elles.
@@ -18,7 +18,7 @@ La plupart des systèmes informatiques/services web que vous pouvez utiliser quo
 
 Un élève répond à un questionnaire de satisfaction en ligne et après la soumission de son questionnaire reçoit automatiquement une réponse personnalisée et spécifique selon ses réponses.
 
-```{image} media/premier-use-case.svg
+```{image} media/premier-use-case.excalidraw.svg
 ```
 
 [https://tally.so/r/w8N0jA](https://tally.so/r/w8N0jA)
@@ -29,7 +29,7 @@ Un élève répond à un questionnaire de satisfaction en ligne et après la sou
 
 <!-- <button onclick="copyFunction()">Email du support</button> -->
 
-```{image} media/second-use-case.svg
+```{image} media/second-use-case.excalidraw.svg
 ```
 
 ```{div}
@@ -80,21 +80,21 @@ On va regarder les plus classiques
 
 ### Client-serveur
 
-```{image} media/client-server.svg
+```{image} media/client-server.excalidraw.svg
 ```
 
 ---
 
 ### Architecture trois-tiers
 
-```{image} media/architecture-three-tiers.svg
+```{image} media/architecture-three-tiers.excalidraw.svg
 ```
 
 ---
 
 ### Architecture pair à pair
 
-```{image} media/peer-to-peer.svg
+```{image} media/peer-to-peer.excalidraw.svg
 :width: 60%
 ```
 
