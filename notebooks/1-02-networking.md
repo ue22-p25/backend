@@ -132,7 +132,7 @@ Généralement on parle de trois qualités :
 :class: fifty
 ````{div}
 :class: center
-```{image} media/osi-model.svg
+```{image} media/osi-model.excalidraw.svg
 ```
 ````
 `````
@@ -178,7 +178,7 @@ L'adresse IP d'une interface réseau s'écrit comme une combinaison de quatre no
 <br>
 ````{div}
 :class: center
-```{image} media/ip-address.svg
+```{image} media/ip-address.excalidraw.svg
 :width: 30%
 ```
 ````
@@ -190,7 +190,7 @@ il y a donc deux parties : l'adresse du réseau (souvent sur 24 bits) et l'adres
 lorsqu'on a besoin d'écrire l'adresse d'un réseau on écrit alors comme ceci le nombre de bits de l'adresse réseau
 ````{div}
 :class: center
-```{image} media/ip-address-subnet.svg
+```{image} media/ip-address-subnet.excalidraw.svg
 :width: 20%
 ```
 ````
@@ -227,7 +227,7 @@ on en reparlera...
 
 ````{div}
 :class: center
-```{image} media/connection-local.svg
+```{image} media/connection-local.excalidraw.svg
 :width: 60%
 ```
 ````
@@ -238,7 +238,7 @@ on en reparlera...
 
 ````{div}
 :class: center
-```{image} media/connection-remote.svg
+```{image} media/connection-remote.excalidraw.svg
 :width: 60%
 ````
 
@@ -384,7 +384,7 @@ les adresses privées réservées:
 
 ````{div}
 :class: center
-```{image} media/nat-routing.svg
+```{image} media/nat-routing.excalidraw.svg
 :width: 125%
 ```
 ````
