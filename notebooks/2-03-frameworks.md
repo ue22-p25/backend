@@ -153,50 +153,129 @@ noyau très léger et minimaliste, mais super puissant
 pip install fastapi[standard]
 ```
 
-xxx ici
+```{admonition} remarque à propos de bash
+:class: dropdown
 
-### Minimal working example
-
-```python
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
-if __name__ == '__main__':
-    app.run()
+en toute rigueur il faudrait taper  
+`pip install "fastapi[standard]"`  
+avec les guillemets, pour éviter que votre shell n'interprète mal les crochets `[]`; savez-vous pourquoi ?  
+mais bon en pratique la différence est minime...
 ```
 
+nous allons aussi installer `httpie` pour tester les API en ligne de commande  
+c'est juste un outil de développement très pratique, pas besoin de cette dépendance en production
+
+```bash
+# ceci installe la commande http, disponible depuis le terminal
+pip install httpie
+```
+
+---
+
+### Hello world en FastAPI (run it)
+
+`````{grid} 2 2 2 2
 ````{div}
-:class: center
-Une fois lancé -> [http://localhost:5000](http://localhost:5000)
+créons un fichier `hello.py` avec ceci:
+
+
+```python
+# dans hello.py
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello World"}
+```
 
 ```{div}
 :class: clignote
-? C'est quoi `@app.route('/')` ?
+? C'est quoi `@app.get('/')` ?
 ```
 ````
+
+````{div}
+et pour le lancer tapez ceci
+```bash
+# dans le terminal
+
+fastapi dev hello.py
+```
+
+:::{admonition} un mot sur `uvicorn`
+:class: dropdown tip
+`uvicorn` est le serveur ASGI recommandé pour FastAPI.  
+Il est installé automatiquement avec l'option `[standard]` de FastAPI.  
+Et pour info, en réalité `fastapi dev` est un alias pour  
+`uvicorn hello:app --reload --debug`
+:::
+````
+`````
+
+---
+
+### Hello world en FastAPI (use it)
+
+après quoi on peut interroger notre API... on a le choix entre:
+
+`````{grid} 2 2 2 2
+````{div}
+ouvrir un navigateur web à l'adresse  
+[http://localhost:8000](http://localhost:8000)  
+faites-le, vous devez voir ceci:
+```text
+{"message":"Hello World"}
+```
+````
+
+````{div}
+utiliser `http(ie)` en ligne de commande
+```bash
+# en version bavarde
+http GET http://localhost:8000
+
+# en version concise
+http :8000
+```
+
+les deux formes sont équivalentes  
+et dans les deux cas observez que `http` nous montre les *Headers* HTTP de la réponse 
+
+````
+
+`````
 
 ---
 
 ## Les routes
 
-`@app.route` est un décorateur qui permet d'associer une fonction à une URL et un type de requête HTTP.
+`@app.get` est un décorateur qui permet **d'associer une fonction à une URL** (ici de type GET).  
+Évidemment une application web c'est plus que ça, on veut gérer plusieurs URLs, et de plusieurs types.  
+Du coup une application FastAPI c'est essentiellement une collection de routes.
 
-Dans sa version complète on peut écrire :
+Par exemple:
 
 ```python
-@app.route('/hello', methods=['GET', 'POST'])
-def hello():
-  if request.method == 'POST':
-    ## traitement
-  elif request.method == 'GET':
-    ## traitement
-  else:
-    return "Méthode non autorisée", 405
+@app.post("/items/")
+def create_item(item: Item):
+    # le code pour créer un item
+
+@app.get("/items/")
+def create_item(item: Item):
+    # le code pour lister les items
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int):
+    # le code pour lire un item
 ```
+
+:::{admonition} `@app.api_route`
+:class: dropdown tip
+il est aussi possible d'utiliser `@app.api_route` pour "capturer" dans une seule fonction plusieurs types de requêtes
+:::
 
 ---
 
