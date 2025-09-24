@@ -108,7 +108,7 @@ et voici à quoi ressemble un paquet:
 
 <br>
 
-```{image} media/packet-layers.svg
+```{image} media/packet-layers.excalidraw.svg
 ```
 
 ---
@@ -122,7 +122,7 @@ et voici à quoi ressemble un paquet:
 **T**ransmission **C**ontrol **P**rotocol
 ````
 
-est **le** protocole historique (Bob Kahn et Vinton Cerf, Septembre 1973), qui doit sa longévité par sa robustesse et sa fiabilité.
+est **le** protocole historique (Bob Kahn et Vinton Cerf, Septembre 1973), qui doit sa longévité à sa robustesse et sa fiabilité.
 
 ````{div}
 :class: center
@@ -145,7 +145,7 @@ Le principe du TCP est très simple et se décompose en trois étapes:
 
 ````{div}
 :class: fourty
-```{image} media/handshake.svg
+```{image} media/handshake.excalidraw.svg
 ```
 ````
 
@@ -180,7 +180,7 @@ de la manière suivante :
 ````{div}
 :class: fourty
 
-```{image} media/tcp-close.svg
+```{image} media/tcp-close.excalidraw.svg
 ```
 ````
 
@@ -253,6 +253,6 @@ Les applications d'UDP sont nombreuses, par exemple :
 
 ````{div}
 :class: center
-```{image} media/udp-applications.svg
+```{image} media/udp-applications.excalidraw.svg
 ```
 ````
