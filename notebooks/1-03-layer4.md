@@ -76,24 +76,19 @@ port = porte d'entrée du service 🚪
 
 ---
 
-## anatomie d'un paquet réseau
+## Anatomie d'un paquet réseau
 
 et voici à quoi ressemble un paquet
+
+```{image} media/packet-layers.excalidraw.svg
+```
+
+<br>
 
 ```{admonition} vocabulaire
 :class: dropdown
 pour être précis, en général on appelle *packet* le niveau 3 et au delà  
 lorsque comme ici on inclut le niveau 2 on parle généralement de "frame"
-```
-
-<br>
-
-```{image} media/packet-layers.excalidraw.svg
-```
-
-```{admonition} présentation
-
-ces différents morceaux sont contigüs naturellement
 ```
 
 ---

@@ -6,7 +6,7 @@ La couche 4 est-elle suffisante, ou avons-nous besoin d'un truc en plus ?
 
 ````{div}
 :class: center
-Avec tcp ou udp on peut faire nos transfert de données entre application
+Avec TCP ou UDP on peut faire nos transferts de données entre application
 ````
 
 <br>
