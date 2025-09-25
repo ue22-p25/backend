@@ -12,7 +12,7 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 
 ````{div}
 :class: fifty center
-```{image} media/osi-model.svg
+```{image} media/osi-model.excalidraw.svg
 ```
 ````
 
@@ -20,13 +20,13 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 :class: fifty center
 Un modèle OSI en 7 couches
 
-```{image} media/ip-address.svg
+```{image} media/ip-address.excalidraw.svg
 :width: 40%
 ```
 <br>
 
 Un protocole HTTP(S) pour le web
-```{image} media/http-request.svg
+```{image} media/http-request.excalidraw.svg
 :class: center
 ```
 
@@ -38,7 +38,7 @@ Un protocole HTTP(S) pour le web
 
 ````{div}
 :class: center
-```{image} media/client-server.svg
+```{image} media/client-server.excalidraw.svg
 :width: 60%
 ```
 ````
@@ -91,13 +91,13 @@ Serveur physique vs serveur virtuel (VPS)
 
 ````{div}
 :class: fifty center
-```{image} media/bare-metal.svg
+```{image} media/bare-metal.excalidraw.svg
 ```
 ````
 
 ````{div}
 :class: fifty center
-```{image} media/vps.svg
+```{image} media/vps.excalidraw.svg
 ```
 ````
 `````
@@ -112,7 +112,7 @@ Différentes solutions : On Premise vs Cloud (OVH, Azure, GCP, AWS, ... )
 
 ````{div}
 :class: center
-```{image} media/server-app.svg
+```{image} media/server-app.excalidraw.svg
 :width: 65%
 ```
 ````
@@ -142,7 +142,7 @@ OUI 🎯 il suffit de se partager le port 80 🤝
 
 ````{div}
 :class: center
-```{image} media/virtual-host.svg
+```{image} media/virtual-host.excalidraw.svg
 :width: 80%
 ```
 ````
@@ -262,7 +262,7 @@ Le serveur http ne fait qu'une seule et unique chose
 
 <br>
 
-```{image} media/site-static.svg
+```{image} media/site-static.excalidraw.svg
 :width: 90%
 ```
 
@@ -278,7 +278,7 @@ Le serveur http ne fait qu'une seule et unique chose
 :class: center
 Le serveur http va devoir travailler **avec d'autres services** <br>afin de produire le résultat final pouvant être envoyé au client
 
-```{image} media/dynamic-site1.svg
+```{image} media/site-dynamic.excalidraw.svg
 :width: 90%
 ```
 
