@@ -76,6 +76,28 @@ port = porte d'entrée du service 🚪
 
 ---
 
+## anatomie d'un paquet réseau
+
+et voici à quoi ressemble un paquet
+
+```{admonition} vocabulaire
+:class: dropdown
+pour être précis, en général on appelle *packet* le niveau 3 et au delà  
+lorsque comme ici on inclut le niveau 2 on parle généralement de "frame"
+```
+
+<br>
+
+```{image} media/packet-layers.excalidraw.svg
+```
+
+```{admonition} présentation
+
+ces différents morceaux sont contigüs naturellement
+```
+
+---
+
 ## Les ports standard
 
 `````{div}
@@ -101,15 +123,6 @@ HTTPS | 443
 ... | ...
 ````
 `````
-
-<br>
-
-et voici à quoi ressemble un paquet:
-
-<br>
-
-```{image} media/packet-layers.excalidraw.svg
-```
 
 ---
 
