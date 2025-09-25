@@ -355,7 +355,7 @@ Attention en revanche&nbsp;: **_Gratuit_** ne veut pas dire **_sans limite_**
 
 ````{div}
 :class: .sixty
-```{image} media/performance.svg
+```{image} media/performance.excalidraw.svg
 :width: 700px
 ```
 ````
@@ -376,7 +376,7 @@ Attention en revanche&nbsp;: **_Gratuit_** ne veut pas dire **_sans limite_**
 
 ````{div}
 :class: center
-```{image} media/concurrency.svg
+```{image} media/concurrency.excalidraw.svg
 :width: 70%
 ```
 ````

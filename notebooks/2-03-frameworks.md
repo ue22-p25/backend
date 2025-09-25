@@ -34,7 +34,7 @@ Ensemble de programmes effectuant des opérations spécifiques, que vous allez u
 
 Par exemple `NumPy` en Python 🐍 est une librairie
 
-```{image} media/code-with-library.svg
+```{image} media/code-with-library.excalidraw.svg
 :align: center
 ```
 ````
@@ -51,7 +51,7 @@ Cadre de développement dans lequel le développeur vient s'inscrire, i.e. déve
 
 Un code à trou 🕳️ en quelque sorte
 
-```{image} media/code-with-framework.svg
+```{image} media/code-with-framework.excalidraw.svg
 :align: center
 ```
 ````
@@ -105,7 +105,7 @@ Focalisé sur le développement côté serveur
 
 ````{div}
 :class: center
-```{image} media/framework-routes.svg
+```{image} media/framework-routes.excalidraw.svg
 :width: 70%
 ```
 ````

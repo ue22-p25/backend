@@ -7,7 +7,7 @@
 
 ````{div}
 :class: fifty
-```{image} media/http-request.svg
+```{image} media/http-request.excalidraw.svg
 :width: 100%
 :align: center
 ```
@@ -15,7 +15,7 @@
 
 ````{div}
 :class: fifty
-```{image} media/response-format.svg
+```{image} media/response-format.excalidraw.svg
 :align: center
 :width: 100%
 ```
