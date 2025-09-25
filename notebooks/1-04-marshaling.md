@@ -2,27 +2,31 @@
 
 La couche 4 est-elle suffisante, ou avons-nous besoin d'un truc en plus ?
 
-<br><br>
+<br>
+
 ````{div}
 :class: center
 Avec tcp ou udp on peut faire nos transfert de données entre application
 ````
+
 <br>
+
 ````{div}
 :class: center
 A votre avis c'est tout bon du coup ou on a besoin d'un truc en plus ?
 ````
 <br><br>
 
---
+---
 
 ````{div}
 :class: center
 🔎 Regardons sur un exemple concret 🔎
 ````
 
-````{div}
+`````{div}
 :class: columns
+
 ````{div}
 :class: seventy
 ```{div}
@@ -35,11 +39,12 @@ le dossier `python/tcp-awkward-api`
 <br>ou<br>
 ```
 ````
+
 ````{div}
 :class: thirty
 <img src="media/qrcode/tcp_qrcode.png" width="65%">
 ````
-````
+`````
 
 ---
 
@@ -49,15 +54,15 @@ le dossier `python/tcp-awkward-api`
 :class: center
 Rien de standard dans mes échanges de données 😵‍💫
 ````
-<br><br><br>
+<br><br>
 ````{div}
 :class: center
-J'ai créé ma propre logique <br><br><br> mais elle ne l'est <strike>peut-être</strike> certainement pas aux yeux des autres.
+J'ai créé ma propre logique 
+
+<br><br> mais elle ne l'est <strike>peut-être</strike> certainement pas aux yeux des autres.
 ````
 
---
-
-<br><br><br>
+<br><br>
 ````{div}
 :class: center
 Un peu de standardisation ne ferait pas de mal ...
@@ -99,12 +104,13 @@ Nom, Prénom, Date de naissance, nombre d'enfants, ...
 <img src="media/serialization-json.excalidraw.svg" width="90%">
 ````
 
---
+---
 
 Via Python 🐍 c'est facile !
 
-````{div}
+`````{div}
 :class: columns
+
 ````{div}
 :class: fifty
 ```python
@@ -114,6 +120,7 @@ serialized = json.dumps(data)
 # serialized is now a string
 ```
 ````
+
 ````{div}
 :class: fifty
 ```python
@@ -123,19 +130,22 @@ data = json.loads(serialized)
 # data is now a dictionary
 ```
 ````
-````
+`````
 
 ---
 
 ## Haut niveau : la couche 7 du modèle OSI
 
 C'est là que les choses concrètes commencent 🥳
-<br><br><br>
+
+<br>
+
 ````{div}
 :class: center
 ***Couche 7 = couche Application***
 ````
-<br><br><br>
+
+<br>
 Chaque "catégorie" d'application spécifie alors :
 
 ````{div}
@@ -145,7 +155,7 @@ Comment se font les communications entre le client et l'application
 format des message, contenu attendu, ...
 ````
 
-````{div}
+`````{div}
 :class: columns
 ````{div}
 :class: fifty
@@ -154,11 +164,10 @@ On parle de protocole, comme par exemple:
 - Transfert de fichiers 📂 : (S)FTP, rsync
 - Messagerie ✉️ : SMTP, POP, IMAP
 - Sessions distantes : telnet, SSH
-- et
+- et...
 ````
 ````{div}
 :class: fifty
 <img src="https://media1.tenor.com/m/qRpNbT_IhBAAAAAd/appurajosh-appu.gif" height="200px">
 ````
-````
-
+`````
