@@ -96,7 +96,7 @@ Nom, Prénom, Date de naissance, nombre d'enfants, ...
 
 ````{div}
 :class: center
-<img src="media/serialization-json.svg" width="90%">
+<img src="media/serialization-json.excalidraw.svg" width="90%">
 ````
 
 --
