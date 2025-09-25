@@ -88,7 +88,7 @@ Deux approches :
 ***Old school***  
 Utilisation de librairies graphiques et développement d'un client lourd
 
-```{image} media/old-school.svg
+```{image} media/old-school.excalidraw.svg
 :width: 50%
 :align: center
 ```
@@ -104,7 +104,7 @@ Utilisation de librairies graphiques et développement d'un client lourd
 
 Utilisation du navigateur
 
-```{image} media/new-age.svg
+```{image} media/new-age.excalidraw.svg
 ```
 ````
 
@@ -267,7 +267,7 @@ En revanche tous les fichiers contenus dans le dossier `static` seront
 
 ````{div}
 :class: center
-```{image} media/http-get-arguments.svg
+```{image} media/http-get-arguments.excalidraw.svg
 :width: 80%
 ```
 ````
@@ -314,7 +314,7 @@ Possibilité offerte par Flask de définir des paramètres au sein même d'une U
 
 ````{div}
 :class: center
-```{image} media/flask-route-param.svg
+```{image} media/flask-route-param.excalidraw.svg
 ```
 ````
 

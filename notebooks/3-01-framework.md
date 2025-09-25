@@ -12,7 +12,7 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 
 ````{div}
 :class: fourty center
-```{image} media/osi-model.svg
+```{image} media/osi-model.excalidraw.svg
 :width: 70%
 ```
 ````
@@ -23,16 +23,16 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 ````{div}
 :class: columns
 
-```{image} media/ip-address.svg
+```{image} media/ip-address.excalidraw.svg
 :width: 40%
 ```
 
-```{image} media/http-request.svg
+```{image} media/http-request.excalidraw.svg
 :width: 40%
 ```
 ````
 
-```{image} media/server-app.svg
+```{image} media/server-app.excalidraw.svg
 :width: 400px
 ```
 `````
@@ -87,7 +87,7 @@ Ensemble de programmes effectuant des opérations spécifiques, que vous allez u
 
 Par exemple `NumPy` en Python 🐍 est une librairie
 
-```{image} media/code-with-library.svg
+```{image} media/code-with-library.excalidraw.svg
 :align: center
 ```
 ````
@@ -106,7 +106,7 @@ Cadre de développement dans lequel le développeur vient s'inscrire, i.e. déve
 
 Un code à trou 🕳️ en quelque sorte - comme `arcade`
 
-```{image} media/code-with-framework.svg
+```{image} media/code-with-framework.excalidraw.svg
 :align: center
 ```
 ````
@@ -162,7 +162,7 @@ Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
 
 ````{div}
 :class: center
-```{image} media/framework-routes.svg
+```{image} media/framework-routes.excalidraw.svg
 :width: 75%
 ```
 ````
@@ -171,6 +171,5 @@ Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
 
 ````{div}
 :class: center
-`Web Template`, `Sécurité`, `Accès à des bases de données`
+*Web Template*, *Sécurité*, *Accès à des bases de données*
 ````
-
