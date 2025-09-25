@@ -18,7 +18,7 @@ connexion **bidirectionnelle** entre un client et le serveur
 
 ````{div}
 :class: fifty center
-```{image} media/timeline-ws.svg
+```{image} media/timeline-ws-excalidraw.svg
 :width: 70%
 ```
 ````

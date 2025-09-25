@@ -1,5 +1,6 @@
 """
-the simplest static server
+kind of cheating as it leverages the standard library
+but this is the simplest static server
 """
 
 from http.server import HTTPServer, SimpleHTTPRequestHandler

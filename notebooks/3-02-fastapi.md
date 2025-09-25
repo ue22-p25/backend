@@ -16,48 +16,41 @@ occupe le même espace que
 
 ## FastAPI
 
-- similar to Flask on the surface
-  - but much more modern !
+similaire en surface à Flask, mais **beaucoup plus moderne** !
 
-- fosters a more structured approach
-  - uses SQLModel for ORM
-  - you can define separate models for creating, reading, updating, etc.
-  - useful e.g. for password hashing (not exposed)
-
-- leverages type information (type hints / pydantic)
-  - and in particular, automatically generates **interactive documentation**
-
-- has native support for asynchroneous programming
-
-- as well as websockets
+- favorise une approche plus structurée
+  - tire parti des **informations de type** (annotations de type / pydantic)
+  - notamment pour la validation / conversion des données
+  - on peut définir des modèles séparés pour la création, la lecture, la mise à jour, etc.  
+    utile par exemple pour le hachage de mots de passe (non exposé)
+- en particulier, génère automatiquement une **documentation interactive**
+- a un support natif pour la programmation asynchrone
+- ainsi que pour les websockets
 
 ---
 
 ## Pourquoi FastAPI et pas autre chose
 
-1️⃣ Vous savez tous à peu prêt faire du Python 🐍
+1️⃣ Vous savez tous à peu près faire du Python 🐍
 
 ````{div}
 :class: center
 donc on élimine tout ce qui n'est pas à base Python
 ````
 
-2️⃣ On va essayer de vous apprendre des trucs utilisés par ailleurs
+2️⃣ On va essayer de vous apprendre des trucs utilisés par ailleurs  
+Et la tendance FastAPI semble effectivement être à une hausse spectaculaire !
 
 ````{div}
 :class: center
 
-````{figure} media/web_framework_survey.png
+```{figure} media/web-framework-survey.png
 :class: smaller
-:width: 70%
-Source: <a href="https://www.jetbrains.com/lp/devecosystem-2022/python/">https://www.jetbrains.com/lp/devecosystem-2022/python/</a>
-````
-
-```{div}
-:class: smaller
-Notez bien que tout ça est extrêmement difficile à mesurer par ailleurs - par exemple, on parle de quelle unité ?  
-Il reste toutefois que la tendance FastAPI semble effectivement être à la hausse.
+:width: 85%
+Source: <a href="https://www.jetbrains.com/lp/devecosystem-2023/python/">https://www.jetbrains.com/lp/devecosystem-2023/python/</a>
 ```
+
+````
 
 ---
 
@@ -73,9 +66,9 @@ Faire le pont 🌉 entre :
 
 ````{div}
 :class: center
-un code de calcul/traitement de donnée/...  
+un code de calcul/traitement de données/...  
 et une interface graphique  
-du coup très pertinent pour les Projets Informatique
+du coup très pertinent pour les "Projets Informatique" de la fin du S2
 ````
 
 Deux approches :
@@ -110,36 +103,25 @@ Utilisation du navigateur
 
 `````
 
-
 ---
 
-## Une première app
-
-### Installation
-
-Pour commencer on installe `Flask`
-
-```bash
-pip install flask
-```
-
-Vous pourrez alors travailler en local 💻️. 
-
-```{div}
-:class: smaller
-Au besoin si vous voulez vous mettre dans une configuration serveur vous pouvez utiliser [@Replit](https://replit.com) il y a un template Flask.
-```
-
+## On sait déjà vaguement s'en servir
 
 ```{div}
 :class: center
-Et rien de plus à faire 😯 <br>
-c'est l'avantage de Flask par rapport à Django <br> qui nécessite un setup plus poussé pour démarrer un projet
+rappelez-vous, on a déjà vu  
+[comment installer FastAPI](label-fastapi-install)  
+et  
+[comment faire un serveur minimal avec FastAPI](label-exo-apitester)
+
+remarquez comme c'est simple de démarrer 😯  
+c'est un avantage de Flask/FastAPI par rapport à Django  
+qui nécessite un setup plus poussé pour démarrer un projet
 ```
 
 ---
 
-## Minimal Working Example
+## Rappel rapide
 
 `````{div}
 :class: columns
@@ -149,7 +131,7 @@ c'est l'avantage de Flask par rapport à Django <br> qui nécessite un setup plu
 - Step 1️⃣ :
 
 ```python
-from flask import Flask
+from fastapi import FastAPI
 ```
 ````
 
@@ -158,7 +140,7 @@ from flask import Flask
 - Step 2️⃣
 
 ```python
-app = Flask("Appli de ouf")
+app = FastAPI()
 ```
 ````
 `````
@@ -166,31 +148,34 @@ app = Flask("Appli de ouf")
 Ensuite tout repose sur une syntaxe un peu particulière :
 
 ```python
-*@app.route("/une/url/cible")
+*@app.get("/un/chemin/cible")
 def la_fonction_correspondante():
   // fait des trucs très intelligents
   // et encore plus
   return un_resultat ## pouvant être du html, du json, ....
-
 ```
 
-Pour finir :
+Pour le lancer en mode développement depuis le terminal
 
 `````{div}
 :class: columns
+
 ````{div}
 :class: fifty
-```python
-app.run(debug=True, port=3001)
+```bash
+fastapi dev mon_fichier.py
 ```
 ````
+
+
 ````{div}
 :class: fifty
-`debug=True` permet d'activer du hot reloading
+ou en mode prod avec  
+`fastapi run mon_fichier.py`
 ````
 `````
 
----
+<!-- ---
 
 ### Pour ceux qui auraient la flemme !
 
@@ -217,7 +202,7 @@ xxx no longer working xxx
 ```
 ````
 `````
-
+ -->
 ---
 
 ## Envoyer autre chose qu'une chaine !

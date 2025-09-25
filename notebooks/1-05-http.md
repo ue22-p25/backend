@@ -61,8 +61,7 @@ Dans Python 🐍 vous vous en doutez il existe tout ce qu'il faut !!
 import requests
 ```
 
-Nous allons utiliser 
-
+Nous allons utiliser
 
 ```{div}
 :class: center

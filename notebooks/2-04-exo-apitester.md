@@ -1,5 +1,6 @@
 # exo: apitester
 
+(label-exo-apitester)=
 ## Petite pause mise en pratique
 
 **Objectif** : Mettre en place une API permettant d'accéder au contenu de fichier CSV

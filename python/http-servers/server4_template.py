@@ -25,7 +25,7 @@ class EchoHttpHandlerWithPOST(BaseHTTPRequestHandler):
         # -------
         # this is the part that changes from previous example
         # Assuming we start the server from the repo root
-        with open("python/http/template.html.j2", "r") as f:
+        with open("python/http-servers/template.html.j2", "r") as f:
             template = f.read()
             # the variable names we can use in the template
             env = dict(

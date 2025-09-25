@@ -147,6 +147,7 @@ noyau très léger et minimaliste, mais super puissant
 
 ## Le setup de base
 
+(label-fastapi-install)=
 ### Installation
 
 ```bash

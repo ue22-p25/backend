@@ -105,11 +105,11 @@ mais bon c'est juste un jouet hein
 ```{div}
 :class: center
 Cette fois-ci on va le faire *à la main* et écrire un peu de code, toujours en Python 🐍  
-ça se passe dans le dossier `python/http`  
+ça se passe dans le dossier `python/http-servers`  
 📢 ⚠️ On regarde le fichier `server1_static.py`
 ```
 
-```{literalinclude} ../python/http/server1_static.py
+```{literalinclude} ../python/http-servers/server1_static.py
 :align:center
 ```
 
@@ -133,7 +133,7 @@ car il définit la manière dont le serveur va traiter la requête.
 
 ## Exemples fait à la main
 
-📢 ⚠️ dans le dossier `python/http`, on regarde les fichiers:
+📢 ⚠️ dans le dossier `python/http-servers`, on regarde les fichiers:
 
 - `server2_static_byhand.py`
   - en gros, mêmes fonctions: sait répondre à GET pour les fichiers statiques
