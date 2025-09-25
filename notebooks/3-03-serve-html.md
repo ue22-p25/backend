@@ -59,7 +59,7 @@ Il faut être curieux et ouvrir l'onglet "Network" des outils de développement 
 
 ````{div}
 :class: center
-```{image} media/csr.svg
+```{image} media/rendering-csr.excalidraw.svg
 :width: 70%
 ```
 ````
@@ -70,7 +70,7 @@ Il faut être curieux et ouvrir l'onglet "Network" des outils de développement 
 
 ````{div}
 :class: center
-```{image} media/ssr.svg
+```{image} media/rendering-ssr.excalidraw.svg
 :width: 70%
 ```
 ````
@@ -88,7 +88,7 @@ Mécanisme de génération de page HTML à partir d'un modèle et de données.
 
 ````{div}
 :class: center
-```{image} media/template-engine.svg
+```{image} media/template-engine.excalidraw.svg
 :width: 40%
 ```
 ````
