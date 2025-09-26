@@ -113,15 +113,15 @@ html article main .relative.group[data-mdast-node-id] {
             content: ' ∅ no output ∅ ';
         }
         font-size: xx-small;
-        padding: 0px 1rem;
+        padding: 0px 1em;
 
         border-color: var(--myst-output-empty-border-color);
-        margin-bottom: 0.6rem;
+        margin-bottom: 1rem;
     }
 
     border-radius: var(--myst-code-border-radius);
     margin-top: 0px;
-    padding: 0.25em 1rem;
+    padding: 0.25em 1em;
     border-width: var(--myst-code-border-width);
     border-color: var(--myst-output-border-color);
     background-color: var(--myst-output-background-color);
@@ -292,10 +292,14 @@ article main table {
 .corrige {
     background-image: radial-gradient(circle at top left, #d1effa, #e2f9cd);
 }
-html.dark .corrige {
+
+html[data-theme='dark'] .corrige {
     background-image: radial-gradient(circle at top left, #0e3852, #0c5517);
-}
-/* the right-hand-side toc made more compact */
+}/*
+ the right-hand-side toc made more compact
+ useful because this content is mostly made of slides
+ and so we use a large zoom level
+*/
 
 ul.text-sm.leading-6>li>a {
     padding-top: 0;
@@ -405,6 +409,12 @@ button.copy-button {
 
 .fifty {
   width: 47%;
+}
+.fifty-five {
+  width: 53%;
+}
+.fourty-five {
+  width: 43%;
 }
 
 .fourty {

@@ -54,15 +54,10 @@ Source: <a href="https://www.jetbrains.com/lp/devecosystem-2023/python/">https:/
 
 ---
 
-## Mais au fait ...
-
-... pourquoi on s'intéresse à ça ?
-
----
-
 ## Graphical User Interface
 
-Faire le pont 🌉 entre :
+Mais au fait ... pourquoi on s'intéresse à ça ?  
+La GUI c'est ce qui fait le pont 🌉 entre :
 
 ````{div}
 :class: center
@@ -105,11 +100,11 @@ Utilisation du navigateur
 
 ---
 
-## On sait déjà vaguement s'en servir
+## FastAPI: on sait déjà un peu !
 
 ```{div}
 :class: center
-rappelez-vous, on a déjà vu  
+on sait déjà vaguement s'en servir, rappelez-vous, on a déjà vu  
 [comment installer FastAPI](label-fastapi-install)  
 et  
 [comment faire un serveur minimal avec FastAPI](label-exo-apitester)
@@ -121,7 +116,7 @@ qui nécessite un setup plus poussé pour démarrer un projet
 
 ---
 
-## Rappel rapide
+### Rappel rapide
 
 `````{div}
 :class: columns
@@ -145,34 +140,47 @@ app = FastAPI()
 ````
 `````
 
-Ensuite tout repose sur une syntaxe un peu particulière :
+Ensuite on attache des fonctions Python aux chemins d'URL  
+on appelle ces fonctions des *route handlers* ou des *router functions*
 
 ```python
-*@app.get("/un/chemin/cible")
+@app.get("/un/chemin/cible")
 def la_fonction_correspondante():
   // fait des trucs très intelligents
-  // et encore plus
-  return un_resultat ## pouvant être du html, du json, ....
+  return un_resultat    # pouvant être des données ou du html ou ...
 ```
 
-Pour le lancer en mode développement depuis le terminal
+---
+### Et pour lancer le serveur ?
+
 
 `````{div}
 :class: columns
 
 ````{div}
 :class: fifty
-```bash
-fastapi dev mon_fichier.py
+depuis le terminal
+```{code} bash
+:caption: le serveur en mode développement
+fastapi dev mon_app.py
+```
+```{code} bash
+:caption: ou sur un autre port
+fastapi dev mon_app.py --port 8080
 ```
 ````
 
 
 ````{div}
 :class: fifty
-ou en mode prod avec  
-`fastapi run mon_fichier.py`
+ou aussi
+```{code} bash
+:caption: en mode production
+fastapi run mon_app.py
+```
+
 ````
+
 `````
 
 <!-- ---
@@ -205,90 +213,54 @@ xxx no longer working xxx
  -->
 ---
 
-## Envoyer autre chose qu'une chaine !
-
-Si on veut pour une url donnée renvoyer, non pas une chaîne, mais un fichier HTML qui lui même peut nécessiter des CSS/JS, il va falloir une organisation un peu particulière
-
-`````{div}
-:class: columns
-
-````{div}
-:class: fifty
-```bash
-.
-├── app.py
-├── static
-│   ├── css
-│   │   └── wheel.css
-│   └── js
-│       └── wheel.js
-└── templates
-    └── wheel.html
-```
-````
-
-````{div}
-:class: fifty
-```python
-from flask import render_template
-```
-
-```python
-@app.route("/")
-def index():
-  return render_template("wheel.html")
-```
-````
-`````
-
-En revanche tous les fichiers contenus dans le dossier `static` seront
-**automatiquement accessibles** sans que l'on ait rien à faire et ça c'est 🆒 !
-
----
-
-## Un truc un tout petit peu plus évolué
-
-### Passage de paramètres aux URLs
+## Paramètres dans un GET
 
 ````{div}
 :class: center
+
+On peut écrire des URLs un tout petit peu plus évoluées:  
+
 ```{image} media/http-get-arguments.excalidraw.svg
 :width: 80%
 ```
+
+Besoin de **récupérer les arguments** dans la fonction *handler* 🤔
 ````
 
-Besoin de récupérer dans la fonction `handler` la requête et donc ses arguments 🤔
+<br>
+
 
 ````{div}
 :class: center
-Flask a tout prévu
+FastAPI a tout prévu
 ````
 
 `````{div}
 :class: columns
 
 ````{div}
-:class: sixty
+:class: fifty
 ```python
-from flask import request
-
-@app.route("/une/route/donnee")
-def handler():
-  name = request.args.get("name")
-  age = request.args.get("age")
-  return f"<h1> Hello {name} ! Tu as vraiment {age} ans ? </h1>"
-```
+@app.get("/une/route/donnee")
+def get_parameters(
+        name: str,
+        age: int):
+    return {'name': name, 'age': age}
 ````
 
 ````{div}
-:class: fourty
-⚠️ Si l'argument n'existe pas la fonction `get` retourne `None`
+:class: fifty
+il suffit de déclarer les paramètres  
+avec leur type  
+et FastAPI fait le reste  
+et même la conversion de type
+
 ````
 `````
 
 ````{div}
 :class: center
-🚧 Pas de notion de type dans les arguments, tout est chaîne de caractère 🚧
+🚧 Pas de notion de type dans les échanges réseau, tout est chaîne de caractère 🚧
 ````
 
 ---
@@ -299,65 +271,148 @@ Possibilité offerte par Flask de définir des paramètres au sein même d'une U
 
 ````{div}
 :class: center
-```{image} media/flask-route-param.excalidraw.svg
+```{image} media/fastapi-route-param.excalidraw.svg
 ```
 ````
 
 `````{div}
 :class: columns
-````{div}
-:class: fifty
-Possibilité de typer les paramètres :
 
-- `string` : pour tout texte sans slash
-- `int` : valeur entière positive
-- `float` : valeur flottante positive
-- `path` : un string qui peut contenir un slash `/`
+````{div}
+:class: fifty-five smaller
+Cas particulier des `/`
+
+- par défaut un paramètre ne contient pas de slash `/`
+- **mais** dans une route on peut déclarer  
+  `"/ma/route/{parametre:path}"`  
+
+  pour autoriser les slashs `\` dans le paramètre
 ````
 ````{div}
-:class: fifty
+:class: fourty-five
 ```python
-@app.route("/home/<int:user_id>")
-def home_uid(user_id):
-    ## do something according to user_id value
-    return f"we were passed {user_id}"
+@app.get("/ma/route/{parameter}")
+def url_parameter(parameter: int):
+    return {"square": parameter**2}
+```
+```{div}
+:class: tiny
+et bien sûr on peut aussi recevoir comme ça plusieurs paramètres
 ```
 ````
 `````
 
-```{div}
-:class: smaller
-bien sûr on peut aussi recevoir comme ça plusieurs paramètres
-```
-
 ---
 
-## Un exemple : générateur de nombre aléatoire
+## Un générateur aléatoire (exo)
+
+`````{div}
+:class: columns
+
+````{div}
+:class: fifty
+
+**dans `python/random-generator.py`**
+- lire le code
+- lancer le serveur
+````
+
+````{div}
+:class: fifty
 
 API de génération de nombres aléatoires
 
 - `/api/integer` : génère des entiers
 - `/api/float` : génère des flottant
 
-Possibilité pour les deux d'ajouter un paramètre `n` par exemple `?n=10` pour générer 10 valeurs alétoires.
+````
+
+`````
 
 ````{div}
 :class: center
 
-xxx no longer working xxx
+depuis le browser - ou le terminal avec httpie - interrogez le *endpoint* `/api/integer`
+````
 
-```{div}
-[http://bit.ly/3nb0yaG](http://bit.ly/3nb0yaG)
-
-```{image} media/qrcode/flask_random_api.png
-:align: center
-:width: 20%
+```{code} bash
+# n'hésitez pas à voir aussi ce que ça donne avec l'option -v
+# qui va vous montrer AUSSI la requête envoyée
+http :8000/api/integer
 ```
+
+```{exercise}
+:label: exo-random-one
+
+- comment faire pour générer 4 nombres flottants entre 10 et 50 ?  
+  ici encore pensez à la documentation interactive
+```
+
+```{exercise}
+:label: exo-random-two
+
+- que se passe-t-il si on passe un max plus petit que le min ?  
+  comment pourrait-on gérer ça ?
+```
+---
+
+## Solutions de l'exercice
+
+````{solution} exo-random-one
+:class: dropdown
+
+- dans le browser:  
+  `http://localhost:8000/api/float?min=10&max=50&count=4`
+
+- c'est important de **bien comprendre comment fonctionne *`http`***  
+  avec httpie, c'est plus simple:
+  ```{code} bash
+  :linenos:
+  :emphasize-lines: 7
+
+  # en version longue - attention aux guillemets !
+  # à cause du & qui est un caractère spécial en bash
+  http ":8000/api/float?min=10&max=50&count=4"
+
+  # en version courte, pour passer des paramètres avec GET
+  # il faut utiliser ==
+  http :8000/api/float min==10 max==50 count==4
+
+  # attention le = simple est pour les requêtes POST !
+  # si on utilise = ça ne fait pas ce qu'on veut !
+  # NE PAS FAIRE COMME ÇA !
+  # http GET :8000/api/float min=10 max=50 count=4
+
+  ```
+````
+
+````{solution} exo-random-two
+:class: dropdown
+
+en l'état, il n'y aucun contrôle sur les paramètres, du coup le serveur appelle la fonction `random.uniform` avec des paramètres invalides et ça génère une erreur 500
+
+pour pallier à cela, plusieurs choix sont possibles:
+
+- soit on ajoute un contrôle dans la fonction `random_floats` pour vérifier que `min < max` et si ce n'est pas le cas on lève une exception HTTP 400 (Bad Request)
+- soit on utilise les fonctionnalités de validation de Pydantic; mais ça pour l'instant c'est prématuré puisqu'on n'a pas encore vu Pydantic 😉
+
+du coup pour l'instant on va se contenter de la 1ère solution
+
+```{code} python
+:linenos:
+:emphasize-lines: 5
+
+from fastapi import HTTPException
+
+def random_floats(min: float, max: float) -> float:
+    if min >= max:
+        raise HTTPException(status_code=400, detail="Invalid range")
+    return random.uniform(min, max)
 ````
 
 ---
 
-## Une API complète
+## Les verbes HTTP
 
 Petit rappel du 1er épisode, HTTP différentes requêtes possibles
 
@@ -366,67 +421,95 @@ Petit rappel du 1er épisode, HTTP différentes requêtes possibles
 - `PATCH` : requêtes pour **_modifier partiellement_** une ressource du serveur (mettre à jour l'addresse mail d'un utilisateur dans la base de données)
 - `DELETE` : requêtes pour **_supprimer_** une ressource du serveur (supprimer un commentaire sur un article, ... )
 
-Il s'agit là des principaux types de requêtes mais il en existe d'autres, pour la liste complète vous pouvez faire un tour [https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
+Il s'agit là des principaux types de requêtes mais il en existe d'autres, pour la liste complète vous pouvez faire un tour ici: [https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 
 ---
 
-## Spécification des requêtes
+## Paramètres dans un POST
 
-Une même fonction pour un chemin, mais pour différents types de requête (e.g. GET et POST)
+```{admonition} vu plus haut: les paramètres GET sont dans l'URL
+:class: tip dropdown admonition-smaller
 
-```python
-from flask import request
-
-@app.route("/chemin", methods=['GET', 'POST'])
-def the_function():
-  if request.method == "POST":
-    ## do something for post
-    return post_response
-  elif request.method == "GET":
-    ## do other thing
-    return get_response
+genre `/ma/route?param1=val1&param2=val2`  
+et pour info le protocole HTTP ne prévoit pas qu'on puisse mettre des paramètres dans le corps d'une requête GET, si vous le faites quand même le comportement est indéfini
 ```
 
-Mais on peut aussi faire: une fonction par chemin et par type de requête
+par contre pour les requêtes POST, PATCH, DELETE, ...  
+les paramètres sont passés dans le **corps** de la requête
 
-```python
-@app.get("/chemin")
-def get_for_chemin():
-  return
+Voyons ça sur un exemple
 
-@app.post("/chemin")
-def post_for_chemin():
-  return
+---
+
+### la requête POST
+
+Et pour commencer regardons ce qui est envoyé par `httpie` quand on fait un POST
+
+````{admonition} le corps d'une requête POST
+:class: dropdown
+
+Voici
+
+```{code} bash
+:linenos:
+:emphasize-lines: 2,11-13
+
+❯ http -v :8000/api/seed seed_value:=42
+POST /api/seed HTTP/1.1
+Accept: application/json, */*;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+Host: localhost:8000
+User-Agent: HTTPie/3.2.4
+
+{
+    "seed_value": 42
+}
+```
+````
+
+Comme on peut le voir, les paramètres sont envoyés **au format JSON**  
+dans le *Body* de la requête - i.e. après les *headers*  
+
+**Retenez bien ça, c'est important !**  
+C'est ce procédé qu'il va nous falloir utiliser lorsqu'on voudra envoyer des données au serveur (et notamment lorsque c'est le frontend qui envoie la requête via du JS)
+
+---
+
+### côté FastAPI
+
+Voici à présent le code FastAPI qui va bien pour gérer cette requête
+
+```{code} python
+:linenos:
+:emphasize-lines: 5
+
+from fastapi import Body
+
+@app.post("/api/seed")
+# avec Body() on indique que le paramètre vient du body de la requête
+def set_seed(seed_value: int=Body(..., embed=True)):
+    random.seed(seed_value)
+    return {"message": f"Seed set to {seed_value}"}
+```
+
+```{admonition} c'est plus simple avec Pydantic
+:class: tip dropdown
+on verra ça plus tard, mais si on utilise un modèle Pydantic pour définir les paramètres, c'est encore plus simple...
 ```
 
 ---
 
-## Récupérer les données reçues
+## La suite
 
-````{div}
-:class: center
-Encore une fois tout se passe dans `request`
-````
+À ce stade vous savez implémenter des *endpoints* FastAPI qui gèrent des
+requêtes GET et POST avec des paramètres
 
-Plusieurs méthodes à disposition :
+On a plein d'autres choses à voir, et notamment:
 
-- `request.is_json()` pour vérifier qu'il y a bien du json dans la requête
-- `request.get_json()` qui retourne le contenu de la requête
+- comment FastAPI tire parti des annotations de type pour faire de la validation automatique
+- comment retourner du HTML plutôt que de simples données
 
-````{div}
-:class: center
-⚠️ Lorsque vous traitez une requête `POST` il faut impérativement que votre fonction renvoie quelque chose ⚠️
-````
-
-````{div}
-:class: center
-
-xxx no longer working xxx
-
-[http://bit.ly/40ly786](http://bit.ly/40ly786)
-
-```{image} media/qrcode/flask_post.png
-:width: 20%
-```
-````
-
+On va voir ça dans les épisodes suivants...
