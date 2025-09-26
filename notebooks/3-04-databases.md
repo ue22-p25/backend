@@ -1,179 +1,142 @@
-# FastAPI & DBs
+# Chapitre : Persister les données dans une base avec FastAPI
 
-````{div}
-:class: center
-🚀 Cours en mode express 🚀
-````
+Dans le chapitre précédent, nous avons vu comment utiliser **Pydantic** pour valider et structurer les données entrantes et sortantes.  
+Mais une API n’est pas très utile si les données disparaissent à chaque redémarrage…  
+👉 Il est temps de **stocker les données dans une base**.
 
-Plein de choses que l'on ne peut pas voir :
+---
 
-````{div}
-:class: center
-Authentification, gestion de base de données,<br><br>sécurité des applications web, interface avec services externes, ...
-````
+## 1. Choix de l’outil : SQLModel
 
-**Quelques ressources**
+Pour manipuler une base SQL avec FastAPI, le plus pratique est d’utiliser **[SQLModel](https://sqlmodel.tiangolo.com/)** :
+- basé sur **SQLAlchemy** (robuste et éprouvé),
+- compatible avec **Pydantic** (validation et sérialisation automatiques),
+- syntaxe simple et moderne (Python + types).
 
-```{div}
-:class: center
-[https://flask.palletsprojects.com/en/1.1.x/](https://flask.palletsprojects.com/en/1.1.x/)
+Installation :
 
-[https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+```{code-block} bash
+pip install sqlmodel sqlite
+```
+
+Ici nous utiliserons **SQLite** : une base légère, parfaite pour débuter.
+
+---
+
+## 2. Définir un modèle de table
+
+Un modèle SQLModel ressemble beaucoup à un modèle Pydantic, avec en plus la possibilité de décrire une table SQL.
+
+```{code-block} python
+from sqlmodel import SQLModel, Field
+
+class User(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    name: str
+    email: str
+    is_active: bool = True
+```
+
+➡️ `table=True` indique que cette classe correspond à une table.  
+➡️ `id` est une clé primaire auto-incrémentée (valeur fournie par la base).
+
+---
+
+## 3. Créer la base et la session
+
+Il faut maintenant créer la base et préparer une **session** pour dialoguer avec elle.
+
+```{code-block} python
+from sqlmodel import create_engine, Session
+
+# fichier SQLite local
+database_url = "sqlite:///./test.db"
+engine = create_engine(database_url, echo=True)
+
+# création des tables
+SQLModel.metadata.create_all(engine)
+
+# fonction utilitaire pour obtenir une session
+def get_session():
+    with Session(engine) as session:
+        yield session
 ```
 
 ---
 
-## Juste un mot quand même sur l'aspect Base de Données
+## 4. Écrire des endpoints CRUD
 
-Pour faire de la base de données relationnelle simplement
+CRUD = Create, Read, Update, Delete.  
+Voici un exemple d’API simple pour gérer des `User`.
 
-````{div}
-:class: center
-SQLAlchemy
-````
+### Créer un utilisateur
 
-Avec une intégration Flask assez simple via `Flask-SQLAlchemy`
+```{code-block} python
+from fastapi import Depends, FastAPI
 
-Après dans le cas où vous avez besoin d'une base de données `simple` pour faire de la lecture/écriture minimaliste une solution :
+app = FastAPI()
 
-````{div}
-:class: center
-Passer par un service externe
-````
-
-Trucs à la mode : Notion ou Airtable par exemple
-
----
-
-## Flask SQLAlchemy
-
-```bash
-pip install Flask-SQLAlchemy
+@app.post("/users/", response_model=User)
+def create_user(user: User, session: Session = Depends(get_session)):
+    session.add(user)
+    session.commit()
+    session.refresh(user)  # recharge l’objet avec l’ID généré
+    return user
 ```
 
-````{div}
-:class: center
-Gestion de base de données se fait via des **modèles**
-<br><br>
-Dans le jargon, ça s'appelle un ORM (Object-Relationship-Model)
-<br><br>
-Mais vous allez voir c'est beaucoup plus simple que ce qu'on vous a dit en prépa 😅
-````
+### Lister les utilisateurs
 
-````{div}
-:class: smaller
-il y a plein d'autres ORMs utilisables avec Flask, mais SQLAlchemy est le plus populaire
-````
+```{code-block} python
+from typing import List
 
----
-
-## La tables des "User"
-
-```python
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-
-    def __repr__(self):
-        return f'<User {self.username}>'
-```
-
-```python
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
-
-db = SQLAlchemy(app)
-
-```
- 
-Pour initialiser et remplir la base de données
-
-```python
-db.init_app(app)
-with app.app_context():
-    db.create_all()
-    db.session.add(User(username="bob", email="bob.leponge@maison-ananas.com"))
-    db.session.add(User(username="patrick", email="patrick.etoile@maison-ananas.com"))
-
-   db.session.commit()
+@app.get("/users/", response_model=List[User])
+def list_users(session: Session = Depends(get_session)):
+    users = session.query(User).all()
+    return users
 ```
 
 ---
 
-## Interogation de la base de données
+## 5. Exemple d’utilisation
 
-**Liste de tous les utilisateurs**
+Créer un utilisateur :
 
-```python
-@app.route("/list")
-def list():
-    users = User.query.all()
-    output = [f"{user.username} ({user.email})" for user in users]
-    return "<pre><code>" + "<br>".join(output) + "</pre></code>"
+```{code-block} bash
+http POST :8000/users/ name="Alice" email="alice@example.com"
 ```
 
-**Recherche d'un utilisateur**
+Réponse :
 
-```python
-@app.route("/get/<string:username>")
-def get_user(username):
-    user = User.query.filter_by(username=username).first()
-    if user is None:
-        return "<h1>User not found</h1>"
-    return f"<h1>{user.username} ({user.email})</h1>"
+```{code-block} json
+{
+  "id": 1,
+  "name": "Alice",
+  "email": "alice@example.com",
+  "is_active": true
+}
 ```
 
----
+Lister les utilisateurs :
 
-## La table des "Post"
-
-Ajout d'une classe Post (au sens message publié, pas de rapport avec le POST de http hein)
-
-On a besoin d'une relation entre les deux tables, puisqu'un Post est lié à un utilisateur
-
-```python
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80), unique=True, nullable=False)
-    content = db.Column(db.String(120), unique=True, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    user = relationship("User", back_populates="posts")
-```
-
-Du coup, besoin d'ajouter également une relation dans la classe User
-
-```python
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    posts = relationship("Post", back_populates="user")
+```{code-block} bash
+http :8000/users/
 ```
 
 ---
 
-## Utilisation
+## 6. Avantages pédagogiques
 
-```python
-@app.route("/posts")
-def posts():
-    posts = Post.query.all()
-    output = [f"{post.title} ({post.content}) from {post.user.username}" for post in posts]
-    return "<pre><code>" + "<br>".join(output) + "</pre></code>"
+- ✅ On manipule **une seule classe** pour la validation *et* la persistance.  
+- ✅ La base conserve les données entre deux exécutions.  
+- ✅ Facile d’illustrer les opérations CRUD.  
 
-@app.route("/post/<string:username>")
-def get_posts(username):
-    user = User.query.filter_by(username=username).first()
-    if user is None:
-        return "<h1>User not found</h1>"
-    posts = user.posts
-    output = [f"{post.title} ({post.content})" for post in posts]
-    return "<pre><code>" + "<br>".join(output) + "</pre></code>"
-```
+---
 
-````{div}
-:class: center
-Ainsi toute la science occulte de la base de données relationnelle
-<br><br>est cachée derrière des classes Python 🐍
-````
+# 🚀 Conclusion
 
+Avec **SQLModel**, FastAPI permet de relier facilement :
+- la **validation des données** (héritée de Pydantic),
+- et la **persistance en base** (via SQLAlchemy).
+
+👉 Vous pouvez maintenant créer de vraies APIs capables de conserver et retrouver les informations dans une base SQL.  
+Prochaine étape : enrichir vos modèles avec des relations (ex. `User` ↔ `Address`).
