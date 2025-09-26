@@ -1,4 +1,4 @@
-# Formulaires avec Flask
+# Formulaires avec FastAPI
 
 Un truc récurrent dans le web c'est les formulaires :
 

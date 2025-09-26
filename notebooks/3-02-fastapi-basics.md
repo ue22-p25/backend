@@ -1,4 +1,4 @@
-# Framework FastAPI
+# FastAPI - les bases
 
 Micro-framework Python 🐍 - plutôt récent (2018);  
 occupe le même espace que
