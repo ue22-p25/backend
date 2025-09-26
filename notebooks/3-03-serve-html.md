@@ -19,6 +19,64 @@ Page profil utilisateur, recherche de produits selon critères, ...
 
 ---
 
+## Renvoyer du HTML
+
+Si pour une route donnée on veut renvoyer, non pas une simple donnée, mais un fichier HTML - qui lui même peut nécessiter des CSS/JS - il va falloir s'organiser un peu  
+
+Et faire la distinction entre
+- les fichiers **statiques** (CSS, JS, images, polices, ...)
+- les **templates** (fichiers HTML avec des emplacements réservés pour insérer des données, elles mêmes calculées par le code FastAPI)
+
+```{admonition} les fichiers statiques en production
+:class: tip dropdown
+Pour des raisons de performance, il est préférable de servir les fichiers statiques via un serveur web dédié (typiquement nginx, apache, ...) - car on n'a pas besoin de Python pour ça  
+C'est pour cela qu'on les sépare bien du reste
+```
+
+---
+
+### Structure du repo
+
+Du coup, cela n'est pas imposé par le framework mais on trouve usuellement une structure de repo de ce genre:
+
+`````{div}
+:class: columns
+
+````{div}
+:class: fifty
+```{code} bash
+:label: fastapi-repo-structure
+:caption: Structure usuelle d'un repo FastAPI
+./
+├── main.py               # FastAPI entrypoint
+├── templates/            # Jinja2 (or other) templates
+│   ├── base.html
+│   └── users/
+│       └── profile.html
+├── static/               # CSS, JS, images, fonts
+└── config.py             # settings
+```
+````
+
+````{div}
+:class: fifty
+```python
+from flask import render_template
+```
+
+```python
+@app.route("/")
+def index():
+  return render_template("wheel.html")
+```
+````
+`````
+
+En revanche tous les fichiers contenus dans le dossier `static` seront
+**automatiquement accessibles** sans que l'on ait rien à faire et ça c'est 🆒 !
+
+---
+
 ## Page dynamique : CSR vs SSR
 
 Pour le cas de pages dynamiques deux approches existent
