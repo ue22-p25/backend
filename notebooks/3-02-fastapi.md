@@ -511,5 +511,6 @@ On a plein d'autres choses à voir, et notamment:
 
 - comment FastAPI tire parti des annotations de type pour faire de la validation automatique
 - comment retourner du HTML plutôt que de simples données
+- et quelques autres tips & tricks
 
 On va voir ça dans les épisodes suivants...
