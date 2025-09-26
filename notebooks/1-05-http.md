@@ -118,7 +118,7 @@ Image from Jérémy Mésière, Architecte Middleware chez Manutan
 **Representational State Transfer**
 ````
 
-Ensemble de principes gouvernant l'architercture d'application Web.
+Ensemble de principes gouvernant l'architecture d'application Web.
 
 `````{div}
 :class: columns smaller

@@ -135,6 +135,8 @@ demande de support par mail qui provoque une nouvelle entrée dans une base de d
 
 ## Application 1
 
+xxx outdated xxx
+
 Je vous ai mis en place un serveur minimaliste offrant une API permettant :
 
 1. Lister l'ensemble des utilisateurs de la base de données
@@ -173,7 +175,7 @@ L'objectif ici est de mettre en place un programme Python permettant de modifier
 - Afficher le détail d'une tâche défini par son ID
 ````
 ````{div}
-:class: forty
+:class: fourty
 - Changer le status d'une tâche
 - Ajouter du texte dans la page de la tâche
 ````
