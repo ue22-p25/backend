@@ -1,9 +1,11 @@
 # Une appli complète
 
 Voyez la construction pas à pas d'une appli de todo-notes minimaliste, mais fonctionnelle, sur
-[ue22-p24.github.io](https://ue22-p24.github.io/backend-fastapi-notes/)
+[backend-fastapi-notes](https://backend-fastapi-notes.info-mines.paris/scrollycoding)
 
 ```{admonition} Pour les curieux qui veulent comparer avec Flask
+xxx WIP cela reste à déménager dans info-mines.paris xxx
+
 pour info, un exercice similaire est dispo sur Flask, avec une une appli de chat, c'est ici
 [backend-chatapp.surge.sh](https://backend-chatapp.surge.sh/scrollycoding)
 ```

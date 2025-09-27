@@ -1,27 +1,25 @@
-# Servir des pages HTML
+# FastAPI & templates
 
-Deux cas de figures :
+xxx ce chapitre est un WIP xxx
 
-- Réponses "statiques" -> contenu ne dépendant de rien donc le plus simple en fait
+il y a plein de bouts mais tout en désordre; le plan est de
 
-````{div}
-:class: center fifty
-<iframe src="https://giphy.com/embed/Rl9Yqavfj2Ula" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-````
+- expliquer la différence entre page statique et dynamique
+- introduire les templates et jinja2
+- montrer la structure usuelle d'un repo
+- et plus vaguement, parler de SSR, CSR, ISR
 
-- Réponses "dynamiques" -> contenu dépendant de données externes  
-  (base de données typiquement, paramètres utilisateur... )
+j'ai perdu la démo de Basile, je ne suis pas sûr d'avoir besoin d'un cas concret pour l'instant
 
-````{div}
-:class: center
-Page profil utilisateur, recherche de produits selon critères, ...
-````
+xxx WIP xxx
 
 ---
 
-## Renvoyer du HTML
+## Servir des pages HTML
 
-Si pour une route donnée on veut renvoyer, non pas une simple donnée, mais un fichier HTML - qui lui même peut nécessiter des CSS/JS - il va falloir s'organiser un peu  
+Maintenant qu'on sait renvoyer du JSON, on va voir comment renvoyer du HTML  
+C'est bien entendu nécessaire pour offrir une interface utilisateur  
+Et n'oublions pas que le HTML lui même peut nécessiter des CSS/JS
 
 Et faire la distinction entre
 - les fichiers **statiques** (CSS, JS, images, polices, ...)
@@ -32,6 +30,37 @@ Et faire la distinction entre
 Pour des raisons de performance, il est préférable de servir les fichiers statiques via un serveur web dédié (typiquement nginx, apache, ...) - car on n'a pas besoin de Python pour ça  
 C'est pour cela qu'on les sépare bien du reste
 ```
+
+---
+## Pages statiques vs dynamiques
+
+Deux cas de figures :
+
+````{div}
+:class: columns
+
+```{div}
+:class: center fifty
+Réponses "statiques"  
+contenu ne dépendant de rien  
+donc le plus simple en fait
+
+<iframe src="https://giphy.com/embed/Rl9Yqavfj2Ula" frameBorder="0" class="giphy-embed"></iframe>
+```
+
+```{div}
+:class: center fifty
+Réponses "dynamiques"  
+contenu dépendant de données externes
+
+typiquement:  
+recherche de produits, profil utilisateur  
+c'est le cas le plus courant évidemment
+```
+````
+
+C'est tout de même utile de faire la distinction pour des raisons de performance !  
+Ce n'est vraiment pas utile de solliciter une stack Python pour juste servir un fichier CSS !
 
 ---
 

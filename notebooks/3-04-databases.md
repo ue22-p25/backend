@@ -1,4 +1,4 @@
-# Chapitre : Persister les données dans une base avec FastAPI
+# Sauver les données dans une base
 
 Dans le chapitre précédent, nous avons vu comment utiliser **Pydantic** pour valider et structurer les données entrantes et sortantes.  
 Mais une API n’est pas très utile si les données disparaissent à chaque redémarrage…  

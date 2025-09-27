@@ -1,4 +1,4 @@
-# FastAPI & Pydantic
+# Typer les données avec Pydantic
 
 
 FastAPI s’appuie sur **Pydantic** pour gérer la validation et la sérialisation des données.  

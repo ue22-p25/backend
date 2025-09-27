@@ -1,5 +1,13 @@
 # Formulaires avec FastAPI
 
+xxx WIP xxx
+
+pour l'instant c'est tel quel le texte Flask, à mettre à jour pour FastAPI
+
+xxx WIP xxx
+
+---
+
 Un truc récurrent dans le web c'est les formulaires :
 
 - Authentification

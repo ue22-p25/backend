@@ -1,6 +1,14 @@
 # Et les websocket ...
 
 
+xxx WIP xxx
+
+pour l'instant c'est tel quel le texte Flask, à mettre à jour pour FastAPI
+
+xxx WIP xxx
+
+---
+
 `````{div}
 :class: columns
 
