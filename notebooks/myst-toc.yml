@@ -13,11 +13,11 @@ project:
 
     - file: 0-00-intro.md
 
-    - title: "Introduction Réseaux"
+    - title: "Intro to networking"
       children:
         - pattern: 1-*.md
 
-    - title: "Coté Serveur !"
+    - title: "Server side"
       children:
         - pattern: 2-*.md
 
