@@ -1,6 +1,6 @@
-# Mon premier serveur
+# My first server
 
-## Et au fait il répond quoi le serveur à GET&nbsp;?
+## And by the way what does the server respond to GET&nbsp;?
 
 `````{div}
 :class: columns
@@ -24,16 +24,16 @@
 
 ```{div}
 :class: smaller
-En vrai, c'est un mauvais exemple car bien souvent le *Body* d'une réponse HTTP est vide;  
-mais bon c'est l'idée générale qu'il faut retenir;
+In reality, it's a bad example because very often the *Body* of an HTTP response is empty;  
+but well it's the general idea to remember;
 ```
 
 ---
 
-### dans le navigateur
+### in the browser
 
-C'est possible de voir les requêtes et réponses dans votre navigateur  
-via `Outils de développement → Network`
+It's possible to see requests and responses in your browser  
+via `Developer Tools → Network`
 
 `````{div}
 :class: columns
@@ -55,7 +55,7 @@ via `Outils de développement → Network`
 
 ---
 
-## Faisons un serveur http de base
+## Let's make a basic HTTP server
 
 `````{div}
 :class: columns
@@ -64,29 +64,29 @@ via `Outils de développement → Network`
 :class: fifty-five
 
 ```sh
-## dans votre terminal:
-## on va dans le repo du cours
+## in your terminal:
+## let's go to the course repo
 cd /bla-bla-bla/backend
 
-## il y a un dossier html
+## there's an html folder
 cd html
 
-## pour lancer le serveur
+## to launch the server
 python -m http.server
 
 ## NB: ... 
-## à ce stade le terminal est bloqué
-## pour tuer le serveur tapez "Control-C"
+## at this stage the terminal is blocked
+## to kill the server type "Control-C"
 ```
 ````
 
 ````{div}
 :class: fourty-five
 
-puis ouvrez dans votre navigateur `http://localhost:8000/index.html` (*)
+then open in your browser `http://localhost:8000/index.html` (*)
 ```{div}
 :class: smaller
-(*) vous pouvez aussi remplacer `localhost` avec votre adresse IP - [on en a parlé ici](#my-ip-address)
+(*) you can also replace `localhost` with your IP address - [we talked about it here](#my-ip-address)
 ```
 ````
 `````
@@ -94,19 +94,19 @@ puis ouvrez dans votre navigateur `http://localhost:8000/index.html` (*)
 ```{div}
 :class: smaller center
 
-c'est vraiment la méthode la plus simple possible pour faire un serveur avec Python 🐍  
-mais bon c'est juste un jouet hein
+it's really the simplest possible method to make a server with Python 🐍  
+but well it's just a toy you know
 ```
 
 ---
 
-### Un peu moins de base
+### A bit less basic
 
 ```{div}
 :class: center
-Cette fois-ci on va le faire *à la main* et écrire un peu de code, toujours en Python 🐍  
-ça se passe dans le dossier `python/http-servers`  
-📢 ⚠️ On regarde le fichier `server1_static.py`
+This time we're going to do it *by hand* and write some code, still in Python 🐍  
+it happens in the `python/http-servers` folder  
+📢 ⚠️ We look at the file `server1_static.py`
 ```
 
 ```{literalinclude} ../python/http-servers/server1_static.py
@@ -115,44 +115,44 @@ Cette fois-ci on va le faire *à la main* et écrire un peu de code, toujours en
 
 ---
 
-## Traitement des requêtes
+## Request processing
 
-Le fonctionnement interne d'un serveur HTTP est assez simple
+The internal operation of an HTTP server is quite simple
 
-1. **Écouter** sur un port (80 par défaut)
-2. **Accepter** une connexion
-3. **Lire** la requête
-4. **Traiter** la requête
-5. **Envoyer** la réponse
-6. **Fermer** la connexion
+1. **Listen** on a port (80 by default)
+2. **Accept** a connection
+3. **Read** the request
+4. **Process** the request
+5. **Send** the response
+6. **Close** the connection
 
-Le point important est la transition entre les étapes 3 et 4 qui est le coeur du serveur HTTP  
-car il définit la manière dont le serveur va traiter la requête.
+The important point is the transition between steps 3 and 4 which is the heart of the HTTP server  
+because it defines how the server will process the request.
 
 ---
 
-## Exemples fait à la main
+## Examples made by hand
 
-📢 ⚠️ dans le dossier `python/http-servers`, on regarde les fichiers:
+📢 ⚠️ in the `python/http-servers` folder, we look at the files:
 
 - `server2_static_byhand.py`
-  - en gros, mêmes fonctions: sait répondre à GET pour les fichiers statiques
-  - mais écrit "à la pogne"
+  - basically, same functions: knows how to respond to GET for static files
+  - but written "by hand"
     <br><br>
 - `server3_post_stateful.py`
-  - le serveur est STATEFUL (il se souvient de l'état) - voir la variable `STATE`  
-    (NB: dans la vraie vie bien sûr, l'état sera stocké dans une database SQL - ou autre)
-  - le POST: les affectations var=value sont mémorisées
-  - le GET: quel que soit le PATH, affiche en html le contenu des variables connues dans `STATE` (et autres détails)
+  - the server is STATEFUL (it remembers the state) - see the `STATE` variable  
+    (NB: in real life of course, the state will be stored in a SQL database - or other)
+  - the POST: var=value assignments are memorized
+  - the GET: whatever the PATH, displays in html the content of variables known in `STATE` (and other details)
     <br><br>
 - `server4_template.py`
-  - mêmes fonctionnalités mais avec un template JINJA2
+  - same functionalities but with a JINJA2 template
 
 ---
 
-## of course il existe des frameworks pour ça&nbsp;!
+## of course frameworks exist for that&nbsp;!
 
-tout cela est un peu fastidieux, c'est pourquoi on utilise des frameworks (→ slides suivants)  
-mais c'est bien de comprendre comment ça marche  
-à retenir tout de même: cette histoire de templates; on en reparlera
+all this is a bit tedious, that's why we use frameworks (→ following slides)  
+but it's good to understand how it works  
+still to remember: this story of templates; we'll talk about it again
 

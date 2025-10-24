@@ -1,10 +1,10 @@
-# C'est quoi un serveur&nbsp;?
+# What is a server?
 
-## Récap de la dernière fois
+## Recap from last time
 
 ````{div}
 :class: center
-Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ...
+Classic Client <-> Server architecture with peer-to-peer, three-tier variations, ...
 ````
 
 `````{div}
@@ -18,14 +18,14 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 
 ````{div}
 :class: fifty center
-Un modèle OSI en 7 couches
+An OSI model in 7 layers
 
 ```{image} media/ip-address.excalidraw.svg
 :width: 40%
 ```
 <br>
 
-Un protocole HTTP(S) pour le web
+An HTTP(S) protocol for the web
 ```{image} media/http-request.excalidraw.svg
 :class: center
 ```
@@ -34,7 +34,7 @@ Un protocole HTTP(S) pour le web
 
 ---
 
-## Quel est le rôle du serveur ?
+## What is the role of the server?
 
 ````{div}
 :class: center
@@ -45,16 +45,16 @@ Un protocole HTTP(S) pour le web
 
 ````{div}
 :class: center
-🥱 Attendre et attendre et attendre ... 🥱
+🥱 Wait and wait and wait ... 🥱
 ````
 
-Et de temps en temps 🥳 il doit traiter une requête !
+And from time to time 🥳 it must process a request!
 
 ---
 
 ## Serveur et serveur deux choses différentes
 
-**_Attention_** il y a deux significations à serveur ...
+**_Attention_** there are two meanings to server ...
 
 ````{div}
 :class: center
@@ -74,7 +74,7 @@ Et de temps en temps 🥳 il doit traiter une requête !
 
 ````{div}
 :class: center
-C'est la machine **physique ou virtuelle** connectée au réseau qui va recevoir des paquets de données mais en aucun cas ne s'occupera du traitement de ces données
+It's the **physical or virtual** machine connected to the network that will receive data packets but will in no case take care of processing this data
 ````
 
 ---
@@ -83,7 +83,7 @@ C'est la machine **physique ou virtuelle** connectée au réseau qui va recevoir
 
 ````{div}
 :class: center
-Serveur physique vs serveur virtuel (VPS)
+Physical server vs virtual server (VPS)
 ````
 
 `````{div}
@@ -102,13 +102,13 @@ Serveur physique vs serveur virtuel (VPS)
 ````
 `````
 
-Différentes solutions : On Premise vs Cloud (OVH, Azure, GCP, AWS, ... )
+Different solutions: On Premise vs Cloud (OVH, Azure, GCP, AWS, ... )
 
 ---
 
 ## Serveur et serveur deux choses différentes
 
-### Le serveur "software"
+### The "software" server
 
 ````{div}
 :class: center
@@ -117,27 +117,27 @@ Différentes solutions : On Premise vs Cloud (OVH, Azure, GCP, AWS, ... )
 ```
 ````
 
-C'est l'application (au sens logiciel) qui va s'occuper de
+It's the application (in the software sense) that will take care of
 
 ````{div}
 :class: center
-**Recevoir**, **Traiter** et **Répondre** aux requètes HTTP (ou autres d'ailleurs)
+**Receive**, **Process** and **Respond** to HTTP requests (or others for that matter)
 ````
 
-Différentes solutions : Nginx (33%), Apache (27%), LiteSpeed (15%), Node.js(4%), IIS (4%), ...
+Different solutions: Nginx (33%), Apache (27%), LiteSpeed (15%), Node.js(4%), IIS (4%), ...
 
 ````{div}
 :class: smaller
-Source : [https://w3techs.com/technologies/overview/web_server](https://w3techs.com/technologies/overview/web_server)
+Source: [https://w3techs.com/technologies/overview/web_server](https://w3techs.com/technologies/overview/web_server)
 ````
 
 ---
 
-## Héberger plusieurs serveurs HTTP(S) sur un même serveur physique ?
+## Host multiple HTTP(S) servers on the same physical server?
 
 ````{div}
 :class: center
-OUI 🎯 il suffit de se partager le port 80 🤝
+YES 🎯 just share port 80 🤝
 ````
 
 ````{div}
@@ -149,14 +149,14 @@ OUI 🎯 il suffit de se partager le port 80 🤝
 
 ````{div}
 :class: center
-Il suffit de configurer au niveau du serveur HTTP des **Virtual Host**
+Just configure **Virtual Hosts** at the HTTP server level
 ````
 
 ---
 
 ### virtual hosts
 
-Exemple de config nginx avec deux sites différents dans le même serveur physique
+Example of nginx config with two different sites on the same physical server
 
 
 `````{div}
@@ -179,24 +179,24 @@ Exemple de config nginx avec deux sites différents dans le même serveur physiq
 
 ````{div}
 :class: center
-le "routage" entre les deux sites se fait sur la base du Header `Host:` de la requête HTTP
+the "routing" between the two sites is done based on the `Host:` Header of the HTTP request
 ````
 
 ---
 
-## Un mot sur le serverless
+## A word about serverless
 
 ````{div}
 :class: center
-Un serveur traditionnel passe son temps à attendre ... 🥱
+A traditional server spends its time waiting ... 🥱
 ````
 
 ````{div}
 :class: center
-**_Un serverless est un serveur qui n'attend pas_**
+**_A serverless is a server that does not wait_**
 ````
 
-Le principe est de découper le traitement en petites **tâches indépendantes** (fonctions) qui seront exécutées **à la demande**
+The principle is to break down processing into small **independent tasks** (functions) that will be executed **on demand**
 
 `````{div}
 :class: columns
@@ -204,37 +204,37 @@ Le principe est de découper le traitement en petites **tâches indépendantes**
 ````{div}
 :class: fifty center
 
-### Avantages
+### Advantages
 
-- Pas de gestion de serveur
-- Pas de coût fixe
-- Évolutif
+- No server management
+- No fixed cost
+- Scalable
 ````
 
 ````{div}
 :class: fifty center
 
-### Inconvénients/Difficultés
+### Disadvantages/Difficulties
 
-- Temps de démarrage
-- Coût à l'usage
-- Difficulté de débogage
+- Startup time
+- Usage cost
+- Debugging difficulty
 - Stateless
 ````
 
 `````
 
-Coût plus faible pour les fournisseurs car ils peuvent optimiser l'utilisation des ressources
+Lower cost for providers because they can optimize resource usage
 
 ---
 
-## Tous les serveurs font la même chose ?
+## Do all servers do the same thing?
 
-**Deux applications**
+**Two applications**
 
 ````{div}
 :class: center
-Sites statiques vs dynamiques
+Static vs dynamic sites
 ````
 
 `````{div}
@@ -252,13 +252,13 @@ Sites statiques vs dynamiques
 
 ---
 
-### Site statique
+### Static site
 
 ````{div}
 :class: center
-Le serveur http ne fait qu'une seule et unique chose
+The HTTP server only does one thing
 <br>
-**_lire des fichiers_** html, png, jpg, pdf, .... et **_envoyer le contenu au client_**
+**_read files_** html, png, jpg, pdf, .... and **_send the content to the client**
 
 <br>
 
@@ -266,45 +266,45 @@ Le serveur http ne fait qu'une seule et unique chose
 :width: 90%
 ```
 
-<br>voir par exemple [le site du cours C++](https://cpp.bmarchand.fr)
+<br>see for example [the C++ course site](https://cpp.bmarchand.fr)
 
 ````
 
 ---
 
-### Site dynamique (basique)
+### Dynamic site (basic)
 
 ````{div}
 :class: center
-Le serveur http va devoir travailler **avec d'autres services** <br>afin de produire le résultat final pouvant être envoyé au client
+The HTTP server will have to work **with other services** <br>in order to produce the final result that can be sent to the client
 
 ```{image} media/site-dynamic.excalidraw.svg
 :width: 90%
 ```
 
-<br>Par exemple: [un site de e-commerce moyen](https://vraimentbeau.com)
+<br>For example: [a medium e-commerce site](https://vraimentbeau.com)
 ````
 
 ---
 
-### Site dynamique (avancé)
+### Dynamic site (advanced)
 
 ````{div}
 :class: center
 
-Par contre l'architecture derrière un site dynamique peut être aussi très très complexe
+On the other hand, the architecture behind a dynamic site can also be very very complex
 
 ```{image} media/cerebro.png
 :width: 90%
 ```
 
 
-<br>Par exemple: [une plateforme de développement](https://rep.minesparis.psl.eu)
+<br>For example: [a development platform](https://rep.minesparis.psl.eu)
 ````
 
 ---
 
-## Solutions d'hébergement gratuit
+## Free hosting solutions
 
 `````{div}
 :class: columns
@@ -312,13 +312,13 @@ Par contre l'architecture derrière un site dynamique peut être aussi très tr�
 ````{div}
 :class: fifty
 
-### Sites statiques
+### Static sites
 
 - Netlify
 - Vercel
 - Surge
-- GitHub Pages (nous y sommes !)
-- readthedocs.io (nous y étions ;)
+- GitHub Pages (we are there!)
+- readthedocs.io (we were there ;)
 - GitLab Pages
 - ...
 ````
@@ -326,7 +326,7 @@ Par contre l'architecture derrière un site dynamique peut être aussi très tr�
 ````{div}
 :class: fifty
 
-### Sites dynamiques
+### Dynamic sites
 
 - Glitch
 - Repl.it
@@ -340,15 +340,15 @@ Par contre l'architecture derrière un site dynamique peut être aussi très tr�
 
 ````{div}
 :class: center
-Plein d'offres sur le marché, à vous de choisir celle qui vous convient le mieux
+Lots of offers on the market, it's up to you to choose the one that suits you best
 
-Attention en revanche&nbsp;: **_Gratuit_** ne veut pas dire **_sans limite_**
+Attention however&nbsp;: **_Free_** does not mean **_without limit_**
 
 ````
 
 ---
 
-## Le serveur web : un besoin de perf 🚀
+## The web server: a need for performance 🚀
 
 `````{div}
 :class: columns bottom
@@ -362,9 +362,9 @@ Attention en revanche&nbsp;: **_Gratuit_** ne veut pas dire **_sans limite_**
 
 ````{div}
 :class: fourty
-  Comment faire pour que tout le monde
+How to make sure everyone
 
-  ait une réponse en un temps raisonnable ?
+has a response in a reasonable time?
 
 ````
   ⏳️
@@ -372,7 +372,7 @@ Attention en revanche&nbsp;: **_Gratuit_** ne veut pas dire **_sans limite_**
 
 ---
 
-## Solutions techniques
+## Technical solutions
 
 ````{div}
 :class: center
@@ -383,5 +383,5 @@ Attention en revanche&nbsp;: **_Gratuit_** ne veut pas dire **_sans limite_**
 
 ````{div}
 :class: center
-Utilisation du parallélisme de tâches processus/thread et/ou programmation asynchrone
+Use of task parallelism processes/threads and/or asynchronous programming
 ````

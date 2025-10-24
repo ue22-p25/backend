@@ -1,13 +1,13 @@
-# Les frameworks
+# Frameworks
 
-Réponse à un besoin mais lequel ?
+Answer to a need but which one?
 
 ````{div}
 :class: center
-***Cadre de développement simplifié***
+***Simplified development framework***
 ````
 
-En gros un guide <strike> spirituel </strike>, permettant de développer simplement des applications spécifiques.
+Basically a <strike> spiritual </strike> guide, allowing to simply develop specific applications.
 
 ````{div}
 :class: center
@@ -16,11 +16,11 @@ En gros un guide <strike> spirituel </strike>, permettant de développer simplem
 
 ---
 
-## Framework vs Librairie
+## Framework vs Library
 
 ````{div}
 :class: center
-Frameworks, Librairies, même chose ? <br>
+Frameworks, Libraries, same thing? <br>
 ````
 
 `````{div}
@@ -28,11 +28,11 @@ Frameworks, Librairies, même chose ? <br>
 
 ````{div}
 :class: fifty center
-<b> Librairies </b>
+<b> Libraries </b>
 
-Ensemble de programmes effectuant des opérations spécifiques, que vous allez utiliser de manière ponctuelle au sein de vos programmes en suivant votre propre logique.
+Set of programs performing specific operations, that you will use punctually within your programs following your own logic.
 
-Par exemple `NumPy` en Python 🐍 est une librairie
+For example `NumPy` in Python 🐍 is a library
 
 ```{image} media/code-with-library.excalidraw.svg
 :align: center
@@ -47,9 +47,9 @@ Par exemple `NumPy` en Python 🐍 est une librairie
 :class: fifty center bottom
 <b> Framework </b>
 
-Cadre de développement dans lequel le développeur vient s'inscrire, i.e. développer des fonctionnalités/comportements. Là ce n'est plus le développeur qui fixe sa logique mais le framework.  
+Development framework in which the developer comes to register, i.e. develop functionalities/behaviors. There it is no longer the developer who sets his logic but the framework.  
 
-Un code à trou 🕳️ en quelque sorte
+A code with holes 🕳️ in a way
 
 ```{image} media/code-with-framework.excalidraw.svg
 :align: center
@@ -64,7 +64,7 @@ Un code à trou 🕳️ en quelque sorte
 
 ````{div}
 :class: center
-⚠️ Framework web un terme très, trop, générique ⚠️
+⚠️ Web framework a very, too, generic term ⚠️
 ````
 
 `````{div}
@@ -72,14 +72,14 @@ Un code à trou 🕳️ en quelque sorte
 
 ````{div}
 :class: fifty center
-Framework frontend
+Frontend framework
 
 ```{image} media/framework_frontend.png
 :width: 50%
 :align: center
 ```
 
-Focalisé sur le développement d'application côté client
+Focused on client-side application development
 ````
 
 ```{div}
@@ -88,20 +88,20 @@ Focalisé sur le développement d'application côté client
 
 ````{div}
 :class: fifty center
-Framework backend
+Backend framework
 
 ```{image} media/framework_backend.png
 :align: center
 ```
 
-Focalisé sur le développement côté serveur
+Focused on server-side development
 ````
 
 `````
 
 ---
 
-## frameworks backend: les grands principes
+## backend frameworks: the main principles
 
 ````{div}
 :class: center
@@ -110,18 +110,18 @@ Focalisé sur le développement côté serveur
 ```
 ````
 
-A cela un framework complet ajoute des fonctionnalités de :
+To this a complete framework adds functionalities of:
 
 ````{div}
 :class: center
-`Web Template`, `Sécurité`, `Accès à des bases de données`
+`Web Template`, `Security`, `Access to databases`
 ````
 
 ---
 
-## Framework FastAPI
+## FastAPI Framework
 
-Framework Python 🐍 "lightweight" développé depuis 2018.
+Python 🐍 "lightweight" framework developed since 2018.
 
 ```{image} media/logos/logo-fastapi.svg
 :align: center
@@ -129,23 +129,23 @@ Framework Python 🐍 "lightweight" développé depuis 2018.
 ```
 
 <br><br>
-🚧 framework "lightweight" ne veut pas dire "pas utilisable sur des gros projets"  ⚠️
+🚧 "lightweight" framework does not mean "not usable on big projects"  ⚠️
 <br>
 ````{div}
 :class: center
-Netflix, Microsoft, Uber, ... utilisent FastAPI pour certaines parties de leurs backends
+Netflix, Microsoft, Uber, ... use FastAPI for certain parts of their backends
 ````
 
-noyau très léger et minimaliste, mais super puissant
+very light and minimalist core, but super powerful
 
-- utilise les **annotations de type** Python pour la validation automatique des données
-- **documentation automatique** des API avec Swagger UI et ReDoc
-- **nativement asynchrone**, du coup très performant
-- de plus, il peut être enrichi avec des **extensions**.
+- uses Python **type annotations** for automatic data validation
+- **automatic documentation** of APIs with Swagger UI and ReDoc
+- **natively asynchronous**, hence very performant
+- moreover, it can be enriched with **extensions**.
 
 ---
 
-## Le setup de base
+## Basic setup
 
 (label-fastapi-install)=
 ### Installation
@@ -154,17 +154,17 @@ noyau très léger et minimaliste, mais super puissant
 pip install fastapi[standard]
 ```
 
-```{admonition} remarque à propos de bash
+```{admonition} remark about bash
 :class: dropdown
 
-en toute rigueur il faudrait taper  
+in all rigor it would be necessary to type  
 `pip install "fastapi[standard]"`  
-avec les guillemets, pour éviter que votre shell n'interprète mal les crochets `[]`; savez-vous pourquoi ?  
-mais bon en pratique la différence est minime...
+with quotes, to avoid your shell misinterpreting the brackets `[]`; do you know why?  
+but well in practice the difference is minimal...
 ```
 
-nous allons aussi installer `httpie` pour tester les API en ligne de commande  
-c'est juste un outil de développement très pratique, pas besoin de cette dépendance en production
+we will also install `httpie` to test APIs in command line  
+it's just a very practical development tool, no need for this dependency in production
 
 ```bash
 # ceci installe la commande http, disponible depuis le terminal
@@ -173,15 +173,15 @@ pip install httpie
 
 ---
 
-### Hello world en FastAPI (run it)
+### Hello world in FastAPI (run it)
 
 `````{grid} 2 2 2 2
 ````{div}
-créons un fichier `hello.py` avec ceci:
+let's create a file `hello.py` with this:
 
 
 ```python
-# dans hello.py
+# in hello.py
 
 from fastapi import FastAPI
 
@@ -194,23 +194,23 @@ def read_root():
 
 ```{div}
 :class: clignote
-? C'est quoi `@app.get('/')` ?
+? What is `@app.get('/')` ?
 ```
 ````
 
 ````{div}
-et pour le lancer tapez ceci
+and to launch it type this
 ```bash
-# dans le terminal
+# in the terminal
 
 fastapi dev hello.py
 ```
 
 :::{admonition} un mot sur `uvicorn`
 :class: dropdown tip
-`uvicorn` est le serveur ASGI recommandé pour FastAPI.  
-Il est installé automatiquement avec l'option `[standard]` de FastAPI.  
-Et pour info, en réalité `fastapi dev` est un alias pour  
+`uvicorn` is the recommended ASGI server for FastAPI.  
+It is automatically installed with the `[standard]` option of FastAPI.  
+And for info, in reality `fastapi dev` is an alias for  
 `uvicorn hello:app --reload --debug`
 :::
 ````
@@ -218,32 +218,32 @@ Et pour info, en réalité `fastapi dev` est un alias pour
 
 ---
 
-### Hello world en FastAPI (use it)
+### Hello world in FastAPI (use it)
 
-après quoi on peut interroger notre API... on a le choix entre:
+after which we can query our API... we have the choice between:
 
 `````{grid} 2 2 2 2
 ````{div}
-ouvrir un navigateur web à l'adresse  
+open a web browser at the address  
 [http://localhost:8000](http://localhost:8000)  
-faites-le, vous devez voir ceci:
+do it, you should see this:
 ```text
 {"message":"Hello World"}
 ```
 ````
 
 ````{div}
-utiliser `http(ie)` en ligne de commande
+use `http(ie)` in command line
 ```bash
-# en version bavarde
+# in verbose version
 http GET http://localhost:8000
 
-# en version concise
+# in concise version
 http :8000
 ```
 
-les deux formes sont équivalentes  
-et dans les deux cas observez que `http` nous montre les *Headers* HTTP de la réponse 
+the two forms are equivalent  
+and in both cases observe that `http` shows us the HTTP *Headers* of the response 
 
 ````
 
@@ -251,41 +251,41 @@ et dans les deux cas observez que `http` nous montre les *Headers* HTTP de la r�
 
 ---
 
-## Les routes
+## Routes
 
-`@app.get` est un décorateur qui permet **d'associer une fonction à une URL** (ici de type GET).  
-Évidemment une application web c'est plus que ça, on veut gérer plusieurs URLs, et de plusieurs types.  
-Du coup une application FastAPI c'est essentiellement une collection de routes.
+`@app.get` is a decorator that allows **to associate a function with a URL** (here of type GET).  
+Obviously a web application is more than that, we want to manage several URLs, and of several types.  
+So a FastAPI application is essentially a collection of routes.
 
-Par exemple:
+For example:
 
 ```python
 @app.post("/items/")
 def create_item(item: Item):
-    # le code pour créer un item
+    # code to create an item
 
 @app.get("/items/")
 def create_item(item: Item):
-    # le code pour lister les items
+    # code to list items
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int):
-    # le code pour lire un item
+    # code to read an item
 ```
 
 :::{admonition} `@app.api_route`
 :class: dropdown tip
-il est aussi possible d'utiliser `@app.api_route` pour "capturer" dans une seule fonction plusieurs types de requêtes
+it is also possible to use `@app.api_route` to "capture" several types of requests in a single function
 :::
 
 ---
 
-## On a fini ...
+## We're done ...
 
 ````{div}
 :class: center
 <iframe src="https://giphy.com/embed/3ohs7XbAurbpO5jIBy" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 ````
 
-... ou pas en fait: on va mettre tout ça en pratique avec un exercice
+... or not actually: we're going to put all this into practice with an exercise
 

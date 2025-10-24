@@ -1,21 +1,21 @@
-# Sécurité et Web
+# Security and Web
 
-## Un petit point sécurité 🔒
+## A small security point 🔒
 
-Quelle différence entre
+What difference between
 
 ````{div}
 :class: center
-HTTP et HTTP**S** ❓  
-Oui oui c'est le **S** de **S**ecure 😓
+HTTP and HTTP**S** ❓  
+Yes yes it's the **S** of **S**ecure 😓
 ````
 
-Grosso modo :
+Roughly:
 
 ````{div}
 :class: center
-Enrobage du protocôle HTTP dans une couche de chiffrement <br>
-pour garantir la sécurité de l'utilisateur
+Wrapping the HTTP protocol in an encryption layer <br>
+ to guarantee user security
 ```{image} media/https.jpg
 :width: 35%
 ```
@@ -23,14 +23,14 @@ pour garantir la sécurité de l'utilisateur
 
 ---
 
-## HTTP un truc pas safe ?
+## HTTP a not safe thing?
 
 `````{div}
 :class: columns
 
 ````{div}
 :class: sixty
-***Alors oui le HTTP de base n'est pas sécurisé***
+***So yes basic HTTP is not secure***
 ````
 
 ````{div}
@@ -55,15 +55,15 @@ pour garantir la sécurité de l'utilisateur
 
 ````{div}
 :class: fifty
-***Ce n'est pas très grave dans pleins de cas***  
-Mais les browsers modernes commencent à être très stricts sur le sujet
+***It's not very serious in many cases***  
+But modern browsers are starting to be very strict on the subject
 ````
 
 `````
 
 ---
 
-## Le risque du HTTP
+## The risk of HTTP
 
 <br>
 
@@ -86,15 +86,15 @@ Mais les browsers modernes commencent à être très stricts sur le sujet
 
 ````{div}
 :class: center
-Le principe est donc de renfermer la requête HTTP et les informations qu'elle contient  
-dans un message crypté
+The principle is therefore to enclose the HTTP request and the information it contains  
+in an encrypted message
 ````
 
 ---
 
-## Principes de chiffrement
+## Encryption principles
 
-En pratique le chiffrement fonctionne avec un système clé publique/clé privée
+In practice encryption works with a public key/private key system
 
 ````{div}
 :class: center
@@ -104,35 +104,35 @@ En pratique le chiffrement fonctionne avec un système clé publique/clé privé
 
 ---
 
-## Autorité de certification (CA)
+## Certification Authority (CA)
 
 ````{div}
 :class: center
-**Tiers de confiance** <br>qui va générer les certificats permettant le chiffrement et l'authentification de l'identité des correspondants
+**Trusted third party** <br>who will generate certificates allowing encryption and authentication of correspondents' identity
 ````
 
-Possible de générer ses propres certificats soi-même mais ils ne sont pas considérés comme valides par les clients standard (sachant que les navigateurs web ont une liste de CA de confiance)
+Possible to generate your own certificates yourself but they are not considered valid by standard clients (knowing that web browsers have a list of trusted CAs)
 
-Les logiciels open-source utilisent majoritairement la librairie ***OpenSSL***
+Open source software mainly uses the ***OpenSSL*** library
 
 ```{image} media/logos/openssl.svg
 :width: 20%
 ```
 
 <br><br>
-Pour générer des certificats gratuitement il existe l'initiative **Let's Encrypt**
+To generate certificates for free there is the **Let's Encrypt** initiative
 ```{image} media/logos/lets-encrypt.svg
 :width: 20%
 ```
 
 ```{div}
 :class: smaller
-en pratique, un certificat est valide pour une durée finie, de l'ordre de 1 an, il faut donc le renouveler régulièrement
+in practice, a certificate is valid for a finite duration, of the order of 1 year, so it must be renewed regularly
 ```
 
 ---
 
-## Et maintenant c'est fini ?
+## And now is it finished?
 
 ````{div}
 :class: center
@@ -141,9 +141,9 @@ en pratique, un certificat est valide pour une durée finie, de l'ordre de 1 an,
 
 ---
 
-## Les cookies 🍪
+## Cookies 🍪
 
-Faisons une pause goûter 🤤
+Let's take a snack break 🤤
 
 ````{div}
 :class: center
@@ -152,16 +152,16 @@ Faisons une pause goûter 🤤
 
 ````{div}
 :class: center
-Ça fait partie de ces petites choses ***cachées*** dans les headers HTTP
+It's part of these little ***hidden*** things in HTTP headers
 ````
 
 ---
 
-## Concrètement c'est quoi ?
+## Concretely what is it?
 
  ````{div}
 :class: center
-Un 🍪 HTTP c'est une donnée qu’un serveur envoie à un client
+An 🍪 HTTP is data that a server sends to a client
 ````
 
 `````{div}
@@ -184,7 +184,7 @@ Un 🍪 HTTP c'est une donnée qu’un serveur envoie à un client
 
 ````{div}
 :class: center
-stockée sur le client (dans le navigateur) <br> et **renvoyée** au serveur à chaque nouvelle requête
+stored on the client (in the browser) <br> and **sent back** to the server at each new request
 ````
 
 ````{div}
@@ -196,96 +196,96 @@ stockée sur le client (dans le navigateur) <br> et **renvoyée** au serveur à 
 
 ---
 
-## Quel intérêt ?
+## What interest?
 
-Les cookies sont là pour enrichir le HTTP.
+Cookies are there to enrich HTTP.
 
-### Le problème
+### The problem
 
 ````{div}
 :class: center
-HTTP = protocole sans état
+HTTP = stateless protocol
 ````
 
-En gros impossible pour un serveur HTTP de savoir si deux requêtes viennent d'un même client ou pas 😵‍💫
+Basically impossible for an HTTP server to know if two requests come from the same client or not 😵‍💫
 
 ````{div}
 :class: center
-Comment rester authentifié alors ?
-````
-
----
-
-### La solution
-
-````{div}
-:class: center
-Les cookies 🍪 parce que ça laisse des miettes
-````
-
-Concrètement on va pouvoir stocker :
-
-````{div}
-:class: center
-Un session ID, des préférences utilisateur (light/dark theme, langue, ...)
+How to stay authenticated then?
 ````
 
 ---
 
-## Mettre des cookies
+### The solution
 
-Rien de plus simple, dans l'en-tête de la réponse serveur il suffit d'ajouter
+````{div}
+:class: center
+Cookies 🍪 because it leaves crumbs
+````
+
+Concretely we will be able to store:
+
+````{div}
+:class: center
+A session ID, user preferences (light/dark theme, language, ...)
+````
+
+---
+
+## Setting cookies
+
+Nothing simpler, in the server response header just add
 <br>
 ````{div}
 :class: center
-`Set-Cookie: <name>=<value>; <attributs...>`
+`Set-Cookie: <name>=<value>; <attributes...>`
 ````
 
-Attributs de Cookie
+Cookie Attributes
 
-- `Expires` : durée de vie (date/heure)
-- `Max-Age` : durée de vie (seconde)
-- `Domain` : noms de domaine pour lesquels le cookie est renvoyé
-- `Path` : chemin particulier pour lesquels le cookie est renvoyé
-- `Secure` : si défini, on n'envoie le cookie que sur https, et pas http
-- `HttpOnly` : si défini, on ne peut pas accéder au cookie via JavaScript
-- `SameSite` : définit si on envoie le cookie dans les *cross-site requests*
+- `Expires`: lifetime (date/time)
+- `Max-Age`: lifetime (seconds)
+- `Domain`: domain names for which the cookie is sent back
+- `Path`: particular path for which the cookie is sent back
+- `Secure`: if set, we only send the cookie on https, and not http
+- `HttpOnly`: if set, we cannot access the cookie via JavaScript
+- `SameSite`: defines if we send the cookie in *cross-site requests*
 
-Par exemple, allez sur <https://www.mat.minesparis.psl.eu> et trouvez le cookie `PHPSESSID`
+For example, go to <https://www.mat.minesparis.psl.eu> and find the `PHPSESSID` cookie
 
 ---
 
-### Les détails scabreux
+### The sordid details
 
 `````{div}
 :class: smaller
 
 ````{div}
-plus de détails ici sur MDN, notamment
-  - [en termes de durée de vie, au sujet de `Expires` et `Max-Age`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#removal_defining_the_lifetime_of_a_cookie)
-  - [en termes de *scope* au sujet de `Domain` et `Path`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#define_where_cookies_are_sent)
-  - [en termes de sécurité, au sujet de `HttpOnly` et `Secure`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#security)
+more details here on MDN, notably
+  - [in terms of lifetime, regarding `Expires` and `Max-Age`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#removal_defining_the_lifetime_of_a_cookie)
+  - [in terms of *scope* regarding `Domain` and `Path`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#define_where_cookies_are_sent)
+  - [in terms of security, regarding `HttpOnly` and `Secure`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#security)
 ````
 
-````{admonition} et les *Third-Party Cookies* ?
+```{admonition} and *Third-Party Cookies* ?
 :class: warning dropdown smaller
 
-Enfin s'agissant de [`SameSite`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#controlling_third-party_cookies_with_samesite), un sujet assez épineux, celui des [*third-party cookies*](https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Third-party_cookies); de quoi s'agit-il ?
+Finally regarding [`SameSite`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#controlling_third-party_cookies_with_samesite), a rather thorny subject, that of [*third-party cookies*](https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Third-party_cookies); what is it about?
 
-  Vous allez sur `https://the-shop.com` qui vous met un cookie
+  You go to `https://the-shop.com` which puts a cookie on you
   <br>
-  un peu plus tard vous consultez `https://other-site.com` 
-  <br>qui fait une requête **indirecte**  (e.g. un `fetch()` ou une `<img>`)
-  vers `https://the-shop.com`
+  a little later you consult `https://other-site.com` 
+  <br>which makes an **indirect** request (e.g. a `fetch()` or an `<img>`)
+  to `https://the-shop.com`
   <br>
-  doit-on envoyer le premier cookie ?
-````
+  should we send the first cookie?
+```
 
 `````
 
 ---
 
-## Quelques règles à suivre
+## Some rules to follow
 
 ````{div}
 :class: center
@@ -296,48 +296,48 @@ Enfin s'agissant de [`SameSite`](https://developer.mozilla.org/en-US/docs/Web/HT
 <https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies>
 ````
 
-- Internautes doivent être informés et donner leur consentement avant le dépôt de certains cookies
-  - ❌ Traçage publicitaire / réseaux sociaux
-  - ✔️ Cookie pour dire qu'on refuse les cookies [exemple](https://cpp.bmarchand.fr), panier d'achat, authentification, ...
-- Recueillir le consentement
-  - Bouton refusé aussi visible que celui accepté
-  - Possibilité de choisir les cookies
-  - Facilité de retrait du consentement
+- Internet users must be informed and give their consent before the deposit of certain cookies
+  - ❌ Advertising tracking / social networks
+  - ✔️ Cookie to say we refuse cookies [example](https://cpp.bmarchand.fr), shopping cart, authentication, ...
+- Collect consent
+  - Refuse button as visible as the accepted one
+  - Possibility to choose cookies
+  - Ease of withdrawal of consent
 
 ```{div}
 :class: smaller
-voir aussi les RGPD:
+see also the GDPR:
 <https://www.economie.gouv.fr/entreprises/reglement-general-protection-donnees-rgpd>
 ```
 
 ---
 
-## Rajoutons un Cookie dans notre serveur
+## Let's add a Cookie to our server
 
 ````{div}
 :class: center
-allons dans le dossier `python/cookies` du cours
+let's go to the `python/cookies` folder of the course
 ````
 
 ````{div}
-faites tourner ce code sur votre ordi et cherchez les cookies dans les headers  
+run this code on your computer and look for cookies in the headers  
 
 ```{div}
 :class: smaller
-notez que sur Chrome, vous pouvez aussi inspecter les cookies dans le navigateur via   
+note that on Chrome, you can also inspect cookies in the browser via   
 `DevTools > Application > Cookies`
 ```
 
-```{admonition} Vous en voyez trop ?
+```{admonition} You see too much?
 :class: dropdown smaller
 
-si vous joignez le serveur sur `localhost`, vous allez peut-être en voir plein..  
-enfin, beaucoup plus que ce que le serveur met lui-même  
-comment se fait-il d'après vous ?
+if you join the server on `localhost`, you might see a lot..  
+well, much more than what the server puts itself  
+how do you think this happens?
 
-<details><summary>réponse</summary>
+<details><summary>answer</summary>
 
-le cookie est - en gros - <b>attaché à un hostname</b>; donc tous les cookies qui auront été mis par un serveur que vous avez déjà joint via <code>localhost</code>, même qui n'ont rien à voir avec celui-ci, seront remis dans la requête par le browser
+the cookie is - roughly - <b>attached to a hostname</b>; so all cookies that will have been set by a server you have already joined via <code>localhost</code>, even which have nothing to do with this one, will be sent back in the request by the browser
 
 </details>
 ```
@@ -345,7 +345,7 @@ le cookie est - en gros - <b>attaché à un hostname</b>; donc tous les cookies 
 
 ---
 
-## HTTP + 🍪 suffisant pour tout faire ?
+## HTTP + 🍪 sufficient to do everything?
 
 ````{div}
 :class: center
@@ -356,7 +356,7 @@ le cookie est - en gros - <b>attaché à un hostname</b>; donc tous les cookies 
 
 ---
 
-## Mais pourquoi ?
+## But why?
 
 `````{div}
 :class: columns
@@ -370,11 +370,11 @@ le cookie est - en gros - <b>attaché à un hostname</b>; donc tous les cookies 
 ````{div}
 :class: eighty
 
-Fonctionnement de HTTP très rigide: orienté **question/réponse**
+HTTP operation very rigid: **question/answer** oriented
 <br>
-**Impossible** pour le serveur d'être **à l'origine** de l'échange : assez limitant en fait 😮‍💨
+**Impossible** for the server to be **at the origin** of the exchange: quite limiting actually 😮‍💨
 <br><br>
-oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
+forces Patrick to always ask if there is anything new for him...
 ````
 `````
 
@@ -403,7 +403,7 @@ oblige Patrick à tout le temps demander s'il y a du nouveau pour lui...
 
 ````{div}
 :class: center
-En 2011, révolution: arrivée de Websocket 🤯
+In 2011, revolution: arrival of Websocket 🤯
 ````
 
 `````{div}
@@ -434,78 +434,78 @@ son petit nom: `ws` (ou `wss` pour le sécurisé)
 
 ## Comment ça marche
 
-Très simplement en fait !
+Very simply actually!
 
 ````{div}
 :class: center
-Première étape on établit une connexion vers un serveur WebSocket <br> via <br>
-`ws://mon-super-server.com` ou `wss://mon-super-server.com`
+First step we establish a connection to a WebSocket server <br> via <br>
+`ws://mon-super-server.com` or `wss://mon-super-server.com`
 ````
 
 ````{div}
 :class: center
-Une fois la connexion établie <br><br>On doit simplement se mettre en état d'écoute à des évènements particuliers
+Once the connection is established <br><br>We must simply put ourselves in a listening state for particular events
 ````
 
-Quatre types d'évènements
+Four types of events
 
 ````{div}
 :class: center
 `onopen` 📖, `onclose` 📕, `onerror` 🚨, `onmessage` 📥
 ````
 
-Et à chaque évènement on va venir associer une action
+And at each event we will come to associate an action
 
 ---
 
-## Par exemple&nbsp;:
+## For example&nbsp;:
 
-Voyez dans le dossier `python/websockets`:
+See in the `python/websockets` folder:
 
 `````{div}
 :class: columns smaller
 
 ````{div}
 :class: fifty
-le protocole "ping-pong" (en fait "ping-gnip"):
+the "ping-pong" protocol (actually "ping-gnip"):
 
-- `ws-server.py` : un serveur WebSocket en Python
-- `ws-client.py` : un client WebSocket en Python
-- `ws-client.js` : un client WebSocket en JavaScript
+- `ws-server.py`: a WebSocket server in Python
+- `ws-client.py`: a WebSocket client in Python
+- `ws-client.js`: a WebSocket client in JavaScript
 
-ça marche mais ça n'a pas grand intérêt  
-disons que ça a le mérite de montrer comment ça fonctionne
+it works but it has little interest  
+let's say it has the merit of showing how it works
 ````
 
 ````{div}
 :class: fifty
-le protocole "countdown", même logique:
+the "countdown" protocol, same logic:
 
-- `python ws-server2.py` pour le serveur
-- `python ws-client2.py 3` va durer 3 secondes
-- `node ws-client2.js 3` pareil mais en JS
+- `python ws-server2.py` for the server
+- `python ws-client2.py 3` will last 3 seconds
+- `node ws-client2.js 3` same but in JS
 
-cette fois c'est plus intéressant, le client **envoie au serveur un nombre de
-secondes**, et le serveur répond en décomptant jusqu'à 0
+this time it's more interesting, the client **sends to the server a number of
+seconds**, and the server responds by counting down to 0
 ```` 
 `````
 
 ````{div}
 :class: smaller
-⚠️ Vous voyez apparaître le mot clé `await` que vous ne connaissez pas en Python 🐍  
-C'est lié à la programmation asynchrone. Pour plus de détails je vous encourage à faire un tour sur le Mooc
+⚠️ You see the keyword `await` that you don't know in Python 🐍  
+It's related to asynchronous programming. For more details I encourage you to take a tour on the Mooc
 
 ```{div}
 :class: center
-*Python : des fondamentaux aux concepts avancés du langage*
+*Python: from fundamentals to advanced language concepts*
 ```
 ````
 
 ---
 
-## En pratique
+## In practice
 
-### Une messagerie instantanée !
+### An instant messaging!
 
 xxx dead link xxx
 
@@ -544,6 +544,6 @@ xxx dead link xxx
 
 ````{div}
 :class: center
-Un tour d'horizon du **Framework `FastAPI`** <br>
-qui va vous simplifier la vie pour tous les développements Web
+An overview of the **FastAPI Framework** <br>
+which will simplify your life for all Web developments
 ````

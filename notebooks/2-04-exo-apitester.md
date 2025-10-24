@@ -1,71 +1,71 @@
 # exo: apitester
 
 (label-exo-apitester)=
-## Petite pause mise en pratique
+## Small practical break
 
-**Objectif** : Mettre en place une API permettant d'accéder au contenu de fichier CSV
+**Objective**: Set up an API allowing access to CSV file content
 
-Vous avez <https://github.com/ue22-p25/backend-apitester-frontend> un frontend tout fait !  
-Et vous avez <https://github.com/ue22-p25/backend-apitester-skeleton> un backend à compléter
+You have <https://github.com/ue22-p25/backend-apitester-frontend> a ready-made frontend!  
+And you have <https://github.com/ue22-p25/backend-apitester-skeleton> a backend to complete
 
-L'API du backend doit **impérativement** respecter les routes documentées dans le README.
+The backend API must **imperatively** respect the routes documented in the README.
 
-```{admonition} doc automatique avec FastAPI !
+```{admonition} automatic doc with FastAPI !
 :class: smaller
-Une fois que votre code fonctionne, allez visiter la route `/docs/` pour voir la doc interactive de votre API.
+Once your code works, go visit the `/docs/` route to see the interactive doc of your API.
 ```
 
-````{admonition} astuce pour copier les dépôts
+````{admonition} tip for copying repositories
 :class: smaller tip dropdown
 
-pour copier le contenu de ces dépôts sur votre machine, plutôt que d'utiliser `git clone`, vous pouvez utiliser ceci
+ to copy the content of these repositories on your machine, rather than using `git clone`, you can use this
 ```bash
-# si nécessaire (npx command not found)
+# if necessary (npx command not found)
 # conda install conda-forge::nodejs
 
-# download le repo dans le dossier 'frontend'
+# download the repo in the 'frontend' folder
 npx degit git@github.com:ue22-p25/backend-apitester-frontend.git frontend
-# pareil pour le backend
+# same for the backend
 npx degit git@github.com:ue22-p25/backend-apitester-skeleton.git backend
 ```
 
-qui a l'avantage de ne pas recréer un dépôt git dans le dossier créé; surtout si vous vous placez dans un dépôt déjà existant genre `backend-homework`  
-(mais ne vous empeche pas de `git add` le résultat immédiatement)
+which has the advantage of not recreating a git repository in the created folder; especially if you place yourself in an already existing repository like `backend-homework`  
+(but doesn't prevent you from `git add` the result immediately)
 ````
 
 ---
 
 ## Tip #1: *auto-reload*
 
-- vous remarquez que les applis FastAPI ne contiennent pas de code à exécuter directement  
-  (juste des définitions de routes)
-- du coup si vous lancez le fichier python avec `python mon_fichier.py`, ça ne fait rien !
-- c'est pourquoi il est **indispensable** de lancer l'appli avec `fastapi dev apitester.py`
-- aussi et surtout, le serveur **se relance tout seul** à chaque modification du code  
+- you notice that FastAPI applications do not contain code to execute directly  
+  (just route definitions)
+- so if you launch the python file with `python my_file.py`, it does nothing!
+- that's why it's **essential** to launch the app with `fastapi dev apitester.py`
+- also and especially, the server **restarts by itself** at each code modification  
 
 ````{div}
 :class: smaller
-et pareil pour le frontend d'ailleurs; si vous avez l'intention d'y toucher, il est préférable de le lancer avec `vite`, comme ça il se relance tout seul à chaque modification
+and same for the frontend by the way; if you intend to touch it, it's better to launch it with `vite`, so it restarts by itself at each modification
 ````
 
 ---
 
-## Tip #2: paramètres typés
+## Tip #2: typed parameters
 
-- une route peut prendre un paramètre, éventuellement typé
+- a route can take a parameter, possibly typed
 
 `````{div}
 :class: columns
 ````{div}
 :class: fifty
 ```python
-# paramètre pas typé
+# untyped parameter
 
 @app.route('/hello/<name>')
   def hello(name):
-    # ici name est une simple str
-    # c'est à vous 
-    # de vérifier son contenu
+    # here name is a simple str
+    # it's up to you 
+    # to check its content
     return f'Hello, {name}!'
 ```
 ````
@@ -73,13 +73,13 @@ et pareil pour le frontend d'ailleurs; si vous avez l'intention d'y toucher, il 
 ````{div}
 :class: fifty
 ```python
-# ici le paramètre est typé
+# here the parameter is typed
 
 @app.route('/hello/<int:id>')
   def hello(id):
-    # du coup fastapi fait le
-    # controle et la conversion
-    # automatiquement
+    # so fastapi does the
+    # control and conversion
+    # automatically
     return f'Hello, {id**2}!'
 ```
 ````
@@ -87,47 +87,47 @@ et pareil pour le frontend d'ailleurs; si vous avez l'intention d'y toucher, il 
 
 ---
 
-## Tip #3: types de retour
+## Tip #3: return types
 
-pour raccourcir le code, le type de retour d'une route implique un traitement automatique  
-on n'a quasiment pas besoin de convertir les objets en dict/json  
-notamment si on utilise des modèles Pydantic (on en reparlera...)
+to shorten the code, the return type of a route implies automatic processing  
+we hardly need to convert objects to dict/json  
+especially if we use Pydantic models (we'll talk about it again...)
 
-| Retour de la route                   | réponse HTTP                                                                      |
+| Route return                   | HTTP response                                                                      |
 |--------------------------------------|-----------------------------------------------------------------------------------|
-| `dict` ou `list` ou `int` ou `float` | Encodé automatiquement en JSON.                                                   |
-| `str`                                | Envoyé comme texte brut (`text/plain`)                                            |
-| Pydantic `BaseModel`                 | JSON automatiquement.                                                             |
-|                                      | Exemple : `return Item(name="Apple", price=1.5)` <br> → `{"name":"Apple","price":1.5}` |
+| `dict` or `list` or `int` or `float` | Automatically encoded in JSON.                                                   |
+| `str`                                | Sent as raw text (`text/plain`)                                            |
+| Pydantic `BaseModel`                 | JSON automatically.                                                             |
+|                                      | Example: `return Item(name="Apple", price=1.5)` <br> → `{"name":"Apple","price":1.5}` |
 
 ---
 
 ## Tip #4: `httpie`
 
-- c'est pratique d'avoir un vrai frontend en HTML/CSS/JS
-- MAIS pour développer il est utile de tester ***aussi*** les routes en ligne de commande dans le terminal
-- pour cela **on peut utiliser `httpie`** (ou `curl` mais c'est moins lisible)
-- qui s'installe avec
+- it's practical to have a real frontend in HTML/CSS/JS
+- BUT for development it's useful to test ***also*** the routes in command line in the terminal
+- for this **we can use `httpie`** (or `curl` but it's less readable)
+- which installs with
 
   ```bash
   pip install httpie
   ```
 
-- et qui s'utilise comme ceci
+- and which is used like this
 
   ```bash
-  # un GET
+  # a GET
   http GET http://localhost:8000/hello
-  # ou en abrégé
+  # or abbreviated
   http :8000/hello
 
-  # un POST
+  # a POST
   http POST http://localhost:8000/hello var=value
-  # d'ailleurs avec une affectation de ce type le POST est automatique
-  # ce qui fait que la commande suivante est équivalente
+  # by the way with an assignment of this type the POST is automatic
+  # which makes the following command equivalent
   http :8000/hello var=value
   ```
 
-- et comme toujours, faire `http --help` ou voir la doc pour plus de détails...
+- and as always, do `http --help` or see the doc for more details...
 
 ---
