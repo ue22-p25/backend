@@ -1,10 +1,10 @@
-# Un framework&nbsp;?
+# A framework?
 
-## Récap des épisodes précédents
+## Recap of previous episodes
 
 ````{div}
 :class: center
-Architecture classique Client <-> Serveur avec des variations peer-to-peer, three-tier, ...
+Classic Client <-> Server architecture with peer-to-peer, three-tier variations, ...
 ````
 
 ``````{div}
@@ -49,16 +49,16 @@ Architecture classique Client <-> Serveur avec des variations peer-to-peer, thre
 
 ---
 
-## Les frameworks
+## Frameworks
 
-Réponse à un besoin mais lequel ?
+Answer to a need but which one?
 
 ````{div}
 :class: center
-***Cadre de développement simplifié***
+***Simplified development framework***
 ````
 
-En gros un guide <strike> spirituel </strike>, permettant de développer simplement des applications spécifiques.
+Basically a <strike> spiritual </strike> guide, allowing to simply develop specific applications.
 
 ````{div}
 :class: center
@@ -67,11 +67,11 @@ En gros un guide <strike> spirituel </strike>, permettant de développer simplem
 
 ---
 
-## Framework vs Librairie
+## Framework vs Library
 
 ````{div}
 :class: center
-Frameworks, Librairies, même chose ? <br>
+Frameworks, Libraries, same thing? <br>
 ````
 
 `````{div}
@@ -79,13 +79,13 @@ Frameworks, Librairies, même chose ? <br>
 
 ````{div}
 :class: fifty center
-<b> Librairies </b>
+<b> Libraries </b>
 
-Ensemble de programmes effectuant des opérations spécifiques, que vous allez utiliser de manière ponctuelle au sein de vos programmes en suivant votre propre logique.
+Set of programs performing specific operations, that you will use punctually within your programs following your own logic.
 
 <br>
 
-Par exemple `NumPy` en Python 🐍 est une librairie
+For example `NumPy` in Python 🐍 is a library
 
 ```{image} media/code-with-library.excalidraw.svg
 :align: center
@@ -100,11 +100,11 @@ Par exemple `NumPy` en Python 🐍 est une librairie
 :class: fifty center
 <b> Framework </b>
 
-Cadre de développement dans lequel le développeur vient s'inscrire, i.e. développer des fonctionnalités/comportements. Là ce n'est plus le développeur qui fixe sa logique mais le framework.
+Development framework in which the developer comes to register, i.e. develop functionalities/behaviors. There it is no longer the developer who sets his logic but the framework.
 
 <br>
 
-Un code à trou 🕳️ en quelque sorte - comme `arcade`
+A code with holes 🕳️ in a way - like `arcade`
 
 ```{image} media/code-with-framework.excalidraw.svg
 :align: center
@@ -119,7 +119,7 @@ Un code à trou 🕳️ en quelque sorte - comme `arcade`
 
 ````{div}
 :class: center
-⚠️ Framework web un terme très, trop, générique ⚠️
+⚠️ Web framework a very, too, generic term ⚠️
 ````
 
 `````{div}
@@ -127,14 +127,14 @@ Un code à trou 🕳️ en quelque sorte - comme `arcade`
 
 ````{div}
 :class: fifty center
-Framework frontend
+Frontend framework
 
 ```{image} media/framework_frontend.png
 :width: 60%
 :align: center
 ```
 
-Focalisé sur le développement d'application côté client.
+Focused on client-side application development.
 ````
 
 ```{div}
@@ -143,22 +143,22 @@ Focalisé sur le développement d'application côté client.
 
 ````{div}
 :class: fifty center
-Framework backend
+Backend framework
 
 ```{image} media/framework_backend.png
 :width: 100%
 ```
 
 <br>
-Focalisé sur le développement côté serveur
+Focused on server-side development
 ````
 `````
 
-Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
+In the context of this course we will only focus on the `backend` side
 
 ---
 
-## Les grands principes des frameworks backend
+## The main principles of backend frameworks
 
 ````{div}
 :class: center
@@ -167,9 +167,9 @@ Dans le cadre de ce cours on ne se focalisera que sur le côté `backend`
 ```
 ````
 
-À cela un framework complet ajoute des fonctionnalités de :
+To this a complete framework adds functionalities of:
 
 ````{div}
 :class: center
-*Web Template*, *Sécurité*, *Accès à des bases de données*
+*Web Template*, *Security*, *Access to databases*
 ````
