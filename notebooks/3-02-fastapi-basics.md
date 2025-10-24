@@ -1,12 +1,12 @@
-# FastAPI - les bases
+# FastAPI - the basics
 
-Micro-framework Python 🐍 - plutôt récent (2018);  
-occupe le même espace que
+Python micro-framework 🐍 - fairly recent (2018);  
+occupies the same space as
 
-- Flask - développé depuis 2010 - léger et extensible
-- Django - développé depuis 2003 - perçu comme plus complet mais plus lourd aussi
+- Flask - developed since 2010 - lightweight and extensible
+- Django - developed since 2003 - perceived as more complete but also heavier
 
-🚧 Micro-framework ne veut pas dire pas utilisable sur des gros projets ⚠️  
+🚧 Micro-framework doesn't mean not usable on large projects ⚠️  
 
 ```{image} media/logos/logo-fastapi.svg
 :width: 20%
@@ -16,30 +16,30 @@ occupe le même espace que
 
 ## FastAPI
 
-similaire en surface à Flask, mais **beaucoup plus moderne** !
+similar on the surface to Flask, but **much more modern**!
 
-- favorise une approche plus structurée
-  - tire parti des **informations de type** (annotations de type / pydantic)
-  - notamment pour la validation / conversion des données
-  - on peut définir des modèles séparés pour la création, la lecture, la mise à jour, etc.  
-    utile par exemple pour le hachage de mots de passe (non exposé)
-- en particulier, génère automatiquement une **documentation interactive**
-- a un support natif pour la programmation asynchrone
-- ainsi que pour les websockets
+- encourages a more structured approach
+  - leverages **type information** (type annotations / pydantic)
+  - especially for data validation / conversion
+  - you can define separate models for creation, reading, updating, etc.  
+    useful for example for password hashing (not exposed)
+- in particular, automatically generates **interactive documentation**
+- has native support for asynchronous programming
+- as well as for websockets
 
 ---
 
-## Pourquoi FastAPI et pas autre chose
+## Why FastAPI and not something else
 
-1️⃣ Vous savez tous à peu près faire du Python 🐍
+1️⃣ You all more or less know how to do Python 🐍
 
 ````{div}
 :class: center
-donc on élimine tout ce qui n'est pas à base Python
+so we eliminate everything that's not Python-based
 ````
 
-2️⃣ On va essayer de vous apprendre des trucs utilisés par ailleurs  
-Et la tendance FastAPI semble effectivement être à une hausse spectaculaire !
+2️⃣ We'll try to teach you things used elsewhere  
+And the FastAPI trend indeed seems to be experiencing spectacular growth!
 
 ````{div}
 :class: center
@@ -56,17 +56,17 @@ Source: <a href="https://www.jetbrains.com/lp/devecosystem-2023/python/">https:/
 
 ## Graphical User Interface
 
-Mais au fait ... pourquoi on s'intéresse à ça ?  
-La GUI c'est ce qui fait le pont 🌉 entre :
+But actually... why are we interested in this?  
+The GUI is what bridges 🌉 between:
 
 ````{div}
 :class: center
-un code de calcul/traitement de données/...  
-et une interface graphique  
-du coup très pertinent pour les "Projets Informatique" de la fin du S2
+a calculation/data processing code/...  
+and a graphical interface  
+so very relevant for the "Computer Science Projects" at the end of S2
 ````
 
-Deux approches :
+Two approaches:
 
 `````{div}
 :class: columns
@@ -74,7 +74,7 @@ Deux approches :
 ````{div}
 :class: fifty center
 ***Old school***  
-Utilisation de librairies graphiques et développement d'un client lourd
+Using graphical libraries and developing a thick client
 
 ```{image} media/old-school.excalidraw.svg
 :width: 50%
@@ -90,7 +90,7 @@ Utilisation de librairies graphiques et développement d'un client lourd
 :class: fifty center
 ***New age***
 
-Utilisation du navigateur
+Using the browser
 
 ```{image} media/new-age.excalidraw.svg
 ```
@@ -100,30 +100,30 @@ Utilisation du navigateur
 
 ---
 
-## FastAPI: on sait déjà un peu !
+## FastAPI: we already know a bit
 
 ```{div}
 :class: center
-on sait déjà vaguement s'en servir, rappelez-vous, on a déjà vu  
-[comment installer FastAPI](label-fastapi-install)  
-et  
-[comment faire un serveur minimal avec FastAPI](label-exo-apitester)
+we already vaguely know how to use it, remember, we've already seen  
+[how to install FastAPI](label-fastapi-install)  
+and  
+[how to make a minimal server with FastAPI](label-exo-apitester)
 
-remarquez comme c'est simple de démarrer 😯  
-c'est un avantage de Flask/FastAPI par rapport à Django  
-qui nécessite un setup plus poussé pour démarrer un projet
+notice how simple it is to get started 😯  
+this is an advantage of Flask/FastAPI compared to Django  
+which requires a more advanced setup to start a project
 ```
 
 ---
 
-### Rappel rapide
+### Quick recap
 
 `````{div}
 :class: columns
 
 ````{div}
 :class: fifty
-- Step 1️⃣ :
+- Step 1️⃣:
 
 ```python
 from fastapi import FastAPI
@@ -140,18 +140,18 @@ app = FastAPI()
 ````
 `````
 
-Ensuite on attache des fonctions Python aux chemins d'URL  
-on appelle ces fonctions des *route handlers* ou des *router functions*
+Then we attach Python functions to URL paths  
+we call these functions *route handlers* or *router functions*
 
 ```python
-@app.get("/un/chemin/cible")
-def la_fonction_correspondante():
-  // fait des trucs très intelligents
-  return un_resultat    # pouvant être des données ou du html ou ...
+@app.get("/a/path/target")
+def the_corresponding_function():
+  // does very smart things
+  return a_result    # which can be data or html or ...
 ```
 
 ---
-### Et pour lancer le serveur ?
+### And to start the server?
 
 
 `````{div}
@@ -159,24 +159,24 @@ def la_fonction_correspondante():
 
 ````{div}
 :class: fifty
-depuis le terminal
+from the terminal
 ```{code} bash
-:caption: le serveur en mode développement
-fastapi dev mon_app.py
+:caption: the server in development mode
+fastapi dev my_app.py
 ```
 ```{code} bash
-:caption: ou sur un autre port
-fastapi dev mon_app.py --port 8080
+:caption: or on another port
+fastapi dev my_app.py --port 8080
 ```
 ````
 
 
 ````{div}
 :class: fifty
-ou aussi
+or also
 ```{code} bash
-:caption: en mode production
-fastapi run mon_app.py
+:caption: in production mode
+fastapi run my_app.py
 ```
 
 ````
@@ -213,18 +213,18 @@ xxx no longer working xxx
  -->
 ---
 
-## Paramètres dans un GET
+## Parameters in a GET
 
 ````{div}
 :class: center
 
-On peut écrire des URLs un tout petit peu plus évoluées:  
+We can write slightly more sophisticated URLs:  
 
 ```{image} media/http-get-arguments.excalidraw.svg
 :width: 80%
 ```
 
-Besoin de **récupérer les arguments** dans la fonction *handler* 🤔
+Need to **retrieve the arguments** in the *handler* function 🤔
 ````
 
 <br>
@@ -232,7 +232,7 @@ Besoin de **récupérer les arguments** dans la fonction *handler* 🤔
 
 ````{div}
 :class: center
-FastAPI a tout prévu
+FastAPI has it all figured out
 ````
 
 `````{div}
@@ -241,7 +241,7 @@ FastAPI a tout prévu
 ````{div}
 :class: fifty
 ```python
-@app.get("/une/route/donnee")
+@app.get("/some/route/data")
 def get_parameters(
         name: str,
         age: int):
@@ -250,24 +250,24 @@ def get_parameters(
 
 ````{div}
 :class: fifty
-il suffit de déclarer les paramètres  
-avec leur type  
-et FastAPI fait le reste  
-et même la conversion de type
+you just need to declare the parameters  
+with their type  
+and FastAPI does the rest  
+and even type conversion
 
 ````
 `````
 
 ````{div}
 :class: center
-🚧 Pas de notion de type dans les échanges réseau, tout est chaîne de caractère 🚧
+🚧 No notion of type in network exchanges, everything is a string 🚧
 ````
 
 ---
 
-## URL paramétrique
+## Parametric URL
 
-Possibilité offerte par Flask de définir des paramètres au sein même d'une URL
+Possibility offered by Flask to define parameters within a URL itself
 
 ````{div}
 :class: center
@@ -280,31 +280,31 @@ Possibilité offerte par Flask de définir des paramètres au sein même d'une U
 
 ````{div}
 :class: fifty-five smaller
-Cas particulier des `/`
+Special case for `/`
 
-- par défaut un paramètre ne contient pas de slash `/`
-- **mais** dans une route on peut déclarer  
-  `"/ma/route/{parametre:path}"`  
+- by default a parameter does not contain a slash `/`
+- **but** in a route you can declare  
+  `"/my/route/{parameter:path}"`  
 
-  pour autoriser les slashs `\` dans le paramètre
+  to allow slashes `\` in the parameter
 ````
 ````{div}
 :class: fourty-five
 ```python
-@app.get("/ma/route/{parameter}")
+@app.get("/my/route/{parameter}")
 def url_parameter(parameter: int):
     return {"square": parameter**2}
 ```
 ```{div}
 :class: tiny
-et bien sûr on peut aussi recevoir comme ça plusieurs paramètres
+and of course you can also receive multiple parameters this way
 ```
 ````
 `````
 
 ---
 
-## Un générateur aléatoire (exo)
+## A random generator (exercise)
 
 `````{div}
 :class: columns
@@ -312,18 +312,18 @@ et bien sûr on peut aussi recevoir comme ça plusieurs paramètres
 ````{div}
 :class: fifty
 
-**dans `python/random-generator.py`**
-- lire le code
-- lancer le serveur
+**in `python/random-generator.py`**
+- read the code
+- start the server
 ````
 
 ````{div}
 :class: fifty
 
-API de génération de nombres aléatoires
+Random number generation API
 
-- `/api/integer` : génère des entiers
-- `/api/float` : génère des flottant
+- `/api/integer`: generates integers
+- `/api/float`: generates floats
 
 ````
 
@@ -332,55 +332,55 @@ API de génération de nombres aléatoires
 ````{div}
 :class: center
 
-depuis le browser - ou le terminal avec httpie - interrogez le *endpoint* `/api/integer`
+from the browser - or the terminal with httpie - query the *endpoint* `/api/integer`
 ````
 
 ```{code} bash
-# n'hésitez pas à voir aussi ce que ça donne avec l'option -v
-# qui va vous montrer AUSSI la requête envoyée
+# don't hesitate to also see what it gives with the -v option
+# which will ALSO show you the request sent
 http :8000/api/integer
 ```
 
 ```{exercise}
 :label: exo-random-one
 
-- comment faire pour générer 4 nombres flottants entre 10 et 50 ?  
-  ici encore pensez à la documentation interactive
+- how to generate 4 floating point numbers between 10 and 50?  
+  here again think about the interactive documentation
 ```
 
 ```{exercise}
 :label: exo-random-two
 
-- que se passe-t-il si on passe un max plus petit que le min ?  
-  comment pourrait-on gérer ça ?
+- what happens if we pass a max smaller than the min?  
+  how could we handle that?
 ```
 ---
 
-## Solutions de l'exercice
+## Exercise solutions
 
 ````{solution} exo-random-one
 :class: dropdown
 
-- dans le browser:  
+- in the browser:  
   `http://localhost:8000/api/float?min=10&max=50&count=4`
 
-- c'est important de **bien comprendre comment fonctionne *`http`***  
-  avec httpie, c'est plus simple:
+- it's important to **understand how *`http`* works well**  
+  with httpie, it's simpler:
   ```{code} bash
   :linenos:
   :emphasize-lines: 7
 
-  # en version longue - attention aux guillemets !
-  # à cause du & qui est un caractère spécial en bash
+  # long version - watch out for quotes!
+  # because of the & which is a special character in bash
   http ":8000/api/float?min=10&max=50&count=4"
 
-  # en version courte, pour passer des paramètres avec GET
-  # il faut utiliser ==
+  # short version, to pass parameters with GET
+  # you must use ==
   http :8000/api/float min==10 max==50 count==4
 
-  # attention le = simple est pour les requêtes POST !
-  # si on utilise = ça ne fait pas ce qu'on veut !
-  # NE PAS FAIRE COMME ÇA !
+  # warning the simple = is for POST requests!
+  # if we use = it doesn't do what we want!
+  # DON'T DO IT LIKE THIS!
   # http GET :8000/api/float min=10 max=50 count=4
 
   ```
@@ -389,14 +389,14 @@ http :8000/api/integer
 ````{solution} exo-random-two
 :class: dropdown
 
-en l'état, il n'y aucun contrôle sur les paramètres, du coup le serveur appelle la fonction `random.uniform` avec des paramètres invalides et ça génère une erreur 500
+as it stands, there is no control on the parameters, so the server calls the `random.uniform` function with invalid parameters and that generates a 500 error
 
-pour pallier à cela, plusieurs choix sont possibles:
+to address this, several choices are possible:
 
-- soit on ajoute un contrôle dans la fonction `random_floats` pour vérifier que `min < max` et si ce n'est pas le cas on lève une exception HTTP 400 (Bad Request)
-- soit on utilise les fonctionnalités de validation de Pydantic; mais ça pour l'instant c'est prématuré puisqu'on n'a pas encore vu Pydantic 😉
+- either we add a check in the `random_floats` function to verify that `min < max` and if not we raise an HTTP 400 (Bad Request) exception
+- or we use Pydantic's validation features; but for now that's premature since we haven't seen Pydantic yet 😉
 
-du coup pour l'instant on va se contenter de la 1ère solution
+so for now we'll settle for the 1st solution
 
 ```{code} python
 :linenos:
@@ -412,43 +412,43 @@ def random_floats(min: float, max: float) -> float:
 
 ---
 
-## Les verbes HTTP
+## HTTP verbs
 
-Petit rappel du 1er épisode, HTTP différentes requêtes possibles
+Quick reminder from the 1st episode, HTTP different possible requests
 
-- `GET` : requêtes pour **_obtenir_** du serveur une ressource (fichier html/css/js, image, video, données, ...)
-- `POST` : requêtes pour **_envoyer_** des données au serveur en vu d'un traitement (ajout d'un utilisateur dans une base de données, ...)
-- `PATCH` : requêtes pour **_modifier partiellement_** une ressource du serveur (mettre à jour l'addresse mail d'un utilisateur dans la base de données)
-- `DELETE` : requêtes pour **_supprimer_** une ressource du serveur (supprimer un commentaire sur un article, ... )
+- `GET`: requests to **obtain** a resource from the server (html/css/js file, image, video, data, ...)
+- `POST`: requests to **send** data to the server for processing (adding a user to a database, ...)
+- `PATCH`: requests to **partially modify** a server resource (updating a user's email address in the database)
+- `DELETE`: requests to **delete** a server resource (deleting a comment on an article, ... )
 
-Il s'agit là des principaux types de requêtes mais il en existe d'autres, pour la liste complète vous pouvez faire un tour ici: [https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
+These are the main types of requests but there are others, for the complete list you can check here: [https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 
 ---
 
-## Paramètres dans un POST
+## Parameters in a POST
 
-```{admonition} vu plus haut: les paramètres GET sont dans l'URL
+```{admonition} seen above: GET parameters are in the URL
 :class: tip dropdown admonition-smaller
 
-genre `/ma/route?param1=val1&param2=val2`  
-et pour info le protocole HTTP ne prévoit pas qu'on puisse mettre des paramètres dans le corps d'une requête GET, si vous le faites quand même le comportement est indéfini
+like `/my/route?param1=val1&param2=val2`  
+and for info the HTTP protocol doesn't provide for putting parameters in the body of a GET request, if you do it anyway the behavior is undefined
 ```
 
-par contre pour les requêtes POST, PATCH, DELETE, ...  
-les paramètres sont passés dans le **corps** de la requête
+however for POST, PATCH, DELETE requests, ...  
+the parameters are passed in the **body** of the request
 
-Voyons ça sur un exemple
+Let's look at an example
 
 ---
 
-### la requête POST
+### the POST request
 
-Et pour commencer regardons ce qui est envoyé par `httpie` quand on fait un POST
+And to start let's look at what is sent by `httpie` when we do a POST
 
-````{admonition} le corps d'une requête POST
+````{admonition} the body of a POST request
 :class: dropdown
 
-Voici
+Here it is
 
 ```{code} bash
 :linenos:
@@ -470,17 +470,17 @@ User-Agent: HTTPie/3.2.4
 ```
 ````
 
-Comme on peut le voir, les paramètres sont envoyés **au format JSON**  
-dans le *Body* de la requête - i.e. après les *headers*  
+As we can see, the parameters are sent **in JSON format**  
+in the *Body* of the request - i.e. after the *headers*  
 
-**Retenez bien ça, c'est important !**  
-C'est ce procédé qu'il va nous falloir utiliser lorsqu'on voudra envoyer des données au serveur (et notamment lorsque c'est le frontend qui envoie la requête via du JS)
+**Remember this well, it's important!**  
+This is the process we'll need to use when we want to send data to the server (and especially when it's the frontend sending the request via JS)
 
 ---
 
-### côté FastAPI
+### on the FastAPI side
 
-Voici à présent le code FastAPI qui va bien pour gérer cette requête
+Here now is the FastAPI code that works well to handle this request
 
 ```{code} python
 :linenos:
@@ -489,28 +489,28 @@ Voici à présent le code FastAPI qui va bien pour gérer cette requête
 from fastapi import Body
 
 @app.post("/api/seed")
-# avec Body() on indique que le paramètre vient du body de la requête
+# with Body() we indicate that the parameter comes from the request body
 def set_seed(seed_value: int=Body(..., embed=True)):
     random.seed(seed_value)
     return {"message": f"Seed set to {seed_value}"}
 ```
 
-```{admonition} c'est plus simple avec Pydantic
+```{admonition} it's simpler with Pydantic
 :class: tip dropdown
-on verra ça plus tard, mais si on utilise un modèle Pydantic pour définir les paramètres, c'est encore plus simple...
+we'll see this later, but if we use a Pydantic model to define the parameters, it's even simpler...
 ```
 
 ---
 
-## La suite
+## What's next
 
-À ce stade vous savez implémenter des *endpoints* FastAPI qui gèrent des
-requêtes GET et POST avec des paramètres
+At this point you know how to implement FastAPI *endpoints* that handle
+GET and POST requests with parameters
 
-On a plein d'autres choses à voir, et notamment:
+We have many other things to see, including:
 
-- comment FastAPI tire parti des annotations de type pour faire de la validation automatique
-- comment retourner du HTML plutôt que de simples données
-- et quelques autres tips & tricks
+- how FastAPI leverages type annotations to do automatic validation
+- how to return HTML rather than simple data
+- and a few other tips & tricks
 
-On va voir ça dans les épisodes suivants...
+We'll see that in the following episodes...
