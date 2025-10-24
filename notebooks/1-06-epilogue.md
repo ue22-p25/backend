@@ -1,16 +1,16 @@
-# Épilogue
+# Epilogue
 
-## Un mot sur l'authentification
+## A word about authentication
 
-Pour s'authentifier auprès d'une API REST, il faut à chaque requête fournir la preuve de qui l'on est. Cela passe généralement par l'association à la requète d'un token qui permet à l'application de savoir
+To authenticate with a REST API, you must provide proof of who you are with each request. This generally involves associating a token with the request that allows the application to know
 
 `````{div}
 :class: columns
 ````{div}
 :class: fifty
 
-- Qui l'on est
-- Ce que l'on a le droit de faire sur quelles ressources
+- Who we are
+- What we have the right to do on which resources
 
 ````
 
@@ -25,31 +25,31 @@ Authorization: Bearer <token>
 `````
 
 
-L'obtention du token se fait généralement via l'interface Web du service visé.
+Token acquisition is generally done via the Web interface of the targeted service.
 
 ````{div}
 :class: center
-⚠️ Attention un token ne doit ***jamais*** être partagé 💣️
+⚠️ Attention a token should ***never*** be shared 💣️
 ````
 
-Dans la plupart des cas à un token est associé :
+In most cases a token is associated with:
 
-- Un ensemble de ressources accessibles
-- Les droits sur ces ressources (consultation, modification, création, suppression)
-- Une durée de validité (date d'expiration du token)
+- A set of accessible resources
+- Rights on these resources (consultation, modification, creation, deletion)
+- A validity period (token expiration date)
 
 ````{div}
 :class: center
-Une solution pour conserver les tokens d'une application est d'utiliser un fichier `.env`
+A solution to preserve application tokens is to use a `.env` file
 ````
 
 ---
 
-## Une API utilisable est une API documentée
+## A usable API is a documented API
 
-Donc pour conclure sur les API, il s'agit d'un moyen très simple pour offrir une interface vers des ressources et données distantes. La seule difficulté dans ce domaine c'est la définition et surtout la **documentation des API** 📑. Donc si vous mettez en place un service Web disposant d'une API et que vous souhaitez ouvrir votre service vers l'extérieur merci de prendre le temps de documenter votre API.
+So to conclude on APIs, it is a very simple way to offer an interface to remote resources and data. The only difficulty in this area is the definition and especially the **documentation of APIs** 📑. So if you set up a Web service with an API and you want to open your service to the outside, please take the time to document your API.
 
-On trouve en ligne plein d'API ouverte un lien pour avoir une liste non exhaustive
+We find online plenty of open APIs a link to have a non-exhaustive list
 
 `````{div}
 :class: columns
@@ -66,7 +66,7 @@ ou
 
 ````{div}
 :class: fifty center
-notamment un exemple d'API utile<br> <https://adresse.data.gouv.fr/outils/api-doc/adresse>
+notably an example of useful API<br> <https://adresse.data.gouv.fr/outils/api-doc/adresse>
 ````
 `````
 
@@ -74,25 +74,25 @@ notamment un exemple d'API utile<br> <https://adresse.data.gouv.fr/outils/api-do
 
 ## Illustration
 
-Considérons par exemple le cas d'un serveur générant des listes de nombres aléatoires à la demande. L'api d'un tel serveur pourrait être
+Consider for example the case of a server generating lists of random numbers on demand. The API of such a server could be
 
-- `/api/integer` renvoie un nombre aléatoire entier
-- `/api/float` renvoie un nombre aléatoire flottant
-- `/api/integer?n=100` renvoie 100 nombres aléatoires entiers
+- `/api/integer` returns a random integer
+- `/api/float` returns a random floating number
+- `/api/integer?n=100` returns 100 random integers
 - ...
 
 ```{div}
 :class: center
-ça se passe dans le dossier `python/api-random` du cours
+it happens in the `python/api-random` folder of the course
 ```
 
 ---
 
-## Par exemple
+## For example
 
 ````{div}
 :class: center
-Voici comment générer quelques statistiques sur Github directement en Markdown
+Here's how to generate some statistics on Github directly in Markdown
 ````
 
 ```md
@@ -115,9 +115,9 @@ Voici comment générer quelques statistiques sur Github directement en Markdown
 
 ---
 
-## Un mot sur le "No Code"
+## A word about "No Code"
 
-Depuis quelques années de plus en plus à la mode: **No Code**, **Low Code**
+For a few years increasingly fashionable: **No Code**, **Low Code**
 
 ````{div}
 :class: center
@@ -128,7 +128,7 @@ Depuis quelques années de plus en plus à la mode: **No Code**, **Low Code**
 
 ````{div}
 :class: center
-demande de support par mail qui provoque une nouvelle entrée dans une base de données<br>et une notification par mail si "urgent" dans le sujet du mail 🤯
+mail support request that causes a new entry in a database<br>and a mail notification if "urgent" in the mail subject 🤯
 ````
 
 ---
@@ -137,12 +137,12 @@ demande de support par mail qui provoque une nouvelle entrée dans une base de d
 
 xxx outdated xxx
 
-Je vous ai mis en place un serveur minimaliste offrant une API permettant :
+I have set up a minimalist server offering an API allowing:
 
-1. Lister l'ensemble des utilisateurs de la base de données
-2. Mettre à jour votre status
-3. Envoyer un message à un utilisateur
-4. Récupérer les messages qui m'ont été envoyés.
+1. List all users in the database
+2. Update your status
+3. Send a message to a user
+4. Retrieve messages that were sent to me.
 
 ````{div}
 :class: center
@@ -151,33 +151,33 @@ Je vous ai mis en place un serveur minimaliste offrant une API permettant :
 
 --
 
-L'idée est que vous réalisiez les actions suivantes :
+The idea is that you perform the following actions:
 
-1. A l'aide d'un programme Python 🐍 :
-   1. faire une requète `GET` permettant de trouver quel est votre ID d'utilisateur
-   2. faire une requète `PATCH` pour mettre à jour votre status
-   3. faire des requètes `GET`/`POST` pour vous envoyer des messages entre vous
-2. Pour les plus joueurs, à l'aide du combo HTML/CSS/JS
-   1. Faire le client web de ce serveur 🤗 !
+1. Using a Python 🐍 program:
+   1. make a `GET` request to find what your user ID is
+   2. make a `PATCH` request to update your status
+   3. make `GET`/`POST` requests to send messages between you
+2. For the more playful, using the HTML/CSS/JS combo
+   1. Make the web client of this server 🤗!
 
 ---
 
-## Application 2 : utilisation de l'API Notion
+## Application 2: using the Notion API
 
-L'objectif ici est de mettre en place un programme Python permettant de modifier le contenu d'une base de données Notion. **[Un squelette est disponible ici](https://github.com/ue22-p24/backend-notion-api-skeleton)**. L'application à terme doit pouvoir :
+The objective here is to set up a Python program allowing to modify the content of a Notion database. **[A skeleton is available here](https://github.com/ue22-p24/backend-notion-api-skeleton)**. The application in the end must be able to:
 
 `````{div}
 :class: columns smaller
 
 ````{div}
 :class: sixty
-- Lister l'ensemble des tâches d'une base de données
-- Afficher le détail d'une tâche défini par son ID
+- List all tasks in a database
+- Display the detail of a task defined by its ID
 ````
 ````{div}
 :class: fourty
-- Changer le status d'une tâche
-- Ajouter du texte dans la page de la tâche
+- Change the status of a task
+- Add text to the task page
 ````
 `````
 
@@ -189,11 +189,11 @@ L'objectif ici est de mettre en place un programme Python permettant de modifier
 ````{div}
 :class: fifty
 
-**Step 1️⃣** : créer une base de données dans Notion  
-[vous pouvez dupliquer celle-ci](https://bmarchand.notion.site/04620d6c67274d8e96211ddc738acf76?v=31bcb2e38fa242cfbc8eb9c51eca6108)
+**Step 1️⃣**: create a database in Notion  
+[you can duplicate this one](https://bmarchand.notion.site/04620d6c67274d8e96211ddc738acf76?v=31bcb2e38fa242cfbc8eb9c51eca6108)
 
-**Step 2️⃣** : créer une intégration Notion  
-Se rendre sur le site [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations) et créer une intégration
+**Step 2️⃣**: create a Notion integration  
+Go to the site [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations) and create an integration
 
 ```{image} media/notion-token.png
 :width: 80%
@@ -202,14 +202,14 @@ Se rendre sur le site [https://www.notion.so/my-integrations](https://www.notion
 
 ````{div}
 :class: fifty
-**Step 3️⃣** : ajouter la base de données à l'intégration créée précédemment  
-depuis la page de la base de données
+**Step 3️⃣**: add the database to the integration created previously  
+from the database page
 
 ```{image} media/notion-db-to-integ.png
 :width: 45%
 ```
 
-**Step 4️⃣** : récuper l'ID de la base de données  
+**Step 4️⃣**: retrieve the database ID  
 ```{image} media/notion-db-id.png
 ```
 ````
@@ -217,9 +217,9 @@ depuis la page de la base de données
 
 ---
 
-## La semaine prochaine❕
+## Next week❕
 
-On passe du côté obscur, et on voit comment définir nos API
+We go to the dark side, and we see how to define our APIs
 
 ````{div}
 :class: center

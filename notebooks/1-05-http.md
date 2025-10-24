@@ -1,6 +1,6 @@
-# Le protocole HTTP
+# The HTTP Protocol
 
-## Format d'une requête
+## Request format
 
 ````{div}
 :class: center
@@ -9,97 +9,97 @@
 
 ---
 
-### HTTP 2.0 et au delà
+### HTTP 2.0 and beyond
 
-Nous utiliserons HTTP1.1 dans ce cours mais sachez qu'il existe des versions
-plus récentes comme HTTP2 et HTTP3 qui apportent des améliorations de
-performance et de sécurité.
+We will use HTTP1.1 in this course but know that there are versions
+more recent like HTTP2 and HTTP3 that bring improvements in
+performance and security.
 
-Notamment HTTP2 introduit
+Notably HTTP2 introduces
 
-- la multiplexion des requêtes, permettant d'envoyer plusieurs requêtes en parallèle sur une seule connexion TCP.
-- la compression des en-têtes, réduisant la taille des données échangées.
-- le push de serveur, permettant au serveur d'envoyer des ressources au client
-- un format binaire pour les requêtes et réponses, améliorant l'efficacité de la transmission.
+- request multiplexing, allowing multiple requests to be sent in parallel on a single TCP connection.
+- header compression, reducing the size of exchanged data.
+- server push, allowing the server to send resources to the client
+- a binary format for requests and responses, improving transmission efficiency.
 
 ```{div}
 :class: smaller
-Et il existe aussi HTTP/3 qui utilise QUIC (au dessus de UDP et non plus TCP)
-comme protocole de transport, offrant des améliorations supplémentaires en
-termes de latence et de sécurité.
+And there is also HTTP/3 which uses QUIC (above UDP and no longer TCP)
+as a transport protocol, offering additional improvements in
+terms of latency and security.
 ```
 
 ---
 
-## Types de requêtes
+## Request types
 
-Vous avez peut être remarqué le `GET` dans la requête précédente.
+You may have noticed the `GET` in the previous request.
 
-En gros c'est pour dire que l'on veut faire un requête de type `GET`.  
-Sous-entendu il existe d'autres types de requête&nbsp;:
+Basically it's to say that we want to make a `GET` type request.  
+Implied there are other types of requests&nbsp;:
 
-- `GET` : requêtes pour **_obtenir_** du serveur une ressource (fichier html/css/js, image, video, données, ...)
-- `POST` : requêtes pour **_envoyer_** des données au serveur en vu d'un traitement (ajout d'un utilisateur dans une base de données, ...)
-- `PATCH` : requêtes pour **_modifier partiellement_** une ressource du serveur (mettre à jour l'addresse mail d'un utilisateur dans la base de données)
-- `DELETE` : requêtes pour **_supprimer_** une ressource du serveur (supprimer un commentaire sur un article, ... )
+- `GET`: requests to **_obtain_** a resource from the server (html/css/js file, image, video, data, ...)
+- `POST`: requests to **_send_** data to the server for processing (adding a user to a database, ...)
+- `PATCH`: requests to **_partially modify_** a server resource (updating a user's email address in the database)
+- `DELETE`: requests to **_delete_** a server resource (delete a comment on an article, ... )
 
-Il s'agit là des principaux types de requêtes mais il en existe d'autres, pour la liste complète vous pouvez faire un tour ici
+These are the main types of requests but there are others, for the complete list you can take a tour here
 <https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol>
 
 ````{div}
 :class: center
-⚠️ En pratique il arrive souvent que `POST` soit utilisée, à la place de `PATCH`, <br> pour mettre à jour une donnée déjà présente côté serveur ... 🤢
+⚠️ In practice it often happens that `POST` is used, instead of `PATCH`, <br> to update data already present on the server side ... 🤢
 ````
 
 ---
 
-## Expérimentons
+## Let's experiment
 
-Dans Python 🐍 vous vous en doutez il existe tout ce qu'il faut !!
+In Python 🐍 you suspect there is everything you need!!
 
 ```python
 import requests
 ```
 
-Nous allons utiliser
+We will use
 
 ```{div}
 :class: center
-le site <http://httpbin.org> qui met à disposition un serveur de test relativement utile.  
-et le dossier `python/httpbin-client` du cours
+the site <http://httpbin.org> which provides a relatively useful test server.  
+and the `python/httpbin-client` folder of the course
 ```
 
 ---
 
-## Les codes de retour
+## Return codes
 
-Lorsque l'on fait une requête à un serveur via http/https, ce dernier nous renvoie en premier lieu un code de retour.
-Ces codes sont normalisés (liste non exhaustive)&nbsp;:
+When we make a request to a server via http/https, the latter returns us first a return code.
+These codes are standardized (non-exhaustive list)&nbsp;:
 
-- 2xx : ok tout s'est bien passé ✅
-  - normalement 200
-- 3xx : redirect
-  - 301/302 : redirection de la page, temporaire ou pas ⤴️
-- 4xx: erreur
-  - 401 : il faut s'authentifier 🔐
-  - 403 : minute papillon tu n'as pas le droit d'accéder à ça ! ⛔
-  - 404 : ce que tu me demandes n'existe pas ⁉️
-- 5xx : la c'est un problème de serveur 💣
+- 2xx: ok everything went well ✅
+  - normally 200
+- 3xx: redirect
+  - 301/302: page redirection, temporary or not ⤴️
+- 4xx: error
+  - 401: you need to authenticate 🔐
+  - 403: wait a minute you don't have the right to access this! ⛔
+  - 404: what you're asking me doesn't exist ⁉️
+- 5xx: that's a server problem 💣
 
-Et donc la première chose à faire lorsque vous faites une requête à un serveur c'est de vérifier que le code de retour est bien 200 car sinon pas la peine de continuer !
+And so the first thing to do when you make a request to a server is to check that the return code is 200 because otherwise there's no point in continuing!
 
 ---
 
-## La notion d'API
+## The notion of API
 
 ````{div}
 :class: center
 Application Programming Interface
 ````
 
-Permet de définir comment un programme **consommateur** va pouvoir exploiter les **fonctionnalités** données d'un programme **fournisseur**
+Allows to define how a **consumer** program will be able to exploit the **functionalities** given by a **provider** program
 
-Dans le domaine particulier du Web l'API, se définit en fait à partir d'une URL. En effet l'accès à la ressource se fait en effectuant une requête GET (ou POST, selon les cas) sur une URL particulière.
+In the particular domain of the Web, the API is actually defined from a URL. Indeed, access to the resource is done by making a GET request (or POST, depending on the case) on a particular URL.
 
 ````{div}
 :class: center
@@ -111,63 +111,63 @@ Image from Jérémy Mésière, Architecte Middleware chez Manutan
 
 ---
 
-## API REST
+## REST API
 
 ````{div}
 :class: center
 **Representational State Transfer**
 ````
 
-Ensemble de principes gouvernant l'architecture d'application Web.
+Set of principles governing Web application architecture.
 
 `````{div}
 :class: columns smaller
 ````{div}
 :class: fifty
 
-- **Méthodes HTTP** :
+- **HTTP Methods**:
 
-  Les opérations sont réalisées à l'aide des méthodes HTTP : GET (lire), POST (créer), PUT/PATCH (mettre à jour), DELETE (supprimer).
-  Exemple : Une requête GET à l'API d'un blog pour récupérer un article spécifique.
+  Operations are performed using HTTP methods: GET (read), POST (create), PUT/PATCH (update), DELETE (delete).
+  Example: A GET request to a blog API to retrieve a specific article.
 
-- **Ressources** :
+- **Resources**:
 
-  Dans REST, toutes les données ou états sont considérés comme des "ressources".
-  Chaque ressource est **identifiée de manière unique** par une URI (Uniform Resource Identifier).
-  Exemple : /articles/123 peut représenter la ressource pour l'article avec l'ID 123.
+  In REST, all data or states are considered as "resources".
+  Each resource is **uniquely identified** by a URI (Uniform Resource Identifier).
+  Example: /articles/123 can represent the resource for the article with ID 123.
 
 ````
 
 ````{div}
 :class: fifty
 
-- Sans état (**Stateless**) :
+- Stateless:
 
-  Chaque requête de l'API REST doit **contenir toutes les informations nécessaires** pour être comprise par le serveur. **Aucun état de session** n'est conservé sur le serveur.
-  Avantages : Simplifie la conception du serveur et améliore la scalabilité.
+  Each REST API request must **contain all the necessary information** to be understood by the server. **No session state** is maintained on the server.
+  Advantages: Simplifies server design and improves scalability.
 
-- **Représentation des ressources** :
+- **Resource representation**:
 
-  Les ressources peuvent être représentées en différents formats, JSON et XML étant les plus courants.
-  Le choix du format est souvent indiqué dans l'en-tête HTTP Content-Type de la requête.
+  Resources can be represented in different formats, JSON and XML being the most common.
+  The choice of format is often indicated in the HTTP Content-Type header of the request.
 
 ````
 `````
 
 ---
 
-## L'importance des headers HTTP
+## The importance of HTTP headers
 
 ````{div}
 :class: center
-Les headers HTTP sont des paramètres envoyés dans les requêtes et réponses HTTP qui fournissent des informations essentielles sur la transaction HTTP.
+HTTP headers are parameters sent in HTTP requests and responses that provide essential information about the HTTP transaction.
 ````
 
-Notamment cela va nous permettre de gérer l'authentification 🔐 lorsqu'on veut accéder à des API protégées, le format des données, la version de l'API
+Notably this will allow us to manage authentication 🔐 when we want to access protected APIs, the data format, the API version
 
-Quelques headers **_classiques_** :
+Some **_classic_** headers:
 
-- `Content-Type` : indique le type de média du corps de la requête ou de la réponse. Dans le cadre des API REST, `application/json` est couramment utilisé, indiquant que l'on ne travaille qu'avec du JSON.
-- `Accept` : le type de contenu que l'on accepte en réponse, généralement ̀`application/json` également
-- `Authorization` : on va voir dans la prochaine slide qu'il permet de gérer l'authentification lorsqu'on veut accéder à une ressource protégée
+- `Content-Type`: indicates the media type of the request or response body. In the context of REST APIs, `application/json` is commonly used, indicating that we only work with JSON.
+- `Accept`: the type of content we accept in response, generally `application/json` as well
+- `Authorization`: we will see in the next slide that it allows to manage authentication when we want to access a protected resource
  

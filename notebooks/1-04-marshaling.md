@@ -1,19 +1,19 @@
-# Encodage de données
+# Data Encoding
 
-La couche 4 est-elle suffisante, ou avons-nous besoin d'un truc en plus ?
+Is layer 4 sufficient, or do we need something else?
 
 <br>
 
 ````{div}
 :class: center
-Avec TCP ou UDP on peut faire nos transferts de données entre application
+With TCP or UDP we can do our data transfers between applications
 ````
 
 <br>
 
 ````{div}
 :class: center
-A votre avis c'est tout bon du coup ou on a besoin d'un truc en plus ?
+In your opinion is it all good then or do we need something else?
 ````
 <br><br>
 
@@ -21,7 +21,7 @@ A votre avis c'est tout bon du coup ou on a besoin d'un truc en plus ?
 
 ````{div}
 :class: center
-🔎 Regardons sur un exemple concret 🔎
+🔎 Let's look at a concrete example 🔎
 ````
 
 `````{div}
@@ -31,12 +31,12 @@ A votre avis c'est tout bon du coup ou on a besoin d'un truc en plus ?
 :class: seventy
 ```{div}
 :class: center
-le dossier `python/tcp-awkward-api`
-<br>ou<br>
+the folder `python/tcp-awkward-api`
+<br>or<br>
 [https://replit.com/@BasileMarchand/tcpexample?v=1](https://replit.com/@BasileMarchand/tcpexample?v=1)
-<br>ou<br>
+<br>or<br>
 [http://bit.ly/3YpoKDR](http://bit.ly/3YpoKDR)
-<br>ou<br>
+<br>or<br>
 ```
 ````
 
@@ -48,56 +48,56 @@ le dossier `python/tcp-awkward-api`
 
 ---
 
-## Un verrou 🔒
+## A lock 🔒
 
 ````{div}
 :class: center
-Rien de standard dans mes échanges de données 😵‍💫
+Nothing standard in my data exchanges 😵‍💫
 ````
 <br><br>
 ````{div}
 :class: center
-J'ai créé ma propre logique 
+I created my own logic 
 
-<br><br> mais elle ne l'est <strike>peut-être</strike> certainement pas aux yeux des autres.
+<br><br> but it's <strike>maybe</strike> certainly not in the eyes of others.
 ````
 
 <br><br>
 ````{div}
 :class: center
-Un peu de standardisation ne ferait pas de mal ...
+A bit of standardization wouldn't hurt ...
 ````
 
 ---
 
-## Au passage : tranfert de données ...
+## By the way: data transfer ...
 
 ````{div}
 :class: center
-La grande question qui peut se poser est <br><br><br>sous quel format est-il pertinent d'échanger des données ❓
+The big question that can arise is <br><br><br>in what format is it relevant to exchange data ❓
 ````
 
 <br>
-Le modèle OSI ne spécifie pas vraiment de format de données autre que dire c'est du binaire 🤨
+The OSI model does not really specify a data format other than saying it is binary 🤨
 <br><br>
-La couche 6 spécifie un peu les choses en réalité mais ca donne un spectre assez large en fait
+Layer 6 specifies things a bit in reality but it gives a fairly broad spectrum actually
 <br>
 
 ````{div}
 :class: center
-😩 Comment on fait si on veut faire transiter <br><br> un paquet de donnée structurée mais hétérogène ?
+😩 How do we do if we want to transmit <br><br> a packet of structured but heterogeneous data?
 ````
 
-Par exemple les informations d'une personne :
+For example, a person's information:
 
 ````{div}
 :class: center
-Nom, Prénom, Date de naissance, nombre d'enfants, ...
+Name, First name, Date of birth, number of children, ...
 ````
 
 ---
 
-## Sérialisation JSON
+## JSON Serialization
 
 ````{div}
 :class: center
@@ -106,7 +106,7 @@ Nom, Prénom, Date de naissance, nombre d'enfants, ...
 
 ---
 
-Via Python 🐍 c'est facile !
+Via Python 🐍 it's easy!
 
 `````{div}
 :class: columns
@@ -134,37 +134,37 @@ data = json.loads(serialized)
 
 ---
 
-## Haut niveau : la couche 7 du modèle OSI
+## High level: layer 7 of the OSI model
 
-C'est là que les choses concrètes commencent 🥳
+This is where concrete things begin 🥳
 
 <br>
 
 ````{div}
 :class: center
-***Couche 7 = couche Application***
+***Layer 7 = Application layer***
 ````
 
 <br>
-Chaque "catégorie" d'application spécifie alors :
+Each "category" of application then specifies:
 
 ````{div}
 :class: center
-Comment se font les communications entre le client et l'application
+How communications are made between the client and the application
 <br><br>
-format des message, contenu attendu, ...
+message format, expected content, ...
 ````
 
 `````{div}
 :class: columns
 ````{div}
 :class: fifty
-On parle de protocole, comme par exemple:
+We talk about protocol, for example:
 
-- Transfert de fichiers 📂 : (S)FTP, rsync
-- Messagerie ✉️ : SMTP, POP, IMAP
-- Sessions distantes : telnet, SSH
-- et...
+- File transfer 📂: (S)FTP, rsync
+- Messaging ✉️: SMTP, POP, IMAP
+- Remote sessions: telnet, SSH
+- and...
 ````
 ````{div}
 :class: fifty

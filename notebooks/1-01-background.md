@@ -1,8 +1,8 @@
-# Le monde connecté 🕸️
+# The Connected World 🕸️
 
 ```{div}
 :class: center
-Le monde d'aujourd'hui est ultra connecté 🕸️
+Today's world is ultra-connected 🕸️
 ```
 
 ---
@@ -10,13 +10,13 @@ Le monde d'aujourd'hui est ultra connecté 🕸️
 ```{image} media/architecture.excalidraw.svg
 ```
 
-La plupart des systèmes informatiques/services web que vous pouvez utiliser quotidiennement ne sont pas **une** application mais un **ensemble** d'applications qui intéragissent entre elles.
+Most computer systems/web services that you can use daily are not **one** application but a **set** of applications that interact with each other.
 
 ---
 
-## Premier use-case
+## First use case
 
-Un élève répond à un questionnaire de satisfaction en ligne et après la soumission de son questionnaire reçoit automatiquement une réponse personnalisée et spécifique selon ses réponses.
+A student answers an online satisfaction survey and after submitting their questionnaire automatically receives a personalized and specific response based on their answers.
 
 ```{image} media/premier-use-case.excalidraw.svg
 ```
@@ -25,7 +25,7 @@ Un élève répond à un questionnaire de satisfaction en ligne et après la sou
 
 ---
 
-## Un second use-case
+## A second use case
 
 <!-- <button onclick="copyFunction()">Email du support</button> -->
 
@@ -34,27 +34,27 @@ Un élève répond à un questionnaire de satisfaction en ligne et après la sou
 
 ```{div}
 :class: center
-❓ Quels ingrédients, outils 🛠️ doivent être mis en oeuvre❓
+❓ What ingredients, tools 🛠️ need to be implemented?❓
 ```
 
 ---
 
-## 👩‍🍳 Les ingrédients nécessaires 👨‍🍳
+## 👩‍🍳 The necessary ingredients 👨‍🍳
 
-Des **applications** qui peuvent se **contacter**,
-<br><br> **échanger** des **données**
-<br><br> avec des règles clairement établies permettant de **déclencher des actions**
+**Applications** that can **contact** each other,
+<br><br> **exchange** **data**
+<br><br> with clearly established rules allowing to **trigger actions**
 
 ---
 
-## Dans ce cours
+## In this course
 
-On va essayer de répondre aux questions suivantes
+We will try to answer the following questions
 
-- Comment communiquer entre deux applications sur un réseau ?
-- Comment envoyer un message d'une application vers une autre via le réseau ?
-- Sous quel format envoyer ce message ?
-- Comment fait-on une application Python capable d'écouter sur le réseau ?
+- How to communicate between two applications on a network?
+- How to send a message from one application to another via the network?
+- In what format should this message be sent?
+- How do we make a Python application capable of listening on the network?
 
 ````{div}
 :class: fourty
@@ -66,7 +66,7 @@ On va essayer de répondre aux questions suivantes
 
 ## Architecture
 
-Pour faire collaborer des applications ensemble il existe plein de modèles, d'architectures différentes
+To make applications collaborate together, there are many different models and architectures
 
 ````{div}
 :class: sixty
@@ -74,45 +74,45 @@ Pour faire collaborer des applications ensemble il existe plein de modèles, d'a
 ```
 ````
 
-On va regarder les plus classiques
+We will look at the most classic ones
 
 ---
 
-### Client-serveur
+### Client-server
 
 ```{image} media/client-server.excalidraw.svg
 ```
 
 ---
 
-### Architecture trois-tiers
+### Three-tier architecture
 
 ```{image} media/architecture-three-tiers.excalidraw.svg
 ```
 
 ---
 
-### Architecture pair à pair
+### Peer-to-peer architecture
 
 ```{image} media/peer-to-peer.excalidraw.svg
 :width: 60%
 ```
 
-Très à la mode à une époque où Netflix/Amazon Prime/... n'existaient pas (oui oui cette période est réelle 🤯)
+Very fashionable at a time when Netflix/Amazon Prime/... didn't exist (yes yes this period is real 🤯)
 
 ```{div}
 :class: center
-ℹ️ Projet [folding@home](https://apps.foldingathome.org/serverstats)
+ℹ️ Project [folding@home](https://apps.foldingathome.org/serverstats)
 ```
 
 ---
 
-## Le Web
+## The Web
 
 ```{div}
 :class: center
 
-Juste un gros réseau
+Just a big network
 
 ```{image} media/web.jpg
 ```
@@ -120,12 +120,12 @@ Juste un gros réseau
 
 ---
 
-## Le cloud
+## The cloud
 
 ````{div}
 :class: center
 
-Le cloud c'est quoi ?
+What is the cloud?
 ```{image} media/nocloud.png
 :width: 40%
 ```

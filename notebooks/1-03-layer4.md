@@ -1,22 +1,22 @@
-# La couche transport 🚗
+# The Transport Layer 🚗
 
-> On sait s'orienter, comment on cause maintenant
+> We know how to navigate, how do we communicate now
 >
-> ➡️ On a besoin de la 4ème couche du modèle OSI
+> ➡️ We need the 4th layer of the OSI model
 
 ---
 
-## La couche 4
+## Layer 4
 
-> spécification de comment on fait pour envoyer des données <br>
-> d'un serveur A vers un client B et inversement.
+> specification of how to send data <br>
+> from server A to client B and vice versa.
 
 `````{div}
 :class: columns
 
 ````{div}
 :class: thirty
-Différents protocoles établis&nbsp;:
+Different established protocols&nbsp;:
 
 - TCP
 - UDP
@@ -28,22 +28,22 @@ Différents protocoles établis&nbsp;:
 **⚠️ Attention ⚠️**
 ````{div}
 :class: center
-La couche transport ne fait que définir la ***manière*** dont deux applications communiquent
+The transport layer only defines the ***way*** two applications communicate
 <br>
-mais ne spécifie en rien le ***contenu*** de ces communications
+but does not specify the ***content*** of these communications
 ````
 `````
 
 ---
 
-## Un serveur == une application ?
+## A server == an application?
 
-Connaitre l'IP du serveur ne vous permet pas encore de communiquer avec l'application qui se trouve sur ce serveur
+Knowing the server's IP doesn't allow you to communicate with the application on that server yet
 <br>
 
 ````{div}
 :class: center
-❓ D'ailleurs sur un serveur il ne peut y avoir qu'une application réseau ou peut-on en mettre plusieurs ❓
+❓ By the way, can there be only one network application on a server or can we put several ❓
 ````
 
 `````{div}
@@ -51,18 +51,18 @@ Connaitre l'IP du serveur ne vous permet pas encore de communiquer avec l'applic
 
 ````{div}
 :class: seventy-five
-On peut avoir plusieurs applications sur un même serveur, et heureusement 🥳
+We can have several applications on the same server, and fortunately 🥳
 
-Le choix de l'application avec laquelle on va discuter implique la notion de **_port_**
+The choice of the application we will talk to involves the notion of **_port_**
 
 ```{div}
 :class: center
-port = porte d'entrée du service 🚪
+port = service entry door 🚪
 ```
 
 ```{div}
 :class: center
-(mais on ne fait pas tourner autant d'applications sur un serveur)
+(but we don't run that many applications on a server)
 ```
 ````
 
@@ -76,24 +76,24 @@ port = porte d'entrée du service 🚪
 
 ---
 
-## Anatomie d'un paquet réseau
+## Network packet anatomy
 
-et voici à quoi ressemble un paquet
+and here is what a packet looks like
 
 ```{image} media/packet-layers.excalidraw.svg
 ```
 
 <br>
 
-```{admonition} vocabulaire
+```{admonition} vocabulary
 :class: dropdown
-pour être précis, en général on appelle *packet* le niveau 3 et au delà  
-lorsque comme ici on inclut le niveau 2 on parle généralement de "frame"
+to be precise, in general we call *packet* level 3 and beyond  
+when as here we include level 2 we generally speak of "frame"
 ```
 
 ---
 
-## Les ports standard
+## Standard ports
 
 `````{div}
 :class: columns
@@ -101,12 +101,12 @@ lorsque comme ici on inclut le niveau 2 on parle généralement de "frame"
 ````{div}
 :class: fifty
 
-Sur une machine on a 2<sup>16</sup> = 65,536 ports
+On a machine we have 2<sup>16</sup> = 65,536 ports
 ````
 
 ````{div}
 :class: fifty
-Quelques port normalisés :
+Some standardized ports:
 
 service | port
 -|-
@@ -123,30 +123,30 @@ HTTPS | 443
 
 ## TCP/IP
 
-### Principe
+### Principle
 
 ````{div}
 :class: center
 **T**ransmission **C**ontrol **P**rotocol
 ````
 
-est **le** protocole historique (Bob Kahn et Vinton Cerf, Septembre 1973), qui doit sa longévité à sa robustesse et sa fiabilité.
+is **the** historical protocol (Bob Kahn and Vinton Cerf, September 1973), which owes its longevity to its robustness and reliability.
 
 ````{div}
 :class: center
-Aujourd'hui lorsque vous naviguez sur le web<br>la plupart des échanges qui ont lieu entre votre navigateur et les sites web sont basés sur du TCP
+Today when you browse the web<br>most exchanges that take place between your browser and websites are based on TCP
 ````
 
 <br>
-Le principe du TCP est très simple et se décompose en trois étapes:
+The principle of TCP is very simple and breaks down into three steps:
 
-- établissement de la connexion
-- transfert de données
-- fin de la connexion
+- connection establishment
+- data transfer
+- connection termination
 
 ---
 
-### TCP/IP : open
+### TCP/IP: open
 
 `````{div}
 :class: columns
@@ -159,20 +159,20 @@ Le principe du TCP est très simple et se décompose en trois étapes:
 
 ````{div}
 :class: sixty
-La connexion d'un client à un serveur TCP se décompose en trois étapes
+The connection of a client to a TCP server breaks down into three steps
 
 ```{div}
 :class: center
 ___three way handshake___
 ```
 
-de la manière suivante :
+in the following way:
 
-- 1️⃣ Client : Hello le serveur tu m'entends&nbsp;?
+- 1️⃣ Client: Hello server can you hear me&nbsp;?
   <br><br>
-- 2️⃣ Serveur : Oui je t'entends et toi ?
+- 2️⃣ Server: Yes I hear you and you?
   <br><br>
-- 3️⃣ Client : Oui c'est bon je t'entends
+- 3️⃣ Client: Yes it's good I hear you
   <br><br>
 
 ````
@@ -180,7 +180,7 @@ de la manière suivante :
 
 ---
 
-### TCP/IP : close
+### TCP/IP: close
 
 `````{div}
 :class: columns
@@ -194,70 +194,70 @@ de la manière suivante :
 
 ````{div}
 :class: sixty
-Clotûre en 4 étapes
+Closure in 4 steps
 <br><br>
 
-- 1️⃣ Client : j'ai fini
+- 1️⃣ Client: I'm done
   <br><br>
-- 2️⃣ Serveur : Ok c'est noté
+- 2️⃣ Server: Ok noted
   <br><br>
-- 3️⃣ Serveur : moi aussi je n'ai plus rien à te dire
+- 3️⃣ Server: me too I have nothing more to tell you
   <br><br>
-- 4️⃣ Client : Ok à la prochaine
+- 4️⃣ Client: Ok see you next time
 ````
 `````
 
 ---
 
-## Regardons un peu en vrai comment ca marche
+## Let's see how it really works
 
 ```{div}
 :class: center
-allons voir le dossier `python/tcp` du cours
+let's go see the `python/tcp` folder of the course
 ```
 
 ---
 
-## TCP un truc de riche 🤑
+## TCP a rich thing 🤑
 
-Vous pouvez donc voir qu'avec cette approche
+You can therefore see that with this approach
 ````{div}
 :class: center
-✅ la connexion est extrêmement fiable et il y a peu de chances d'avoir des loupés
+✅ the connection is extremely reliable and there is little chance of having misses
 ````
 
-En revanche cette fiabilité n'est pas gratuite 💰️
+However this reliability is not free 💰️
 ````{div}
 :class: center
-❌ elle s'accompagne d'un coût en terme d'échanges relativement élevé
+❌ it is accompanied by a relatively high cost in terms of exchanges
 ````
 
-C'est pour cela qu'il existe une alternative au TCP 😯
+That's why there's an alternative to TCP 😯
 
 ---
 
 ## UDP
 
-Le protocole UDP (User Datagram Protocol) est complémentaire au protocole TCP. Créé par David Reed en 1980.
+The UDP protocol (User Datagram Protocol) is complementary to the TCP protocol. Created by David Reed in 1980.
 
-Cas d'usage :
+Use cases:
 
 ````{div}
 :class: center
-Transmission rapide de données et réception de l'intégralité **pas impérative**
+Fast data transmission and reception of the whole **not imperative**
 ````
 
 ````{div}
 :class: center
-TCP = très fiable mais lent
+TCP = very reliable but slow
 
 *vs*
 <br>
 
-UDP = rapide mais peu fiable
+UDP = fast but unreliable
 ````
 
-Les applications d'UDP sont nombreuses, par exemple :
+UDP applications are numerous, for example:
 
 ````{div}
 :class: center

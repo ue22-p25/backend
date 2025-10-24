@@ -1,31 +1,31 @@
-# Le réseau : principe
+# The Network: Principle
 
 ## Infrastructure
 
-Tout d'abord un réseau c'est quoi ?
+First of all, what is a network?
 
 ````{div}
 :class: center
-Et bien c'est une **infrastructure** que l'on utilise pour faire transiter des données.
+Well, it's an **infrastructure** that we use to transmit data.
 ````
 
-Dans sa version la plus élémentaire qui soit, un réseau est composé de deux appareils reliés entre eux, par un câble réseau par exemple.
+In its most elementary version, a network consists of two devices connected to each other, by a network cable for example.
 
-Le point important là-dedans c'est qu’un appareil connecté au réseau doit posséder une **interface réseau**, un composant capable de communiquer c'est-à-dire d'envoyer et recevoir un signal.
+The important point here is that a device connected to the network must have a **network interface**, a component capable of communicating, i.e., sending and receiving a signal.
 
-Par exemple votre ordinateur portable possède deux interfaces réseau : la prise RJ45 et la carte wifi. Le signal qui transite par l'interface réseau est un signal binaire.
+For example, your laptop has two network interfaces: the RJ45 port and the wifi card. The signal that passes through the network interface is a binary signal.
 
 ````{div}
 :class: center
-**⚠️ L'appareil en lui-même n'a pas besoin de connaître la signification de ce signal, 
-<br> car c'est un programme tournant derrière l'interface réseau qui se chargera de traiter le signal en question ⚠️**
+**⚠️ The device itself doesn't need to know the meaning of this signal,
+<br> because it's a program running behind the network interface that will handle processing the signal in question ⚠️**
 ````
 
 ---
 
-## Petite parenthèse
+## Small parenthesis
 
-### Supercalculateur : un modèle peer-to-peer
+### Supercomputer: a peer-to-peer model
 
 `````{div}
 :class: columns
@@ -60,7 +60,7 @@ Par exemple votre ordinateur portable possède deux interfaces réseau : la pris
 
 ````{div}
 :class: center
-Diviser pour mieux régner
+Divide and conquer
 ````
 
 `````{div}
@@ -69,38 +69,38 @@ Diviser pour mieux régner
 ````{div}
 :class: thirty
 ```{figure} media/aube_dd.png
-décomposition en sous-domaines
+domain decomposition
 ```
 ````
 
 ````{div}
 :class: thirty
 ```{figure} media/dd.png
-Chaque sous-domaine "envoyé" <br> sur une machine de calcul
+Each subdomain "sent" <br> to a computing machine
 ```
 ````
 
 ````{div}
 :class: thirty
 ```{figure} media/dd_zoom.png
-Chaque sous-domaine "éclaté" par paquet d'éléments <br>pour l'intégration de la loi de comportement
+Each subdomain "exploded" by packet of elements <br>for integration of the behavior law
 ```
 ````
 
 `````
 
-Au niveau de chaque sous-domaine :
+At the level of each subdomain:
 
-- Opérations algébriques distribuées
-- Résolution de problèmes locaux (solveurs DD)
+- Distributed algebraic operations
+- Resolution of local problems (DD solvers)
 
-mais refermons la parenthèse, on n'est pas là pour parler de HPC mais de réseau !
+but let's close the parenthesis, we're not here to talk about HPC but about networks!
 
 ---
 
-## Différentes qualités du réseau
+## Different network qualities
 
-La qualité du réseau, un petit truc qui a son importance suivant l'application 🚀
+Network quality, a little thing that matters depending on the application 🚀
 
 <!-- <button onclick="plot_network()"> xxx no longer working - click me 📈 </button> 
 
@@ -110,20 +110,20 @@ La qualité du réseau, un petit truc qui a son importance suivant l'application
 ````
 -->
 
-Généralement on parle de trois qualités :
+Generally we talk about three qualities:
 
-- **Bande passante** : la quantité de données qui peut être transmise par unité de temps (en bits par seconde, bps)
-- **Latence** : le temps nécessaire pour qu'un paquet de données atteigne sa destination
-- **Fiabilité** : la probabilité que les données soient transmises sans erreur
+- **Bandwidth**: the amount of data that can be transmitted per unit of time (in bits per second, bps)
+- **Latency**: the time needed for a data packet to reach its destination
+- **Reliability**: the probability that data is transmitted without error
 
 ````{div}
 :class: center
-⏳️ Sur des grosses simulations le temps des échanges peut représenter 20% du temps de calcul 💣
+⏳️ In large simulations, communication time can represent 20% of computation time 💣
 ````
 
 ---
 
-## Modèle OSI
+## OSI Model
 
 ``````{div}
 :class: columns
@@ -143,15 +143,15 @@ Généralement on parle de trois qualités :
 **O**pen **S**ystem **I**nterconnexion
 <br><br><br>
 
-**Norme** mise en place <br>par le commité ISO en 1984
+**Standard** established <br>by the ISO committee in 1984
 <br><br>
 
-**Objectifs** :
+**Objectives**:
 <br><br>
 
 ```{div}
 :class: center
-standardiser les communications<br> entre appareils sur un réseau
+standardize communications<br> between devices on a network
 ```
 
 ````
@@ -160,21 +160,21 @@ standardiser les communications<br> entre appareils sur un réseau
 
 ---
 
-## Adressage
+## Addressing
 
 ````{div}
 :class: center
-Associer à chaque interface de chaque machine sur un réseau une adresse unique
+Associate with each interface of each machine on a network a unique address
 ````
 
 <br>
 
-Cette addresse peut être _temporaire_ ou bien _fixe_.
+This address can be _temporary_ or _fixed_.
 
 <br>
 
-C'est ce qu'on appelle l'adresse IP, pour _Internet Protocol_. 
-L'adresse IP d'une interface réseau s'écrit comme une combinaison de quatre nombres compris entre 0 et 255.
+This is what we call the IP address, for _Internet Protocol_.
+The IP address of a network interface is written as a combination of four numbers between 0 and 255.
 <br>
 ````{div}
 :class: center
@@ -186,8 +186,8 @@ L'adresse IP d'une interface réseau s'écrit comme une combinaison de quatre no
 `````{div}
 :class: smaller
 
-il y a donc deux parties : l'adresse du réseau (souvent sur 24 bits) et l'adresse de l'hôte (souvent sur 8 bits)  
-lorsqu'on a besoin d'écrire l'adresse d'un réseau on écrit alors comme ceci le nombre de bits de l'adresse réseau
+so there are two parts: the network address (often on 24 bits) and the host address (often on 8 bits)
+when we need to write the address of a network we write it like this the number of bits of the network address
 ````{div}
 :class: center
 ```{image} media/ip-address-subnet.excalidraw.svg
@@ -198,32 +198,32 @@ lorsqu'on a besoin d'écrire l'adresse d'un réseau on écrit alors comme ceci l
 
 ---
 
-### Adresses IPv6
+### IPv6 Addresses
 
-**en 2011** on prévoit **l'épuisement 💣 des adresses IP** disponibles !...
+**in 2011** we predict **the exhaustion 💣 of available IP addresses**!...
 
-2<sup>32</sup> = 4,294,967,296 c'est-à-dire environ 1/2 adresse par personne sur terre  
-(bien sûr certaines personnes en ont plus que d'autres 😅)
+2<sup>32</sup> = 4,294,967,296 that is about 1/2 address per person on earth  
+(of course some people have more than others 😅)
 
-Il a donc été mis en place le protocol **IP v6** (l'ancien protocole était le **v4**)
+Therefore the **IPv6** protocol was implemented (the old protocol was **v4**)
 
-Le principe est simple: passer d'une adresse sur **32 bits** à une adresse sur **128 bits**  
-par exemple (en hexa) `2001:0db8:0000:85a3:0000:0000:ac1f:8001`  
-En fait on a tellement d'adresses que l'on peut donner une adresse IP à chaque grain de sable sur terre 🏖  ️
+The principle is simple: go from an address on **32 bits** to an address on **128 bits**  
+for example (in hex) `2001:0db8:0000:85a3:0000:0000:ac1f:8001`  
+In fact we have so many addresses that we can give an IP address to every grain of sand on earth 🏖  ️
 
 <br>
 
-Actuellement déployé **mais en partie** - principalement, mais pas que, dans le coeur de réseau chez les opérateurs
+Currently deployed **but partially** - mainly, but not only, in the network core at operators
 
-Et pourquoi pas partout, me direz-vous ?  
-eh bien notamment, le besoin de IPv6 est moins important que prévu grâce notamment au NAT  
-on en reparlera...
+And why not everywhere, you might ask?  
+well notably, the need for IPv6 is less important than expected thanks notably to NAT  
+we'll talk about it again...
 
 ---
 
-## Interconnexion
+## Interconnection
 
-### Réseau local
+### Local network
 
 ````{div}
 :class: center
@@ -234,7 +234,7 @@ on en reparlera...
 
 ---
 
-### Réseau distant
+### Remote network
 
 ````{div}
 :class: center
@@ -244,52 +244,52 @@ on en reparlera...
 
 ---
 
-## Pour résumer :
+## To summarize:
 
 ````{div}
 :class: center
-interconnexion qui constitue en fait **la troisième couche** du modèle OSI
+interconnection which actually constitutes **the third layer** of the OSI model
 ````
 
-gère trois éléments :
+manages three elements:
 <br>
 
-- Routage
+- Routing
   ````{div}
   :class: center
-  chemin entre deux machines dans des réseaux différents, <br>chemin passant par les passerelles (routeurs)<br>ces fameuses machines ayant des interfaces dans deux réseaux distincts.
+  path between two machines in different networks, <br>path passing through gateways (routers)<br>these famous machines having interfaces in two distinct networks.
   ````
 
-- Relayage
+- Relaying
   ````{div}
   :class: center
-  s'occupe, une fois la route déterminée, <br>de faire transiter l'information de la machine A à la machine B
+  takes care, once the route is determined, <br>of transmitting the information from machine A to machine B
   ````
 
-- Contrôle de flux
+- Flow control
   ````{div}
   :class: center
-  une fonctionnalité optionnelle mais néanmoins essentielle <br> qui permet de décongestionner l'ensemble du réseau (au sens large). <br>Un peu le Waze du transit de données
+  an optional but nevertheless essential functionality <br> which allows to decongest the entire network (in the broad sense). <br>A bit like Waze for data transit
   ````
 
 ---
 (my-ip-address)=
 
-## Au passage: c'est quoi mon IP ?
+## By the way: what is my IP?
 
 `````{div}
 :class: columns
 
 ````{div}
 :class: fourty
-Comment je fais <br>pour connaitre mon IP ?
+How do I <br>find out my IP?
 ````
 
 ````{div}
 :class: sixty
-pour commencer je clone le cours (si ce n'est déjà fait)  
-sur github: `ue22-p25/backend`  
-et je me rends dans le dossier `python/ip-address`
+to start I clone the course (if not already done)  
+on github: `ue22-p25/backend`  
+and I go to the `python/ip-address` folder
 ````
 
 `````
@@ -299,7 +299,7 @@ et je me rends dans le dossier `python/ip-address`
 ````{div}
 :class: fitfy
 
-un petit code pour demander à un site extérieur
+a small code to ask an external site
 
 ```{literalinclude} ../python/ip-address/my-public-ip.py
 ```
@@ -308,7 +308,7 @@ un petit code pour demander à un site extérieur
 
 ````{div}
 :class: fitfy
-ou pour demander à mon OS(*)
+or to ask my OS(*)
 
 ```{literalinclude} ../python/ip-address/my-local-ip.py
 ```
@@ -324,7 +324,7 @@ ou pour demander à mon OS(*)
 ````{div}
 :class: fifty
 
-et j'obtiens (essayez !)
+and I get (try it!)
 ```{code}
 :linenos:
 :emphasize-lines: 2
@@ -335,7 +335,7 @@ Public IP: 138.96.202.10
 
 ````{div}
 :class: fifty
-.. et ça peut être différent ! quel est ce mystère ?
+.. and it can be different! what is this mystery?
 ```{code}
 :linenos:
 :emphasize-lines: 2
@@ -346,33 +346,33 @@ Outgoing IP: 10.1.1.15
 
 `````
 
-(*) depuis le terminal, utiliser: `ipconfig` sur Windows, `ifconfig` sur MacOS, `ip address show` sur Linux
+(*) from the terminal, use: `ipconfig` on Windows, `ifconfig` on MacOS, `ip address show` on Linux
 
 ---
 
-### le NAT (Network Address Translation)
+### NAT (Network Address Translation)
 
 `````{div}
 :class: columns
 
 ````{div}
 :class: sixty-five
-et mon petit doigt me dit que:
+and my little finger tells me that:
 
-- vous allez tous avoir **la même adresse publique**
-- mais pour la deuxième vous avez chacun une **adresse locale différente**
+- you will all have **the same public address**
+- but for the second one you each have a **different local address**
 
-en fait il y a deux types d'adresses IP :
+in fact there are two types of IP addresses:
 
-- publiques: celles qui sont visibles sur le réseau, et qui sont uniques
-- privées: celles qui sont utilisées **uniquement** dans un réseau local
+- public: those that are visible on the network, and which are unique
+- private: those that are used **only** in a local network
 
 ````
 
 ````{div}
 :class: thirty-five
 <br><br>
-les adresses privées réservées:
+reserved private addresses:
 
 - `192.168.0.0/16` <br> 2<sup>16</sup> = 65,536 adresses
 
@@ -391,32 +391,32 @@ les adresses privées réservées:
 
 ---
 
-## Les noms de domaines là-dedans !
+## Domain names in all this!
 
-Retenir les adresses IP c'est quand même pas super 🤯 !
+Remembering IP addresses is still not super 🤯!
 
 ````{div}
 :class: center
-Par exemple imaginez que vous deviez retenir `91.134.82.158` (*)
-<br/>pour savoir les salles de cours .... <strike>on ne vous verrait pas souvent !</strike>
+For example imagine that you had to remember `91.134.82.158` (*)
+<br/>to know the classrooms .... <strike>we wouldn't see you often!</strike>
 ````
 
-(*) c'est l'adresse IP du serveur qui héberge OASIS
+(*) this is the IP address of the server that hosts OASIS
 
 --
 
-Pour cela dans l'infrastructure d'Internet il y a un truc magique, le :
+For this in the Internet infrastructure there is a magic thing, the:
 
 ````{div}
 :class: center
 **DNS** = **D**omain **N**ame **S**ystem
 ````
 
-En gros c'est le service qui fait l'association entre un nom de domaine et un adresse IP.
+Basically it's the service that makes the association between a domain name and an IP address.
 
 ---
 
-### Le DNS depuis le terminal
+### DNS from the terminal
 
 `````{div}
 :class: columns
@@ -425,7 +425,7 @@ En gros c'est le service qui fait l'association entre un nom de domaine et un ad
 :class: fifty
 
 ```bash
-# plusieurs utilitaires pour faire des requêtes DNS
+# several utilities to make DNS queries
 
 $ nslookup oasis.minesparis.psl.eu
 Server:		192.168.0.1
