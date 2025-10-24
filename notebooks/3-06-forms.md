@@ -1,29 +1,30 @@
-# Formulaires avec FastAPI
+# Forms with FastAPI
 
 xxx WIP xxx
 
-pour l'instant c'est tel quel le texte Flask, à mettre à jour pour FastAPI
+for now this is the raw Flask text, to be updated for FastAPI
 
 xxx WIP xxx
 
 ---
 
-Un truc récurrent dans le web c'est les formulaires :
+A recurring thing in web development is forms:
 
-- Authentification
-- Messagerie
-- Interface utilisateur
+- Authentication
+- Messaging
+- User interface
 - ...
 
 <br><br>
-Un besoin
+
+A need
 
 ````{div}
 :class: center
-Spécifier les champs (nom et nature/type) ; agréger les données saisies par l'utilisateur ; envoyer ces données au backend ; traiter ces données et émettre une réponse
+Specify the fields (name and nature/type); aggregate data entered by the user; send this data to the backend; process this data and emit a response
 ````
 
-Un module tout fait en Python WTForm et son interface pour Flask FlaskWTF
+A ready-made Python module WTForm and its interface for Flask FlaskWTF
 
 ```bash
 pip install flask-wtf
@@ -38,15 +39,15 @@ pip install flask-wtf
 
 ---
 
-## Principes
+## Principles
 
-L'utilisation de Flask-WTF se fait en définissant son propre formulaire en créant une classe héritant de la class `FlaskForm`.
+Using Flask-WTF is done by defining your own form by creating a class inheriting from the `FlaskForm` class.
 
 ```python
 from flask_wtf import FlaskForm
 ```
 
-Par exemple un formulaire de login pourrait s'écrire de la manière suivante :
+For example, a login form could be written as follows:
 
 ```python
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
@@ -60,35 +61,35 @@ class LoginForm(FlaskForm):
 
 ---
 
-## Les types input
+## Input types
 
 `````{div}
 :class: columns
 ````{div}
 :class: fifty
-Les différents types prédéfinis dans `WTForm` sont les suivants :
+The different predefined types in `WTForm` are as follows:
 
-- `BooleanField` : représente un booléen
+- `BooleanField`: represents a boolean
 - `IntegerField`
 - `FloatField`
 - `DecimalField`
-- `SelectField` : choix parmi une liste d'option
-- `DateField` : représente une date
-- `FileField` : pour la sélection de fichier
-- `MultipleFileField` : pour la sélection multiple
-- `PasswordField` : champ pour le mot de passe (affiche des étoiles)
-- `TextAreaField` : champ de saisie de texte libre
-- `SubmitField` : le bouton de soumission du formulaire
+- `SelectField`: choice from a list of options
+- `DateField`: represents a date
+- `FileField`: for file selection
+- `MultipleFileField`: for multiple selection
+- `PasswordField`: field for password (displays stars)
+- `TextAreaField`: free text input field
+- `SubmitField`: the form submission button
 ````
   ````{div}
 :class: fifty
-Possibilité d'ajouter des "validateurs"
+Possibility to add "validators"
 
-- `DataRequired` : champs obligatoire
-- `Email` : le champs est une adresse email
-- `EqualTo` : test d'égalité
-- `NumberRange` : valeur numérique dans un intervalle
-- `Optional` : champs optionnel
+- `DataRequired`: required field
+- `Email`: the field is an email address
+- `EqualTo`: equality test
+- `NumberRange`: numeric value in a range
+- `Optional`: optional field
 
 <div style="position: relative; bottom: 10%; right: 5%; transform: rotate(20deg) scale(0.6) translate(50pt, 50pt)">
 <iframe src="https://giphy.com/embed/lPF1CyJXXcTZmUrP2J" width="480" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
@@ -98,7 +99,7 @@ Possibilité d'ajouter des "validateurs"
 `````
 ---
 
-## Utilisation en lien avec les templates
+## Using with templates
 
 `````{div}
 :class: columns smaller
@@ -133,7 +134,7 @@ Possibilité d'ajouter des "validateurs"
 ````{div}
 :class: fifty
 
-La méthode `form.hidden_tag` va générer une ligne du genre :
+The `form.hidden_tag` method will generate a line like:
 
 ```html
 <input
@@ -144,14 +145,15 @@ La méthode `form.hidden_tag` va générer une ligne du genre :
 />
 ```
 
-Aucun intérêt fonctionnel. En revanche utile pour la sécurité 🚨 et se prémunir des attaques type
+No functional interest. However useful for security 🚨 and to protect against attacks like
 <br><br>
+
 ```{div}
 :class: center
 **C**ross **S**ite **R**equest **F**orgery
 ```
 
-Et ça demande de définir une clé secrete
+And this requires defining a secret key
  `app.config['SECRET_KEY'] = os.urandom(32))`
 ````
 
@@ -159,9 +161,9 @@ Et ça demande de définir une clé secrete
 
 ---
 
-## Données du formulaire dans les *handlers*
+## Form data in the *handlers*
 
-On peut directement réutiliser la classe `LoginForm` dans nos fonctions *handler* par exemple :
+We can directly reuse the `LoginForm` class in our *handler* functions, for example:
 
 ```python
 @app.route("/", methods=['GET', 'POST'])
@@ -180,9 +182,10 @@ def login():
 
 ````{div}
 :class: sixty
-Remarques
-- `login.html` doit être dans un répertoire `/templates`
-- son extension doit être `.html`, `.htm`, `.xml`, `.xhtml`, ou `.svg`
+Notes
+
+- `login.html` must be in a `/templates` directory
+- its extension must be `.html`, `.htm`, `.xml`, `.xhtml`, or `.svg`
 ````
 
 ````{div}
@@ -200,7 +203,7 @@ xxx no longer working xxx
 
 ---
 
-## Un petit bonus : les Cookies 🍪
+## A little bonus: Cookies 🍪
 
 `````{div}
 :class: columns
@@ -229,7 +232,7 @@ def handler():
 ````
 `````
 
-Par exemple, nombre de fois qu'on visite une page !
+For example, number of times we visit a page!
 
 
 ````{div}
@@ -246,20 +249,20 @@ xxx no longer working xxx
 
 ---
 
-## Un mot sur la notion de `Session`
+## A word on the `Session` concept
 
-Très souvent besoin de la notion de session utilisateur
+Very often need the concept of a user session
 
 ````{div}
 :class: center
-Stocker des infos spécifiques à un utilisateur entre deux requêtes
+Store user-specific information between two requests
 ````
 
-Possible de faire ça à la main 🖖🏻 à l'aide de cookies 🍪 ...
+Possible to do this manually 🖖🏻 using cookies 🍪 ...
 
 ````{div}
 :class: center
-mais Flask peut tout faire à votre place
+but Flask can do it all for you
 ````
 
 `````{div}
@@ -271,10 +274,10 @@ mais Flask peut tout faire à votre place
 from Flask import session
 ```
 
-Besoin d'un peu de config par contre
+Need a bit of config though
 
 ```python
-app.config["SECRET_KEY"] = "un secret"
+app.config["SECRET_KEY"] = "a secret"
 ```
 ````
 
@@ -285,7 +288,7 @@ app.config["SECRET_KEY"] = "un secret"
 @app.route("/une/url/<string:username>")
 def handler( username ):
   session["name"] = username
-  return "Ok j'ai enregistré"
+  return "Ok I saved it"
 
 @app.route("/")
 def index():
@@ -293,8 +296,8 @@ def index():
   if name:
     return f"Hello {name}"
   else:
-    return ("Merci de faire d'abord une requête"
-            " vers /une/url/<username>")
+    return ("Please first make a request"
+            " to /une/url/<username>")
 ```
 ````
 

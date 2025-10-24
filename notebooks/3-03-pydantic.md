@@ -1,15 +1,14 @@
-# Typer les données avec Pydantic
+# Typing data with Pydantic
 
-
-FastAPI s’appuie sur **Pydantic** pour gérer la validation et la sérialisation des données.  
-C’est l’un des points forts du framework : vous décrivez vos données avec des classes Python annotées, et FastAPI s’occupe du reste.
+FastAPI relies on **Pydantic** to handle data validation and serialization.  
+This is one of the framework's strengths: you describe your data with annotated Python classes, and FastAPI takes care of the rest.
 
 ---
 
-## 1. Définir un modèle de données
+## 1. Define a data model
 
-Un modèle Pydantic est une classe qui hérite de `BaseModel`.  
-Chaque attribut est typé avec les annotations Python standard :
+A Pydantic model is a class that inherits from `BaseModel`.  
+Each attribute is typed with standard Python annotations:
 
 ```{code-block} python
 from pydantic import BaseModel
@@ -18,16 +17,16 @@ class User(BaseModel):
     id: int
     name: str
     email: str
-    is_active: bool = True  # valeur par défaut
+    is_active: bool = True  # default value
 ```
 
-➡️ Ici, `id` et `name` sont obligatoires, `is_active` est optionnel avec une valeur par défaut.
+➡️ Here, `id` and `name` are required, `is_active` is optional with a default value.
 
 ---
 
-## 2. Utiliser un modèle comme corps de requête
+## 2. Use a model as request body
 
-Dans FastAPI, si vous déclarez un paramètre de type `BaseModel`, FastAPI lira automatiquement le **JSON du corps de la requête** et vérifiera que les données correspondent.
+In FastAPI, if you declare a parameter of type `BaseModel`, FastAPI will automatically read the **JSON from the request body** and verify that the data matches.
 
 ```{code-block} python
 from fastapi import FastAPI
@@ -36,24 +35,24 @@ app = FastAPI()
 
 @app.post("/users/")
 def create_user(user: User):
-    return {"message": f"Utilisateur {user.name} créé", "data": user}
+    return {"message": f"User {user.name} created", "data": user}
 ```
 
-### Exemple d’appel
+### Call example
 
 ```{code-block} bash
 http POST :8000/users/ id:=1 name="Alice" email="alice@example.com"
 ```
 
-✅ FastAPI transforme le JSON en un objet `User`.  
-✅ Si une valeur manque ou est du mauvais type, une erreur 422 est renvoyée automatiquement.
+✅ FastAPI transforms the JSON into a `User` object.  
+✅ If a value is missing or of the wrong type, a 422 error is returned automatically.
 
 ---
 
-## 3. Validation et transformation automatiques
+## 3. Automatic validation and transformation
 
-Pydantic ne se contente pas de vérifier les types :  
-il sait aussi **convertir** des données.
+Pydantic doesn't just check types:  
+it also knows how to **convert** data.
 
 ```{code-block} python
 class Product(BaseModel):
@@ -63,17 +62,17 @@ class Product(BaseModel):
 ```
 
 ```{code-block} bash
-http POST :8000/products/ name="Stylo" price="9.99" in_stock=true
+http POST :8000/products/ name="Pen" price="9.99" in_stock=true
 ```
 
-➡️ `price="9.99"` est une chaîne, mais Pydantic la convertit en `float`.  
-➡️ `in_stock=true` est converti en `bool`.
+➡️ `price="9.99"` is a string, but Pydantic converts it to `float`.  
+➡️ `in_stock=true` is converted to `bool`.
 
 ---
 
-## 4. Validation avancée
+## 4. Advanced validation
 
-Pydantic propose des contraintes simples :
+Pydantic offers simple constraints:
 
 ```{code-block} python
 from pydantic import BaseModel, Field
@@ -84,16 +83,16 @@ class Signup(BaseModel):
     age: int = Field(..., ge=18)  # ge = greater or equal
 ```
 
-- `...` signifie « obligatoire ».  
-- Les contraintes sont automatiquement documentées dans la doc OpenAPI.
+- `...` means "required".  
+- Constraints are automatically documented in the OpenAPI doc.
 
-### Exemple d’erreur
+### Error example
 
 ```{code-block} bash
 http POST :8000/signup username="ab" password="123" age:=15
 ```
 
-Réponse :
+Response:
 
 ```{code-block} json
 {
@@ -107,9 +106,9 @@ Réponse :
 
 ---
 
-## 5. Modèles imbriqués
+## 5. Nested models
 
-Un modèle peut contenir d’autres modèles :
+A model can contain other models:
 
 ```{code-block} python
 class Address(BaseModel):
@@ -121,7 +120,7 @@ class Customer(BaseModel):
     address: Address
 ```
 
-FastAPI gère la désérialisation automatiquement :
+FastAPI handles deserialization automatically:
 
 ```{code-block} json
 {
@@ -135,9 +134,9 @@ FastAPI gère la désérialisation automatiquement :
 
 ---
 
-## 6. Réponses avec Pydantic
+## 6. Responses with Pydantic
 
-Vous pouvez aussi déclarer le **schéma de sortie** avec `response_model` :
+You can also declare the **output schema** with `response_model`:
 
 ```{code-block} python
 @app.get("/users/{user_id}", response_model=User)
@@ -145,29 +144,30 @@ def get_user(user_id: int):
     return {"id": user_id, "name": "Alice", "email": "alice@example.com", "is_active": True}
 ```
 
-➡️ FastAPI renverra une réponse **validée** selon `User`.  
-➡️ Les champs supplémentaires (non définis) sont automatiquement exclus.  
-   Utile par exemple pour ne pas exposer des données sensibles.
+➡️ FastAPI will return a **validated** response according to `User`.  
+➡️ Additional fields (not defined) are automatically excluded.  
+   Useful for example to avoid exposing sensitive data.
 
 ---
 
-## 7. Avantages pédagogiques
+## 7. Educational advantages
 
-- ✅ **Validation automatique** des entrées  
-- ✅ **Conversion de types** (moins d’erreurs de parsing)  
-- ✅ **Documentation gratuite** (Swagger/OpenAPI)  
-- ✅ **Réutilisation des modèles** (entrées et sorties)  
+- ✅ **Automatic validation** of inputs  
+- ✅ **Type conversion** (fewer parsing errors)  
+- ✅ **Free documentation** (Swagger/OpenAPI)  
+- ✅ **Model reuse** (inputs and outputs)
 
 ---
 
-# 🚀 Conclusion
+## Conclusion
 
-Avec Pydantic, vous décrivez vos données une seule fois sous forme de classes Python.  
-FastAPI se charge de :
-- lire le JSON du client,  
-- valider et convertir les champs,  
-- produire une documentation claire,  
-- garantir que vos réponses respectent le contrat.  
+With Pydantic, you describe your data once in the form of Python classes.  
+FastAPI takes care of:
 
-👉 C’est une bonne pratique d’utiliser **systématiquement des modèles Pydantic** pour vos endpoints qui consomment ou produisent des données structurées.
+- reading the JSON from the client,  
+- validating and converting fields,  
+- producing clear documentation,  
+- ensuring your responses respect the contract.  
+
+👉 It's good practice to **systematically use Pydantic models** for your endpoints that consume or produce structured data.
 

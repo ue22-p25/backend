@@ -1,34 +1,35 @@
 # FastAPI & templates
 
-xxx ce chapitre est un WIP xxx
+xxx this chapter is a WIP xxx
 
-il y a plein de bouts mais tout en désordre; le plan est de
+there are lots of pieces but all in disorder; the plan is to
 
-- expliquer la différence entre page statique et dynamique
-- introduire les templates et jinja2
-- montrer la structure usuelle d'un repo
-- et plus vaguement, parler de SSR, CSR, ISR
+- explain the difference between static and dynamic pages
+- introduce templates and jinja2
+- show the usual structure of a repo
+- and more vaguely, talk about SSR, CSR, ISR
 
-j'ai perdu la démo de Basile, je ne suis pas sûr d'avoir besoin d'un cas concret pour l'instant
+I lost Basile's demo, I'm not sure I need a concrete case for now
 
 xxx WIP xxx
 
 ---
 
-## Servir des pages HTML
+## Serving HTML pages
 
-Maintenant qu'on sait renvoyer du JSON, on va voir comment renvoyer du HTML  
-C'est bien entendu nécessaire pour offrir une interface utilisateur  
-Et n'oublions pas que le HTML lui même peut nécessiter des CSS/JS
+Now that we know how to return JSON, we'll see how to return HTML  
+This is of course necessary to offer a user interface  
+And let's not forget that HTML itself may require CSS/JS
 
-Et faire la distinction entre
-- les fichiers **statiques** (CSS, JS, images, polices, ...)
-- les **templates** (fichiers HTML avec des emplacements réservés pour insérer des données, elles mêmes calculées par le code FastAPI)
+And make the distinction between
 
-```{admonition} les fichiers statiques en production
+- **static** files (CSS, JS, images, fonts, ...)
+- **templates** (HTML files with placeholders to insert data, calculated by FastAPI code)
+
+```{admonition} static files in production
 :class: tip dropdown
-Pour des raisons de performance, il est préférable de servir les fichiers statiques via un serveur web dédié (typiquement nginx, apache, ...) - car on n'a pas besoin de Python pour ça  
-C'est pour cela qu'on les sépare bien du reste
+For performance reasons, it's better to serve static files via a dedicated web server (typically nginx, apache, ...) - because we don't need Python for that  
+That's why we separate them well from the rest
 ```
 
 ---
@@ -36,37 +37,46 @@ C'est pour cela qu'on les sépare bien du reste
 
 Deux cas de figures :
 
+---
+
+## Static vs dynamic pages
+
+Two cases:
+
 ````{div}
 :class: columns
 
 ```{div}
 :class: center fifty
-Réponses "statiques"  
-contenu ne dépendant de rien  
-donc le plus simple en fait
+"Static" responses  
+content depending on nothing  
+so the simplest actually
 
 <iframe src="https://giphy.com/embed/Rl9Yqavfj2Ula" frameBorder="0" class="giphy-embed"></iframe>
 ```
 
 ```{div}
 :class: center fifty
-Réponses "dynamiques"  
-contenu dépendant de données externes
+"Dynamic" responses  
+content depending on external data
 
-typiquement:  
-recherche de produits, profil utilisateur  
-c'est le cas le plus courant évidemment
+typically:  
+product search, user profile  
+obviously the most common case
 ```
 ````
+
+It's still useful to make the distinction for performance reasons!  
+It's really not useful to solicit a Python stack just to serve a CSS file!
 
 C'est tout de même utile de faire la distinction pour des raisons de performance !  
 Ce n'est vraiment pas utile de solliciter une stack Python pour juste servir un fichier CSS !
 
 ---
 
-### Structure du repo
+### Repo structure
 
-Du coup, cela n'est pas imposé par le framework mais on trouve usuellement une structure de repo de ce genre:
+So, this is not imposed by the framework but we usually find a repo structure like this:
 
 `````{div}
 :class: columns
@@ -101,14 +111,14 @@ def index():
 ````
 `````
 
-En revanche tous les fichiers contenus dans le dossier `static` seront
-**automatiquement accessibles** sans que l'on ait rien à faire et ça c'est 🆒 !
+However, all files contained in the `static` folder will be
+**automatically accessible** without us having to do anything and that's 🆒!
 
 ---
 
-## Page dynamique : CSR vs SSR
+## Dynamic page: CSR vs SSR
 
-Pour le cas de pages dynamiques deux approches existent
+For dynamic pages, two approaches exist
 
 ````{div}
 :class: center
@@ -169,9 +179,9 @@ Besoin d'un mécanisme de ***génération de page HTML***
 
 ---
 
-## Moteur de template
+## Template engine
 
-Mécanisme de génération de page HTML à partir d'un modèle et de données.
+Mechanism for generating HTML pages from a model and data.
 
 ````{div}
 :class: center
@@ -180,7 +190,7 @@ Mécanisme de génération de page HTML à partir d'un modèle et de données.
 ```
 ````
 
-Plusieurs techno/solutions :
+Several technologies/solutions:
 
 ````{div}
 :class: center
@@ -191,15 +201,15 @@ Plusieurs techno/solutions :
 
 ## Jinja 2
 
-Moteur de template Pythonique 🐍
+Pythonic template engine 🐍
 
-Lien avec Flask via la fonction `render_template`
+Link with Flask via the `render_template` function
 
 ```python
 from flask import render_template
 ```
 
-Que l'on utilise dans les fonctions de routage
+Which we use in routing functions
 
 ```python
 @app.route("/")
@@ -209,112 +219,112 @@ def index():
   return render_template("templated_html.html", **context)
 ```
 
-Où `context` est un dictionnaire Python contenant les variables que l'on souhaite transmettre de notre application Flask au moteur de template.
+Where `context` is a Python dictionary containing the variables we want to transmit from our Flask application to the template engine.
 
 ---
 
-### subbstitution de variables
+### Variable substitution
 
-Pour afficher dans le HTML le contenu d'une variable il faut entourer cette dernière par des doubles accolades dans du code HTML.
+To display the content of a variable in HTML, you need to surround it with double braces in HTML code.
 
 ```html
-<div>Bonjour {{ name }}</div>
+<div>Hello {{ name }}</div>
 ```
 
 ---
 
-### Blocs conditionnels
+### Conditional blocks
 
-Pour choisir d'afficher ou nom une partie de la page HTML  
-vous pouvez utiliser des branchements de type `{% if %}` `{% else %}` `{% endif %}`  
-La syntaxe est la suivante
+To choose whether to display a part of the HTML page  
+you can use branches of type `{% if %}` `{% else %}` `{% endif %}`  
+The syntax is as follows
 
 ```html
-{% if une_condition %}
-<div>du html en pagaille</div>
-{% elif une_autre_condition %}
-<div>un autre fouillis de html</div>
+{% if a_condition %}
+<div>some html mess</div>
+{% elif another_condition %}
+<div>another html jumble</div>
 {% else %}
-<div>le html par défaut</div>
+<div>the default html</div>
 {% endif %}
 ```
 
-_Remarque_ le `None` de Python se transforme en `none` dans Jinja2
+_Note_ Python's `None` becomes `none` in Jinja2
 
 ---
 
-### Boucles for
+### For loops
 
-L'intérêt majeur étant l'affichage dynamique de tableau.  
-Les boucles `{% for %}` dans Jinja2 vous permettent d'itérer sur tout objet Python itérable  
- La syntaxe est la suivante
+The main interest being dynamic table display.  
+`{% for %}` loops in Jinja2 allow you to iterate over any iterable Python object  
+The syntax is as follows
 
 ```html
-{% for x in ma_liste %}
+{% for x in my_list %}
 <div>Iteration {{ x }}</div>
 {% endfor %}
 ```
 
 ---
 
-### accès dans un dictionnaire
+### Dictionary access
 
-si `x` est lui même un dictionnaire, on peut accéder à ses clés/valeurs via e.g. `x.name` ou `x['name']`, le premier étant généralement plus pratique  
+if `x` is itself a dictionary, we can access its keys/values via e.g. `x.name` or `x['name']`, the first being generally more convenient  
 
 ```html
 {% for user in users %}
 <div>Iteration
   {{ x.name }}
-  ou encore
+  or also
   {x['age']}
 </div>
 {% endfor %}
 ```
 
-voyez `python/jinja-demo.py` pour un exemple exécutable
+see `python/jinja-demo.py` for an executable example
 
 ---
 
-### plein d'autres choses
+### Many other things
 
-On a survolé les fonctionnalités de base de Jinja mais il y a plein de trucs *advance* super pratiques
+We've skimmed over Jinja's basic features but there are lots of _advanced_ super practical things
 
 [https://jinja.palletsprojects.com/en/3.1.x/templates/](https://jinja.palletsprojects.com/en/3.1.x/templates/)
 
-Liste non exhaustive :
+Non-exhaustive list:
 
-- Composition de template par héritage 
-  - pour emboiter les templates les uns dans les autres
-- Filtres 
-  - pour formater les données
-- Définition de macros
-  - un peu comme des fonctions en Python
+- Template composition by inheritance
+  - to nest templates within each other
+- Filters
+  - to format data
+- Macro definition
+  - a bit like functions in Python
 
 ---
 
-## Synthèse CSR vs SSR
+## CSR vs SSR summary
 
-Deux modes avec des avantages et inconvénients
+Two modes with advantages and disadvantages
 
-Grosso modo
+Roughly
 
-- CSR c'est cool pour
+- CSR is cool for
 
 ````{div}
 :class: center
-Avoir des pages avec beaucoup d'interaction,<br><br>notamment lorsque l'on est plus sur de l'appli web que du site web
+Having pages with lots of interaction,<br><br>especially when you're more into web app than website
 ````
 
-- SSR c'est bien pour
+- SSR is good for
 
 ````{div}
 :class: center
-accélérer le chargement initial de votre site, si vous avez peu d'interaction avec l'utilisateur,<br><br>si vous souhaitez optimiser votre référencement naturel dans les moteurs de recherches.
+speeding up the initial loading of your site, if you have little user interaction,<br><br>if you want to optimize your natural search engine ranking.
 ````
 
-Et d'un point de vue très pragmatique
+And from a very pragmatic point of view
 ````{div}
 :class: center
-peut dépendre également du confort que vous avez à programmer en Python ou Javascript
+may also depend on your comfort level programming in Python or Javascript
 ````
 

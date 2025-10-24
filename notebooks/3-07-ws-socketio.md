@@ -1,9 +1,9 @@
-# Et les websocket ...
+# And websockets ...
 
 
 xxx WIP xxx
 
-pour l'instant c'est tel quel le texte Flask, à mettre à jour pour FastAPI
+for now this is the raw Flask text, to be updated for FastAPI
 
 xxx WIP xxx
 
@@ -14,13 +14,14 @@ xxx WIP xxx
 
 ````{div}
 :class: fifty
-Petit rappel au cas où ...
+A quick reminder just in case ...
 <br><br>
+
 ```{div}
 :class: center
-connexion **bidirectionnelle** entre un client et le serveur
-<br><br>on parle de connexion *full-duplex*
-<br><br>Permet au serveur de ***pousser*** des informations vers le client sans que ce dernier n'ait rien demandé 😲
+**bidirectional** connection between a client and the server
+<br><br>we talk about *full-duplex* connection
+<br><br>Allows the server to **push** information to the client without the client having asked for anything 😲
 ```
 ````
 
@@ -35,22 +36,22 @@ connexion **bidirectionnelle** entre un client et le serveur
 
 ---
 
-## Utilisation des Websocket
+## Using Websockets
 
-Un module dédié dans Flask
+A dedicated module in Flask
 
 ```bash
 pip install flask-socketio
 ```
 
-L'utilisation de websocket avec Flask se fait de manière très simple. Il suffit tout d'abord de créer notre serveur websocket à l'aide de la classe `SocketIO` que l'on attache à notre application Flask.
+Using websockets with Flask is very simple. First, you need to create our websocket server using the `SocketIO` class that we attach to our Flask application.
 
 ```python
 from flask_socketio import SocketIO
 socketio = SocketIO(app)
 ```
 
-Ensuite rien de révolutionnaire on enregistre des fonctions pour des `events` donnés
+Then nothing revolutionary, we register functions for given `events`
 
 ```python
 @socketio.on('message')
@@ -61,7 +62,7 @@ def handle_message(json):
 
 ---
 
-## Exemple de Chat Flask + SocketIO
+## Chat Example with Flask + SocketIO
 
 ``````{div}
 :class: columns
@@ -87,8 +88,8 @@ def handle_my_custom_event(json):
 
 ```
 
-Possibilité d'ajouter par dessus la notion de `room` <br>
-pour une gestion plus fine des destinataires
+Possibility to add on top the concept of `room` <br>
+for finer-grained management of recipients
 <br>
 ````{div}
 :class: center

@@ -1,31 +1,32 @@
-# Sauver les données dans une base
+# Saving data in a database
 
-Dans le chapitre précédent, nous avons vu comment utiliser **Pydantic** pour valider et structurer les données entrantes et sortantes.  
-Mais une API n’est pas très utile si les données disparaissent à chaque redémarrage…  
-👉 Il est temps de **stocker les données dans une base**.
+In the previous chapter, we saw how to use **Pydantic** to validate and structure incoming and outgoing data.  
+But an API is not very useful if the data disappears at each restart…  
+👉 It's time to **store the data in a database**.
 
 ---
 
-## 1. Choix de l’outil : SQLModel
+## 1. Tool choice: SQLModel
 
-Pour manipuler une base SQL avec FastAPI, le plus pratique est d’utiliser **[SQLModel](https://sqlmodel.tiangolo.com/)** :
-- basé sur **SQLAlchemy** (robuste et éprouvé),
-- compatible avec **Pydantic** (validation et sérialisation automatiques),
-- syntaxe simple et moderne (Python + types).
+To work with an SQL database in FastAPI, the most practical option is to use **[SQLModel](https://sqlmodel.tiangolo.com/)**:
 
-Installation :
+- based on **SQLAlchemy** (robust and proven),
+- compatible with **Pydantic** (automatic validation and serialization),
+- simple and modern syntax (Python + types).
+
+Installation:
 
 ```{code-block} bash
 pip install sqlmodel sqlite
 ```
 
-Ici nous utiliserons **SQLite** : une base légère, parfaite pour débuter.
+Here we'll use **SQLite**: a lightweight database, perfect for getting started.
 
 ---
 
-## 2. Définir un modèle de table
+## 2. Define a table model
 
-Un modèle SQLModel ressemble beaucoup à un modèle Pydantic, avec en plus la possibilité de décrire une table SQL.
+A SQLModel model looks a lot like a Pydantic model, with the added capability to describe an SQL table.
 
 ```{code-block} python
 from sqlmodel import SQLModel, Field
@@ -37,26 +38,26 @@ class User(SQLModel, table=True):
     is_active: bool = True
 ```
 
-➡️ `table=True` indique que cette classe correspond à une table.  
-➡️ `id` est une clé primaire auto-incrémentée (valeur fournie par la base).
+➡️ `table=True` indicates that this class corresponds to a table.  
+➡️ `id` is an auto-incremented primary key (value provided by the database).
 
 ---
 
-## 3. Créer la base et la session
+## 3. Create the database and the session
 
-Il faut maintenant créer la base et préparer une **session** pour dialoguer avec elle.
+Now we need to create the database and prepare a **session** to interact with it.
 
 ```{code-block} python
 from sqlmodel import create_engine, Session
 
-# fichier SQLite local
+# local SQLite file
 database_url = "sqlite:///./test.db"
 engine = create_engine(database_url, echo=True)
 
-# création des tables
+# create tables
 SQLModel.metadata.create_all(engine)
 
-# fonction utilitaire pour obtenir une session
+# utility function to get a session
 def get_session():
     with Session(engine) as session:
         yield session
@@ -64,12 +65,12 @@ def get_session():
 
 ---
 
-## 4. Écrire des endpoints CRUD
+## 4. Write CRUD endpoints
 
 CRUD = Create, Read, Update, Delete.  
-Voici un exemple d’API simple pour gérer des `User`.
+Here's a simple API example to manage `User` entries.
 
-### Créer un utilisateur
+### Create a user
 
 ```{code-block} python
 from fastapi import Depends, FastAPI
@@ -80,11 +81,11 @@ app = FastAPI()
 def create_user(user: User, session: Session = Depends(get_session)):
     session.add(user)
     session.commit()
-    session.refresh(user)  # recharge l’objet avec l’ID généré
+    session.refresh(user)  # reload the object with the generated ID
     return user
 ```
 
-### Lister les utilisateurs
+### List users
 
 ```{code-block} python
 from typing import List
@@ -97,6 +98,12 @@ def list_users(session: Session = Depends(get_session)):
 
 ---
 
+## 5. Usage example
+
+Create a user:
+
+---
+
 ## 5. Exemple d’utilisation
 
 Créer un utilisateur :
@@ -104,6 +111,31 @@ Créer un utilisateur :
 ```{code-block} bash
 http POST :8000/users/ name="Alice" email="alice@example.com"
 ```
+
+Response:
+
+```{code-block} json
+{
+  "id": 1,
+  "name": "Alice",
+  "email": "alice@example.com",
+  "is_active": true
+}
+```
+
+List users:
+
+```{code-block} bash
+http :8000/users/
+```
+
+---
+
+## 6. Educational advantages
+
+- ✅ We manipulate **a single class** for both validation and persistence.  
+- ✅ The database retains data between runs.  
+- ✅ Easy to illustrate CRUD operations.
 
 Réponse :
 
@@ -132,11 +164,12 @@ http :8000/users/
 
 ---
 
-# 🚀 Conclusion
+## Conclusion
 
-Avec **SQLModel**, FastAPI permet de relier facilement :
-- la **validation des données** (héritée de Pydantic),
-- et la **persistance en base** (via SQLAlchemy).
+With **SQLModel**, FastAPI makes it easy to connect:
 
-👉 Vous pouvez maintenant créer de vraies APIs capables de conserver et retrouver les informations dans une base SQL.  
-Prochaine étape : enrichir vos modèles avec des relations (ex. `User` ↔ `Address`).
+- **data validation** (inherited from Pydantic),
+- and **database persistence** (via SQLAlchemy).
+
+👉 You can now create real APIs capable of storing and retrieving information in an SQL database.  
+Next step: enrich your models with relationships (e.g., `User` ↔ `Address`).
