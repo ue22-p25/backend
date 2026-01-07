@@ -119,7 +119,7 @@ A code with holes 🕳️ in a way - like `arcade`
 
 ````{div}
 :class: center
-⚠️ Web framework a very, too, generic term ⚠️
+⚠️ Web framework a very (way too much) generic term ⚠️
 ````
 
 `````{div}

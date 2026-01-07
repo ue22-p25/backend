@@ -206,7 +206,7 @@ and to launch it type this
 fastapi dev hello.py
 ```
 
-:::{admonition} un mot sur `uvicorn`
+:::{admonition} a word about `uvicorn`
 :class: dropdown tip
 `uvicorn` is the recommended ASGI server for FastAPI.  
 It is automatically installed with the `[standard]` option of FastAPI.  
@@ -243,7 +243,7 @@ http :8000
 ```
 
 the two forms are equivalent  
-and in both cases observe that `http` shows us the HTTP *Headers* of the response 
+and in both cases observe that `http` shows us the HTTP *Headers* of the response
 
 ````
 

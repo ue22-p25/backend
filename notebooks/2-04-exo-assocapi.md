@@ -1,12 +1,16 @@
-# exo: apitester
+---
+short_title: exo assocapi
+---
 
-(label-exo-apitester)=
+# exo: assocapi with FastAPI
+
+(label-exo-assocapi)=
 ## Small practical break
 
 **Objective**: Set up an API allowing access to CSV file content
 
-You have <https://github.com/ue22-p25/backend-apitester-frontend> a ready-made frontend!  
-And you have <https://github.com/ue22-p25/backend-apitester-skeleton> a backend to complete
+You have <https://github.com/ue22-p25/backend-assocapi-frontend> a ready-made frontend!  
+And you have <https://github.com/ue22-p25/backend-assocapi-skeleton> a backend to complete
 
 The backend API must **imperatively** respect the routes documented in the README.
 
@@ -24,9 +28,9 @@ Once your code works, go visit the `/docs/` route to see the interactive doc of 
 # conda install conda-forge::nodejs
 
 # download the repo in the 'frontend' folder
-npx degit git@github.com:ue22-p25/backend-apitester-frontend.git frontend
+npx degit git@github.com:ue22-p25/backend-assocapi-frontend.git frontend
 # same for the backend
-npx degit git@github.com:ue22-p25/backend-apitester-skeleton.git backend
+npx degit git@github.com:ue22-p25/backend-assocapi-skeleton.git backend
 ```
 
 which has the advantage of not recreating a git repository in the created folder; especially if you place yourself in an already existing repository like `backend-homework`  
@@ -40,7 +44,7 @@ which has the advantage of not recreating a git repository in the created folder
 - you notice that FastAPI applications do not contain code to execute directly  
   (just route definitions)
 - so if you launch the python file with `python my_file.py`, it does nothing!
-- that's why it's **essential** to launch the app with `fastapi dev apitester.py`
+- that's why it's **essential** to launch the app with `fastapi dev assocapi.py`
 - also and especially, the server **restarts by itself** at each code modification  
 
 ````{div}
