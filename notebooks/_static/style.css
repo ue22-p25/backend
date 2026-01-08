@@ -315,6 +315,17 @@ as the code cell is then part of the list item, in markdown, and is no longer de
 *:has(+div.group\/block>div.myst-code) {
     margin-bottom: 0.3em;
 }
+
+/* strong code */
+strong>code {
+    font-weight: bold !important;
+    background-color: var(--myst-block-background-color) !important;
+    border-width: var(--myst-code-border-width) !important;
+    border-color: var(--myst-block-border-color) !important;
+    padding: 0.10rem 0.20rem !important;
+    margin-right: 0.20rem !important;
+    border-radius: 3px !important;
+}
 /*
  the right-hand-side toc made more compact
  useful because this content is mostly made of slides
