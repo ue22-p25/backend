@@ -1,6 +1,7 @@
 # Typing data with Pydantic
 
-FastAPI relies on **Pydantic** to handle data validation and serialization.  
+FastAPI relies on **Pydantic** to handle data **validation** and **serialization**.
+
 This is one of the framework's strengths:  
 you **describe your data** with annotated Python classes, and FastAPI takes care of the rest.
 
