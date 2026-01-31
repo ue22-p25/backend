@@ -20,6 +20,8 @@ project:
     - UE22
     - git
   date: 2026-01-05
+  jupyter:
+    lite: true
   # bibliography: []
 
 site:
