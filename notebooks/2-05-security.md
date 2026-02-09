@@ -461,7 +461,7 @@ And we attach an action to each event type
 
 ## For example&nbsp;:
 
-See in the `python/websockets` folder:
+See in the `python/raw-websockets` folder:
 
 `````{div}
 :class: columns smaller
