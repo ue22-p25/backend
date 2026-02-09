@@ -36,7 +36,8 @@ In production environments, you would typically use **PostgreSQL** or **MySQL** 
 
 ## Define a table model
 
-A SQLModel model looks a lot like a Pydantic model, with the added capability to describe an SQL table.
+A SQLModel model looks a lot like a Pydantic model, with the added capability to
+describe an SQL table.
 
 ```{code-block} python
 from sqlmodel import SQLModel, Field
@@ -50,7 +51,15 @@ class User(SQLModel, table=True):
 
 ➡️ `SQLModel` is a subclass of `pydantic.BaseModel`; you can use all Pydantic features too !  
 ➡️ `table=True` indicates that this class corresponds to a table.  
-➡️ `id` is an auto-incremented primary key (value provided by the database).  
+➡️ `id` is an auto-incremented primary key (value provided by the database).[^optional]
+
+[^optional]: we use `int | None` to indicate that the `id` can be `None` when
+    creating a new user (before it's saved in the database), and will be an
+    `int` once it's stored  
+    note that there's also an `Optional` type factory
+    defined in the standard `typing` module, so you could also write  
+    `id: Optional[int] = Field(default=None, primary_key=True)`  
+    instead of `int | None` if you prefer that style.
 
 ---
 
