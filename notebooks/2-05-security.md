@@ -255,7 +255,7 @@ For example, go to <https://www.mat.minesparis.psl.eu> and find the `PHPSESSID` 
 
 ---
 
-### The sordid details
+### The gory details
 
 `````{div}
 :class: smaller
@@ -399,11 +399,11 @@ forces Patrick to always ask if there is anything new for him...
 
 ---
 
-## Websocket
+## Websockets
 
 ````{div}
 :class: center
-In 2011, revolution: arrival of Websocket 🤯
+In 2011, revolution: arrival of Websockets 🤯
 ````
 
 `````{div}
@@ -414,11 +414,11 @@ In 2011, revolution: arrival of Websocket 🤯
 <br><br>
 ```{div}
 :class: center
-connexion **bidirectionnelle** entre un client et le serveur
-<br>on parle de connexion *full-duplex*
-<br>permet au serveur de ***pousser*** des informations vers le client sans que ce dernier n'ait rien demandé 😲
+**bi-directional** connection between client and server
+<br>sometimes referred to as a *full-duplex* connection
+<br>allows the server to ***push*** information to the client without the client having to ask for anything 😲
 ```
-son petit nom: `ws` (ou `wss` pour le sécurisé)
+its short name: `ws` (or `wss` for the secure version)
 ````
 
 ````{div}
@@ -432,19 +432,20 @@ son petit nom: `ws` (ou `wss` pour le sécurisé)
 
 ---
 
-## Comment ça marche
+## How ws works
 
 Very simply actually!
 
 ````{div}
 :class: center
-First step we establish a connection to a WebSocket server <br> via <br>
-`ws://mon-super-server.com` or `wss://mon-super-server.com`
+First step we establish a connection to a WebSocket server <br> i.e. <br>
+`ws://my-super-server.com` or `wss://my-super-server.com`
 ````
 
 ````{div}
 :class: center
-Once the connection is established <br><br>We must simply put ourselves in a listening state for particular events
+Once the connection is established <br><br>
+We simply need to keep on listening for particular events
 ````
 
 Four types of events
@@ -454,7 +455,7 @@ Four types of events
 `onopen` 📖, `onclose` 📕, `onerror` 🚨, `onmessage` 📥
 ````
 
-And at each event we will come to associate an action
+And we attach an action to each event type
 
 ---
 
@@ -505,21 +506,12 @@ It's related to asynchronous programming. For more details I encourage you to ta
 
 ## In practice
 
-### An instant messaging!
+We'll see websockets again:
 
-xxx dead link xxx
-
-```{div}
-:class: center
-[http://bit.ly/3xu599H](http://bit.ly/3xu599H)
-```
-
-````{div}
-:class: center
-```{image} media/qrcode/tornado.png
-:width: 20%
-```
-````
+- after we've covered FastAPI, and we'll see [how to define websocket endpoints
+  in FastAPI](/websockets#label-websockets)
+- and in a more realistic example, a complete app that deals with notes  
+  see step 11 in https://backend-fastapi-notes.info-mines.paris/scrollycoding
 
 ---
 
