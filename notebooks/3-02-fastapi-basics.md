@@ -283,6 +283,7 @@ and even type conversion
 :class: center
 Now you can also - and more in line with best practices - **define parameters within a URL itself**  
 e.g. then your users would call URLs like `/my/route/basile/42` instead
+
 ```{image} media/fastapi-route-param.excalidraw.svg
 ```
 ````

@@ -11,39 +11,33 @@ Classic Client <-> Server architecture with peer-to-peer, three-tier variations,
 :class: columns
 
 ````{div}
-:class: fourty center
+:class: thirty-five center
 ```{image} media/osi-model.excalidraw.svg
-:width: 70%
 ```
 ````
 
 `````{div}
-:class: fifty
+:class: sixty-five
 
 ````{div}
 :class: columns
 
 ```{image} media/ip-address.excalidraw.svg
-:width: 40%
+:width: 30%
 ```
 
-```{image} media/http-request.excalidraw.svg
-:width: 40%
+```{image} media/http-post-request.excalidraw.svg
+:width: 70%
 ```
 ````
 
 ```{image} media/server-app.excalidraw.svg
-:width: 400px
 ```
-`````
-
-````{div}
-:class: twenty
 ```{image} media/logos/lets-encrypt.svg
 :width: 150px
 ```
-<p style="font-size: 4rem"> 🍪 </p>
 ````
+`````
 
 ``````
 

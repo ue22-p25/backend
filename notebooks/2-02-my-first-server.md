@@ -7,7 +7,7 @@
 
 ````{div}
 :class: fifty
-```{image} media/http-request.excalidraw.svg
+```{image} media/http-get-request.excalidraw.svg
 :width: 100%
 :align: center
 ```
@@ -15,7 +15,7 @@
 
 ````{div}
 :class: fifty
-```{image} media/response-format.excalidraw.svg
+```{image} media/http-get-response.excalidraw.svg
 :align: center
 :width: 100%
 ```
@@ -24,8 +24,8 @@
 
 ```{div}
 :class: smaller
-In reality, it's a bad example because very often the *Body* of an HTTP response is empty;  
-but well it's the general idea to remember;
+Indeed, the *Body* partof an HTTP GET request is empty;  
+but well it's the general idea to remember: there's a header+body structure for both requests and responses
 ```
 
 ---

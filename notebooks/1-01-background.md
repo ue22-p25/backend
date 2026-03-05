@@ -18,7 +18,7 @@ Most computer systems/web services that you can use daily are not **one** applic
 
 A student answers an online satisfaction survey and after submitting their questionnaire automatically receives a personalized and specific response based on their answers.
 
-```{image} media/premier-use-case.excalidraw.svg
+```{image} media/use-case-1.excalidraw.svg
 ```
 
 [https://tally.so/r/w8N0jA](https://tally.so/r/w8N0jA)
@@ -29,7 +29,7 @@ A student answers an online satisfaction survey and after submitting their quest
 
 <!-- <button onclick="copyFunction()">Email du support</button> -->
 
-```{image} media/second-use-case.excalidraw.svg
+```{image} media/use-case-2.excalidraw.svg
 ```
 
 ```{div}
@@ -87,14 +87,14 @@ We will look at the most classic ones
 
 ### Three-tier architecture
 
-```{image} media/architecture-three-tiers.excalidraw.svg
+```{image} media/archi-three-tiers.excalidraw.svg
 ```
 
 ---
 
 ### Peer-to-peer architecture
 
-```{image} media/peer-to-peer.excalidraw.svg
+```{image} media/archi-peer-to-peer.excalidraw.svg
 :width: 60%
 ```
 

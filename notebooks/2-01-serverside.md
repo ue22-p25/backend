@@ -26,7 +26,7 @@ An OSI model in 7 layers
 <br>
 
 An HTTP(S) protocol for the web
-```{image} media/http-request.excalidraw.svg
+```{image} media/http-post-request.excalidraw.svg
 :class: center
 ```
 
@@ -91,13 +91,13 @@ Physical server vs virtual server (VPS)
 
 ````{div}
 :class: fifty center
-```{image} media/bare-metal.excalidraw.svg
+```{image} media/server-bare-metal.excalidraw.svg
 ```
 ````
 
 ````{div}
 :class: fifty center
-```{image} media/vps.excalidraw.svg
+```{image} media/server-vps.excalidraw.svg
 ```
 ````
 `````
@@ -294,7 +294,7 @@ The HTTP server will have to work **with other services** <br>in order to produc
 
 On the other hand, the architecture behind a dynamic site can also be very very complex
 
-```{image} media/cerebro.png
+```{image} media/site-cerebro.png
 :width: 90%
 ```
 

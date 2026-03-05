@@ -153,7 +153,7 @@ The principle of TCP is very simple and breaks down into three steps:
 
 ````{div}
 :class: fourty
-```{image} media/handshake.excalidraw.svg
+```{image} media/tcp-handshake.excalidraw.svg
 ```
 ````
 

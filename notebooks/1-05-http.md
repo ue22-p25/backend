@@ -4,7 +4,7 @@
 
 ````{div}
 :class: center
-<img src="media/http-request.excalidraw.svg" width="60%">
+<img src="media/http-post-request.excalidraw.svg" width="60%">
 ````
 
 ---
@@ -68,6 +68,15 @@ We will use
 the site <http://httpbin.org> which provides a relatively useful test server.  
 and the `python/httpbin-client` folder of the course
 ```
+
+---
+
+## Response format
+
+````{div}
+:class: center
+<img src="media/http-post-response.excalidraw.svg" width="60%">
+````
 
 ---
 
