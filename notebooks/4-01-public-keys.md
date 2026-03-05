@@ -6,13 +6,13 @@ this paradigm of public / private keys is at the heart of modern cryptography
 and is used all over the place, from SSH to TLS, and many more
 
 in this notebook, we will focus on the RSA algorithm, knowing that it is just one of many  
-that is widely used for secure data transmission
-(RSA name comes from the initials of its inventors:  
-Rivest, Shamir, and Adleman, who introduced it in 1977)
+that is widely used for secure data transmission[^rsa]
+
+[^rsa]: RSA name comes from the initials of its inventors: Rivest, Shamir, and Adleman, who introduced it in 1977
 
 ```{admonition} We've used RSA already
-:class: tip admonition-x-small dropdown
-in the installation notebook, we have already used RSA keys to set up SSH access to github
+:class: tip admonition-small dropdown
+in the installation notebook, we've been using RSA keys to set up SSH access to github !
 ```
 
 
