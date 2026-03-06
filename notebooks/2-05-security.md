@@ -161,7 +161,7 @@ It's part of these little ***hidden*** things in HTTP headers
 
  ````{div}
 :class: center
-An 🍪 HTTP is data that a server sends to a client
+An HTTP 🍪 is data that a server sends to a client
 ````
 
 `````{div}
@@ -184,7 +184,7 @@ An 🍪 HTTP is data that a server sends to a client
 
 ````{div}
 :class: center
-stored on the client (in the browser) <br> and **sent back** to the server at each new request
+stored on the client (in the browser) <br> and that the client **sends back again** to the server at each new request
 ````
 
 ````{div}
