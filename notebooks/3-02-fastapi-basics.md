@@ -22,16 +22,16 @@ occupies the same space as
 
 ## FastAPI vs Flask
 
-Similar on the surface to Flask, but **much more modern**!
+FastAPI is similar on the surface to Flask, but **much more modern**!
 
 - encourages a more structured approach
-  - leverages **type information** (type annotations / pydantic)
-  - especially for data validation / conversion
-  - you can define separate models for creation, reading, updating, etc.  
+  - leverages type information (type annotations / Pydantic)
+  - especially for **automatic data validation** / conversion
+  - so you can define separate models for creation, reading, updating, etc.  
     useful for example for password hashing (not exposed)
 - in particular, automatically generates **interactive documentation**
-- has native support for asynchronous programming
-- as well as for websockets
+- has native support for **asynchronous** programming
+- as well as for **websockets**
 
 ---
 
@@ -318,6 +318,101 @@ def url_parameter(name: str, age: int):
 
 ---
 
+## More kinds of parameters
+
+`````{div}
+:class: columns
+
+````{div}
+:class: fourty
+
+in all generality, parameters can be passed in 5 different ways in an HTTP request:
+
+1. in the URL path  
+   (e.g. `/my/route/basile/42`)
+2. in the URL query string  
+   (e.g. `/my/route?name=basile&age=42`)
+3. in the request body (e.g. for POST requests)
+4. in the request headers
+5. in cookies
+
+here's an example of a request with parameters in all these different places, freely inpired from the pixels-war game
+````
+
+````{div}
+:class: sixty
+```{image} media/http-request-parameters.excalidraw.svg
+```
+````
+
+`````
+---
+
+### Capturing parameters in the FastAPI route handler
+
+::::{grid} 2
+
+```{code} python
+:linenos:
+:emphasize-lines: 1,6,11,13-17
+from fastapi import FastAPI, Header, Cookie, Query, Body
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class PixelPayload(BaseModel):
+    i: int
+    j: int
+    color: str  # e.g. "#ff0000"
+
+@app.post("/api/{map}/set")
+async def set_pixel(
+    map: str,
+    defer: bool = Query(False),
+    authorization: str = Header(...),
+    signature: str = Cookie(...),
+    payload: PixelPayload = Body(...),
+):
+    ...
+```
+
+````{div}
+with this code, inside the router function, you can access the parameters as follows:
+
+```{list-table}
+:align: center
+* - Python code
+  - value
+* - `map`
+  -  `themap`
+* - `defer`
+  -  `True`
+* - `authorization`
+  -  `Bearer ...`
+* - `signature`
+  -  `f4d93b...`
+* - `payload.i`
+  - `3`
+```
+
+```{admonition} FastAPI does the heavy lifting for you
+:class: tip smaller dropdown
+
+as you can see FastAPI takes care of parsing the request and extracting
+the parameters for you
+
+in particular observe how the `payload` parameter is automatically converted from JSON to a `PixelPayload` object  
+this is in anticipation of the next episode where we'll see how to use Pydantic models to define the structure of the data we expect in the body of a request
+
+also notice how the `defer`, `authorization`, and `signature` parameters are extracted from the query string, headers, and cookies respectively.  
+Cookie is a special case of Header, but FastAPI provides a convenient way to access cookies directly.
+```
+
+````
+::::
+
+---
+
 ## Returning data
 
 ```{div}
@@ -326,22 +421,22 @@ remember: **everything is text over the network**
 by default, FastAPI returns data in **JSON format**  
 ```
 
-`````{div}
-:class: columns
+::::{grid} 2
 
 ````{div}
-:class: fifty
 this means that when you say e.g.
-```python
+```{code} python
+:linenos:
+:emphasize-lines: 3-4
 @app.get("/my/route/{name}/{age}"):
 def url_parameter(name: str, age: int):
-    return {'name': name, 'age': age}
+    return {'name': name,
+            'age': age}
 ```
 ````
 
 ````{div}
-:class: fifty
-then what is sent back to the client will be the text:
+what is sent back to the client will be **the text**:
 
 ```json
 {
@@ -349,10 +444,17 @@ then what is sent back to the client will be the text:
   "age": 42
 }
 ```
-which needs to be interpreted as JSON on the client side
+so remember to **interpret this text as JSON** on the client side
 ````
 
-`````
+::::
+
+```{admonition} note on using Pydantic models for return values
+as we'll see in the next episode, it's often **more convenient to define a Pydantic model**
+for the return value of a route handler,  
+rather than returning a raw dictionary as in the example above  
+this way FastAPI can also do automatic validation, conversion, and documentation for the return value
+```
 
 ---
 
