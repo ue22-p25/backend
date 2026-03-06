@@ -194,6 +194,21 @@ stored on the client (in the browser) <br> and **sent back** to the server at ea
 ```
 ````
 
+````{admonition} How does it work in concrete terms
+:class: dropdown smaller
+
+- the server sends a response to the client with a `Set-Cookie` header containing the cookie information
+  ```http
+  Set-Cookie: sessionId=abc123; Expires=Wed, 21 Oct 2021 07:28:00 GMT; Path=/; Secure; HttpOnly
+  ```
+- the client (browser) stores the cookie and associates it with the server's domain
+- for each subsequent request to the same server, the client automatically includes the cookie in the request
+  ```http
+  Cookie: sessionId=abc123
+  ```
+- now, this is subject to security considerations, like CORS, but that's the general idea
+````
+
 ---
 
 ## What interest?
