@@ -172,18 +172,20 @@ These layers were in that original model, but are often ignored in favor of the 
 
 ````{div}
 :class: center
-Associate with each interface of each machine on a network a unique address
+Associate with each interface of each machine on a network a unique address<br />
+unique as in, there's no other machine on the world with the same address
 ````
 
 <br>
 
-This address can be _temporary_ or _fixed_.
+This address can be _temporary_ or _fixed_.  
+Also in many modern setup, an interface can have _several addresses_.
 
 <br>
 
-This is what we call the IP address, for _Internet Protocol_.
-The IP address of a network interface is written as a combination of four numbers between 0 and 255.
-<br>
+This is what we call the IP address, for _Internet Protocol_.  
+The IP (v4) address of a network interface is written as a combination of four numbers between 0 and 255.
+
 ````{div}
 :class: center
 ```{image} media/ip-address.excalidraw.svg
@@ -194,7 +196,7 @@ The IP address of a network interface is written as a combination of four number
 `````{div}
 :class: smaller
 
-so there are two parts: the network address (often on 24 bits) and the host address (often on 8 bits)
+so there are two parts: the network address (often on 24 bits) and the host address (often on 8 bits)  
 when we need to write the address of a network we write it like this the number of bits of the network address
 ````{div}
 :class: center
@@ -208,7 +210,7 @@ when we need to write the address of a network we write it like this the number 
 
 ### IPv6 Addresses
 
-**in 2011** we predict **the exhaustion 💣 of available IP addresses**!...
+**in 2011** was predicted **the exhaustion 💣 of available IP addresses**!...
 
 2<sup>32</sup> = 4,294,967,296 that is about 1/2 address per person on earth  
 (of course some people have more than others 😅)
