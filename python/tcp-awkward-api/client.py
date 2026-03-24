@@ -1,5 +1,5 @@
 """
-this slient just blindly:
+this client just blindly:
 
 - lists the current contacts
 - adds a hard-wired new contact
@@ -23,14 +23,17 @@ class ContactClient:
 
         to_send = json.dumps(data).encode()
 
-        sz = self.__socket.send( to_send )
+        # send packet
+        _size = self.__socket.send( to_send )
 
+        # receive answer
         buff = self.__socket.recv(1024).decode()
         data_srv = buff
         while buff != "":
             buff = self.__socket.recv(1024).decode()
             data_srv += buff
 
+        # decode answer
         ret = json.loads(data_srv)
         if ret["status"] is False:
             print("ERROR : " + ret["msg"])
@@ -45,5 +48,5 @@ print("----------- list command --------------")
 out = c.command("list")
 print(out)
 print("----------- add command --------------")
-out = c.command("add", name="Basile Marchand", mail="basile.marchand@mines-paristech.fr")
+out = c.command("add", name="Basile Marchand", mail="basile.marchand@minesparis.psl.eu")
 print(out)

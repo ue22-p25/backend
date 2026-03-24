@@ -112,9 +112,9 @@ Using the browser
 We already vaguely know how to use it, remember, we've already seen  
 ```{div}
 :class: center
-[how to install FastAPI](label-fastapi-install)  
+[how to install FastAPI](#label-fastapi-install)  
 and  
-[how to make a minimal server with FastAPI](label-exo-assocapi)
+[how to make a minimal server with FastAPI](#label-exo-assocapi)
 ```
 
 Notice how simple it is to get started 😯  

@@ -36,6 +36,7 @@ class ContactRequestHandler(socketserver.BaseRequestHandler):
             contacts[name] = mail
 
             ret["status"] = True
+            ret['data'] = data['args']
             ret["msg"] = f"{name} added to contacts"
         else:
             ret["status"] = False

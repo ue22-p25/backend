@@ -53,19 +53,23 @@ the folder `python/tcp-awkward-api`
 ````{div}
 :class: center
 Nothing standard in my data exchanges 😵‍💫
-````
-<br><br>
-````{div}
+
+<br>
+
+```{div}
 :class: center
 I created my own logic 
 
-<br><br> but it's <strike>maybe</strike> certainly not in the eyes of others.
-````
+<br> but it's <strike>maybe</strike> certainly not in the eyes of others.
+```
 
-<br><br>
-````{div}
+<br>
+
+```{div}
 :class: center
 A bit of standardization wouldn't hurt ...
+```
+
 ````
 
 ---
@@ -106,7 +110,7 @@ Name, First name, Date of birth, number of children, ...
 
 ---
 
-Via Python 🐍 it's easy!
+### Via Python 🐍 it's easy!
 
 `````{div}
 :class: columns

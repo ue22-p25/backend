@@ -4,6 +4,8 @@ server_ip = "127.0.0.1"
 server_port = 3000
 
 params = (server_ip, server_port)
+# INET = InterNet = IP
+# STREAM = TCP (and UDP = DGRAM)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(params)
 

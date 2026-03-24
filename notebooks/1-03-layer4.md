@@ -62,7 +62,8 @@ port = service entry door 🚪
 
 ```{div}
 :class: center
-(but we don't run that many applications on a server)
+$2^16$ = 65,536 ports per IP address  
+(but of course we don't run that many applications on a server)
 ```
 ````
 
@@ -220,7 +221,11 @@ let's go see the `python/tcp` folder of the course
 
 ## TCP a rich thing 🤑
 
-You can therefore see that with this approach
+TCP takes care of 
+- retransmissions in case of packet loss,
+- ordering packets in case they arrive in the wrong order, 
+- and flow control to avoid congestion, etc..
+  
 ````{div}
 :class: center
 ✅ the connection is extremely reliable and there is little chance of having misses
@@ -244,7 +249,7 @@ Use cases:
 
 ````{div}
 :class: center
-Fast data transmission and reception of the whole **not imperative**
+Fast data transmission and reception of the whole  - **not imperative**
 ````
 
 ````{div}
@@ -257,7 +262,7 @@ TCP = very reliable but slow
 UDP = fast but unreliable
 ````
 
-UDP applications are numerous, for example:
+UDP applications are numerous, essentially **everything streaming**, for example:
 
 ````{div}
 :class: center

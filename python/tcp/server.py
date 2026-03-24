@@ -8,7 +8,7 @@ class ForkingEchoRequestHandler(socketserver.BaseRequestHandler):
         data = self.request.recv(1024)
         print(f"Receive {data}")
         cur_pid = os.getpid()
-        response = 'data received by the server: %s' % ( data.decode())
+        response = f'received by server (pid={cur_pid}): {data.decode()}'
         self.request.send(response.encode())
         return
 

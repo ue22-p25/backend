@@ -29,6 +29,14 @@ as a transport protocol, offering additional improvements in
 terms of latency and security.
 ```
 
+```{admonition} so why use 1.1 then ?
+:class: dropdown admonition-small
+Versions 2.0 and 3.0 of HTTP use binary formats for requests and responses  
+which makes them unlegible to the human eye !  
+This makes them less practical for learning and debugging, which is why we will use HTTP 1.1 in this course,
+which aims at introducing the basics of backend development.
+```
+
 ---
 
 ## Request types
@@ -95,7 +103,7 @@ These codes are standardized (non-exhaustive list)&nbsp;:
   - 404: what you're asking me doesn't exist ⁉️
 - 5xx: that's a server problem 💣
 
-And so the first thing to do when you make a request to a server is to check that the return code is 200 because otherwise there's no point in continuing!
+And so the first thing to do when you make a request to a server is to check that the return code is 2xx because otherwise there's no point in continuing!
 
 ---
 

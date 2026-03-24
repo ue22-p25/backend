@@ -49,6 +49,8 @@ A solution to preserve application tokens is to use a `.env` file
 
 So to conclude on APIs, it is a very simple way to offer an interface to remote resources and data. The only difficulty in this area is the definition and especially the **documentation of APIs** 📑. So if you set up a Web service with an API and you want to open your service to the outside, please take the time to document your API.
 
+Fortunately, FastAPI does all the heavy lifting for us (more on this later)
+
 We find online plenty of open APIs a link to have a non-exhaustive list
 
 `````{div}
@@ -66,7 +68,7 @@ ou
 
 ````{div}
 :class: fifty center
-notably an example of useful API<br> <https://adresse.data.gouv.fr/outils/api-doc/adresse>
+notably an example of useful API<br> <https://data.geopf.fr/geocodage/openapi>
 ````
 `````
 

@@ -367,7 +367,7 @@ Outgoing IP: 10.1.1.15
 
 ````{div}
 :class: sixty-five
-and my little finger tells me that:
+a little bird told me that:
 
 - you will all have **the same public address**
 - but for the second one you each have a **different local address**
@@ -382,7 +382,7 @@ in fact there are two types of IP addresses:
 ````{div}
 :class: thirty-five
 <br><br>
-reserved private addresses:
+reserved **private** addresses:
 
 - `192.168.0.0/16` <br> 2<sup>16</sup> = 65,536 adresses
 
@@ -407,11 +407,11 @@ Remembering IP addresses is still not super 🤯!
 
 ````{div}
 :class: center
-For example imagine that you had to remember `91.134.82.158` (*)
+For example imagine that you had to remember `91.134.82.158` [^oasis-ip]
 <br/>to know the classrooms .... <strike>we wouldn't see you often!</strike>
 ````
 
-(*) this is the IP address of the server that hosts OASIS
+[^oasis-ip]: this is the IP address of `oasis.minesparis.psl.eu`
 
 --
 
