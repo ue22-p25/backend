@@ -139,19 +139,27 @@ Generally we talk about three qualities:
 
 ````{div}
 :class: fifty
-<br><br>
+<br>
+
 **O**pen **S**ystem **I**nterconnexion
-<br><br><br>
+<br><br>
 
 **Standard** established <br>by the ISO committee in 1984
 <br><br>
 
 **Objectives**:
-<br><br>
+<br>
 
 ```{div}
 :class: center
 standardize communications<br> between devices on a network
+```
+<br><br>
+
+```{admonition} Note on layers 5 and 6
+:class: warning admonition-small
+These layers were in that original model, but are often ignored in favor of the TCP/IP model, which has only 4 layers
+(Link, Internet, Transport, Application).
 ```
 
 ````
