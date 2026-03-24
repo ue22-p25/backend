@@ -135,9 +135,17 @@ mail support request that causes a new entry in a database<br>and a mail notific
 
 ---
 
-## Application 1
+## warning
 
-xxx outdated xxx
+```{admonition} the following apps are outdated !
+:class: danger
+
+you can [skip to the end of this notebook](#next-week)
+```
+
+---
+
+## Application 1
 
 I have set up a minimalist server offering an API allowing:
 
