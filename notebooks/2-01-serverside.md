@@ -52,7 +52,7 @@ And from time to time 🥳 it must process a request!
 
 ---
 
-## Serveur et serveur deux choses différentes
+## There is server and server
 
 **_Attention_** there are two meanings to server ...
 
@@ -63,7 +63,7 @@ And from time to time 🥳 it must process a request!
 
 ---
 
-### Le serveur hardware
+### Hardware server
 
 ````{div}
 :class: center
@@ -79,7 +79,7 @@ It's the **physical or virtual** machine connected to the network that will rece
 
 ---
 
-### Le serveur hardware : différents types
+### Hardware servers : different kinds
 
 ````{div}
 :class: center
@@ -106,9 +106,9 @@ Different solutions: On Premise vs Cloud (OVH, Azure, GCP, AWS, ... )
 
 ---
 
-## Serveur et serveur deux choses différentes
+## There is server and server
 
-### The "software" server
+### Software server
 
 ````{div}
 :class: center
@@ -124,7 +124,7 @@ It's the application (in the software sense) that will take care of
 **Receive**, **Process** and **Respond** to HTTP requests (or others for that matter)
 ````
 
-Different solutions: Nginx (33%), Apache (27%), LiteSpeed (15%), Node.js(4%), IIS (4%), ...
+Different solutions: Nginx (32.7%), Cloudflare Server (27.2%), Apache (24%), LiteSpeed (15.2%), Node.js (6%), ...
 
 ````{div}
 :class: smaller
@@ -165,21 +165,21 @@ Example of nginx config with two different sites on the same physical server
 ````{div}
 :class: fifty center
 ```{image} media/servername-mines.png
-:width: 40%
+:width: 100%
 ```
 ````
 
 ````{div}
 :class: fifty center
 ```{image} media/servername-cpp.png
-:width: 70%
+:width: 90%
 ```
 ````
 `````
 
 ````{div}
 :class: center
-the "routing" between the two sites is done based on the `Host:` Header of the HTTP request
+routing between both sites is done based on the `Host:` Header in the incoming HTTP request
 ````
 
 ---
@@ -198,33 +198,26 @@ A traditional server spends its time waiting ... 🥱
 
 The principle is to break down processing into small **independent tasks** (functions) that will be executed **on demand**
 
-`````{div}
-:class: columns
+````{grid} 2
 
-````{div}
-:class: fifty center
-
+```{div}
 ### Advantages
 
 - No server management
-- No fixed cost
-- Scalable
-````
+- Auto-scalable
+- Smaller cost for small/medium traffic
+```
 
-````{div}
-:class: fifty center
-
+```{div}
 ### Disadvantages/Difficulties
 
 - Startup time
-- Usage cost
+- No fixed cost
 - Debugging difficulty
 - Stateless
+```
+
 ````
-
-`````
-
-Lower cost for providers because they can optimize resource usage
 
 ---
 
@@ -256,7 +249,7 @@ Static vs dynamic sites
 
 ````{div}
 :class: center
-The HTTP server only does one thing
+A static HTTP server only does one thing
 <br>
 **_read files_** html, png, jpg, pdf, .... and **_send the content to the client**
 
@@ -354,20 +347,17 @@ Attention however&nbsp;: **_Free_** does not mean **_without limit_**
 :class: columns bottom
 
 ````{div}
-:class: .sixty
+:class: .sixty-five
 ```{image} media/performance.excalidraw.svg
 :width: 700px
 ```
 ````
 
 ````{div}
-:class: fourty
-How to make sure everyone
-
-has a response in a reasonable time?
-
+:class: thirty-five
+How to make sure everyone  
+has a response in a reasonable time? ⏳️
 ````
-  ⏳️
 `````
 
 ---

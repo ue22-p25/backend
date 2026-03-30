@@ -1,6 +1,6 @@
 # My first server
 
-## And by the way what does the server respond to GET&nbsp;?
+## And by the way, what does the server respond to `GET`&nbsp;?
 
 `````{div}
 :class: columns
