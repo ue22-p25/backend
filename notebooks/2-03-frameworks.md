@@ -114,7 +114,7 @@ To this a complete framework adds functionalities of:
 
 ````{div}
 :class: center
-`Web Template`, `Security`, `Access to databases`
+`Web Template`, `Access to databases`, `Security`, ...
 ````
 
 ---

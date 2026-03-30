@@ -210,7 +210,7 @@ Closure in 4 steps
 
 ---
 
-## Let's see how it really works
+## → Let's see how it really works
 
 ```{div}
 :class: center
@@ -221,9 +221,9 @@ let's go see the `python/tcp` folder of the course
 
 ## TCP a rich thing 🤑
 
-TCP takes care of 
+TCP takes care of
 - retransmissions in case of packet loss,
-- ordering packets in case they arrive in the wrong order, 
+- ordering packets in case they arrive in the wrong order,
 - and flow control to avoid congestion, etc..
   
 ````{div}
