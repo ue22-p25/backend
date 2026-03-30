@@ -17,7 +17,7 @@ aware of it and know how to work around that.
 
 ---
 
-## The backend
+## → The backend
 
 We're going to elaborate on the simplistic backend example from
 `python/db-single-table`, remember:
@@ -36,7 +36,7 @@ reminders:
 
 ---
 
-## The `<form>` HTML element (frontend)
+## → The `<form>` HTML element (frontend)
 
 When building an HTML page that prompts the user to enter data, the most common
 approach is to use a `<form>` element, which provides a structured way to
@@ -80,7 +80,7 @@ JavaScript.
 
 ---
 
-## Converting form data to JSON
+## → Converting form data to JSON
 
 And here's how we can do that[^scriptinject]
 
@@ -117,7 +117,7 @@ Make sure to pick the one that works best for you.
 
 ---
 
-## CORS breaks the naive way
+## → CORS breaks the naive way
 
 When trying to run the above code a bit too naively, i.e. with
 
@@ -176,7 +176,7 @@ development.
 
 ---
 
-## A workaround: `vite` as a proxy
+## → A workaround: `vite` as a proxy
 
 For development purposes, a common workaround is to use a proxy, which allows us
 to forward requests from the frontend server to the backend server, effectively

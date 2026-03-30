@@ -32,7 +32,7 @@ A foreign key is simply a column that references the **primary key of another ta
 
 ---
 
-## One-to-many relationships
+## → One-to-many relationships
 
 The most common relationship is **one-to-many**.
 
@@ -119,7 +119,7 @@ SQLModel (and SQLAlchemy) require you to define **both sides explicitly** if you
 
 ---
 
-## Many-to-many relationships
+## → Many-to-many relationships
 
 Some relationships are **many-to-many**.
 

@@ -327,7 +327,7 @@ see also the GDPR:
 
 ---
 
-## Let's add a Cookie to our server
+## → Let's add a Cookie to our server
 
 ````{div}
 :class: center
@@ -474,7 +474,7 @@ And we attach an action to each event type
 
 ---
 
-## For example&nbsp;:
+## → For example&nbsp;:
 
 See in the `python/raw-websockets` folder:
 

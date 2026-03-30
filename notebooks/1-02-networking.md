@@ -285,7 +285,7 @@ manages three elements:
 ---
 (my-ip-address)=
 
-## By the way: what is my IP?
+## → By the way: what is my IP?
 
 `````{div}
 :class: columns

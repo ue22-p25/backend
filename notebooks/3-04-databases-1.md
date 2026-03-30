@@ -4,7 +4,10 @@ short_title: "DB 1/2: the basics"
 
 # DB 1/2: using a database for storage
 
-Previously, we saw how to use **Pydantic** to validate and convert data.  
+
+## → Previously
+
+we saw how to use **Pydantic** to validate and convert data.  
 But an API is not very useful if the data disappears at each restart…  
 👉 It's time to see how to **store data in a database**.
 

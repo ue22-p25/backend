@@ -100,7 +100,7 @@ but well it's just a toy you know
 
 ---
 
-### A bit less basic
+### → A bit less basic
 
 ```{div}
 :class: center
@@ -131,7 +131,7 @@ because it defines how the server will process the request.
 
 ---
 
-## Examples made by hand
+## → Examples made by hand
 
 📢 ⚠️ in the `python/http-servers` folder, we look at the files:
 

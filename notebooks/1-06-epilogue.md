@@ -74,7 +74,7 @@ notably an example of useful API<br> <https://data.geopf.fr/geocodage/openapi>
 
 ---
 
-## Illustration
+## → Illustration
 
 Consider for example the case of a server generating lists of random numbers on demand. The API of such a server could be
 

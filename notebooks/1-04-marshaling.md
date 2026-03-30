@@ -19,10 +19,7 @@ In your opinion is it all good then or do we need something else?
 
 ---
 
-````{div}
-:class: center
-🔎 Let's look at a concrete example 🔎
-````
+## → a concrete example
 
 `````{div}
 :class: columns

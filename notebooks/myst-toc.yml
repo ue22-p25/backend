@@ -28,3 +28,5 @@ project:
     - title: "optional content"
       children:
         - pattern: 4-*.md
+        - file: TOC-external-code.md
+

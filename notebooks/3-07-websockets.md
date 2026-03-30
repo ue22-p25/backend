@@ -29,7 +29,7 @@ real-time applications:
 
 ---
 
-## a simple example
+## → a simple example
 
 you can refer to the code in the `python/fastapi-websockets` folder for a
 complete example of a websocket server and client using FastAPI and vanilla JS.
@@ -55,7 +55,7 @@ as you will have guessed, you need to
 
 ---
 
-## builtin in FastAPI !
+## → builtin in FastAPI !
 
 let's take a look at the code, and for starters look at the `app.py` file  
 the interesting snippet is below, where we define a websocket endpoint at `/ws`, like so
@@ -77,7 +77,7 @@ the connection with each client
 
 ---
 
-## and builtin in JS !
+## → and builtin in JS !
 
 looking now at the JS code (in `index.html`), we can see how the client connects
 to the websocket server and sends/receives messages

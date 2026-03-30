@@ -458,7 +458,7 @@ this way FastAPI can also do automatic validation, conversion, and documentation
 
 ---
 
-## A random generator (exercise)
+## → A random generator (exercise)
 
 **in `python/random-generator/`**
 - read the code - at least the 2 first `get` endpoints for now
@@ -697,7 +697,7 @@ this is useful, especially when sending boolean or numeric values
 
 ---
 
-### On the FastAPI side
+### → On the FastAPI side
 
 Here now is one FastAPI code that works well to handle this request
 

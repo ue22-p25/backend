@@ -253,7 +253,7 @@ The syntax is as follows
 
 ---
 
-### Dictionary access
+### → Dictionary access
 
 if `x` is itself a dictionary, we can access its keys/values via e.g. `x.name` or `x['name']`, the first being generally more convenient
 
