@@ -138,8 +138,8 @@ Netflix, Microsoft, Uber, ... use FastAPI for certain parts of their backends
 
 very light and minimalist core, but super powerful
 
-- uses Python **type annotations** for automatic data validation
-- **automatic documentation** of APIs with Swagger UI and ReDoc
+- uses Python **type annotations** for automatic data validation and conversion
+- **automatic documentation** of APIs in `/docs` (leveraging OpenAPI and Swagger UI)
 - **natively asynchronous**, hence very performant
 - moreover, it can be enriched with **extensions**.
 
@@ -167,7 +167,7 @@ we will also install `httpie` to test APIs in command line
 it's just a very practical development tool, no need for this dependency in production
 
 ```bash
-# ceci installe la commande http, disponible depuis le terminal
+# this installs the 'http' command, available from the terminal
 pip install httpie
 ```
 

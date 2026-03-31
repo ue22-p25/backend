@@ -33,7 +33,10 @@ short_title: "code snippets index"
 - [`python/http-servers/server1_static.py` (literalinclude)](my-first-server#id-a-bit-less-basic)  
   - a minimal static-file HTTP server written with the stdlib
 - [`python/http-servers/` — other files (mentioned)](my-first-server#id-examples-made-by-hand)  
-  - hand-written variants: static server from scratch, stateful POST server
+  - hand-written variants: 
+    - `server2_static_byhand.py`,
+    - `server3_post_stateful.py`,
+    - `server4_template.py`
 
 ## 2-05-security
 

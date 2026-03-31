@@ -28,9 +28,9 @@ Once your code works, go visit the `/docs/` route to see the interactive doc of 
 # conda install conda-forge::nodejs
 
 # download the repo in the 'frontend' folder
-npx degit git@github.com:ue22-p25/backend-assocapi-frontend.git frontend
+npx degit ue22-p25/backend-assocapi-frontend frontend
 # same for the backend
-npx degit git@github.com:ue22-p25/backend-assocapi-skeleton.git backend
+npx degit ue22-p25/backend-assocapi-skeleton backend
 ```
 
 which has the advantage of not recreating a git repository in the created folder; especially if you place yourself in an already existing repository like `backend-homework`  
@@ -65,10 +65,10 @@ and same for the frontend by the way; if you intend to touch it, it's better to 
 ```python
 # untyped parameter
 
-@app.route('/hello/<name>')
+@app.route('/hello/{name}')
   def hello(name):
     # here name is a simple str
-    # it's up to you 
+    # it's up to you
     # to check its content
     return f'Hello, {name}!'
 ```
@@ -77,13 +77,17 @@ and same for the frontend by the way; if you intend to touch it, it's better to 
 ````{div}
 :class: fifty
 ```python
-# here the parameter is typed
+# here with a path parameter
+# note how it is typed
 
-@app.route('/hello/<int:id>')
-  def hello(id):
-    # so fastapi does the
-    # control and conversion
-    # automatically
+@app.route('/hello/{id}')
+  def hello(id: int):
+    """
+    fastapi does the control and conversion of 'id'
+    automatically for you, so you can be sure that 'id' is an int in the function body
+
+    also this docstring ends up in the automatic documentation
+    """
     return f'Hello, {id**2}!'
 ```
 ````

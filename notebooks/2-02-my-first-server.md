@@ -74,7 +74,7 @@ cd html
 ## to launch the server
 python -m http.server
 
-## NB: ... 
+## NB: ...
 ## at this stage the terminal is blocked
 ## to kill the server type "Control-C"
 ```
@@ -148,9 +148,24 @@ because it defines how the server will process the request.
 - `server4_template.py`
   - same functionalities but with a JINJA2 template
 
+````{admonition} how to easily send POST requests to our server?
+:class: tip
+install `httpie` and use the `http` command from the terminal, for example:
+```bash
+# this installs the 'http' command, available from the terminal
+pip install httpie
+```
+and from then on you can do things like
+```bash
+# send a POST request to localhost on port 9002
+# with a body containing a dict {"var": "value", "foo": "bar"}
+http :9002 var=value foo=bar 
+```
+````
+
 ---
 
-## of course frameworks exist for that&nbsp;!
+## that's the purpose of frameworks&nbsp;!
 
 all this is a bit tedious, that's why we use frameworks (→ following slides)  
 but it's good to understand how it works  

@@ -31,6 +31,9 @@ class EchoHttpHandlerWithPOST(BaseHTTPRequestHandler):
 
 
     def do_POST(self):
+        # not strictly necessary in Python
+        # but explicit is better than implicit, right?
+        global STATE
         client_addr = self.client_address
         print(f"Server received POST from {client_addr} for path {self.path}")
         request_path = self.path
@@ -40,7 +43,7 @@ class EchoHttpHandlerWithPOST(BaseHTTPRequestHandler):
             self.log_message( f"data_size = {data_size}")
             data_raw = self.rfile.read(data_size).decode()
             data_json = json.loads(data_raw)
-            # expect a dicionary
+            # expect a dictionary
             if not isinstance(data_json, dict):
                 self.send_response(400)
                 self.send_header('Content-type', 'text/plain')
