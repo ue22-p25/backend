@@ -15,8 +15,8 @@ from fastapi.responses import HTMLResponse
 app = FastAPI()
 
 
-@app.get("/{path:path}", response_class=HTMLResponse)
-async def serve_with_cookie(path: str, request: Request):
+@app.get("/{anypath:path}", response_class=HTMLResponse)
+async def serve_with_cookie(anypath: str, request: Request):
     """
     display the number of times the page has been visited
     """
@@ -32,7 +32,7 @@ async def serve_with_cookie(path: str, request: Request):
         html = "<h1>Welcome for your first time here !</h1>"
     else:
         html = f"<h1>You have seen this page {visit} times !</h1>"
-    html += f"this is the fastapi version - you were visiting path /<code>{path}</code> !"
+    html += f"this is the fastapi version - you were visiting path /<code>{anypath}</code> !"
 
     response = HTMLResponse(content=html)
     response.set_cookie(key="visit", value=str(visit))
