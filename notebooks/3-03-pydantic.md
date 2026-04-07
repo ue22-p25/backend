@@ -163,16 +163,7 @@ def get_user(user_id: int):
 
 ---
 
-## Educational advantages
-
-- ✅ **Automatic validation** of inputs  
-- ✅ **Type conversion** (fewer parsing errors)  
-- ✅ **Free documentation** (Swagger/OpenAPI)  
-- ✅ **Model reuse** (inputs and outputs)
-
----
-
-## Conclusion
+## The cool features of Pydantic
 
 With Pydantic, you describe your data once in the form of Python classes.  
 FastAPI takes care of:
@@ -182,5 +173,5 @@ FastAPI takes care of:
 - producing clear documentation,  
 - ensuring your responses respect the contract.  
 
-👉 It's good practice to **systematically use Pydantic models** for your endpoints that consume or produce structured data.
-
+👉 It's good practice to **systematically use Pydantic models** for your
+endpoints that consume or produce structured data.

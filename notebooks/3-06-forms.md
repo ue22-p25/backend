@@ -5,7 +5,7 @@
 This section shows a minimal example of implementing a user registration
 **form** with FastAPI  
 we want to focus on the aspects relating to **forms**, and for that reason we
-deliberately keep things simple^singlemodel].
+deliberately keep things simple[^singlemodel].
 
 [^singlemodel]: we keep the schema minimal to focus on form handling; in practice you might
   want to use more specific types (e.g. `User` and `UserCreate`), and add
