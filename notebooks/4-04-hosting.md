@@ -105,7 +105,7 @@ particularly as it is a standard and you can use it on any cloud provider
   - a set of processes (process group)
   - a network namespace (IP address)
 
-- in short, it is a *lightwight* virtual machine
+- in short, it is a *lightweight* virtual machine
   - except that it **shares the kernel** with the host OS
 
 - an app vendor can package their app
