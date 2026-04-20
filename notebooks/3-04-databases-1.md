@@ -214,12 +214,6 @@ It's also possible to use inheritance to avoid code duplication.
 
 ---
 
-## Relationships between tables
-
-
-
----
-
 ## Why is it cool ?
 
 With **SQLModel**, FastAPI makes it easy to connect:
@@ -239,4 +233,4 @@ The benefits are numerous:
 
 👉 You can now create real APIs capable of storing and retrieving information in an SQL database.
 
-Next step: enrich your models with relationships (e.g., `User` ↔ `Address`).
+Next step: **enrich your models with relationships** (e.g., `User` ↔ `Address`).

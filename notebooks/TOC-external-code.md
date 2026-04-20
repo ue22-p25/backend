@@ -60,7 +60,9 @@ short_title: "code snippets index"
 ## 3-04-databases-2
 
 - [`python/db-relationships/user_posts.py` (mentioned)](databases-2#id-one-to-many-relationships)  
-  - one-to-many example: one User has many Posts
+  - one-to-many example: one User has many Posts, using `Relationship` for navigation
+- [`python/db-relationships/user_posts_no_relationship.py` (mentioned)](databases-2#id-a-lighter-approach-no-relationship)  
+  - same example rewritten without `Relationship`, using explicit `select()` queries
 - [`python/db-relationships/students_courses.py` (mentioned)](databases-2#id-many-to-many-relationships)  
   - many-to-many example with an association table for students/courses
 

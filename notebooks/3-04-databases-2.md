@@ -230,12 +230,178 @@ A common rule of thumb:
 
 ---
 
+## → A lighter approach (no `Relationship`)
+
+The `Relationship()` approach is powerful, but there is a simpler alternative.
+
+When you just need to **query data across tables**, you can write explicit `select()` queries — no `Relationship` attributes, no `back_populates`.
+
+This is closer to raw SQL, and often more readable for API code.
+
+See the complete side-by-side comparison in `python/db-relationships/user_posts_no_relationship.py` (vs `user_posts.py`).
+
+We'll use a chat-app model as a running example:
+
+- `User` — chat participants
+- `Room` — chat rooms
+- `Message` — messages in a room, written by a user
+- `Subscription` — which users are subscribed to which rooms (many-to-many)
+
+---
+
+## The models (no `Relationship`)
+
+```{code} python
+:linenos:
+:emphasize-lines: 14,15,19,20
+from sqlmodel import SQLModel, Field
+
+class User(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    name: str
+
+class Room(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    name: str
+
+class Message(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    content: str
+    user_id: int = Field(foreign_key="user.id")
+    room_id: int = Field(foreign_key="room.id")
+
+class Subscription(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    user_id: int = Field(foreign_key="user.id")
+    room_id: int = Field(foreign_key="room.id")
+```
+
+Foreign keys are declared, but there are **no `Relationship()` attributes** — we navigate the data entirely through queries.
+
+---
+
+## Fetch by primary key
+
+The simplest lookup — get one row by its `id`:
+
+```python
+room = session.get(Room, room_id)
+```
+
+Equivalent to `SELECT * FROM room WHERE id = room_id`.  
+Returns `None` if not found.
+
+---
+
+## Filtered queries
+
+Use `.where()` to filter rows:
+
+```python
+# get all subscriptions for a given user
+subs = session.exec(
+    select(Subscription).where(Subscription.user_id == user_id)
+).all()
+
+# get one user by name (.first() returns None if no match)
+user = session.exec(
+    select(User).where(User.name == username)
+).first()
+```
+
+`.all()` returns a list; `.first()` returns the first match or `None`.
+
+---
+
+## Joining two tables in a `select`
+
+To retrieve data from **two tables at once**, pass both models to `select()` and use `.where()` to express the join condition:
+
+```{code} python
+:linenos:
+:emphasize-lines: 2-5
+messages = session.exec(
+    select(Message, User)
+    .where(Message.room_id == room_id)
+    .where(Message.user_id == User.id)   # the JOIN condition
+    .order_by(Message.created_at)
+).all()
+```
+
+Each result is a `(Message, User)` tuple, so you can pull fields from both:
+
+```python
+result = [
+    {**dict(msg), "username": user.name}
+    for msg, user in messages
+]
+```
+
+This is the SQLModel equivalent of:
+
+```sql
+SELECT message.*, user.*
+FROM message JOIN user ON message.user_id = user.id
+WHERE message.room_id = :room_id
+ORDER BY message.created_at
+```
+
+---
+
+## Working with a junction table directly
+
+For a many-to-many (here: users ↔ rooms via `Subscription`), you can query the junction table without any `Relationship` attribute:
+
+```python
+# is this user already subscribed?
+existing = session.exec(
+    select(Subscription)
+    .where(Subscription.user_id == user_id)
+    .where(Subscription.room_id == room_id)
+).first()
+
+# subscribe (if not already)
+if not existing:
+    session.add(Subscription(user_id=user_id, room_id=room_id))
+    session.commit()
+
+# unsubscribe
+if existing:
+    session.delete(existing)
+    session.commit()
+
+# get all room IDs a user is subscribed to
+room_ids = [
+    s.room_id for s in session.exec(
+        select(Subscription).where(Subscription.user_id == user_id)
+    ).all()
+]
+```
+
+---
+
+## ORM style vs query style — comparison
+
+| | ORM style (`Relationship`) | Query style (explicit `select`) |
+|---|---|---|
+| navigation | `user.posts`, `post.user` | `session.exec(select(...).where(...))` |
+| join | automatic (lazy load) | explicit `.where(A.fk == B.id)` |
+| many-to-many | navigate via `student.courses` / `course.students` | direct queries on junction table |
+| verbosity | less in Python code | more explicit, closer to SQL |
+| transparency | magic behind the scenes | every query is visible |
+
+Both approaches are valid — pick the one that matches your team's comfort with SQL and the complexity of your data access patterns.
+
+For simple APIs, the **query style** is often easier to reason about: you always know exactly what SQL is being executed.
+
+---
+
 ## Key takeaways
 
 - Relationships link tables using **foreign keys**.
-- SQLModel lets you describe relationships using **type hints** and `Relationship`.
-- One-to-many is the most common pattern.
-- Many-to-many requires an **association table**.
+- SQLModel lets you describe relationships using **type hints** and `Relationship` — you then navigate them like Python attributes (`user.posts`, `student.courses`).
+- One-to-many is the most common pattern; many-to-many requires an **association table**.
+- You don't always need `Relationship`: explicit `select()` queries with `.where()` are a simpler alternative, closer to SQL.
+- Both styles coexist — `Relationship` shines when you navigate object graphs; explicit queries shine when you just need targeted data.
 - Database relationships do not automatically imply API nesting.
 
-Understanding relationships is a major step toward building **real-world data models** — and SQLModel makes this step far less painful than traditional ORMs.
