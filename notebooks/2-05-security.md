@@ -329,10 +329,10 @@ see also the GDPR:
 
 ## → Let's add a Cookie to our server
 
-````{div}
-:class: center
-let's go to the `python/cookies` folder of the course
-````
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/cookies/`
+```
 
 ````{div}
 run this code on your computer and look for cookies in the headers  
@@ -476,7 +476,10 @@ And we attach an action to each event type
 
 ## → For example&nbsp;:
 
-See in the `python/raw-websockets` folder:
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/raw-websockets/`
+```
 
 `````{div}
 :class: columns smaller

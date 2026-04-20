@@ -212,9 +212,9 @@ Closure in 4 steps
 
 ## → Let's see how it really works
 
-```{div}
-:class: center
-let's go see the `python/tcp` folder of the course
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/tcp/`
 ```
 
 ---

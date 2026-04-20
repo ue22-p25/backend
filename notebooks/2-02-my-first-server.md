@@ -105,8 +105,12 @@ but well it's just a toy you know
 ```{div}
 :class: center
 This time we're going to do it *by hand* and write some code, still in Python 🐍  
-it happens in the `python/http-servers` folder  
 📢 ⚠️ We look at the file `server1_static.py`
+```
+
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/http-servers/`
 ```
 
 ```{literalinclude} ../python/http-servers/server1_static.py
@@ -133,7 +137,12 @@ because it defines how the server will process the request.
 
 ## → Examples made by hand
 
-📢 ⚠️ in the `python/http-servers` folder, we look at the files:
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/http-servers/`
+```
+
+📢 ⚠️ we look at the files:
 
 - `server2_static_byhand.py`
   - basically, same functions: knows how to respond to GET for static files

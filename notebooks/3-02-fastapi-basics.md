@@ -460,7 +460,10 @@ this way FastAPI can also do automatic validation, conversion, and documentation
 
 ## → A random generator (exercise)
 
-**in `python/random-generator/`**
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/random-generator/`
+```
 - read the code - at least the 2 first `get` endpoints for now
 - start the server
 - point your browser at the documentation page at `http://localhost:8000/docs`
@@ -716,8 +719,12 @@ def set_seed(seed_value: int=Body(..., embed=True)):
 
 ```{admonition} it's simpler with Pydantic
 :class: tip dropdown
-we'll see this later, but things get a little simpler with a Pydantic model to define the parameters...  
-interested students can check the code for `/api/seed2` in `python/random-generator/generator.py`
+we'll see this later, but things get a little simpler with a Pydantic model to define the parameters...
+```
+
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/random-generator/generator.py`
 ```
 
 ---

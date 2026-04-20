@@ -182,8 +182,12 @@ For development purposes, a common workaround is to use a proxy, which allows us
 to forward requests from the frontend server to the backend server, effectively
 bypassing CORS restrictions.
 
-You can see this in action in the `python/fastapi-forms` folder, where we have a
-`vite.config.js` file which configures `vite` to proxy requests starting with
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/fastapi-forms/`
+```
+
+The `vite.config.js` file there configures `vite` to proxy requests starting with
 `/users` to `http://localhost:8000/users`.
 
 This means you can run the original code by simply running `vite` without the

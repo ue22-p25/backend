@@ -299,7 +299,11 @@ How do I <br>find out my IP?
 :class: sixty
 to start I clone the course (if not already done)  
 on github: `ue22-p25/backend`  
-and I go to the `python/ip-address` folder
+
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/ip-address/`
+```
 ````
 
 `````

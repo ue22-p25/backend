@@ -269,7 +269,10 @@ if `x` is itself a dictionary, we can access its keys/values via e.g. `x.name` o
 {% endfor %}
 ```
 
-see `python/jinja-demo.py` for an executable example
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/jinja-demo.py`
+```
 
 ---
 

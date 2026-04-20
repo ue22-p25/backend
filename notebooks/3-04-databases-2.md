@@ -39,7 +39,10 @@ The most common relationship is **one-to-many**.
 Example:  
 👉 One `User` can have many `Post`s, but each `Post` belongs to exactly one `User`.
 
-See also the complete code in `python/db-relationships/user_posts.py`.
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/db-relationships/user_posts.py`
+```
 
 ---
 
@@ -128,7 +131,10 @@ Example:
 
 Relational databases handle this using an **association table** (also called a junction table).
 
-See the code in `python/db-relationships/students_courses.py` for a complete example.
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/db-relationships/students_courses.py`
+```
 
 ---
 
@@ -238,7 +244,10 @@ When you just need to **query data across tables**, you can write explicit `sele
 
 This is closer to raw SQL, and often more readable for API code.
 
-See the complete side-by-side comparison in `python/db-relationships/user_posts_no_relationship.py` (vs `user_posts.py`).
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/db-relationships/user_posts_no_relationship.py (vs user_posts.py)`
+```
 
 We'll use a chat-app model as a running example:
 

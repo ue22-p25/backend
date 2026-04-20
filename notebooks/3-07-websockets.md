@@ -31,8 +31,10 @@ real-time applications:
 
 ## → a simple example
 
-you can refer to the code in the `python/fastapi-websockets` folder for a
-complete example of a websocket server and client using FastAPI and vanilla JS.
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/fastapi-websockets/`
+```
 
 let's start with `app.py` and its companion `index.html`[^app2]
 

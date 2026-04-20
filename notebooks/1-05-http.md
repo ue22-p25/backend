@@ -73,8 +73,12 @@ We will use
 
 ```{div}
 :class: center
-the site <http://httpbin.org> which provides a relatively useful test server.  
-and the `python/httpbin-client` folder of the course
+the site <http://httpbin.org> which provides a relatively useful test server.
+```
+
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/httpbin-client/`
 ```
 
 ---

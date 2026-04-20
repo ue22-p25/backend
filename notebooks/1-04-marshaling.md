@@ -21,6 +21,11 @@ In your opinion is it all good then or do we need something else?
 
 ## → a concrete example
 
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/tcp-awkward-api/`
+```
+
 `````{div}
 :class: columns
 
@@ -28,12 +33,9 @@ In your opinion is it all good then or do we need something else?
 :class: seventy
 ```{div}
 :class: center
-the folder `python/tcp-awkward-api`
-<br>or<br>
 [https://replit.com/@BasileMarchand/tcpexample?v=1](https://replit.com/@BasileMarchand/tcpexample?v=1)
 <br>or<br>
 [http://bit.ly/3YpoKDR](http://bit.ly/3YpoKDR)
-<br>or<br>
 ```
 ````
 

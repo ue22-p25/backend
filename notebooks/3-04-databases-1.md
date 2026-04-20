@@ -11,7 +11,10 @@ we saw how to use **Pydantic** to validate and convert data.
 But an API is not very useful if the data disappears at each restart…  
 👉 It's time to see how to **store data in a database**.
 
-(See complete code in `python/db-single-table/`)
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/db-single-table/`
+```
 
 ---
 

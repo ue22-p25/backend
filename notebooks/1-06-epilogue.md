@@ -83,9 +83,9 @@ Consider for example the case of a server generating lists of random numbers on 
 - `/api/integer?n=100` returns 100 random integers
 - ...
 
-```{div}
-:class: center
-it happens in the `python/api-random` folder of the course
+```{admonition} see complete code example in
+:class: seealso external-code
+`python/api-random/`
 ```
 
 ---
